@@ -17,18 +17,19 @@
 
                 <div class="form-group">
                     <label class="label-name" for="name">Nome Completo</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autocomplete="name" autofocus/>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{Session::get('name')}}" required autocomplete="name" autofocus/>
                     @error('name') {{$message}} @enderror
+                                     
                 </div>
                 <div class="form-row">
                 <div class="form-group col-md-7">
                     <label class="label-name" for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required />
+                    <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" required />
                     @error('email') {{$message}} @enderror
                 </div>
                 <div class="form-group col-md-5">
                     <label class="label-name" for="phone">Telefone</label>
-                    <input type="text" class="form-control" id="phone" name="phone" required />    
+                    <input type="text" class="form-control" id="phone" name="phone" value="{{Session::get('phone')}}" required />    
                 </div>
                 </div>
                 <div class="line-horizontal"></div>
@@ -108,7 +109,7 @@
                     <br/>
                     <input class="form-check-input" type="checkbox" id="outra-opcao" value="" onclick="habilitar_outros()">
                     <label class="form-check-label" for="outra-opcao">Outros</label>
-                    <input type="text" class="form-control" name="other_course" id="outro-curso" style="display:none"  />
+                    <input type="text" class="form-control" name="other_course" id="outro-curso" style="display:none" value="{{Session::get('other_course')}}" />
                 </div>
                 </div>
 
@@ -116,15 +117,15 @@
                 <div class="form-row">
                 <div class="form-group col-auto">
                     <label class="label-name" for="contact-date">Data contato</label>
-                    <input type="date" class="form-control" id="date_contact" name="date_contact" required />
+                    <input type="date" class="form-control" id="date_contact" name="date_contact" value="{{Session::get('date_contact')}}" required />
                 </div>
                 <div class="form-group col-auto">
                     <label class="label-name" for="contact-date">Retorno agendado</label>
-                    <input type="date" class="form-control" id="scheduled_return" name="scheduled_return" required />
+                    <input type="date" class="form-control" id="scheduled_return" name="scheduled_return" value="{{Session::get('scheduled_return')}}"required />
                 </div>
                 <div class="form-group col-auto">
                     <label class="label-name" for="contact-date">Horário</label>
-                    <input type="time" class="form-control" id="schedule" name="schedule" required />
+                    <input type="time" class="form-control" id="schedule" name="schedule" value="{{Session::get('schedule')}}" required />
                 </div>
                 </div>
                 <div class="line-horizontal"></div>
@@ -145,7 +146,7 @@
                 <div class="line-horizontal"></div>
                 <div class="form-group">
                     <label class="label-name" for="observation">Informações adicionais</label>
-                    <textarea class="form-control" id="additional_information" name="additional_information"></textarea>
+                    <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                 </div>
                 <div class="line-horizontal"></div>
                 <button type="submit" id="add" class="btn-form"    data-dismiss=" ">Salvar</button>

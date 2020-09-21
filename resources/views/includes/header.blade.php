@@ -7,8 +7,8 @@
         <div class="col-md-8">
           <nav class="header-menu">
             <ul class="menu">
-              <li><a href="#" class="menu-ativo">Contatos</a></li>
-              <li><a href="#">Ligações</a></li>
+              <li><a href="{{ route('contactShow') }}" class="menu-ativo">Contatos</a></li>
+              <li><a href="{{ route('callShow') }}">Ligações</a></li>
               <li><a href="#">Relatório</a></li>
             </ul>
           </nav>

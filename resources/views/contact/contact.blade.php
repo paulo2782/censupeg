@@ -13,7 +13,7 @@
 
         <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
       </div>
-      <span>@foreach($errors->all() as $error) {{ $error }} @endforeach</span>
+      <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
       <div class="aux-bar">
         <h2>Contatos</h2>
         <form class="search-contact">
@@ -61,7 +61,4 @@
 <script src="{{ asset('/js/contact.js') }}"></script>
 </body>  
 </html>
-
-<script>
-
-</script>
+<script src="{{ asset('js/function.js') }}"></script> 

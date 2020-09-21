@@ -42,12 +42,15 @@ class LoginController extends Controller
 
     public function login(Request $request){
         if(auth()->attempt([
-                'email' => request()->input('email'),
+                'email'    => request()->input('email'),
                 'password' => request()->input('password')
         ])){
             return redirect('/contact');
+        }else{
+            return back()->withErrors(['messages'=>'Usuário ou senha inválido.']);
         }  
     }
+
     public function logout(){
         Auth::logout();
         return redirect('/login');

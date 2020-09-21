@@ -24,8 +24,10 @@ Route::get('/home',   'HomeController@index')->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function() {
-	Route::get('contact', 'ContactController@index')->name('index');
-	Route::post('store', 'ContactController@store')->name('store');
+	Route::get('contact',      'ContactController@contactShow')->name('contactShow');
+	Route::post('store',       'ContactController@store')->name('store');
 	Route::get('destroy/{id}', 'ContactController@destroy')->name('destroy');
-	Route::get('search', 'ContactController@search')->name('search');
+	Route::get('search',       'ContactController@search')->name('search');
+
+	Route::get('call', 'CallControler@callShow')->name('callShow');
 });

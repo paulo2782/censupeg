@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <form name="frmLogin" id="frmLogin">
                 <section class="section_login">
                         <img src="img/logo-censupeg.png" alt="Logo censupeg" class="login-img">
@@ -16,7 +16,12 @@
                         <button type="submit" class="btn btn-primary form-control"> 
                             {{ __('Login') }}
                         </button>                        
-                        <div id="message"></div>
+                        <div class="clearfix">&nbsp</div>
+                        <input type="button" class="btn btn-success form-control" onclick="window.location.href='register'" value="Registre-se">
+                        <div class="clearfix">&nbsp</div>                        
+                        <div id="message">
+                           <center> @error('messages'){{ $message }}@enderror</center>
+                        </div>
                 </section>
   
             </form>
@@ -25,4 +30,4 @@
 </div>
 </form> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 
+<script src="{{ asset('js/function.js') }}"></script>

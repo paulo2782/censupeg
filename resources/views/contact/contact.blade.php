@@ -62,3 +62,4 @@
 </body>  
 </html>
 <script src="{{ asset('js/function.js') }}"></script> 
+

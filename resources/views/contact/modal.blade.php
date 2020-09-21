@@ -35,6 +35,7 @@
                 <div class="line-horizontal"></div>
                 <div class="form-group">
                     <label class="label-name" for="contact-origin">Origem do contato</label>
+                    <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="{{Session::get('hiddenContact_origin')}}">
                     <select class="form-control" id="contact_origin" name="contact_origin" >
                         <option selected>Selecione</option>
                         <option value="ebook">E-book</option>
@@ -131,8 +132,9 @@
                 <div class="line-horizontal"></div>
                 <div class="form-group">
                 <label class="label-name" for="status-return">Status</label>
-                <select class="form-control" name="status" id="status">
-                    <option selected>Selecione</option>
+                <input type="hidden" name="hiddenStatus" id="hiddenStatus" value="{{Session::get('status')}}">
+                <select class="form-control sss" name="status" id="status">
+                    <option >Selecione</option>
                     <option value="Analisando proposta">Analisando proposta</option>
                     <option value="Vai conversar com familiar">Vai conversar com familiar</option>
                     <option value="Não tem o curso que deseja">Não tem o curso que deseja</option>
@@ -156,3 +158,5 @@
     </div>
 </div>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 

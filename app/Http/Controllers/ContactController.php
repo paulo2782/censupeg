@@ -36,11 +36,15 @@ class ContactController extends Controller
             $schedule = $request->schedule;
             $additional_information = $request->additional_information; 
             $other_course = $request->other_course;
-
+            $status       = $request->status;
+            $hiddenContact_origin = $request->contact_origin;
+            
             return redirect()->back()->with([
                 'name'=>$name,'email'=>$email,'phone'=>$phone,'contact_origin'=>$contact_origin,
                 'date_contact'=>$date_contact,'scheduled_return'=>$scheduled_return,
-                'schedule'=>$schedule,'additional_information'=>$additional_information,'other_course'=>$other_course])
+                'schedule'=>$schedule,'additional_information'=>$additional_information,
+                'other_course'=>$other_course,'status'=>$status,
+                'hiddenContact_origin'=>$hiddenContact_origin])
             ->withErrors($validator);
 		}
 

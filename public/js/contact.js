@@ -1,5 +1,8 @@
 $('#btnAdd').click(function(event) {
+    $('#status').val($('#hiddenStatus').val());
+    $('#contact_origin').val($('#hiddenContact_origin').val());
     $('#myModal').modal('toggle')
+
 });
 $('.btnDelete').click(function(event) {
 

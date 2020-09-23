@@ -70,25 +70,11 @@ ul.menu li a.menu-ativo {
 }
 
 /*=========LOGIN=========*/
-.login{
-    width: 500px;
-    min-height: 560px;
-    margin: 0px auto;
-    position: relative;
-}
-
 .login-img{
     display: block;
     margin: 75px auto 45px auto;
 }
 
-.login h1{
-    font-size: 2em;
-    color: #111;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 45px;
-}
 
 .form label{
     color: #5b708a;

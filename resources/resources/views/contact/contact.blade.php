@@ -14,7 +14,7 @@
       </div>
       <div class="aux-bar">
         <h2>Contatos</h2>
-        <form class="search-contact">
+        <form class="mr-1">
           <input type="search" id="botao" class="form-control" placeholder="Pesquisar contato" />
         </form>
       </div>

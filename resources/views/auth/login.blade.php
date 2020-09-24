@@ -20,7 +20,7 @@
                     {{ __('Login') }}
                 </button>                        
                 <div class="clearfix">&nbsp</div>
-                <input type="button" class="btn btn-success form-control" onclick="window.location.href='register'" value="Registre-se">
+                <input type="button" class="btn btn-secondary form-control" onclick="window.location.href='register'" value="Registre-se">
                 <div class="clearfix">&nbsp</div>                        
                 <div id="message">
                     <div class="mx-auto"> @error('messages'){{ $message }}@enderror</div>

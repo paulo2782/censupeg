@@ -23,7 +23,7 @@
                 <input type="button" class="btn btn-secondary form-control" onclick="window.location.href='register'" value="Registre-se">
                 <div class="clearfix">&nbsp</div>                        
                 <div id="message">
-                    <div class="mx-auto"> @error('messages'){{ $message }}@enderror</div>
+                    <div class="text-center"> @error('messages'){{ $message }}@enderror</div>
                 </div>  
             </form>
         </div>

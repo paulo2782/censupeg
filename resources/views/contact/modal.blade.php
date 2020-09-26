@@ -122,11 +122,11 @@
                     </div>
                     <div class="form-group col-md-auto col-6">
                         <label class="h6" for="contact-date">Retorno agendado</label>
-                        <input type="date" class="form-control" id="scheduled_return" name="scheduled_return" value="{{Session::get('scheduled_return')}}"required />
+                        <input type="date" class="form-control" id="scheduled_return" name="scheduled_return" value="{{Session::get('scheduled_return')}}"/>
                     </div>
                     <div class="form-group col-md-auto col-6">
                         <label class="h6" for="contact-date">Horário</label>
-                        <input type="time" class="form-control" id="schedule" name="schedule" value="{{Session::get('schedule')}}" required />
+                        <input type="time" class="form-control" id="schedule" name="schedule" value="{{Session::get('schedule')}}"/>
                     </div>
                 </div>
                 <div class="line-horizontal"></div>

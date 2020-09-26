@@ -48,7 +48,10 @@ class ContactController extends Controller
             ->withErrors($validator);
 		}
 
-    	$interest_course = json_encode($request->interest_course,JSON_UNESCAPED_UNICODE);
+    	// $interest_course = json_encode($request->interest_course,JSON_UNESCAPED_UNICODE);
+        // $explode = $request->interest_course;
+        $interest_course = implode(",",$request->interest_course);
+
         Contact::create([
             'name'=>$request['name'],
             'email'=>$request['email'],
@@ -74,11 +77,27 @@ class ContactController extends Controller
 
     public function search(Request $request){
         $search = $request->search;
+
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')
         ->orwhere('email','like',$search.'%')
         ->get();
 
         return view('contact/contact',compact('dados'));
+    }
+
+    public function bekykData(Request $request){
+        $dados = Contact::find($request->id);
+        return response()->json(['name'=>$dados->name,
+            'email'=>$dados->email,
+            'phone'=>$dados->phone,
+            'contact_origin'=>$dados->contact_origin,
+            'date_contact'=>$dados->date_contact,
+            'scheduled_return'=>$dados->scheduled_return,
+            'schedule'=>$dados->schedule,
+            'status'=>$dados->status,
+            'additional_information'=>$dados->additional_information,
+            'interest_course'=>$dados->interest_course,
+            'other_course'=>$dados->other_course]);        
     }
 }

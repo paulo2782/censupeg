@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @include('contact/modal')
+@include('contact/bekykDatamodal')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 
@@ -16,7 +17,7 @@
       <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
       <div class="aux-bar">
         <h2>Contatos</h2>
-        <form class="search-contact">
+        <form class="search-contact" action="{{ route('search') }}">
           <input type="search" id="search" class="form-control" placeholder="Pesquisar contato" />
         </form>
       </div>
@@ -41,7 +42,7 @@
                   <div class='dropdown'>
                     <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                     <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                      <a href='#' class='dropdown-item btnToView'>Visualizar</a>
+                      <a href="#" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
                       <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
                     </div>
                   </div>

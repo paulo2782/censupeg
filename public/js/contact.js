@@ -5,20 +5,42 @@ $('#btnAdd').click(function(event) {
 
 });
 $('.btnDelete').click(function(event) {
-
    if(confirm('Confirma Excluir?')){
     
    }else{
     return false;
    }
  });
-$('#search').keyup(function(event) {
-  search = $('#search').val();
-  window.location.href='search?search='+search;
-  
-});
 $('.btnToView').click(function(event) {
-	$('#myModal').modal('toggle')
+  id = this.id
+  $.ajax({
+    url: "bekykData",
+    method: 'GET',
+    dataType: 'json',
+    data: {id:id},
+    success:function(data){
+      $('#myModalBekykData').modal('toggle')
+      $('#bekykDataName').val(data.name);
+      $('#bekykDataEmail').val(data.email);
+      $('#bekykDataPhone').val(data.phone);
+      $('#bekykDataContact_origin').val(data.contact_origin);
+      $('#bekykDataDate_contact').val(data.date_contact);
+      $('#bekykDataScheduled_return').val(data.scheduled_return);
+      $('#bekykDataSchedule').val(data.schedule);
+      $('#bekykDataStatus').val(data.status);
+      $('#bekykDataAdditional_information').html(data.additional_information);
+      $('#outro-curso').val(data.other_course);
+
+      i = data.interest_course.split(",");
+
+      for(x = 0 ; x <= i.length-1 ; x++){
+        value = i[x];   
+        if($('.form-check').val(value)) {
+          $('#'+value).attr('checked',true)
+        }
+      }
+    }
+  });
 });
 
 function habilitar_outros() {

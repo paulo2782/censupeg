@@ -200,9 +200,9 @@ ul.menu li a.menu-ativo {
 }
 
 .search-contact{
-    display: inline-block;
     margin: 13px;
     border-radius: 3px;
+    float: right;
 }
 
 .search-contact input[type=search]{

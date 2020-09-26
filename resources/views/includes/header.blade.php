@@ -14,7 +14,9 @@
           </nav>
         </div>
         <div class="col-md-2 logout">
+          <b> {{ auth()->user()->name }} </b>
           <a href="{{ route('logout') }}">Sair</a>
+          
         </div>
       </div>
     </div>

@@ -47,9 +47,6 @@ class ContactController extends Controller
                 'hiddenContact_origin'=>$hiddenContact_origin])
             ->withErrors($validator);
 		}
-
-    	// $interest_course = json_encode($request->interest_course,JSON_UNESCAPED_UNICODE);
-        // $explode = $request->interest_course;
         $interest_course = implode(",",$request->interest_course);
 
         Contact::create([

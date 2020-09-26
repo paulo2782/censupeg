@@ -31,4 +31,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('viewData',     'ContactController@viewData')->name('viewData');
 	
 	Route::get('call', 'CallControler@callShow')->name('callShow');
+	Route::get('search','CallController@search')->name('search');
+
 });

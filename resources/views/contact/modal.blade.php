@@ -116,15 +116,15 @@
                 </div>
                 <div class="line-horizontal"></div>
                 <div class="form-row">
-                    <div class="form-group col-md-4 col-6">
+                    <div class="form-group col-md-auto col-6">
                         <label class="h6" for="contact-date">Data contato</label>
                         <input type="date" class="form-control" id="date_contact" name="date_contact" value="{{Session::get('date_contact')}}" required />
                     </div>
-                    <div class="form-group col-md-4 col-6">
+                    <div class="form-group col-md-auto col-6">
                         <label class="h6" for="contact-date">Retorno agendado</label>
                         <input type="date" class="form-control" id="scheduled_return" name="scheduled_return" value="{{Session::get('scheduled_return')}}"required />
                     </div>
-                    <div class="form-group col-md-3 col-6">
+                    <div class="form-group col-md-auto col-6">
                         <label class="h6" for="contact-date">Horário</label>
                         <input type="time" class="form-control" id="schedule" name="schedule" value="{{Session::get('schedule')}}" required />
                     </div>
@@ -155,8 +155,7 @@
                     </div>
                 </div>                
                 <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn-form"    data-dismiss=" ">Salvar</button>
-                <button type="reset"  id="cancel" class="btn-form" data-dismiss="modal">Cancelar</button>
+                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

@@ -3,7 +3,6 @@
 @include('contact/viewDatamodal')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body class="body-container">
   @include('includes/header')
@@ -37,7 +36,7 @@
                 <td> {{ $dado->name }} </td>
                 <td> {{ $dado->email }} </td>
                 <td> {{ $dado->phone }} </td>
-                <td>&nbsp</td>
+                <td> {{ $dado->user->name }}</td>
                 <td id='toview'>
                   <div class='dropdown'>
                     <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>

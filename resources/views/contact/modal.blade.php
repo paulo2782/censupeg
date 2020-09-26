@@ -1,4 +1,5 @@
 @section('content')
+
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -14,6 +15,7 @@
             <form class="form-dialog registerForm" id="contact-modal" action="{{ route('store') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="name">Nome Completo</label>

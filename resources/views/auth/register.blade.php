@@ -4,7 +4,7 @@
 <section class="container">
     <div class="row">
         <div class="col-md-6 mx-auto">
-            <img src="img/logo-censupeg-1.png" alt="Logo censupeg" class="login-img">
+            <img src="img/logo-censupeg.png" alt="Logo censupeg" class="login-img">
             <h1 class="h3 my-2 text-center">{{ __('Register') }} </h1>
             <form method="POST" action="{{ route('register') }}">
                 @csrf

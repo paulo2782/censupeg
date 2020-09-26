@@ -18,7 +18,7 @@
       <div class="aux-bar">
         <h2>Contatos</h2>
         <form class="search-contact" action="{{ route('search') }}">
-          <input type="search" id="search" class="form-control" placeholder="Pesquisar contato" />
+          <input type="search" id="search" name="search" class="form-control" placeholder="Pesquisar contato" />
         </form>
       </div>
       <div class="content-table">

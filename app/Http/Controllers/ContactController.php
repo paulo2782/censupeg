@@ -86,7 +86,7 @@ class ContactController extends Controller
         return view('contact/contact',compact('dados'));
     }
 
-    public function bekykData(Request $request){
+    public function viewData(Request $request){
         $dados = Contact::find($request->id);
         return response()->json(['name'=>$dados->name,
             'email'=>$dados->email,

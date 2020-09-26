@@ -14,21 +14,21 @@ $('.btnDelete').click(function(event) {
 $('.btnToView').click(function(event) {
   id = this.id
   $.ajax({
-    url: "bekykData",
+    url: "viewData",
     method: 'GET',
     dataType: 'json',
     data: {id:id},
     success:function(data){
-      $('#myModalBekykData').modal('toggle')
-      $('#bekykDataName').val(data.name);
-      $('#bekykDataEmail').val(data.email);
-      $('#bekykDataPhone').val(data.phone);
-      $('#bekykDataContact_origin').val(data.contact_origin);
-      $('#bekykDataDate_contact').val(data.date_contact);
-      $('#bekykDataScheduled_return').val(data.scheduled_return);
-      $('#bekykDataSchedule').val(data.schedule);
-      $('#bekykDataStatus').val(data.status);
-      $('#bekykDataAdditional_information').html(data.additional_information);
+      $('#myModalViewData').modal('toggle')
+      $('#viewDataName').val(data.name);
+      $('#viewDataEmail').val(data.email);
+      $('#viewDataPhone').val(data.phone);
+      $('#viewDataContact_origin').val(data.contact_origin);
+      $('#viewDataDate_contact').val(data.date_contact);
+      $('#viewDataScheduled_return').val(data.scheduled_return);
+      $('#viewDataSchedule').val(data.schedule);
+      $('#viewDataStatus').val(data.status);
+      $('#viewDataAdditional_information').html(data.additional_information);
       $('#outro-curso').val(data.other_course);
 
       i = data.interest_course.split(",");

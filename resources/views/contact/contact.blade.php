@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @include('contact/modal')
-@include('contact/bekykDatamodal')
+@include('contact/viewDatamodal')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 

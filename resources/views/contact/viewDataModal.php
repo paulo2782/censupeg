@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModalBekykData">
+<div class="modal fade" id="myModalViewData">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -14,22 +14,22 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="name">Nome Completo</label>
-                        <input type="text" class="form-control" id="bekykDataName" readonly />
+                        <input type="text" class="form-control" id="viewDataName" readonly />
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label class="h6" for="email">Email</label>
-                        <input type="email" class="form-control" id="bekykDataEmail" readonly/>
+                        <input type="email" class="form-control" id="viewDataEmail" readonly/>
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label class="h6" for="phone">Telefone</label>
-                        <input type="text" class="form-control" id="bekykDataPhone" readonly/>    
+                        <input type="text" class="form-control" id="viewDataPhone" readonly/>    
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="contact-origin">Origem do contato</label>
-                        <select class="form-control" id="bekykDataContact_origin" readonly>
+                        <select class="form-control" id="viewDataContact_origin" readonly>
                             <option selected>Selecione</option>
                             <option value="ebook">E-book</option>
                             <option value="partner-business">Empresas parceiras</option>
@@ -112,22 +112,22 @@
                 <div class="form-row">
                     <div class="form-group col-md-4 col-6">
                         <label class="h6" for="contact-date">Data contato</label>
-                        <input type="date" class="form-control" id="bekykDataDate_contact" readonly />
+                        <input type="date" class="form-control" id="viewDataDate_contact" readonly />
                     </div>
                     <div class="form-group col-md-4 col-6">
                         <label class="h6" for="contact-date">Retorno agendado</label>
-                        <input type="date" class="form-control" id="bekykDataScheduled_return" readonly />
+                        <input type="date" class="form-control" id="viewDataScheduled_return" readonly />
                     </div>
                     <div class="form-group col-md-3 col-6">
                         <label class="h6" for="contact-date">Horário</label>
-                        <input type="time" class="form-control" id="bekykDataSchedule" readonly />
+                        <input type="time" class="form-control" id="viewDataSchedule" readonly />
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="status-return">Status</label>
-                        <select class="form-control" id="bekykDataStatus" readonly>
+                        <select class="form-control" id="viewDataStatus" readonly>
                             <option >Selecione</option>
                             <option value="Analisando proposta">Analisando proposta</option>
                             <option value="Vai conversar com familiar">Vai conversar com familiar</option>
@@ -144,7 +144,7 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="observation">Informações adicionais</label>
-                        <textarea class="form-control" id="bekykDataAdditional_information" readonly></textarea>
+                        <textarea class="form-control" id="viewDataAdditional_information" readonly></textarea>
                     </div>
                 </div>                
                 <div class="line-horizontal"></div>

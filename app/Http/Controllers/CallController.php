@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 
-class CallControler extends Controller
+class CallController extends Controller
 {
 
     public function callShow(Request $request){
@@ -19,7 +19,8 @@ class CallControler extends Controller
     	return view('/call/call',compact('dados'));
     }
 
-    public function search(Request $request){
+    public function searchCall(Request $request){
+
         $search = $request->search;
 
         $dados = Contact::where('name','like',$search.'%')
@@ -29,6 +30,7 @@ class CallControler extends Controller
         ->get();
 
         return view('/call/call',compact('dados'));
+
     }
 
 }

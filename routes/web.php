@@ -27,10 +27,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('contact',      'ContactController@contactShow')->name('contactShow');
 	Route::post('store',       'ContactController@store')->name('store');
 	Route::get('destroy/{id}', 'ContactController@destroy')->name('destroy');
-	Route::get('search',       'ContactController@search')->name('search');
+	Route::get('searchContact','ContactController@searchContact')->name('searchContact');
 	Route::get('viewData',     'ContactController@viewData')->name('viewData');
 	
-	Route::get('call', 'CallControler@callShow')->name('callShow');
-	Route::get('search','CallController@search')->name('search');
+	Route::get('call', 'CallController@callShow')->name('callShow');
+	Route::get('searchCall','CallController@searchCall')->name('searchCall');
 
 });

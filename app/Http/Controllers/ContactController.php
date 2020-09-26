@@ -73,7 +73,7 @@ class ContactController extends Controller
         return redirect('/contact');
     }
 
-    public function search(Request $request){
+    public function searchContact(Request $request){
         $search = $request->search;
 
         $dados = Contact::where('name','like',$search.'%')
@@ -82,7 +82,7 @@ class ContactController extends Controller
         ->get();
 
         return view('contact/contact',compact('dados'));
-    }
+     }
 
     public function viewData(Request $request){
         $dados = Contact::find($request->id);

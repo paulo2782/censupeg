@@ -10,7 +10,7 @@
         </div>
         <div class="aux-bar">
             <h2>Ligacões</h2>
-            <form class="search-contact" action="" method="GET">
+            <form class="search-contact" action="{{ route('searchCall') }}" method="GET">
                 <input type="search" id="botao" class="form-control" name="search" placeholder="Pesquisar contato" />
             </form>
         </div>

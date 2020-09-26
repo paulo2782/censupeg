@@ -16,9 +16,9 @@
 
                     {{ __('Você está logado!') }}
                 </div>
-                <center>
-                <a href="{{ route('logout') }}"> Logout </a>
-            </center>
+                <div class="text-center">
+                    <a href="{{ route('logout') }}"> Logout </a>
+                </div>
             </div>
         </div>
     </div>

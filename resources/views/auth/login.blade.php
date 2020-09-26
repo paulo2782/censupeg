@@ -4,7 +4,7 @@
 
 <section class="container my-4">
     <div class="row">
-        <div class="col-auto mx-auto">
+        <div class="col-md-6 mx-auto">
             <img src="img/logo-censupeg.png" alt="Logo censupeg" class="login-img my-4">
             <h1 class="h3 my-2 text-center">Acesse sua conta </h1>
             <form name="frmLogin" id="frmLogin">

@@ -200,9 +200,9 @@ ul.menu li a.menu-ativo {
 }
 
 .search-contact{
-    display: inline-block;
     margin: 13px;
     border-radius: 3px;
+    float: right;
 }
 
 .search-contact input[type=search]{
@@ -286,23 +286,17 @@ ul.menu li a.menu-ativo {
     border: 1px solid #9E1D21;
 }
 
-.btn-form{
-    color: #313131;
-    background-color: #fff;
-    border: 2px solid #9E1D21;
-    border-radius: 5px;
-    line-height: 20px;
-    margin-right: 10px;
-    padding: 0.375rem 0.875rem;
-    width: 90px;
-    font-size: 14px;
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #9E1D21 !important;
     font-weight: bold;
-    text-align: center;
 }
 
-.btn-form:hover{
-    color: #fff;
-    background-color: #9E1D21;
+.btn-primary{
+    color: #313131 !important;
+    background: #fff !important;
+    font-size: 14px !important;
+    border: 1px solid #9E1D21 !important;
 }
 /*=========footer=========*/
   .footer{

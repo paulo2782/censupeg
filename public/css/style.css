@@ -1,4 +1,3 @@
-/*=========ESTILOS GERAIS=========*/
 *{
     box-sizing: border-box;
 }
@@ -7,69 +6,30 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-/*=========HEADER=========*/
 .header{
     background: #9E1D21;
     width: 100%;
 }
 
-.header-container{
-    max-width: 95%;
-    margin: 0 auto;
+.navbar-toggler{
+    background-color: #fff !important;
 }
 
-.header-container row{
-    height: 60px !important;
+.nav-link{
+    color: #eee !important;
 }
 
-.header-menu{
-    width: 550px;
-    line-height: 65px; /* centraliza na vertical */
-    margin: 0 auto;
-}
-ul.menu{
-    text-align: center; /* centraliza na horizontal */
-    margin-bottom: 0px !important;
+.nav-link:hover{
+    color: #fff !important;
+    font-weight: bold;
 }
 
-ul.menu li{
-    display: inline-block; /* centraliza na horizontal */
-    margin: 0 5px;
-}
-
-ul.menu li a{
-    font-size: 14px;
-    padding: 6px 10px;
+.username{
+    font-weight: bold;
+    color: #fff !important;
     text-transform: uppercase;
-    color: #eee;
-}
-ul.menu li a:hover{
-    text-decoration: none;
-    color: #fff;
 }
 
-ul.menu li a.menu-ativo {
-	color: #fff;
-}
-
-.logout{
-   text-align: right;
-}
-
-.logout a{
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #eee;
-    line-height: 65px;
-    padding: 20px 0px;
-}
-
-.logout a:hover{
-    text-decoration: none;
-    color: #fff;
-}
-
-/*=========LOGIN=========*/
 .login-img{
     display: block;
     margin: 20px auto;
@@ -131,7 +91,7 @@ ul.menu li a.menu-ativo {
     line-height: 30px;
     text-align: center;
 }
-/*=========CONTEUDO=========*/
+
 .body-container{
     background-color: #ebebeb!important;
 }
@@ -211,7 +171,6 @@ ul.menu li a.menu-ativo {
     padding: 5px;
 }
 
-/*=========TABLE=========*/
 .table-content {
     width: 100%;
     font-size: 14px;
@@ -249,7 +208,6 @@ ul.menu li a.menu-ativo {
     color: #fff !important;
 }
 
-/*=========modal=========*/
 .modal-dialog{
     max-width: 500px;
     overflow-y: initial !important;
@@ -298,8 +256,8 @@ ul.menu li a.menu-ativo {
     font-size: 14px !important;
     border: 1px solid #9E1D21 !important;
 }
-/*=========footer=========*/
-  .footer{
+
+.footer{
     position: absolute;
     bottom: 0;
     width: 100%;

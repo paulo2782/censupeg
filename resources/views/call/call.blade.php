@@ -31,7 +31,10 @@
                     <td> {{ $dado->name }} </td>
                     <td> {{ $dado->phone }} </td>
                     <td> {{ date('d-m-Y',strtotime($dado->date_contact)) }} </td>
-                    <td> {{ date('d-m-Y',strtotime($dado->scheduled_return)) }}</td>
+                    <td> @if($dado->scheduled_return != '') 
+                                {{ date('d-m-Y',strtotime($dado->scheduled_return)) }} 
+                        @endif 
+                    </td>
                     <td id='toview'>
                       <div class='dropdown'>
                         <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>

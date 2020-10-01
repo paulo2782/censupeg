@@ -32,9 +32,9 @@
             <tbody id="tabela">
               @foreach($dados as $dado)
                 <tr>
-                <td> {{ $dado->name }} </td>
-                <td> {{ $dado->email }} </td>
-                <td> {{ $dado->phone }} </td>
+                <td> {{ $dado->course }} </td>
+                <td> {{ $dado->course_type }} </td>
+                <td> {{ $dado->level_course }} </td>
                 <td> {{ $dado->user->name }}</td>
                 <td id='toview'>
                   <div class='dropdown'>

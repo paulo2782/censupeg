@@ -33,4 +33,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('call', 'CallController@callShow')->name('callShow');
 	Route::get('searchCall','CallController@searchCall')->name('searchCall');
 
+	Route::get('course', 'CourseController@courseShow')->name('courseShow');
+	Route::get('searchCourse','CourseController@searchCourse')->name('searchCourse');
+
 });

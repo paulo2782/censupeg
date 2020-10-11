@@ -18,6 +18,22 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="level_course" id="level_course" value="Graduação" checked>
+                                Graduação
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="level_course" id="level_course" value="Pós-graduação">
+                                Pós-graduação
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
                         <label class="h6" for="name">Curso</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('name')}}" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     

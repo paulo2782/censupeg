@@ -18,7 +18,8 @@ class CourseController extends Controller
     	Course::create([
     		'course'=>$request['course'],
     		'level_course'=>$request['level_course'],
-    		'course_type'=>$course_type
+    		'course_type'=>$course_type,
+            'additional_information'=>$request['additional_information']
     	]);
  		return redirect('/course');
     }

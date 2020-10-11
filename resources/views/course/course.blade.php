@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@include('course/modal')
 @include('course/viewDatamodal')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
@@ -35,13 +34,13 @@
                 <td> {{ $dado->course }} </td>
                 <td> {{ $dado->course_type }} </td>
                 <td> {{ $dado->level_course }} </td>
-                <td> {{ $dado->user->name }}</td>
+                <!-- <td> $dado->user->name }}</td> -->
                 <td id='toview'>
                   <div class='dropdown'>
                     <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                     <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                      <a href="#" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
-                      <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
+                      <a href="#" class='dropdown-item btnToView' id="">Visualizar</a>
+                      <a href="#" class='dropdown-item btnDelete'>Excluir</a>
                     </div>
                   </div>
                 </td>

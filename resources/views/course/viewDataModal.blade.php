@@ -12,15 +12,15 @@
             </div>
             <div id="callback"></div>
             <!-- Modal body -->
-            <form class="form-dialog registerForm" id="contact-modal" action="{{ route('store') }}" method="post">
+            <form class="form-dialog registerForm" id="contact-modal" action="{{ route('storeCourse') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="name">Curso</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{Session::get('name')}}" required autocomplete="name" autofocus/>
-                        @error('name') {{$message}} @enderror                                     
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('name')}}" required autocomplete="course" autofocus/>
+                        @error('course') {{$message}} @enderror                                     
                     </div>
                 </div>
                 <div class="form-row">
@@ -28,11 +28,11 @@
                         <input type="hidden" name="course_type" id="course_type">    
                         <label class="h6" for="course_type">Modalidade</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="course_type[]" id="1" value="1" >
+                            <input class="form-check-input" type="checkbox" name="course_type[]" id="1" value="EAD" >
                             <label class="form-check-label d-block" for="ead">EAD</label>
-                            <input class="form-check-input" type="checkbox" name="course_type[]" id="2" value="2">
+                            <input class="form-check-input" type="checkbox" name="course_type[]" id="2" value="Presencial">
                             <label class="form-check-label d-block" for="presencial">Presencial</label>
-                            <input class="form-check-input" type="checkbox" name="course_type[]" id="3" value="3">
+                            <input class="form-check-input" type="checkbox" name="course_type[]" id="3" value="Semipresencial">
                             <label class="form-check-label d-block" for="semipresencial">Semipresencial</label>
                         </div>
                     </div>

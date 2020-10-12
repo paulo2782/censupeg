@@ -37,7 +37,11 @@
                     <div class="form-group col-12">
                         <label class="h6" for="contact-origin">Escolaridade</label>
                         <select class="form-control" id="schooling" name="schooling">
-                            <option value="1">Escolaridade ....</option>
+                            <option value="1">Selecione...</option>
+                            <option value="1">Ensino médio incompleto</option>
+                            <option value="2">Ensino médio completo</option>
+                            <option value="3">Ensino superior incompleto</option>
+                            <option value="4">Ensino superior completo</option>
                         </select>
                     </div>
                 </div>
@@ -81,7 +85,6 @@
                         <select class="form-control" id="city" name="city"></select>
                     </div>
                 </div>
-
 
                 <div class="line-horizontal"></div>
                 <div class="form-row">

@@ -16,7 +16,7 @@
                     <label for="password" >Senha:</label>
                     <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary login-btn form-control"> 
+                <button type="submit" class="btn btn-primary form-control"> 
                     {{ __('Login') }}
                 </button>
                 <div class="mt-4">

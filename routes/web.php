@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('store',       'ContactController@store')->name('store');
 	Route::get('destroy/{id}', 'ContactController@destroy')->name('destroy');
 	Route::get('searchContact','ContactController@searchContact')->name('searchContact');
-	Route::get('viewData',     'ContactController@viewData')->name('viewData');
+	Route::get('viewData/{id}',     'ContactController@viewData')->name('viewData');
 	
 	Route::get('call', 'CallController@callShow')->name('callShow');
 	Route::get('searchCall','CallController@searchCall')->name('searchCall');

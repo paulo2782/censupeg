@@ -90,17 +90,9 @@ class ContactController extends Controller
      }
 
     public function viewData(Request $request){
-        $dados = Contact::find($request->id);
-        return response()->json(['name'=>$dados->name,
-            'email'=>$dados->email,
-            'phone'=>$dados->phone,
-            'contact_origin'=>$dados->contact_origin,
-            'date_contact'=>$dados->date_contact,
-            'scheduled_return'=>$dados->scheduled_return,
-            'schedule'=>$dados->schedule,
-            'status'=>$dados->status,
-            'additional_information'=>$dados->additional_information,
-            'interest_course'=>$dados->interest_course,
-            'other_course'=>$dados->other_course]);        
+        
+        $dados = Contact::where('id',$request->id)->get();
+        
+        return view('/contact/viewData',compact('dados'));
     }
 }

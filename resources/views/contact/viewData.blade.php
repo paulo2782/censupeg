@@ -3,7 +3,9 @@
 <body>
 <div class="card text-center">
 	<div class="card-body">
-		<h4 class="card-title">CONTATO</h4>
+		<h4 class="card-title">CONTATO
+		<a href="#"><img src="{{ asset('img/button-edit.png') }}" alt="Botão Editar" id="btnEditContact" title="Editar Contato"></a>
+		</h4>
 		<h6 class="card-subtitle mb-2 text-muted">{{ $dados[0]->name }}</h6>
 	</div>
 </div>
@@ -50,7 +52,7 @@
 <div class="card text-center">
 	<div class="card-body">
 		<h4 class="card-title">CURSO
-		<a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAddCourse"></a>
+		<a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAddCourse" title="Adicionar Curso"></a>
 		</h4>
 	</div>
 </div>
@@ -58,7 +60,7 @@
 <div class="card text-center">
 	<div class="card-body">
 		<h4 class="card-title">LIGAÇÕES
-		<a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAddCall"></a>
+		<a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAddCall" title="Adicionar Ligação"></a>
 		</h4>
 	</div>
 </div>

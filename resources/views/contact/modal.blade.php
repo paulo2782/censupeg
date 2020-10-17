@@ -32,6 +32,60 @@
                         <input type="text" class="form-control" id="phone" name="phone" value="{{Session::get('phone')}}" required />    
                     </div>
                 </div>
+                 <div class="line-horizontal"></div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label class="h6" for="contact-origin">Escolaridade</label>
+                        <select class="form-control" id="schooling" name="schooling">
+                            <option value="1">Selecione...</option>
+                            <option value="1">Ensino médio incompleto</option>
+                            <option value="2">Ensino médio completo</option>
+                            <option value="3">Ensino superior incompleto</option>
+                            <option value="4">Ensino superior completo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="line-horizontal"></div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label class="h6" for="contact-origin">Estado</label>
+                        <select class="form-control" id="state" name="state">
+                            <option value="">Selecione um Estado</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                            <option value="DF">DF</option>                            
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="h6" for="contact-origin">Cidade</label>
+                        <select class="form-control" id="city" name="city"></select>
+                    </div>
+                </div>
+
                 <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
@@ -57,7 +111,9 @@
                         </select>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
+
+                
+<!--                 <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <input type="hidden" name="interest_course" id="interest_course">    
@@ -115,7 +171,7 @@
                             <input type="text" class="form-control mt-2" name="other_course" id="outro-curso" style="display:none" value="{{Session::get('other_course')}}" />
                         </div>
                     </div>
-                </div>
+                </div> 
                 <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-md-auto col-6">
@@ -148,7 +204,7 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
-                </div>
+                </div>-->
                 <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">

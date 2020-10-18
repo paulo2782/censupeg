@@ -12,10 +12,6 @@ class CallController extends Controller
         $search = $request->search;
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')
-        ->orwhere('date_contact','like','%'.$search.'%')
-        ->orwhere('scheduled_return','like','%'.$search.'%')
-        ->orderby('scheduled_return','desc')
-        ->orderby('date_contact','desc')
         ->get();
 
     	return view('/call/call',compact('dados'));
@@ -27,10 +23,6 @@ class CallController extends Controller
 
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')
-        ->orwhere('date_contact','like','%'.$search.'%')
-        ->orwhere('scheduled_return','like','%'.$search.'%')
-        ->orderby('scheduled_return','desc')
-        ->orderby('date_contact','desc')
         ->get();
 
         return view('/call/call',compact('dados'));

@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @include('contact/modal')
-@include('contact/viewDatamodal')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -33,15 +32,16 @@
             <tbody id="tabela">
               @foreach($dados as $dado)
                 <tr>
-                <td> {{ $dado->name }} </td>
-                <td> {{ $dado->email }} </td>
-                <td> {{ $dado->phone }} </td>
-                <td> {{ $dado->user->name }}</td>
+                <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->name }} </td> </a>
+                <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->email }} </td> </a>
+                <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->phone }} </td> </a>
+                <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->user->name }}</td> </a>
                 <td id='toview'>
                   <div class='dropdown'>
                     <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                     <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                      <a href="#" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
+                      <a href="{{ route('viewData',$dado->id) }}" class='dropdown-item' id="{{ $dado->id }}">Editar</a>
+                      <a href="#" class='dropdown-item btnToView'       id="{{ $dado->id }}">Visualizar</a>
                       <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
                     </div>
                   </div>

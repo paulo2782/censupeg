@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @include('contact/modal')
-@include('contact/viewDatamodal')
 <body class="body-container">
     @include('includes/header')
     <section class="container-main">
@@ -26,28 +25,21 @@
                 </tr>
                 </thead>
             <tbody id="tabela">
-              @foreach($dados as $dado)
                 <tr>
-                    <td> {{ $dado->name }} </td>
-                    <td> {{ $dado->phone }} </td>
-                    <td> {{ date('d-m-Y',strtotime($dado->date_contact)) }} </td>
-                    <td> @if($dado->scheduled_return != '') 
-                                {{ date('d-m-Y',strtotime($dado->scheduled_return)) }} 
-                        @endif 
-                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td id='toview'>
                       <div class='dropdown'>
                         <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                         <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                          <a href="#" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
-                          <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
+                          <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                          <a href="#" class='dropdown-item btnDelete'>Excluir</a>
                         </div>
                       </div>
                     </td>
-                    </tr>
-                    <tr>
-                @endforeach
-            
+                </tr>                    
             </tbody>
         </table>
       </div>

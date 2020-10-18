@@ -32,30 +32,20 @@
                         <input type="text" class="form-control" id="phone" name="phone" value="{{Session::get('phone')}}" required />    
                     </div>
                 </div>
-                 <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="contact-origin">Escolaridade</label>
                         <select class="form-control" id="schooling" name="schooling">
-<<<<<<< HEAD
-                            <option value="1">Selecione...</option>
-                            <option value="1">Ensino médio incompleto</option>
-                            <option value="2">Ensino médio completo</option>
-                            <option value="3">Ensino superior incompleto</option>
-                            <option value="4">Ensino superior completo</option>
-=======
-                            <option value="">Escolaridade ....</option>
+                            <option value="">Selecione escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                             <option value="Ensino médio completo">Ensino médio completo</option>
                             <option value="Ensino superior incompleto">Ensino superior incompleto</option>
                             <option value="Ensino superior completo">Ensino superior completo</option>
->>>>>>> b5be8d46bd66d43d13c062170e9790210db79fbf
                         </select>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
                 <div class="form-row">
-                    <div class="form-group col-6">
+                    <div class="form-group col-md-6 col-12">
                         <label class="h6" for="contact-origin">Estado</label>
                         <select class="form-control" id="state" name="state">
                             <option value="">Selecione um Estado</option>
@@ -88,13 +78,11 @@
                             <option value="DF">DF</option>                            
                         </select>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-md-6 col-12">
                         <label class="h6" for="contact-origin">Cidade</label>
                         <select class="form-control" id="city" name="city"></select>
                     </div>
                 </div>
-
-                <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="contact-origin">Origem do contato</label>
@@ -119,7 +107,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="h6" for="observation">Informações adicionais</label>

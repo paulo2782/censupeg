@@ -18,28 +18,22 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <div class="radio">
+                        <div class="radio-course">
                             <label>
                                 <input type="radio" name="level_course" id="level_course" value="Graduação" checked>
                                 Graduação
                             </label>
-                        </div>
-                        <div class="radio">
                             <label>
                                 <input type="radio" name="level_course" id="level_course" value="Pós-graduação">
                                 Pós-graduação
                             </label>
                         </div>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="h6" for="name">Curso</label>
+                        <label class="h6" for="name">Nome do Curso</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('name')}}" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-12">
                         <input type="hidden" name="course_type" id="course_type">    
                         <label class="h6" for="course_type">Modalidade</label>
@@ -52,13 +46,11 @@
                             <label class="form-check-label d-block" for="semipresencial">Semipresencial</label>
                         </div>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="h6" for="observation">Observações</label>
+                        <label class="h6" for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
-                </div>                
+                </div>
                 <div class="line-horizontal"></div>
                 <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>

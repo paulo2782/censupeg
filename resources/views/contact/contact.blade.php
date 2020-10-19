@@ -29,9 +29,10 @@
               <th>Operador</th>
               <th>Ação</th>
             </tr>
-            <tbody id="tabela">
-              @foreach($dados as $dado)
-                <tr>
+          </thead>  
+          <tbody id="tabela">
+            @foreach($dados as $dado)
+              <tr>
                 <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->name }} </td> </a>
                 <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->email }} </td> </a>
                 <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->phone }} </td> </a>
@@ -48,8 +49,7 @@
                 </td>
               </tr>
               @endforeach
-            
-            </tbody>
+          </tbody>
         </table>
       </div>
     </div>

@@ -4,11 +4,11 @@
 <section class="container-main">
     <div class="content border border-primary">
       	<div class="top-bar">
-	  		<h4 class="mt-4 text-center">{{ $dados[0]->name }}</h4>
+	  		<h4 class="py-4 text-center">João Manuel Marques De Carlo</h4>
       	</div>
       	<div class="line-horizontal"></div>
-		<div class="contact-info">
-			<h5>Dados Pessoais
+		<div class="contact-info my-2">
+			<h5>Dados básicos
 				<i class="fa fa-pencil" aria-hidden="true"></i>
 			</h5>
 			<form class="form-dialog" method="post">
@@ -27,11 +27,11 @@
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group col-6">
+					<div class="form-group col-md-6 col-12">
 						<label class="h6" for="stateContact">Estado</label>
 						<input type="text" class="form-control-plaintext" id="stateContact" name="state" value="SC"/>    
 					</div>
-					<div class="form-group col-6">
+					<div class="form-group col-md-6 col-12">
 						<label class="h6" for="cityContact">Cidade</label>
 						<input type="text" class="form-control-plaintext" id="cityContact" name="city" value="Criciúma"/>    
 					</div>
@@ -68,54 +68,58 @@
 			</form>
 		</div>
 		<div class="line-horizontal"></div>
-		<div class="contact-info-courses">
+		<div class="contact-info-courses my-2">
 			<h5>Cursos
 				<i class="fa fa-pencil" aria-hidden="true"></i>
 			</h5>
-			<form action="">
-				<div class="form-row">
-					<div class="form-group col-12">
-						<label class="h6" for="nameCourse">Curso</label>
-						<input type="text" class="form-control-plaintext" id="courseContact" name="nameCourse" value="matemática" />
-					</div>
-					<div class="form-group col-md-6 col-12">
-						<label class="h6" for="typeCourse">Modalidade</label>
-						<input type="email" class="form-control-plaintext" id="emailContact" name="typeCourse" value="EAD" />
-					</div>
-					<div class="form-group col-md-6 col-12">
-						<label class="h6" for="levelCourse">Nível</label>
-						<input type="text" class="form-control-plaintext" id="phoneContact" name="levelCourse" value="graduação"/>    
-					</div>
-				</div>
-			</form>
+			<div class="content-table">
+				<table class="table-content">
+					<thead>
+						<tr>
+							<th>Curso</th>
+							<th>Modalidade</th>
+							<th>Nível</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody id="tabela">
+					@foreach($dados as $dado)
+						<tr>
+							<td>Matemática</td>
+							<td>Semipresencial</td>
+							<td>Graduação </td>
+							<td>Concluído</td>
+						</tr>
+						@endforeach		
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<div class="line-horizontal"></div>
-		<div class="contact-info-call">
+		<div class="contact-info-call my-2">
 			<h5>Ligações
 				<i class="fa fa-pencil" aria-hidden="true"></i>
 			</h5>
 			<div class="content-table">
-			<table class="table-content">
-				<thead>
-					<tr>
-						<th>Data</th>
-						<th>Retorno</th>
-						<th>Horário</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody id="tabela">
-				@foreach($dados as $dado)
-					<tr>
-						<td>01-01-2020 </td>
-						<td>01-09-2020 </td>
-						<td>11:00 </td>
-						<td>Aguardando retorno</td>
-					</tr>
-					@endforeach		
-				</tbody>
-			</table>
-      </div>
-		</div>
+				<table class="table-content">
+					<thead>
+						<tr>
+							<th>Data</th>
+							<th>Retorno</th>
+							<th>Horário</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody id="tabela">
+						<tr>
+							<td>01-01-2020 </td>
+							<td>01-09-2020 </td>
+							<td>11:00 </td>
+							<td>Aguardando retorno</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+      	</div>
     </div>
 </section>

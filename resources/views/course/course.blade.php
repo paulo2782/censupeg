@@ -6,49 +6,134 @@
 <body class="body-container">
   @include('includes/header')
   <section class="container-main">
-    <div class="content">
+    <div class="content-courses">
       <div class="top-bar">
         <h1>Cursos</h1>
-
         <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
       </div>
-      <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
-      <div class="aux-bar">
-        <h2>Contatos</h2>
-        <form class="search-contact" action="{{ route('searchContact') }}">
-          <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar curso" />
-        </form>
+      <div class="title-category">
+        <h2>Graduação</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Administração
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Análise e Desenvolvimento de Sistemas
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Ciências Contábeis
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Educação Especial
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Gestão Ambiental
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Gestão Financeira
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">História
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Letras- Língua Portuguesa
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Logística
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Matemática
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Pedagogia
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Processos Gerenciais
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Recursos Humanos
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="content-table">
-        <table class="table-content">
-          <thead>
-            <tr>
-              <th>Curso</th>
-              <th>Modalidade</th>
-              <th>Nível</th>
-              <th>Ação</th>
-            </tr>
-            <tbody id="tabela">
-              @foreach($dados as $dado)
-                <tr>
-                <td> {{ $dado->course }} </td>
-                <td> {{ $dado->course_type }} </td>
-                <td> {{ $dado->level_course }} </td>
-                <!-- <td> $dado->user->name }}</td> -->
-                <td id='toview'>
-                  <div class='dropdown'>
-                    <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                      <a href="#" class='dropdown-item btnToView' id="">Visualizar</a>
-                      <a href="#" class='dropdown-item btnDelete'>Excluir</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              @endforeach
-            
-            </tbody>
-        </table>
+      <div class="title-category">
+        <h2>Pós-graduação</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ABA
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Arteterapia
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Duo Neuropsicopedagogia
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Musicoterapia
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Personal e Fisiologia
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+          <li class="list-group-item">Saúde
+            <div class="pull-right">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                <a href="#" class="fa fa-trash" aria-hidden="true"></a>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="content">

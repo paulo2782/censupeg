@@ -7,6 +7,12 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.list-group-item {
+  border: 0px !important;
+  padding: 0.35rem 1rem !important;
+  font-size: 14px;
+}
+
 .header {
   background: #9E1D21;
   width: 100%;
@@ -31,22 +37,26 @@ body {
   text-transform: uppercase;
 }
 
-.login-img {
-  display: block;
-  margin: 20px auto;
+.login .row {
+  margin: auto 0px !important;
 }
 
-.login-a {
+.login .login-a {
   text-decoration: none;
   text-align: center;
   color: #313131;
   cursor: pointer;
 }
 
-.login-a:hover {
+.login .login-a:hover {
   text-decoration: none;
   color: #9E1D21;
   font-weight: bold;
+}
+
+.login-img {
+  display: block;
+  margin: 20px auto;
 }
 
 .botao {
@@ -117,17 +127,13 @@ body {
 
 .body-container {
   background-color: #ebebeb !important;
+  min-height: 100%;
 }
 
 .container-main {
   width: 100%;
   margin-top: 40px;
-}
-
-.container-main::after, .container-main::before {
-  content: '';
-  display: table;
-  clear: both;
+  min-height: calc(100vh - 70px);
 }
 
 .content {
@@ -230,6 +236,45 @@ body {
   display: block;
 }
 
+.content-courses {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-courses .top-bar {
+  height: 75px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.content-courses .top-bar h1 {
+  display: inline-block;
+  color: #797979;
+  font-size: 20px;
+  line-height: 27px;
+  margin: 14px 20px;
+  padding: 10px 0px;
+}
+
+.content-courses .top-bar img {
+  width: 30px;
+  margin-bottom: 5px;
+  margin-left: -10px;
+}
+
+.content-courses .title-category {
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.content-courses .title-category h2 {
+  color: #9E1D21;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 10px 20px;
+  padding: 10px 0px;
+}
+
 .contact-info h5 {
   margin: 10px 20px;
 }
@@ -247,8 +292,6 @@ body {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   height: 50px;
   background-color: #111;

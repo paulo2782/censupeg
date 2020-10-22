@@ -19,6 +19,25 @@ body {
     padding: 0.35rem 1rem !important;
     font-size: 14px;
 }
+
+h1 {
+    font-size: 20px !important;
+}
+
+h2, .h2 {
+    font-size: 18px !important;
+}
+
+.h3 {
+    font-size: 16px !important;
+}
+
+.text-4{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
 // HEADER
 .header {
     background: $primary-color;
@@ -85,9 +104,29 @@ body {
     overflow-y: initial !important;
     border-radius: 5px;
 }
-  
+
 .modal-content {
     overflow-y: auto;
+    .form-dialog {
+        max-width: 480px;
+        margin: 10px auto;
+        font-size: 14px !important;
+    }
+    
+    .form-control {
+        font-size: 14px !important;
+    }
+    .btn-primary {
+        color: #313131 !important;
+        background: $white !important;
+        font-size: 14px !important;
+        border: 1px solid $primary-color !important;
+        &:hover {
+            color: $white !important;
+            background-color: $primary-color !important;
+            font-weight: bold;    
+        }
+    }    
 }
 
 .modal-title {
@@ -96,40 +135,11 @@ body {
     font-weight: bold;
 }
 
-.form-dialog {
-    max-width: 480px;
-    margin: 10px auto;
-    font-size: 14px !important;
-}
-
-.form-control {
-    font-size: 14px !important;
-}
-
-.h5 {
-    font-size: 16px !important;
-}
-
-.h6 {
-    font-size: 14px !important;
-}
-
 .line-horizontal {
     margin-bottom: 10px;
     border: 1px solid $primary-color;
 }
 
-.btn-primary {
-    color: #313131 !important;
-    background: $white !important;
-    font-size: 14px !important;
-    border: 1px solid $primary-color !important;
-    &:hover {
-        color: $white !important;
-        background-color: $primary-color !important;
-        font-weight: bold;    
-    }
-}
 
 // CONTENT
 .body-container {
@@ -142,7 +152,6 @@ body {
     //min-height: 100%;
     margin-top: 40px;
     min-height: calc(100vh - 70px);
-
 }
   
 .content {
@@ -158,7 +167,6 @@ body {
     h1 {
         display: inline-block;
         color: #797979;
-        font-size: 20px;
         line-height: 27px;
         margin: 14px 20px;
         padding: 10px 0px;    
@@ -175,7 +183,6 @@ body {
     height: 55px;
     background-color: $primary-color;
     h2 {
-        font-size: 17px;
         line-height: 57px;
         color: $white;
         margin-left: 20px;
@@ -240,10 +247,9 @@ body {
 }
 
 // COURSE INFO
-.content-courses {
+.content-details {
     max-width: 900px;
     margin: 0 auto;
-    
     .top-bar {
         height: 75px;
         background-color: $white;
@@ -251,7 +257,6 @@ body {
         h1 {
             display: inline-block;
             color: #797979;
-            font-size: 20px;
             line-height: 27px;
             margin: 14px 20px;
             padding: 10px 0px;    
@@ -262,14 +267,11 @@ body {
             margin-left: -10px;    
         }
     }
-    
     .title-category {
         background-color: $white;
         margin-bottom: 20px;
-
         h2 {
             color: $primary-color;
-            font-size: 18px;
             line-height: 25px;
             margin: 10px 20px;
             padding: 10px 0px;    

@@ -31,13 +31,13 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="h6" for="name">Nome do Curso</label>
+                        <label class="text-4" for="name">Nome do Curso</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" name="course_type" id="course_type">    
-                        <label class="h6" for="course_type">Modalidade</label>
+                        <label class="text-4" for="course_type">Modalidade</label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="course_type[]" id="1" value="EAD" >
                             <label class="form-check-label d-block" for="ead">EAD</label>
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="h6" for="observation">Informações adicionais</label>
+                        <label class="text-4" for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
                 </div>

@@ -18,23 +18,23 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="h6" for="name">Nome Completo</label>
+                        <label class="text-4" for="name">Nome Completo</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{Session::get('name')}}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="h6" for="email">Email</label>
+                        <label class="text-4" for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" required />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="h6" for="phone">Telefone</label>
+                        <label class="text-4" for="phone">Telefone</label>
                         <input type="text" class="form-control" id="phone" name="phone" value="{{Session::get('phone')}}" required />    
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="h6" for="contact-origin">Escolaridade</label>
+                        <label class="text-4" for="contact-origin">Escolaridade</label>
                         <select class="form-control" id="schooling" name="schooling">
                             <option value="">Selecione escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
-                        <label class="h6" for="contact-origin">Estado</label>
+                        <label class="text-4" for="contact-origin">Estado</label>
                         <select class="form-control" id="state" name="state">
                             <option value="">Selecione um Estado</option>
                             <option value="AC">AC</option>
@@ -79,13 +79,13 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="h6" for="contact-origin">Cidade</label>
+                        <label class="text-4" for="contact-origin">Cidade</label>
                         <select class="form-control" id="city" name="city"></select>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="h6" for="contact-origin">Origem do contato</label>
+                        <label class="text-4" for="contact-origin">Origem do contato</label>
                         <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="{{Session::get('hiddenContact_origin')}}">
                         <select class="form-control" id="contact_origin" name="contact_origin" >
                             <option selected>Selecione</option>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="h6" for="observation">Informações adicionais</label>
+                        <label class="text-4" for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
                 </div>                

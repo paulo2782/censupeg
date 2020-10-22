@@ -10,47 +10,47 @@
 			<h2>Dados básicos
 				<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 			</h2>
-			<form class="form-dialog" method="post">
+			<form class="contact-info" method="post">
 				<div class="form-row">
 					<div class="form-group col-12">
-						<label class="h6" for="nameContact">Nome Completo</label>
-						<input type="text" class="form-control-plaintext" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
+						<label class="text-4" for="nameContact">Nome Completo</label>
+						<input type="text" class="form-control" readonly="readonly" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
 					</div>
 					<div class="form-group col-md-6 col-12">
-						<label class="h6" for="emailContact">Email</label>
-						<input type="email" class="form-control-plaintext" id="emailContact" name="email" value="{{ $dados[0]->email }}" />
+						<label class="text-4" for="emailContact">Email</label>
+						<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="{{ $dados[0]->email }}" />
 					</div>
 					<div class="form-group col-md-6 col-12">
-						<label class="h6" for="phoneContact">Telefone</label>
-						<input type="text" class="form-control-plaintext" id="phoneContact" name="phone" value="{{ $dados[0]->phone }}"/>    
+						<label class="text-4" for="phoneContact">Telefone</label>
+						<input type="text" class="form-control" readonly="readonly" id="phoneContact" name="phone" value="{{ $dados[0]->phone }}"/>    
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6 col-12">
-						<label class="h6" for="stateContact">Estado</label>
-						<input type="text" class="form-control-plaintext" id="stateContact" name="state" value="{{ $dados[0]->state }}"/>    
+						<label class="text-4" for="stateContact">Estado</label>
+						<input type="text" class="form-control" readonly="readonly" id="stateContact" name="state" value="{{ $dados[0]->state }}"/>    
 					</div>
 					<div class="form-group col-md-6 col-12">
-						<label class="h6" for="cityContact">Cidade</label>
-						<input type="text" class="form-control-plaintext" id="cityContact" name="city" value="{{ $dados[0]->city }}"/>    
+						<label class="text-4" for="cityContact">Cidade</label>
+						<input type="text" class="form-control" readonly="readonly" id="cityContact" name="city" value="{{ $dados[0]->city }}"/>    
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-12">
-						<label class="h6" for="schoolContact">Escolaridade</label>
-						<input type="text" class="form-control-plaintext" id="schoolContact" name="school" value="{{ $dados[0]->schooling }}"/>    
+						<label class="text-4" for="schoolContact">Escolaridade</label>
+						<input type="text" class="form-control" readonly="readonly" id="schoolContact" name="school" value="{{ $dados[0]->schooling }}"/>    
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-12">
-						<label class="h6" for="originContact">Origem do contato</label>
-						<input type="text" class="form-control-plaintext" id="originContact" name="origin" value="{{ $dados[0]->contact_origin }}"/>    
+						<label class="text-4" for="originContact">Origem do contato</label>
+						<input type="text" class="form-control" readonly="readonly" id="originContact" name="origin" value="{{ $dados[0]->contact_origin }}"/>    
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-12">
-						<label class="h6" for="observation">Informações adicionais</label>
-						<textarea class="form-control-plaintext" id="additional_information" name="additional_information"> {{ $dados[0]->additional_information }}</textarea>
+						<label class="text-4" for="observation">Informações adicionais</label>
+						<textarea class="form-control" readonly="readonly" id="additional_information" name="additional_information"> {{ $dados[0]->additional_information }}</textarea>
 					</div>
 				</div>                
 			</form>

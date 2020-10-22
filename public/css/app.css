@@ -236,18 +236,18 @@ body {
   display: block;
 }
 
-.content-courses {
+.content-details {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.content-courses .top-bar {
+.content-details .top-bar {
   height: 75px;
   background-color: #fff;
   margin-bottom: 20px;
 }
 
-.content-courses .top-bar h1 {
+.content-details .top-bar h1 {
   display: inline-block;
   color: #797979;
   font-size: 20px;
@@ -256,18 +256,18 @@ body {
   padding: 10px 0px;
 }
 
-.content-courses .top-bar img {
+.content-details .top-bar img {
   width: 30px;
   margin-bottom: 5px;
   margin-left: -10px;
 }
 
-.content-courses .title-category {
+.content-details .title-category {
   background-color: #fff;
   margin-bottom: 20px;
 }
 
-.content-courses .title-category h2 {
+.content-details .title-category h2 {
   color: #9E1D21;
   font-size: 18px;
   line-height: 25px;

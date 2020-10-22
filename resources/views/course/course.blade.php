@@ -6,7 +6,7 @@
 <body class="body-container">
   @include('includes/header')
   <section class="container-main">
-    <div class="content-courses">
+    <div class="content-details">
       <div class="top-bar">
         <h1>Cursos</h1>
         <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>

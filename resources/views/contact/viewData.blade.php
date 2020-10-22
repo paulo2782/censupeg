@@ -1,16 +1,15 @@
 @extends('layouts.app')
 @include('includes/header')
-<body>
+<body class="body-container">
 <section class="container-main">
-    <div class="content border border-primary">
+    <div class="content-details">
       	<div class="top-bar">
 	  		<h4 class="py-4 text-center">João Manuel Marques De Carlo</h4>
       	</div>
-      	<div class="line-horizontal"></div>
-		<div class="contact-info my-2">
-			<h5>Dados básicos
-				<i class="fa fa-pencil" aria-hidden="true"></i>
-			</h5>
+		<div class="title-category">
+			<h2>Dados básicos
+				<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+			</h2>
 			<form class="form-dialog" method="post">
 				<div class="form-row">
 					<div class="form-group col-12">
@@ -67,11 +66,10 @@
 				</div>                
 			</form>
 		</div>
-		<div class="line-horizontal"></div>
-		<div class="contact-info-courses my-2">
-			<h5>Cursos
+		<div class="title-category">
+			<h2>Cursos
 				<i class="fa fa-pencil" aria-hidden="true"></i>
-			</h5>
+			</h2>
 			<div class="content-table">
 				<table class="table-content">
 					<thead>
@@ -95,11 +93,10 @@
 				</table>
 			</div>
 		</div>
-		<div class="line-horizontal"></div>
-		<div class="contact-info-call my-2">
-			<h5>Ligações
-				<i class="fa fa-pencil" aria-hidden="true"></i>
-			</h5>
+		<div class="title-category">
+			<h2>Ligações
+				<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+			</h2>
 			<div class="content-table">
 				<table class="table-content">
 					<thead>
@@ -121,5 +118,5 @@
 				</table>
 			</div>
       	</div>
-    </div>
+	</div>
 </section>

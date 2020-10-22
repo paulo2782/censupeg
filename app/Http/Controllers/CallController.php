@@ -10,22 +10,23 @@ class CallController extends Controller
 
     public function callShow(Request $request){
         $search = $request->search;
-        $dados = Contact::where('name','like',$search.'%')
-        ->orwhere('phone','like',$search.'%')
-        ->get();
+        $data = 0;
+        // $data = Contact::where('name','like',$search.'%')
+        // ->orwhere('phone','like',$search.'%')
+        // ->get();
 
-    	return view('/call/call',compact('dados'));
+    	return view('/call/call',compact('data'));
     }
 
     public function searchCall(Request $request){
 
         $search = $request->search;
+        $data = 0;
+        // $data = Contact::where('name','like',$search.'%')
+        // ->orwhere('phone','like',$search.'%')
+        // ->get();
 
-        $dados = Contact::where('name','like',$search.'%')
-        ->orwhere('phone','like',$search.'%')
-        ->get();
-
-        return view('/call/call',compact('dados'));
+        return view('/call/call',compact('data'));
 
     }
 

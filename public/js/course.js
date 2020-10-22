@@ -1,3 +1,5 @@
+
+
 $('#btnAdd').click(function(event) {
     $('#status').val($('#hiddenStatus').val());
     $('#contact_origin').val($('#hiddenContact_origin').val());
@@ -15,7 +17,6 @@ $('#btnAdd').click(function(event) {
     });
 });
 
-
 $('.btnDelete').click(function(event) {
    if(confirm('Confirma Excluir?')){
     
@@ -23,13 +24,3 @@ $('.btnDelete').click(function(event) {
     return false;
    }
  });
-
-function habilitar_outros() {
-    var checkBox = document.getElementById("outra-opcao");
-    var text = document.getElementById("outro-curso");
-    if (checkBox.checked == true){
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
-}

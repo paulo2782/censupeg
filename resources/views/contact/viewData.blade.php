@@ -16,6 +16,8 @@
 						<label class="text-4" for="nameContact">Nome Completo</label>
 						<input type="text" class="form-control" readonly="readonly" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
 					</div>
+				</div>
+				<div class="form-row">
 					<div class="form-group col-md-6 col-12">
 						<label class="text-4" for="emailContact">Email</label>
 						<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="{{ $dados[0]->email }}" />
@@ -36,13 +38,11 @@
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group col-12">
+					<div class="form-group col-md-6 col-12">
 						<label class="text-4" for="schoolContact">Escolaridade</label>
 						<input type="text" class="form-control" readonly="readonly" id="schoolContact" name="school" value="{{ $dados[0]->schooling }}"/>    
 					</div>
-				</div>
-				<div class="form-row">
-					<div class="form-group col-12">
+					<div class="form-group col-md-6 col-12">
 						<label class="text-4" for="originContact">Origem do contato</label>
 						<input type="text" class="form-control" readonly="readonly" id="originContact" name="origin" value="{{ $dados[0]->contact_origin }}"/>    
 					</div>
@@ -52,7 +52,7 @@
 						<label class="text-4" for="observation">Informações adicionais</label>
 						<textarea class="form-control" readonly="readonly" id="additional_information" name="additional_information"> {{ $dados[0]->additional_information }}</textarea>
 					</div>
-				</div>                
+				</div>
 			</form>
 		</div>
 		<div class="title-category">

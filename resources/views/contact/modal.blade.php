@@ -87,7 +87,7 @@
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Origem do contato</label>
                         <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="{{Session::get('hiddenContact_origin')}}">
-                        <select class="form-control" id="contact_origin" name="contact_origin" >
+                        <select class="form-control" id="contact_origin" name="contact_origin" required>
                             <option selected>Selecione</option>
                             <option value="E-book">E-book</option>
                             <option value="Empresas Parceiras">Empresas parceiras</option>

@@ -10,6 +10,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div id="callback"></div>
             <!-- Modal body -->
             <form class="form-dialog registerForm" id="contact-modal" action="{{ route('storeCourse') }}" method="post">
@@ -31,7 +32,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label class="h6" for="name">Nome do Curso</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('name')}}" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">

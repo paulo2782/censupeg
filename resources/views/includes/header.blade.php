@@ -13,7 +13,7 @@
           <a class="nav-link" style="color: #fff" href="{{ route('callShow') }}">Ligações</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color: #fff" href="{{ route('courseShow') }}">Curso</a>
+          <a class="nav-link" style="color: #fff" href="{{ route('courseShow') }}">Cursos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" style="color: #fff" href="#">Relatório</a>

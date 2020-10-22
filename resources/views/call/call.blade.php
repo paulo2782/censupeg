@@ -30,6 +30,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <!-- foreach($data as $data) -->
+                    @if($data > 0)
                     <td id='toview'>
                       <div class='dropdown'>
                         <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
@@ -39,6 +41,8 @@
                         </div>
                       </div>
                     </td>
+                    @endif
+                    <!-- endforeach -->
                 </tr>                    
             </tbody>
         </table>

@@ -2,19 +2,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Course;
 
 class CourseController extends Controller
 {
  	public function courseShow(Request $request){
- 		$dados = Course::all(); 
-    	return view('/course/course',compact('dados'));
+ 		$data_level_graduacao = Course::where('level_course','like','G%')->orderby('course')->get();
+        $data_level_pos       = Course::where('level_course','like','P%')->orderby('course')->get();
+ 
+    	return view('/course/course',compact('data_level_graduacao','data_level_pos'));
     }
 
     public function storeCourse(Request $request)
     {
-    	$course_type = implode(",",$request->course_type);
+        $rules = array(
+            'course_type' => 'required'
+        );    
+        $messages = array(
+            'course_type.required' => 'Campo Modalidade do Curso é obrigatório'
+        );
 
+        $validator = Validator::make($request->all(),$rules, $messages);
+
+        if($validator->fails()){
+            $course = $request->course;
+            $additional_information = $request->additional_information;
+
+            return redirect()->back()
+            ->with([
+                'course'=>$course,
+                'additional_information'=>$additional_information
+            ])->withErrors($validator);
+        }
+
+    	$course_type = implode(",",$request->course_type);
     	Course::create([
     		'course'=>$request['course'],
     		'level_course'=>$request['level_course'],
@@ -23,4 +45,12 @@ class CourseController extends Controller
     	]);
  		return redirect('/course');
     }
+
+    public function destroyCourse(Request $request){
+        $id = Course::find($request->id);
+        $id->delete();
+        return redirect('/course');
+
+    }
+
 }

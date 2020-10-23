@@ -31,6 +31,16 @@ h2, .h2 {
   line-height: 1.2;
 }
 
+.table {
+  font-size: 14px;
+  margin: 10px !important;
+  color: #181818;
+}
+
+.form-control {
+  font-size: 14px !important;
+}
+
 .header {
   background: #9E1D21;
   width: 100%;
@@ -217,7 +227,7 @@ h2, .h2 {
 .table-content th, .table-content td {
   padding: 10px;
   border-bottom: 1px solid #eee;
-  color: #888;
+  color: #181818;
 }
 
 .table-content a {
@@ -281,20 +291,12 @@ h2, .h2 {
   padding: 10px 0px;
 }
 
-.contact-info h5 {
-  margin: 10px 20px;
-}
-
 .contact-info .form-row {
   margin: 10px 20px !important;
 }
 
-.contact-info-courses h5 {
-  margin: 10px 20px;
-}
-
-.contact-info-call h5 {
-  margin: 10px 20px;
+.contact-info .form-row .form-control {
+  font-size: 14px !important;
 }
 
 .footer {

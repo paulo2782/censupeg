@@ -59,25 +59,25 @@
 			<h2>Cursos
 				<i class="fa fa-pencil" aria-hidden="true"></i>
 			</h2>
-			<div class="content-table">
-				<table class="table-content">
+			<div class=".contact-info">
+				<table class="table">
 					<thead>
 						<tr>
-							<th>Curso</th>
-							<th>Modalidade</th>
-							<th>Nível</th>
+							<th scope="col">#</th>
+							<th scope="col">Curso</th>
+							<th scope="col">Modalidade</th>
+							<th scope="col">Nível</th>
 							<th>Status</th>
 						</tr>
 					</thead>
-					<tbody id="tabela">
-					@foreach($dados as $dado)
+					<tbody>
 						<tr>
+							<th scope="row">1</th>
 							<td>Matemática</td>
 							<td>Semipresencial</td>
 							<td>Graduação </td>
 							<td>Concluído</td>
 						</tr>
-					@endforeach		
 					</tbody>
 				</table>
 			</div>
@@ -86,22 +86,24 @@
 			<h2>Ligações
 				<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 			</h2>
-			<div class="content-table">
-				<table class="table-content">
+			<div class=".contact-info">
+			<table class="table">
 					<thead>
 						<tr>
-							<th>Data</th>
-							<th>Retorno</th>
-							<th>Horário</th>
-							<th>Status</th>
+							<th scope="col">#</th>
+							<th scope="col">Data</th>
+							<th scope="col">Retorno</th>
+							<th scope="col">Horário</th>
+							<th scope="col">Status</th>
 						</tr>
 					</thead>
-					<tbody id="tabela">
+					<tbody>
 						<tr>
-							<!-- <td>01-01-2020 </td> -->
-							<!-- <td>01-09-2020 </td> -->
-							<!-- <td>11:00 </td> -->
-							<!-- <td>Aguardando retorno</td> -->
+							<th scope="row">1</th>
+							<td>01-01-2020</td>
+							<td>01-01-2020</td>
+							<td>12:00 </td>
+							<td>Aguardando retorno</td>
 						</tr>
 					</tbody>
 				</table>

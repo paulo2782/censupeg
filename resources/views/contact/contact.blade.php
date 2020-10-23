@@ -14,12 +14,14 @@
       </div>
       <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
       <div class="aux-bar">
-        <h2>Contatos</h2>
+        <h2>Contatos </h2>
+
         <form class="search-contact" action="{{ route('searchContact') }}">
           <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar contato" />
         </form>
       </div>
       <div class="content-table">
+        <h5><span>{{ $dados->appends(['search'=>$dados])->links() }}</span></h5>
         <table class="table-content">
           <thead>
             <tr>

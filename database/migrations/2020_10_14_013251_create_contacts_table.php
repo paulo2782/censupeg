@@ -23,9 +23,10 @@ class CreateContactsTable extends Migration
             $table->string('email',150)->nullable();
             $table->string('phone',14)->nullable();
             $table->string('schooling',150)->nullable();
+            $table->string('course',150)->nullable();
             $table->string('state')->nullable();
             $table->string('city',150)->nullable();
-            $table->string('contact_origin',150);
+            $table->string('contact_origin',150)->nullable();
             $table->text('additional_information')->nullable();
             $table->timestamps();
         });

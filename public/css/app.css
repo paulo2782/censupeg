@@ -84,6 +84,11 @@ h2, .h2 {
 
 #header .container {
   min-width: 100%;
+  max-height: 70px;
+}
+
+#header .container .navbar {
+  max-height: 70px;
 }
 
 #header .container .navbar-toggler {
@@ -93,6 +98,7 @@ h2, .h2 {
 #header .container .nav-link {
   color: #eee;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 #header .container .nav-link:hover {
@@ -164,27 +170,25 @@ h2, .h2 {
   border: 1px solid #9E1D21;
 }
 
-.body-container {
-  background-color: #ebebeb !important;
+#body-container {
+  background-color: #ebebeb;
+}
+
+#container-main {
+  margin-top: 40px;
+  margin-bottom: -40px;
   min-height: 100%;
 }
 
-.container-main {
-  width: 100%;
-  margin-top: 40px;
-  min-height: calc(100vh - 70px);
-}
-
-.content {
-  width: 900px;
-  margin: 0 auto 40px auto;
+#container-main .container .content {
+  max-width: 900px;
+  margin: 0 auto;
   background-color: #fff;
 }
 
 .top-bar {
   width: 100%;
   height: 75px;
-  line-height: 70px;
 }
 
 .top-bar h1 {
@@ -226,13 +230,13 @@ h2, .h2 {
   color: #fff;
 }
 
-.search-contact {
+.aux-bar .search-contact {
   margin: 13px;
   border-radius: 3px;
   float: right;
 }
 
-.search-contact input[type=search] {
+.aux-bar .search-contact input[type=search] {
   height: 29px;
   width: 200px;
   padding: 5px;
@@ -243,15 +247,16 @@ h2, .h2 {
   font-size: 14px;
 }
 
-.table-content th, .table-content td {
+.table-content th {
   padding: 10px;
   border-bottom: 1px solid #eee;
   color: #181818;
 }
 
-.table-content a {
-  text-decoration: none;
-  color: #888;
+.table-content td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: #181818;
 }
 
 .table-content td img {
@@ -259,14 +264,19 @@ h2, .h2 {
   margin-left: 10px;
 }
 
-.dropdown-menu.show {
+.table-content a {
+  text-decoration: none;
+  color: #888;
+}
+
+.table-content .dropdown-menu.show {
   font-size: 14px;
   width: 100px;
 }
 
-.dropdown-item:hover {
-  background: #9E1D21 !important;
-  color: #fff !important;
+.table-content .dropdown-item:hover {
+  background: #9E1D21;
+  color: #fff;
 }
 
 .radio-course label {
@@ -326,7 +336,7 @@ h2, .h2 {
   padding: 20px 0;
 }
 
-.copyright {
+.footer .copyright {
   font-size: 0.875em;
   color: #fff;
   line-height: 10px;

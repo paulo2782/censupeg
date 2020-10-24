@@ -72,26 +72,28 @@ h2, .h2 {
 }
 
 // LOGIN
-.login {
-    .row {
-        margin: auto 0px !important;
-    }
-    .login-a {
-        text-decoration: none;
-        text-align: center;
-        color: #313131;
-        cursor: pointer;
-        &:hover {
+#login {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    .container {
+        max-width: 500px;
+        height: 320px;
+        .login-img {
+            display: block;
+            margin: 20px auto;
+        }
+        .login-a {
             text-decoration: none;
-            color: $primary-color;
-            font-weight: bold;
-        }    
+            text-align: center;
+            color: #313131;
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+                color: #9E1D21;
+                font-weight: bold;
+            }
+        }
     }
-}    
-
-.login-img {
-    display: block;
-    margin: 20px auto;
 }
 
 .botao {

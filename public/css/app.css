@@ -65,26 +65,32 @@ h2, .h2 {
   text-transform: uppercase;
 }
 
-.login .row {
-  margin: auto 0px !important;
+#login {
+  width: 100%;
+  min-height: calc(100vh - 90px);
 }
 
-.login .login-a {
+#login .container {
+  max-width: 500px;
+  height: 320px;
+}
+
+#login .container .login-img {
+  display: block;
+  margin: 20px auto;
+}
+
+#login .container .login-a {
   text-decoration: none;
   text-align: center;
   color: #313131;
   cursor: pointer;
 }
 
-.login .login-a:hover {
+#login .container .login-a:hover {
   text-decoration: none;
   color: #9E1D21;
   font-weight: bold;
-}
-
-.login-img {
-  display: block;
-  margin: 20px auto;
 }
 
 .botao {

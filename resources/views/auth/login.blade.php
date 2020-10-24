@@ -7,17 +7,13 @@
         <img class="login-img my-4" src="img/logo-censupeg.png" alt="Logo censupeg">
         <h1 class="my-2 text-center">Acesse sua conta </h1>
         <form name="frmLogin" id="frmLogin">
-            <div class="form-group row">
-                <div class="col-12">
-                    <label for="username">Usuário:</label>
-                    <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control">
-                </div>
+            <div class="form-group">
+                <label for="username">Usuário:</label>
+                <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control">
             </div>
-            <div class="form-group row">
-                <div class="col-12">
-                    <label for="password" >Senha:</label>
-                    <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control">
-                </div>
+            <div class="form-group">
+                <label for="password" >Senha:</label>
+                <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary form-control"> 
                 {{ __('Login') }}

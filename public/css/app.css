@@ -41,30 +41,6 @@ h2, .h2 {
   font-size: 14px !important;
 }
 
-.header {
-  background: #9E1D21;
-  width: 100%;
-}
-
-.navbar-toggler {
-  background-color: #fff !important;
-}
-
-.nav-link {
-  color: #eee !important;
-}
-
-.nav-link:hover {
-  color: #fff !important;
-  font-weight: bold;
-}
-
-.username {
-  font-weight: bold;
-  color: #fff !important;
-  text-transform: uppercase;
-}
-
 #login {
   width: 100%;
   min-height: calc(100vh - 90px);
@@ -100,6 +76,34 @@ h2, .h2 {
   text-decoration: none;
   color: #9E1D21;
   font-weight: bold;
+}
+
+#header {
+  background: #9E1D21;
+}
+
+#header .container {
+  min-width: 100%;
+}
+
+#header .container .navbar-toggler {
+  background-color: #fff;
+}
+
+#header .container .nav-link {
+  color: #eee;
+  font-size: 14px;
+}
+
+#header .container .nav-link:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+#header .container .username {
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .botao {

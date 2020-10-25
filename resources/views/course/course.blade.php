@@ -8,14 +8,12 @@
 <div id="container-main">
     <div class="container">
         <div class="content-details">
-            <div class="top-bar">
+            <div class="top-bar-block">
                 <h1>Cursos</h1>
                 <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
-            </div>
-            <div class="card">
                 <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
             </div>
-            <div class="title-category">
+            <div class="show-details-block">
                 <h2>Graduação</h2>
                 <ul class="list-group list-group-flush">
                 @foreach($data_level_graduacao as $data_level1)
@@ -27,7 +25,7 @@
                     @endforeach
                 </li>
             </div>
-            <div class="title-category">
+            <div class="show-details-block">
                 <h2>Pós-graduação</h2>
                 <ul class="list-group list-group-flush">
                 @foreach($data_level_pos as $data_level2)

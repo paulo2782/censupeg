@@ -4,10 +4,10 @@
 <div id="container-main">
 	<div class="container">
 		<div class="content-details">
-			<div class="top-bar">
-				<h4 class="py-4 text-center">{{ $dados[0]->name }}</h4>
+			<div class="top-bar-block">
+				<h3 class="py-4 text-center">{{ $dados[0]->name }}</h3>
 			</div>
-			<div class="title-category">
+			<div class="show-details-block">
 				<h2>Dados básicos
 					<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 				</h2>
@@ -56,11 +56,11 @@
 					</div>
 				</form>
 			</div>
-			<div class="title-category">
+			<div class="show-details-block">
 				<h2>Cursos
 					<i class="fa fa-pencil" aria-hidden="true"></i>
 				</h2>
-				<div class=".contact-info">
+				<div class="show-details-block">
 					<table class="table">
 						<thead>
 							<tr>
@@ -83,11 +83,11 @@
 					</table>
 				</div>
 			</div>
-			<div class="title-category">
+			<div class="show-details-block">
 				<h2>Ligações
 					<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 				</h2>
-				<div class=".contact-info">
+				<div class="contact-info-schedule">
 				<table class="table">
 						<thead>
 							<tr>

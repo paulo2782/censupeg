@@ -20,7 +20,7 @@
                 </form>
             </div>
             <div class="content-table">
-                <h5><span>{{ $dados->appends(['search'=>$dados])->links() }}</span></h5>
+                <span class="text-4">{{ $dados->appends(['search'=>$dados])->links() }}</span>
                 <table class="table-content">
                     <thead>
                     <tr>

@@ -16,14 +16,13 @@ class ContactController extends Controller
         ->orwhere('email','like',$search.'%')
         ->paginate(50);
 
-    	return view('/contact/contact',compact('dados'));
+    	return view('/contact/contact',compact('dados','search'));
     }
 
 
     public function store(Request $request)
     { 
         
-
     	$validator = Validator::make($request->all(),[
 		  'name'=>'required|min:5',
 		  'email'=>'required|unique:contacts',
@@ -50,8 +49,8 @@ class ContactController extends Controller
                 'hiddenContact_origin'=>$hiddenContact_origin])
             ->withErrors($validator);
 		}
-        // $interest_course = implode(",",$request->interest_course);
-        Contact::create([
+
+         Contact::create([
 
             'user_id'=>$request['id'],
             'name'=>$request['name'],
@@ -87,7 +86,7 @@ class ContactController extends Controller
         ->orwhere('email','like',$search.'%')
         ->paginate(50);
 
-        return view('contact/contact',compact('dados'));
+        return view('contact/contact',compact('dados','search'));
      }
 
     public function viewData(Request $request){

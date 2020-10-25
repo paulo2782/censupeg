@@ -20,8 +20,9 @@
           <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar contato" />
         </form>
       </div>
+      <br>
+      {{ $dados->appends(['search'=>$search])->links() }}
       <div class="content-table">
-        <h5><span>{{ $dados->appends(['search'=>$dados])->links() }}</span></h5>
         <table class="table-content">
           <thead>
             <tr>

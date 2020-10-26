@@ -5,7 +5,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Novo Curso</h4>
+                <h3 class="modal-title">Novo Curso</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -56,8 +56,7 @@
                 <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
-    </div>
+   </div>
 </div>
 @endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 

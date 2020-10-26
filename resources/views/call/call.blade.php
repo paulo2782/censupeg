@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @include('contact/modal')
-<body class="body-container">
-    @include('includes/header')
-    <section class="container-main">
-    <div class="content">
-        <div class="top-bar">
-            <h1>Ligações</h1>
-        </div>
+<body id="body-container">
+  @include('includes/header')
+<div id="container-main">
+    <div class="container">
+        <div class="content">
+            <div class="top-bar">
+                <h1>Ligações</h1>
+            </div>
         <div class="aux-bar">
             <h2>Ligacões</h2>
             <form class="search-contact" action="{{ route('searchCall') }}" method="GET">
@@ -51,10 +52,10 @@
     <div class="content">
       <ul class="pagination"> </ul>
     </div>
-  </section>
+    </div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('/js/contact.js') }}"></script>
 </body>  
 </html>
 <script src="{{ asset('js/function.js') }}"></script> 
-

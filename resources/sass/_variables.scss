@@ -28,7 +28,7 @@ h2, .h2 {
     font-size: 18px !important;
 }
 
-.h3 {
+h3, .h3 {
     font-size: 16px !important;
 }
 
@@ -47,51 +47,66 @@ h2, .h2 {
 .form-control {
     font-size: 14px !important;
 }
-// HEADER
-.header {
-    background: $primary-color;
-    width: 100%;
-}
-
-.navbar-toggler {
-    background-color: $white !important;
-}
-
-.nav-link {
-    color: #eee !important;
-    &:hover {
-        color: $white !important;
-        font-weight: bold;
-    }
-}
-
-.username {
-    font-weight: bold;
-    color: $white !important;
-    text-transform: uppercase;
-}
 
 // LOGIN
-.login {
-    .row {
-        margin: auto 0px !important;
-    }
-    .login-a {
-        text-decoration: none;
-        text-align: center;
-        color: #313131;
-        cursor: pointer;
-        &:hover {
+#login {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    .container {
+        max-width: 500px;
+        height: 320px;
+        .login-img {
+            display: block;
+            margin: 20px auto;
+        }
+        label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        input {
+            font-size: 14px; 
+        }
+        .login-a {
             text-decoration: none;
-            color: $primary-color;
-            font-weight: bold;
-        }    
+            text-align: center;
+            color: #313131;
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+                color: #9E1D21;
+                font-weight: bold;
+            }
+        }
     }
-}    
+}
 
-.login-img {
-    display: block;
-    margin: 20px auto;
+// HEADER
+#header {
+    background: #9E1D21;
+    .container {
+        min-width: 100%;
+        max-height: 70px;
+        .navbar {
+            max-height: 70px;
+        }
+        .navbar-toggler {
+            background-color: #fff;
+        }
+        .nav-link {
+            color: #eee;
+            font-size: 14px;
+            text-transform: uppercase;
+            &:hover {
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+        .username {
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
 }
 
 .botao {
@@ -148,41 +163,41 @@ h2, .h2 {
     border: 1px solid $primary-color;
 }
 
+.radio-course {
+    label {
+        display: block;
+    }
+}
 
-// CONTENT
-.body-container {
-    background-color: #ebebeb !important;
-    min-height: 100%;
-  }
+// MOSTRUÁRIO
+#body-container {
+    background-color: #ebebeb;
+}
   
-.container-main {
-    width: 100%;
-    //min-height: 100%;
+#container-main {
     margin-top: 40px;
-    min-height: calc(100vh - 70px);
+    margin-bottom: -40px;
+    min-height: 100%;
+    .container .content {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #fff;
+    }
 }
-  
-.content {
-    width: 900px;
-    margin: 0 auto 40px auto;
-    background-color: $white;
-}
-  
+
 .top-bar {
     width: 100%;
-    height: 75px;
-    line-height: 70px;
+    height: 70px;
     h1 {
         display: inline-block;
         color: #797979;
-        line-height: 27px;
-        margin: 14px 20px;
-        padding: 10px 0px;    
+        margin: 13px 20px;
+        padding: 10px 0px;
     }
     img {
         width: 30px;
         margin-bottom: 5px;
-        margin-left: -10px;    
+        margin-left: -10px;
     }
 }
       
@@ -191,100 +206,96 @@ h2, .h2 {
     height: 55px;
     background-color: $primary-color;
     h2 {
-        line-height: 57px;
-        color: $white;
+        line-height: 55px;
+        color: #fff;
         margin-left: 20px;
         display: inline;
-        padding: 19px 0px;            
-    }
+        }
     a {
         color: $white;
         font-size: 14px;
         text-transform: lowercase;
         text-decoration: none;
-        &:hover { 
+        &:hover {
             color: $white;
-        }    
+        }
+    }
+    .search-contact {
+        margin: 13px;
+        border-radius: 3px;
+        float: right;
+        input[type=search] {
+            height: 29px;
+            width: 200px;
+            padding: 5px;
+        }
     }
 }
-        
-.search-contact {
-    margin: 13px;
-    border-radius: 3px;
-    float: right;
-    input[type=search] {
-        height: 29px;
-        width: 200px;
-        padding: 5px;
-    }
-}
-  
+
 .table-content {
     width: 100%;
     font-size: 14px;
-    th, td {
-        padding: 10px;
+    th {
+        padding: 10px 20px;
         border-bottom: 1px solid #eee;
         color: #181818;
+    }
+    td {
+        padding: 10px 20px;
+        border-bottom: 1px solid #eee;
+        color: #181818;        
+        img {
+            padding: 0px 5px;
+            margin-left: 10px;
+        }        
     }
     a {
         text-decoration: none;
         color: #888;
     }
-    td img {
-        padding: 0px 5px;
-        margin-left: 10px;
-    }    
-}
-  
-.dropdown-menu.show {
-    font-size: 14px;
-    width: 100px;
-}
-  
-.dropdown-item:hover {
-    background: $primary-color !important;
-    color: $white !important;
-}
-
-// MODAL COURSE
-.radio-course {
-    label {
-        display: block;
+    .dropdown-menu.show {
+        font-size: 14px;
+        width: 100px;
+    }
+    .dropdown-item {
+        &:hover {
+            background: $primary-color;
+            color: $white;
+        }
     }
 }
 
-// COURSE INFO
 .content-details {
     max-width: 900px;
     margin: 0 auto;
-    .top-bar {
-        height: 75px;
-        background-color: $white;
-        margin-bottom: 20px;
-        h1 {
-            display: inline-block;
-            color: #797979;
-            line-height: 27px;
-            margin: 14px 20px;
-            padding: 10px 0px;    
-        }
-        img {
-            width: 30px;
-            margin-bottom: 5px;
-            margin-left: -10px;    
-        }
+  }
+
+.top-bar-block {
+    height: 70px;
+    background-color: $white;
+    margin-bottom: 20px;
+    h1 {
+        display: inline-block;
+        color: #797979;
+        margin: 13px 20px;
+        padding: 10px 0px;
     }
-    .title-category {
-        background-color: $white;
-        margin-bottom: 20px;
-        h2 {
-            color: $primary-color;
-            line-height: 25px;
-            margin: 10px 20px;
-            padding: 10px 0px;
-        }
+    img {
+        width: 30px;
+        margin-bottom: 5px;
+        margin-left: -10px;
     }
+}
+
+.show-details-block {
+    background-color: $white;
+    margin-bottom: 15px;
+    h2 {
+        color: $primary-color;
+        line-height: 25px;
+        margin: 0px 20px;
+        padding: 10px 0px;
+      }
 }
 
 // CONTACT INFO
@@ -304,11 +315,10 @@ h2, .h2 {
     background-color: #111;
     color: $white;
     padding: 20px 0;
-}
-
-.copyright {
-    font-size: 0.875em;
-    color: $white;
-    line-height: 10px;
-    text-align: center;
+    .copyright {
+        font-size: 0.875em;
+        color: $white;
+        line-height: 10px;
+        text-align: center;
+    }    
 }

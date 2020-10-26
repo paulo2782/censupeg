@@ -50,6 +50,6 @@
     </div>
 
     @yield('content')
-    @include('includes/footer')
+    <!-- include('includes/footer') -->
  </body>
 </html>

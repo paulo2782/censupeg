@@ -1,7 +1,7 @@
 <div id="header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-censupeg-header.png') }}" alt="Logo da Censupeg" /></a>
+            <a class="navbar-brand" href="{{ route('contactShow') }}"><img src="{{ asset('img/logo-censupeg-header.png') }}" alt="Logo da Censupeg" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>

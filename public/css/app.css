@@ -21,7 +21,7 @@ h2, .h2 {
   font-size: 18px !important;
 }
 
-.h3 {
+h3, .h3 {
   font-size: 16px !important;
 }
 
@@ -41,50 +41,75 @@ h2, .h2 {
   font-size: 14px !important;
 }
 
-.header {
-  background: #9E1D21;
+#login {
   width: 100%;
+  min-height: calc(100vh - 90px);
 }
 
-.navbar-toggler {
-  background-color: #fff !important;
+#login .container {
+  max-width: 500px;
+  height: 320px;
 }
 
-.nav-link {
-  color: #eee !important;
+#login .container .login-img {
+  display: block;
+  margin: 20px auto;
 }
 
-.nav-link:hover {
-  color: #fff !important;
-  font-weight: bold;
+#login .container label {
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.username {
-  font-weight: bold;
-  color: #fff !important;
-  text-transform: uppercase;
+#login .container input {
+  font-size: 14px;
 }
 
-.login .row {
-  margin: auto 0px !important;
-}
-
-.login .login-a {
+#login .container .login-a {
   text-decoration: none;
   text-align: center;
   color: #313131;
   cursor: pointer;
 }
 
-.login .login-a:hover {
+#login .container .login-a:hover {
   text-decoration: none;
   color: #9E1D21;
   font-weight: bold;
 }
 
-.login-img {
-  display: block;
-  margin: 20px auto;
+#header {
+  background: #9E1D21;
+}
+
+#header .container {
+  min-width: 100%;
+  max-height: 70px;
+}
+
+#header .container .navbar {
+  max-height: 70px;
+}
+
+#header .container .navbar-toggler {
+  background-color: #fff;
+}
+
+#header .container .nav-link {
+  color: #eee;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#header .container .nav-link:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+#header .container .username {
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .botao {
@@ -145,34 +170,35 @@ h2, .h2 {
   border: 1px solid #9E1D21;
 }
 
-.body-container {
-  background-color: #ebebeb !important;
+.radio-course label {
+  display: block;
+}
+
+#body-container {
+  background-color: #ebebeb;
+}
+
+#container-main {
+  margin-top: 40px;
+  margin-bottom: -40px;
   min-height: 100%;
 }
 
-.container-main {
-  width: 100%;
-  margin-top: 40px;
-  min-height: calc(100vh - 70px);
-}
-
-.content {
-  width: 900px;
-  margin: 0 auto 40px auto;
+#container-main .container .content {
+  max-width: 900px;
+  margin: 0 auto;
   background-color: #fff;
 }
 
 .top-bar {
   width: 100%;
-  height: 75px;
-  line-height: 70px;
+  height: 70px;
 }
 
 .top-bar h1 {
   display: inline-block;
   color: #797979;
-  line-height: 27px;
-  margin: 14px 20px;
+  margin: 13px 20px;
   padding: 10px 0px;
 }
 
@@ -189,11 +215,10 @@ h2, .h2 {
 }
 
 .aux-bar h2 {
-  line-height: 57px;
+  line-height: 55px;
   color: #fff;
   margin-left: 20px;
   display: inline;
-  padding: 19px 0px;
 }
 
 .aux-bar a {
@@ -207,13 +232,13 @@ h2, .h2 {
   color: #fff;
 }
 
-.search-contact {
+.aux-bar .search-contact {
   margin: 13px;
   border-radius: 3px;
   float: right;
 }
 
-.search-contact input[type=search] {
+.aux-bar .search-contact input[type=search] {
   height: 29px;
   width: 200px;
   padding: 5px;
@@ -224,15 +249,16 @@ h2, .h2 {
   font-size: 14px;
 }
 
-.table-content th, .table-content td {
-  padding: 10px;
+.table-content th {
+  padding: 10px 20px;
   border-bottom: 1px solid #eee;
   color: #181818;
 }
 
-.table-content a {
-  text-decoration: none;
-  color: #888;
+.table-content td {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  color: #181818;
 }
 
 .table-content td img {
@@ -240,18 +266,19 @@ h2, .h2 {
   margin-left: 10px;
 }
 
-.dropdown-menu.show {
+.table-content a {
+  text-decoration: none;
+  color: #888;
+}
+
+.table-content .dropdown-menu.show {
   font-size: 14px;
   width: 100px;
 }
 
-.dropdown-item:hover {
-  background: #9E1D21 !important;
-  color: #fff !important;
-}
-
-.radio-course label {
-  display: block;
+.table-content .dropdown-item:hover {
+  background: #9E1D21;
+  color: #fff;
 }
 
 .content-details {
@@ -259,35 +286,34 @@ h2, .h2 {
   margin: 0 auto;
 }
 
-.content-details .top-bar {
-  height: 75px;
+.top-bar-block {
+  height: 70px;
   background-color: #fff;
   margin-bottom: 20px;
 }
 
-.content-details .top-bar h1 {
+.top-bar-block h1 {
   display: inline-block;
   color: #797979;
-  line-height: 27px;
-  margin: 14px 20px;
+  margin: 13px 20px;
   padding: 10px 0px;
 }
 
-.content-details .top-bar img {
+.top-bar-block img {
   width: 30px;
   margin-bottom: 5px;
   margin-left: -10px;
 }
 
-.content-details .title-category {
+.show-details-block {
   background-color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.content-details .title-category h2 {
+.show-details-block h2 {
   color: #9E1D21;
   line-height: 25px;
-  margin: 10px 20px;
+  margin: 0px 20px;
   padding: 10px 0px;
 }
 
@@ -307,7 +333,7 @@ h2, .h2 {
   padding: 20px 0;
 }
 
-.copyright {
+.footer .copyright {
   font-size: 0.875em;
   color: #fff;
   line-height: 10px;

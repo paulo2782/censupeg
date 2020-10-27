@@ -14,6 +14,7 @@ class ContactController extends Controller
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')
         ->orwhere('email','like',$search.'%')
+        
         ->paginate(50);
 
     	return view('/contact/contact',compact('dados','search'));
@@ -84,6 +85,7 @@ class ContactController extends Controller
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')
         ->orwhere('email','like',$search.'%')
+        
         ->paginate(50);
 
         return view('contact/contact',compact('dados','search'));

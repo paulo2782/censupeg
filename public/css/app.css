@@ -43,7 +43,6 @@ h3, .h3 {
 
 #login {
   width: 100%;
-  min-height: calc(100vh - 90px);
 }
 
 #login .container {
@@ -181,7 +180,6 @@ h3, .h3 {
 #container-main {
   margin-top: 40px;
   margin-bottom: -40px;
-  min-height: 100%;
 }
 
 #container-main .container .content {
@@ -284,6 +282,7 @@ h3, .h3 {
 .content-details {
   max-width: 900px;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .top-bar-block {

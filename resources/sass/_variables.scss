@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-// Body
-$body-bg: #f8fafc;
-
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
-
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
-=======
 // COLORS
 $primary-color: #9E1D21;
 $white: #fff;
@@ -61,7 +40,7 @@ h3, .h3 {
 
 .table {
     font-size: 14px;
-    margin: 10px !important;
+    //margin: 10px !important;
     color: #181818;
 }
 
@@ -251,18 +230,19 @@ h3, .h3 {
     }
 }
 
-.table-content {
+#content-table {
     width: 100%;
     font-size: 14px;
+    color: #181818;
     th {
         padding: 10px 20px;
         border-bottom: 1px solid #eee;
         color: #181818;
     }
     td {
-        padding: 10px 20px;
+        padding: 5px 20px;
         border-bottom: 1px solid #eee;
-        color: #181818;        
+        color: #6d6d6d;        
         img {
             padding: 0px 5px;
             margin-left: 10px;
@@ -270,13 +250,19 @@ h3, .h3 {
     }
     a {
         text-decoration: none;
-        color: #888;
+        color: #6d6d6d;
+        &:hover {
+            font-weight: 500;
+        }
     }
+
+
     .dropdown-menu.show {
         font-size: 14px;
         width: 100px;
     }
     .dropdown-item {
+        cursor: pointer;
         &:hover {
             background: $primary-color;
             color: $white;
@@ -315,7 +301,7 @@ h3, .h3 {
         line-height: 25px;
         margin: 0px 20px;
         padding: 10px 0px;
-      }
+    }
 }
 
 // CONTACT INFO
@@ -342,4 +328,3 @@ h3, .h3 {
         text-align: center;
     }    
 }
->>>>>>> 09743a7ec2cb8a16766607efb9b592d59ef8e129

@@ -60,7 +60,7 @@
 				<h2>Cursos
 					<i class="fa fa-pencil" aria-hidden="true"></i>
 				</h2>
-				<div class="show-details-block">
+				<div id="content-table">
 					<table class="table">
 						<thead>
 							<tr>
@@ -68,12 +68,12 @@
 								<th scope="col">Curso</th>
 								<th scope="col">Modalidade</th>
 								<th scope="col">Nível</th>
-								<th>Status</th>
+								<th scope="col">Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<th scope="row">1</th>
+								<td>1</th>
 								<td>Matemática</td>
 								<td>Semipresencial</td>
 								<td>Graduação </td>
@@ -87,7 +87,7 @@
 				<h2>Ligações
 					<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 				</h2>
-				<div class="contact-info-schedule">
+				<div id="content-table">
 				<table class="table">
 						<thead>
 							<tr>
@@ -100,7 +100,7 @@
 						</thead>
 						<tbody>
 							<tr>
-								<th scope="row">1</th>
+								<td>1</th>
 								<td>01-01-2020</td>
 								<td>01-01-2020</td>
 								<td>12:00 </td>

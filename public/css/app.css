@@ -33,7 +33,6 @@ h3, .h3 {
 
 .table {
   font-size: 14px;
-  margin: 10px !important;
   color: #181818;
 }
 
@@ -242,39 +241,48 @@ h3, .h3 {
   padding: 5px;
 }
 
-.table-content {
+#content-table {
   width: 100%;
   font-size: 14px;
+  color: #181818;
 }
 
-.table-content th {
+#content-table th {
   padding: 10px 20px;
   border-bottom: 1px solid #eee;
   color: #181818;
 }
 
-.table-content td {
-  padding: 10px 20px;
+#content-table td {
+  padding: 5px 20px;
   border-bottom: 1px solid #eee;
-  color: #181818;
+  color: #6d6d6d;
 }
 
-.table-content td img {
+#content-table td img {
   padding: 0px 5px;
   margin-left: 10px;
 }
 
-.table-content a {
+#content-table a {
   text-decoration: none;
-  color: #888;
+  color: #6d6d6d;
 }
 
-.table-content .dropdown-menu.show {
+#content-table a:hover {
+  font-weight: 500;
+}
+
+#content-table .dropdown-menu.show {
   font-size: 14px;
   width: 100px;
 }
 
-.table-content .dropdown-item:hover {
+#content-table .dropdown-item {
+  cursor: pointer;
+}
+
+#content-table .dropdown-item:hover {
   background: #9E1D21;
   color: #fff;
 }

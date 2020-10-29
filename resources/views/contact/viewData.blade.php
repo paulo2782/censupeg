@@ -58,7 +58,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Cursos
-					<i class="fa fa-pencil" aria-hidden="true"></i>
+					<i class="fa fa-plus-circle" aria-hidden="true"></i>
 				</h2>
 				<div id="content-table">
 					<table class="table">
@@ -78,6 +78,7 @@
 								<td>Semipresencial</td>
 								<td>Graduação </td>
 								<td>Concluído</td>
+								<td><i class="fa fa-pencil" aria-hidden="true"></i></td>
 							</tr>
 						</tbody>
 					</table>
@@ -85,7 +86,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Ligações
-					<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+					<a href="#" class="fa fa-plus-circle" aria-hidden="true"></a>
 				</h2>
 				<div id="content-table">
 				<table class="table">
@@ -105,6 +106,7 @@
 								<td>01-01-2020</td>
 								<td>12:00 </td>
 								<td>Aguardando retorno</td>
+								<td><i class="fa fa-pencil" aria-hidden="true"></i></td>
 							</tr>
 						</tbody>
 					</table>

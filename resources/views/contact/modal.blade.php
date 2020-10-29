@@ -31,8 +31,6 @@
                         <label class="text-4" for="phone">Telefone</label>
                         <input type="text" class="form-control" id="phone" name="phone" value="{{Session::get('phone')}}" required />    
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Escolaridade</label>
                         <select class="form-control" id="schooling" name="schooling">
@@ -43,8 +41,6 @@
                             <option value="Ensino superior completo">Ensino superior completo</option>
                         </select>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="contact-origin">Estado</label>
                         <select class="form-control" id="state" name="state">
@@ -82,8 +78,6 @@
                         <label class="text-4" for="contact-origin">Cidade</label>
                         <select class="form-control" id="city" name="city"></select>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Origem do contato</label>
                         <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="{{Session::get('hiddenContact_origin')}}">
@@ -106,8 +100,6 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>

@@ -78,7 +78,7 @@
 								<td>Semipresencial</td>
 								<td>Graduação </td>
 								<td>Concluído</td>
-								<td><i class="fa fa-pencil" aria-hidden="true"></i></td>
+								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span</td>
 							</tr>
 						</tbody>
 					</table>
@@ -106,7 +106,7 @@
 								<td>01-01-2020</td>
 								<td>12:00 </td>
 								<td>Aguardando retorno</td>
-								<td><i class="fa fa-pencil" aria-hidden="true"></i></td>
+								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span</td>
 							</tr>
 						</tbody>
 					</table>

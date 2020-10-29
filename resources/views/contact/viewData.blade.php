@@ -60,17 +60,18 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Cursos
-					<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddCourse"> </i>
+					<a href="#" class="fa fa-plus-circle" aria-hidden="true" id="btnAddCourse"> </a>
 				</h2>
-				<div id="content-table">
+				<div id="content-table" class="table-responsive">
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">#</th>
-								<th scope="col">Curso</th>
-								<th scope="col">Modalidade</th>
-								<th scope="col">Nível</th>
-								<th scope="col">Status</th>
+								<th>#</th>
+								<th>Curso</th>
+								<th>Modalidade</th>
+								<th>Nível</th>
+								<th>Status</th>
+								<th>Ação</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -80,7 +81,10 @@
 								<td>Semipresencial</td>
 								<td>Graduação </td>
 								<td>Concluído</td>
-								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span></td>
+								<td>
+									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+									<a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -88,17 +92,18 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Ligações
-					<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddSchedule"> </i>
+					<a href="#" class="fa fa-plus-circle" aria-hidden="true" id="btnAddSchedule"></a>
 				</h2>
-				<div id="content-table">
-				<table class="table">
+				<div id="content-table" class="table-responsive">
+					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">#</th>
-								<th scope="col">Data</th>
-								<th scope="col">Retorno</th>
-								<th scope="col">Horário</th>
-								<th scope="col">Status</th>
+								<th>#</th>
+								<th>Data</th>
+								<th>Retorno</th>
+								<th>Horário</th>
+								<th>Status</th>
+								<th>Ação</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -108,7 +113,10 @@
 								<td>01-01-2020</td>
 								<td>12:00 </td>
 								<td>Aguardando retorno</td>
-								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span></td>
+								<td>
+									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+									<a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -117,10 +125,5 @@
 		</div>
 	</div>
 </div>
-
- 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('/js/contact.js') }}"></script>
-
-

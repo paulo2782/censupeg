@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label class="text-4" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" required />
+                        <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">

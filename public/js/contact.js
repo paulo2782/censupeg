@@ -1,3 +1,11 @@
+$('#btnAddCourse').click(function(event) {
+  $('#myModalCourse').modal('toggle')
+});
+
+$('#btnAddSchedule').click(function(event) {
+  $('#myModalSchedule').modal('toggle')
+});
+
 $('#btnAdd').click(function(event) {
     $('#status').val($('#hiddenStatus').val());
     $('#contact_origin').val($('#hiddenContact_origin').val());

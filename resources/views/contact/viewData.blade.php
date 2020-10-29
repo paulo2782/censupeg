@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @include('includes/header')
+@include('contact/modal_contact_courses')
+@include('contact/modal_contact_schedule')
 <body id="body-container">
 <div id="container-main">
 	<div class="container">
@@ -58,7 +60,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Cursos
-					<i class="fa fa-plus-circle" aria-hidden="true"></i>
+					<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddCourse"> </i>
 				</h2>
 				<div id="content-table">
 					<table class="table">
@@ -78,7 +80,7 @@
 								<td>Semipresencial</td>
 								<td>Graduação </td>
 								<td>Concluído</td>
-								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span</td>
+								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span></td>
 							</tr>
 						</tbody>
 					</table>
@@ -86,7 +88,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Ligações
-					<a href="#" class="fa fa-plus-circle" aria-hidden="true"></a>
+					<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddSchedule"> </i>
 				</h2>
 				<div id="content-table">
 				<table class="table">
@@ -106,7 +108,7 @@
 								<td>01-01-2020</td>
 								<td>12:00 </td>
 								<td>Aguardando retorno</td>
-								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span</td>
+								<td><span><i class="fa fa-pencil" aria-hidden="true"></i></span><i class="fa fa-trash btnDelete" aria-hidden="true"></i></span></td>
 							</tr>
 						</tbody>
 					</table>
@@ -115,3 +117,10 @@
 		</div>
 	</div>
 </div>
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('/js/contact.js') }}"></script>
+
+

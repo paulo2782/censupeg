@@ -72,7 +72,7 @@ h3, .h3 {
             cursor: pointer;
             &:hover {
                 text-decoration: none;
-                color: #9E1D21;
+                color: $primary-color;
                 font-weight: bold;
             }
         }
@@ -81,12 +81,12 @@ h3, .h3 {
 
 // HEADER
 #header {
-    background: #9E1D21;
+    background: $primary-color;
     .container {
         min-width: 100%;
-        max-height: 70px;
+        min-height: 70px;
         .navbar {
-            max-height: 70px;
+            min-height: 70px;
         }
         .navbar-toggler {
             background-color: $white;
@@ -316,6 +316,8 @@ h3, .h3 {
 
 // FOOTER
 .footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
     height: 50px;
     background-color: #111;

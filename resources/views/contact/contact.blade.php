@@ -19,7 +19,7 @@
                     <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar contato" />
                 </form>
             </div>
-            <div id="content-table">
+            <div id="content-table" class="table-responsive">
                 <span class="text-4">{{ $dados->appends(['search'=>$search])->links() }}</span>
                 <table class="table">
                     <thead>

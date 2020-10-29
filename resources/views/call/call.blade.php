@@ -14,43 +14,43 @@
                 <input type="search" id="botao" class="form-control" name="search" placeholder="Pesquisar contato" />
             </form>
         </div>
-        <div class="content-table">
-            <table class="table-content">
+        <div id="content-table" class="table-responsive">
+            <table class="table">
                 <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Ligação</th>
-                    <th>Retorno</th>
-                    <th>Ação</th>
-                </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Ligação</th>
+                        <th>Retorno</th>
+                        <th>Ação</th>
+                    </tr>
                 </thead>
-            <tbody id="tabela">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <!-- foreach($data as $data) -->
-                    @if($data > 0)
-                    <td id='toview'>
-                      <div class='dropdown'>
-                        <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                          <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                          <a href="#" class='dropdown-item btnDelete'>Excluir</a>
-                        </div>
-                      </div>
-                    </td>
-                    @endif
-                    <!-- endforeach -->
-                </tr>                    
-            </tbody>
-        </table>
-      </div>
+                <tbody id="tabela">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <!-- foreach($data as $data) -->
+                        @if($data > 0)
+                        <td id='toview'>
+                            <div class='dropdown'>
+                                <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                    <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                                    <a href="#" class='dropdown-item btnDelete'>Excluir</a>
+                                </div>
+                            </div>
+                        </td>
+                        @endif
+                        <!-- endforeach -->
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="content">
-      <ul class="pagination"> </ul>
+        <ul class="pagination"> </ul>
     </div>
     </div>
 </div>

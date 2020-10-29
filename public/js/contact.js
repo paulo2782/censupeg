@@ -1,5 +1,7 @@
 $('#btnAddCourse').click(function(event) {
   $('#myModalCourse').modal('toggle')
+  $('#nameModalCourse').val($('#nameContact').val())
+
 });
 
 $('#btnAddSchedule').click(function(event) {

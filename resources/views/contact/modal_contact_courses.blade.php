@@ -17,23 +17,35 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4">Nome Completo</label>
-                        <input type="text" class="form-control" name="name" value=""/>            
+                        <input type="text" class="form-control" id="nameModalCourse" name="name" readonly />            
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4">Curso</label>
-                        <input type="text" class="form-control" name="course" value=""/>
+                        <select class="c-select form-control">
+                        @foreach($courses as $course)
+                            <option value="{{ $course->course }}">{{ $course->course }}</option>
+                        @endforeach
+                        </select>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="phone">Modalidade</label>
-                        <input type="text" class="form-control" name="phone" value=""/>    
+                        <select class="c-select form-control">
+                            <option value="">Presencial</option>
+                            <option value="">Distância</option>
+
+                        </select>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="phone">Nível</label>
-                        <input type="text" class="form-control" name="phone" value=""/>    
+                        <select class="c-select form-control">
+                            <option value="">Graduação</option>
+                        </select>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="phone">Status</label>
-                        <input type="text" class="form-control" name="phone" value=""/>    
+                        <select class="c-select form-control">
+                            <option value=""></option>
+                        </select>
                     </div>
                 </div>
                 <div class="line-horizontal"></div>

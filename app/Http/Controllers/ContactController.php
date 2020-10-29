@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 use App\Contact;
+use App\Course;
 
 class ContactController extends Controller
 {
@@ -92,9 +93,10 @@ class ContactController extends Controller
      }
 
     public function viewData(Request $request){
-        
+        $courses = Course::all();
+
         $dados = Contact::where('id',$request->id)->get();
         
-        return view('/contact/viewData',compact('dados'));
+        return view('/contact/viewData',compact('dados','courses'));
     }
 }

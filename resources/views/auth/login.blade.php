@@ -18,12 +18,18 @@
             <button type="submit" class="btn btn-primary form-control"> 
                 {{ __('Login') }}
             </button>
-            <div class="mt-4">
-                <div class="d-flex justify-content-center">
+            <div class="form-group mt-2">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkLogin">
+                    <label class="form=check-label" for="checkLogin">Lembrar senha</label>
+                </div>
+            </div>
+            <div class="mt-2">
+                <div class="d-flex justify-content-center text-4">
                     Para se registrar? <a onclick="window.location.href='register'" class="ml-2 login-a">Clique aqui</a>
                 </div>
-                <div class="d-flex justify-content-center">
-
+                <div class="d-flex justify-content-center text-4">
+                    <a href="#" class="mt-2 login-a">Esqueceu sua senha?</a>
                 </div>
             </div>                        
             <div id="message">

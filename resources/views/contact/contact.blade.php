@@ -19,34 +19,34 @@
                     <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar contato" />
                 </form>
             </div>
-            <div class="content-table">
+            <div id="content-table">
                 <span class="text-4">{{ $dados->appends(['search'=>$search])->links() }}</span>
-                <table class="table-content">
+                <table class="table">
                     <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>Operador</th>
-                        <th>Ação</th>
-                    </tr>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Operador</th>
+                            <th>Ação</th>
+                        </tr>
                     </thead>  
                     <tbody id="tabela">
                     @foreach($dados as $dado)
                         <tr>
-                        <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->name }} </td> </a>
-                        <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->email }} </td> </a>
-                        <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->phone }} </td> </a>
-                        <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->user->name }}</td> </a>
-                        <td id='toview'>
-                            <div class='dropdown'>
-                            <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                            <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                <a href="{{ route('viewData',$dado->id) }}" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
-                                <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
-                            </div>
-                            </div>
-                        </td>
+                            <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->name }} </td> </a>
+                            <td>{{ $dado->email }} </td>
+                            <td> {{ $dado->phone }} </td>
+                            <td> {{ $dado->user->name }}</td>
+                            <td id='toview'>
+                                <div class='dropdown'>
+                                <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                    <a href="{{ route('viewData',$dado->id) }}" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
+                                    <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
+                                </div>
+                                </div>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

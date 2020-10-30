@@ -40,4 +40,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('interestShow','InterestController@interestShow')->name('interestShow');
 	Route::get('routeForCorrect','InterestController@routeForCorrect')->name('routeForCorrect');
+	Route::get('correctRegister/{id}','InterestController@correctRegister')->name('correctRegister');
+
+	Route::put('updateRegister/{id}','InterestController@updateRegister')->name('updateRegister');
 });

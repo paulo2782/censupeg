@@ -11,6 +11,7 @@
 		</tr>
 	</thead>
 	<tbody>		
+		{{ $dados->links() }}
 		@foreach($dados as $dado)
 		<tr>
 			<td> {{ $dado->name }} </td>
@@ -18,7 +19,9 @@
 			<td> {{ $dado->phone }} </td>
 			<td> {{ $dado->course }} </td>
 		 	<td> {{ $dado->additional_information }} </td>
+		 	<td><a href="{{ route('correctRegister',$dado->id) }}"> {{ $dado->id }} </a></td>
 		@endforeach
 		</tr>
+
 	</tbody>
 </table>

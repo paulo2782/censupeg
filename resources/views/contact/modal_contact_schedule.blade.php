@@ -17,10 +17,6 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome Completo</label>
-                        <input type="text" class="form-control" name="name" value=""/>            
-                    </div>
-                    <div class="form-group col-12">
                         <label class="text-4" for="date_contact">Data do contato</label>
                         <input type="date" class="form-control" name="date_contact" value=""/>
                     </div>

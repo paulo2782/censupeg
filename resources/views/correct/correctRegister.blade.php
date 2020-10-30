@@ -100,7 +100,7 @@
 	<select class="form-control" id="city" name="city"></select>
 	<br>
 	<strong>INFORMAÇÕES ADICIONAIS:</strong>
-	<textarea class="form-control">{{ $dados[0]->additional_information }}</textarea>
+	<textarea class="form-control" name="additional_information">{{ $dados[0]->additional_information }}</textarea>
 	<input type="submit" id="update" value="ATUALIZAR DADOS" class="form-control btn btn-danger"> 
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

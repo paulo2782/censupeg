@@ -21,20 +21,28 @@
                         <input type="text" class="form-control" name="name" value=""/>            
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="email">Data do contato</label>
-                        <input type="date" class="form-control" name="date_contract" value=""/>
+                        <label class="text-4" for="date_contact">Data do contato</label>
+                        <input type="date" class="form-control" name="date_contact" value=""/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="phone">Data de retorno'</label>
-                        <input type="text" class="form-control" name="date_return" value=""/>    
+                        <label class="text-4" for="date_return">Data de retorno'</label>
+                        <input type="date" class="form-control" name="date_return" value=""/>    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="phone">Horário</label>
-                        <input type="text" class="form-control" name="schedule" value=""/>    
+                        <label class="text-4" for="schedule">Horário</label>
+                        <input type="hour" class="form-control" name="schedule" value=""/>    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="phone">Status</label>
-                        <input type="text" class="form-control" name="status" value=""/>    
+                        <label class="text-4" for="statusSchedule">Status</label>
+                        <select class="form-control" id="statusSchedule" name="status">
+                            <option value="">Selecione status</option>
+                            <option value="Analisará a proposta">Analisará a proposta</option>
+                            <option value="Conversará com a família">Conversará com a família</option>
+                            <option value="Não tem o curso que deseja">Não tem o curso que deseja</option>
+                            <option value="Não tem interesse">Não tem interesse</option>
+                            <option value="Não entrei em contato">Não entrei em contato</option>
+                            <option value="Outros">Outros</option>
+                        </select>
                     </div>
                 </div>
                 <div class="line-horizontal"></div>

@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito");
-* {
+@import url(https://fonts.googleapis.com/css?family=Nunito);* {
   box-sizing: border-box;
 }
 
@@ -17,11 +16,13 @@ h1 {
   font-size: 20px !important;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 18px !important;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 16px !important;
 }
 
@@ -348,3 +349,4 @@ h3, .h3 {
   line-height: 10px;
   text-align: center;
 }
+

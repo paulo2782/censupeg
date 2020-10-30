@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+
 <div id="header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">

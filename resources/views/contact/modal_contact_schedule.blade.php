@@ -21,12 +21,12 @@
                         <input type="date" class="form-control" name="date_contact" value=""/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_return">Data de retorno'</label>
+                        <label class="text-4" for="date_return">Data de retorno</label>
                         <input type="date" class="form-control" name="date_return" value=""/>    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="schedule">Horário</label>
-                        <input type="hour" class="form-control" name="schedule" value=""/>    
+                        <input type="time" class="form-control" name="schedule" value=""/>    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status</label>

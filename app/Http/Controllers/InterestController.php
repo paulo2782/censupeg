@@ -18,7 +18,11 @@ class InterestController extends Controller
       $dados = DB::table('contacts')
       ->whereNull('updated_at')
       ->paginate(50);
-      return view('/correct/correct',compact('dados'));
+
+      $iCount = DB::table('contacts')
+      ->whereNull('updated_at')->count();
+
+      return view('/correct/correct',compact('dados','iCount'));
     }
 
     public function correctRegister(request $request){

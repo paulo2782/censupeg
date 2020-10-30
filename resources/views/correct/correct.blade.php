@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 <table class="table table-responsive">
 	<thead>
 		<tr>
@@ -12,6 +11,9 @@
 	</thead>
 	<tbody>		
 		{{ $dados->links() }}
+
+		<h2> Total Restante: {{ $iCount }}</h2> 
+
 		@foreach($dados as $dado)
 		<tr>
 			<td> {{ $dado->name }} </td>

@@ -15,10 +15,7 @@
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
-                    <div class="form-group col-12">
-                        <label class="text-4">Nome Completo</label>
-                        <input type="text" class="form-control" id="nameModalCourse" name="name" readonly />            
-                    </div>
+
                     <div class="form-group col-12">
                         <label class="text-4">Curso</label>
                         <select class="c-select form-control">

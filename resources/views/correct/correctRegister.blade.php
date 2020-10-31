@@ -58,6 +58,7 @@
 	<br>
 	<strong>CURSO:</strong>
 	<select class="form-control" id="iCourse">
+	<option value=""></option>
 	@foreach($dataCourses as $dataCourse)
 	    <option value="{{ $dataCourse->id }}">{{ $dataCourse->course }}</option>
 	@endforeach

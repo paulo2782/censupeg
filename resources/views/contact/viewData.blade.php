@@ -75,17 +75,21 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</th>
-								<td>Matemática</td>
-								<td>Semipresencial</td>
-								<td>Graduação </td>
-								<td>Concluído</td>
+							@php $i = 1; @endphp
+							@foreach($dataInterests as $data)
+							<tr>				
+								<td> {{ $i }}</td>			
+								<td> {{ $data->course->course }}</td>
+								<td> {{ $data->course->course_type }}</td>
+								<td> {{ $data->course->level_course }}</td>
+ 								<td> </td>																
 								<td>
 									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 									<a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>
 								</td>
 							</tr>
+							@php $i++; @endphp
+							@endforeach
 						</tbody>
 					</table>
 				</div>
@@ -108,11 +112,11 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>1</th>
-								<td>01-01-2020</td>
-								<td>01-01-2020</td>
-								<td>12:00 </td>
-								<td>Aguardando retorno</td>
+								<td></th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 								<td>
 									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 									<a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>

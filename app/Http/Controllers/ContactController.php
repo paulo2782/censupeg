@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Contact;
 use App\Course;
+use App\Interest;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,6 @@ class ContactController extends Controller
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')
         ->orwhere('email','like',$search.'%')
-        
         ->paginate(50);
 
     	return view('/contact/contact',compact('dados','search'));
@@ -94,9 +94,10 @@ class ContactController extends Controller
 
     public function viewData(Request $request){
         $courses = Course::all();
-
         $dados = Contact::where('id',$request->id)->get();
         
-        return view('/contact/viewData',compact('dados','courses'));
+        $dataInterests = Interest::where('contact_id','=',$request->id)
+        ->get(); 
+        return view('/contact/viewData',compact('dados','courses','dataInterests'));
     }
 }

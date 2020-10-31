@@ -14,6 +14,13 @@ class CourseController extends Controller
     	return view('/course/course',compact('data_level_graduacao','data_level_pos'));
     }
 
+    public function listCourse(Request $request){
+        $selectCourse = $request->selectCourse;
+
+        $dados = Course::where('course',$selectCourse)->get();
+        return response()->json(['courses'=>$dados]);
+    }
+
     public function storeCourse(Request $request)
     {
         $rules = array(

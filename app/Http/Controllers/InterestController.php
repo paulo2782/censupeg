@@ -11,8 +11,11 @@ use App\Interest;
 
 class InterestController extends Controller
 {
-    public function interestShow(){
-    }
+   public function interestStore(Request $request){
+     $dados = $request->all();
+     Interest::create($dados);
+     return back();
+   }
  
    public function routeForCorrect(){
       $dados = DB::table('contacts')

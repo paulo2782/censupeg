@@ -21,6 +21,7 @@ class ContactController extends Controller
     	return view('/contact/contact',compact('dados','search'));
     }
 
+    
 
     public function store(Request $request)
     { 

@@ -10,34 +10,37 @@
             </div>
             <div id="callback"></div>
             <!-- Modal body -->
-            <form class="form-dialog registerForm" id="contact-modal" action="#" method="post">
+            <form class="form-dialog registerForm" id="contact-modal" action="{{ route('interestStore') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
                 <div class="form-row">
 
                     <div class="form-group col-12">
                         <label class="text-4">Curso</label>
-                        <select class="c-select form-control">
+                        <select class="c-select form-control" id="selectCourse" required>
+                        <option value=""></option>
                         @foreach($courses as $course)
                             <option value="{{ $course->course }}">{{ $course->course }}</option>
                         @endforeach
                         </select>
+                        <input type="hidden" name="course_id" id="course_id">
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="modality">Modalidade</label>
-                        <select class="c-select form-control">
-                            <option value="ead">EAD</option>
-                            <option value="semipresencial">Semipresencial</option>
-                            <option value="presencial">Presencial</option>
+                        <label class="text-4">Modalidade</label>
+                        <select class="c-select form-control" id="modality">
+                            <!-- <option value="ead">EAD</option> -->
+                            <!-- <option value="semipresencial">Semipresencial</option> -->
+                            <!-- <option value="presencial">Presencial</option> -->
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="level">Nível</label>
-                        <select class="c-select form-control">
-                            <option value="">Selecione status</option>
-                            <option value="graduacao">Graduação</option>
-                            <option value="pós-graduacao">Pós-graduação</option>
+                        <label class="text-4">Nível</label>
+                        <select class="c-select form-control" id="level">
+                            <!-- <option value="">Selecione status</option> -->
+                            <!-- <option value="graduacao">Graduação</option> -->
+                            <!-- <option value="pós-graduacao">Pós-graduação</option> -->
                         </select>
                     </div>
                     <div class="form-group col-12">
@@ -57,3 +60,28 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('/js/course.js') }}"></script>
+
+<script>
+ $('#selectCourse').change(function(event) {
+  
+  $.ajax({
+    url: "{{ route('listCourse') }}",
+    method: 'GET',
+    data:{selectCourse:$('#selectCourse').val()},
+    dataType: 'json',
+    success:function(data){
+      $('#modality').html('');
+      $('#modality').append("<option value=''>"+data.courses[0].course_type)
+      $('#level').html('');
+      $('#level').append("<option value=''>"+data.courses[0].level_course)
+      $('#course_id').val(data.courses[0].id)
+      
+    },
+    error:function(error){
+        alert('Erro na requisição.')
+    }
+  });  
+});
+
+</script>

@@ -37,10 +37,12 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('searchCourse','CourseController@searchCourse')->name('searchCourse');
 	Route::post('storeCourse', 'CourseController@storeCourse')->name('storeCourse');
 	Route::get('destroyCourse/{id}', 'CourseController@destroyCourse')->name('destroyCourse');
+	Route::get('listCourse','CourseController@listCourse')->name('listCourse');
 
 	Route::get('interestShow','InterestController@interestShow')->name('interestShow');
 	Route::get('routeForCorrect','InterestController@routeForCorrect')->name('routeForCorrect');
 	Route::get('correctRegister/{id}','InterestController@correctRegister')->name('correctRegister');
-
+	Route::post('interestStore','InterestController@interestStore')->name('interestStore');
+	
 	Route::put('updateRegister/{id}','InterestController@updateRegister')->name('updateRegister');
 });

@@ -82,7 +82,7 @@
 								<td> {{ $data->course->course }}</td>
 								<td> {{ $data->course->course_type }}</td>
 								<td> {{ $data->course->level_course }}</td>
- 								<td> </td>																
+ 								<td> {{ $data->status }}</td>																
 								<td>
 									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 									<a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>

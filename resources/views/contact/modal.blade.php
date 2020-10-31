@@ -39,6 +39,7 @@
                             <option value="Ensino médio completo">Ensino médio completo</option>
                             <option value="Ensino superior incompleto">Ensino superior incompleto</option>
                             <option value="Ensino superior completo">Ensino superior completo</option>
+                            <option value="Outros">Outros</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">

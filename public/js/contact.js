@@ -27,12 +27,17 @@ $('#btnAdd').click(function(event) {
 
 
 $('.btnDelete').click(function(event) {
-   if(confirm('Confirma Excluir?')){
-    
-   }else{
+  if(confirm('Confirma Excluir?')){
+    alert('Registro Excluído!')  
+  }else{
     return false;
-   }
- });
+  }
+});
+
+$('#schooling').val($('#schoolingData').val())
+$('#state').val($('#stateData').val())
+$('#city').append("<option value='"+$('#cityData').val()+"'>"+$('#cityData').val())
+$('#contactOrigin').val($('#contactOriginData').val())
 
 function habilitar_outros() {
     var checkBox = document.getElementById("outra-opcao");

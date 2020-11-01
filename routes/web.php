@@ -26,12 +26,16 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::group(['middleware' => 'auth'], function() {
 	Route::get('contact',      'ContactController@contactShow')->name('contactShow');
 	Route::post('store',       'ContactController@store')->name('store');
+	Route::put('updateContact/{id}','ContactController@updateContact')->name('updateContact');
+
 	Route::get('destroy/{id}', 'ContactController@destroy')->name('destroy');
 	Route::get('searchContact','ContactController@searchContact')->name('searchContact');
 	Route::get('viewData/{id}','ContactController@viewData')->name('viewData');
 	
 	Route::get('call', 'CallController@callShow')->name('callShow');
 	Route::get('searchCall','CallController@searchCall')->name('searchCall');
+	Route::post('storeCall','CallController@storeCall')->name('storeCall');
+	Route::get('destroyCall/{id}','CallController@destroyCall')->name('destroyCall');
 
 	Route::get('course', 	  'CourseController@courseShow')->name('courseShow');
 	Route::get('searchCourse','CourseController@searchCourse')->name('searchCourse');
@@ -43,6 +47,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('routeForCorrect','InterestController@routeForCorrect')->name('routeForCorrect');
 	Route::get('correctRegister/{id}','InterestController@correctRegister')->name('correctRegister');
 	Route::post('interestStore','InterestController@interestStore')->name('interestStore');
+	Route::get('destroyInterestCourse/{id}','InterestController@destroyInterestCourse')->name('destroyInterestCourse');
 	
 	Route::put('updateRegister/{id}','InterestController@updateRegister')->name('updateRegister');
 });

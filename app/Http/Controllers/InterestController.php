@@ -45,5 +45,13 @@ class InterestController extends Controller
 
         return redirect('routeForCorrect');
     }
+
+    public function destroyInterestCourse(Request $request){
+        $id = Interest::find($request->id);
+        $id->delete();
+        return back();
+
+    }
+
 }
 

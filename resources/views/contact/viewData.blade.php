@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @include('includes/header')
+@include('contact/modalEdit')
+
 @include('contact/modal_contact_courses')
 @include('contact/modal_contact_schedule')
 <body id="body-container">
@@ -11,7 +13,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Dados básicos
-					<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+					<a href="#" class="fa fa-pencil" aria-hidden="true" id="btnAdd"></a>
 				</h2>
 				<form class="contact-info" method="post">
 					<div class="form-row">
@@ -82,10 +84,10 @@
 								<td> {{ $data->course->course }}</td>
 								<td> {{ $data->course->course_type }}</td>
 								<td> {{ $data->course->level_course }}</td>
- 								<td> {{ $data->status }}</td>																
+ 								<td> {{ $data->status }}</td>
 								<td>
-									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-									<a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>
+									<!-- <a href="#" class="fa fa-pencil btnEdit" aria-hidden="true" title="Editar Registro"></a> -->
+									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
 								</td>
 							</tr>
 							@php $i++; @endphp
@@ -111,16 +113,20 @@
 							</tr>
 						</thead>
 						<tbody>
+							@php $i = 1; @endphp
+							@foreach($dataCalls as $data)
 							<tr>
-								<td></th>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>{{ $i }}</th>
+								<td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
+								<td>{{ date('d/m/Y',strtotime($data->date_return)) }}</td>
+								<td>{{ date('H:m', strtotime($data->schedule)) }}</td>
+								<td>{{ $data->status }}</td>
 								<td>
-									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-									<a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>
+									<!-- <a href="#" class="fa fa-pencil" aria-hidden="true"></a> -->
+									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
 								</td>
+							@php $i++; @endphp
+							@endforeach
 							</tr>
 						</tbody>
 					</table>

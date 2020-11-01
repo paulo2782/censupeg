@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\Course;
 use App\Interest;
+use App\Call;
 
 class ContactController extends Controller
 {
@@ -22,6 +23,11 @@ class ContactController extends Controller
     }
 
     
+    public function updateContact(Request $request, $id){
+        $dados = $request->all();
+        Contact::find($id)->update($dados);
+        return back();
+    }
 
     public function store(Request $request)
     { 
@@ -97,8 +103,8 @@ class ContactController extends Controller
         $courses = Course::all();
         $dados = Contact::where('id',$request->id)->get();
         
-        $dataInterests = Interest::where('contact_id','=',$request->id)
-        ->get(); 
-        return view('/contact/viewData',compact('dados','courses','dataInterests'));
+        $dataInterests = Interest::where('contact_id','=',$request->id)->get();
+        $dataCalls     = Call::where('contact_id','=',$request->id)->get(); 
+        return view('/contact/viewData',compact('dados','courses','dataInterests','dataCalls'));
     }
 }

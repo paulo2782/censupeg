@@ -12,8 +12,8 @@
             <div class="top-bar">
                 <h1>Contatos</h1>
                 <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
+                <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
             </div>
-            <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
             <div class="aux-bar">
                 <h2>Contatos </h2>
                 <form class="search-contact" action="{{ route('searchContact') }}">
@@ -21,7 +21,6 @@
                 </form>
             </div>
             <div id="content-table" class="table-responsive">
-                <span class="text-4">{{ $dados->appends(['search'=>$search])->links() }}</span>
                 <table class="table">
                     <thead>
                         <tr>
@@ -55,7 +54,11 @@
             </div>
         </div>
         <div class="content">
-            <ul class="pagination"> </ul>
+            <ul class="pagination">
+                <li>
+                    <span class="text-4">{{ $dados->appends(['search'=>$search])->links() }}</span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

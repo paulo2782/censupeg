@@ -81,10 +81,20 @@ class ContactController extends Controller
          return redirect('/contact');
     }
 
-    public function destroy(Request $request){
-        $id = Contact::find($request->id);
-        $id->delete();
-        return redirect('/contact');
+    public function destroy(Request $request, $id){
+
+        
+        
+        $ligacao = Call::where('contact_id',$id)->count();
+
+
+        if($ligacao == 0){
+            $id = Contact::find($id);
+            $id->delete();
+            return redirect()->back()->with('alert','Registro Excluído.');            
+        }else{
+            return redirect()->back()->with('alert','Impossível excluir esse registro, existe ligações vinculadas.');
+        }
     }
 
     public function searchContact(Request $request){

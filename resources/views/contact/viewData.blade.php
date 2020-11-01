@@ -4,6 +4,7 @@
 
 @include('contact/modal_contact_courses')
 @include('contact/modal_contact_schedule')
+
 <body id="body-container">
 <div id="container-main">
 	<div class="container">

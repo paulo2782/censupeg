@@ -28,7 +28,7 @@ $('#btnAdd').click(function(event) {
 
 $('.btnDelete').click(function(event) {
   if(confirm('Confirma Excluir?')){
-    alert('Registro Excluído!')  
+      
   }else{
     return false;
   }

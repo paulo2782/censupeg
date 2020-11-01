@@ -28,14 +28,13 @@
             <div class="show-details-block">
                 <h2>Pós-graduação</h2>
                 <ul class="list-group list-group-flush">
-                @foreach($data_level_pos as $data_level2)
-                <li class="list-group-item">{{ $data_level2->course }}
-                    <div class="pull-right">
-                        <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-                        <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true"></a>
-                    </div>
-                @endforeach
-
+                    @foreach($data_level_pos as $data_level2)
+                    <li class="list-group-item">{{ $data_level2->course }}
+                        <div class="pull-right">
+                            <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                            <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true"></a>
+                        </div>
+                    @endforeach
                 </ul>
             </div>
             <div class="content">

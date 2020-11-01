@@ -287,6 +287,15 @@ h3, .h3 {
   color: #fff;
 }
 
+.pagination {
+  margin: 0px 10px 10px 10px;
+}
+
+.pagination > li > a, .pagination > li > span {
+  border-radius: 50% !important;
+  margin: 0 5px;
+}
+
 .content-details {
   max-width: 900px;
   margin: 0 auto;

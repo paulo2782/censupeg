@@ -330,3 +330,25 @@ h3, .h3 {
         text-align: center;
     }    
 }
+
+// ERROR 404
+#error-404 {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0px;
+    .error-code {
+        bottom: 60%;
+        color: $primary-color;
+        font-size: 96px;
+        line-height: 100px;
+        font-weight: bold;
+    }
+    .error-desc {
+        font-size: 1em;
+        padding: 20px 0;
+        color: #797979;
+    }
+    .btn-error {
+        margin-top: 20px;
+    }
+}

@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);* {
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+* {
   box-sizing: border-box;
 }
 
@@ -16,13 +17,11 @@ h1 {
   font-size: 20px !important;
 }
 
-h2,
-.h2 {
+h2, .h2 {
   font-size: 18px !important;
 }
 
-h3,
-.h3 {
+h3, .h3 {
   font-size: 16px !important;
 }
 
@@ -350,3 +349,26 @@ h3,
   text-align: center;
 }
 
+#error-404 {
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+#error-404 .error-code {
+  bottom: 60%;
+  color: #9E1D21;
+  font-size: 96px;
+  line-height: 100px;
+  font-weight: bold;
+}
+
+#error-404 .error-desc {
+  font-size: 1em;
+  padding: 20px 0;
+  color: #797979;
+}
+
+#error-404 .btn-error {
+  margin-top: 20px;
+}

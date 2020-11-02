@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Course;
+use App\Contact;
+use App\Interest;
 
 class CourseController extends Controller
 {
@@ -53,10 +55,18 @@ class CourseController extends Controller
  		return redirect('/course');
     }
 
-    public function destroyCourse(Request $request){
-        $id = Course::find($request->id);
-        $id->delete();
-        return redirect('/course');
+    public function destroyCourse(Request $request, $id){
+
+        $interest = Interest::where('course_id',$id)->count();
+
+        if($interest == 0){
+            $id = Course::find($id);
+            $id->delete();
+            return redirect()->back()->with('alert','Registro Excluído.');            
+        }else{
+            return redirect()->back()->with('alert','Impossível excluir registro, existe contatos vinculadas.');
+
+        }
 
     }
 

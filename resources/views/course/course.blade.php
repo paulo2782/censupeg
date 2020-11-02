@@ -4,7 +4,7 @@
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body id="body-container">
-  @include('includes/header')
+@include('includes/header')
 <div id="container-main">
     <div class="container">
         <div class="content-details">
@@ -20,7 +20,7 @@
                 <li class="list-group-item">{{ $data_level1->course }}
                     <div class="pull-right">
                         <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-                        <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true"></a>
+                        <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level1->course }}"></a>
                     </div>
                     @endforeach
                 </li>
@@ -32,7 +32,7 @@
                     <li class="list-group-item">{{ $data_level2->course }}
                         <div class="pull-right">
                             <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-                            <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true"></a>
+                            <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level2->course }}"></a>
                         </div>
                     @endforeach
                 </ul>
@@ -49,3 +49,12 @@
 </html>
 <script src="{{ asset('js/function.js') }}"></script> 
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      swal("Censupeg",msg);
+    }
+</script>

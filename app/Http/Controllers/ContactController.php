@@ -91,7 +91,7 @@ class ContactController extends Controller
             $id->delete();
             return redirect()->back()->with('alert','Registro Excluído.');            
         }else{
-            return redirect()->back()->with('alert','Impossível excluir registro, existe ligações vinculadas.');
+            return redirect()->back()->with('alert','Não é possível excluir esse registro, existem ligações vinculadas.');
         }
     }
 

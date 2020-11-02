@@ -83,6 +83,6 @@ endif
     var msg = '{{Session::get('alert')}}';
     var exist = '{{Session::has('alert')}}';
     if(exist){
-      swal("Censupeg",msg);
+      swal("Censupeg",msg, 'error');
     }
 </script>

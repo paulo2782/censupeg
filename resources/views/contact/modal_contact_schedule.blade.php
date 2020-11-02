@@ -2,7 +2,6 @@
 <div class="modal fade" id="myModalSchedule">
     <div class="modal-dialog">
         <div class="modal-content">
-            <!-- Modal Header -->
             <div class="modal-header">
                 <h3 class="modal-title">Contato - Ligações</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -10,7 +9,6 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <!-- Modal body -->
             <form class="form-dialog registerForm" id="contact-modal" action="{{ route('storeCall') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">

@@ -21,7 +21,10 @@ class CallController extends Controller
     public function searchCall(Request $request){
 
         $search = $request->search;
-        $data = Call::all();
+        $data = Call::join('contacts','contacts.id','=','calls.contact_id')
+        ->where('contacts.name','like',$search.'%')
+        ->orwhere('contacts.phone','like',$search.'%')
+        ->paginate(50);
 
         return view('/call/call',compact('data'));
 

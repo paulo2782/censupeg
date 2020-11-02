@@ -82,9 +82,7 @@ class ContactController extends Controller
     }
 
     public function destroy(Request $request, $id){
-
-        
-        
+ 
         $ligacao = Call::where('contact_id',$id)->count();
 
 
@@ -93,7 +91,7 @@ class ContactController extends Controller
             $id->delete();
             return redirect()->back()->with('alert','Registro Excluído.');            
         }else{
-            return redirect()->back()->with('alert','Impossível excluir esse registro, existe ligações vinculadas.');
+            return redirect()->back()->with('alert','Impossível excluir registro, existe ligações vinculadas.');
         }
     }
 

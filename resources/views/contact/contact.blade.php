@@ -7,13 +7,15 @@
 <body id="body-container">
 @include('includes/header')
 
-@if(session('alert'))
+<!-- if(session('alert'))
 <center>
     <div class="alert alert-success">
-        {{ session('alert') }}
+          session('alert') }}
     </div>
 </center>
-@endif
+endif
+ -->
+
 <div id="container-main">
     <div class="container">
         <div class="content">
@@ -75,4 +77,12 @@
 </body>  
 </html>
 <script src="{{ asset('js/function.js') }}"></script> 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      swal("Censupeg",msg);
+    }
+</script>

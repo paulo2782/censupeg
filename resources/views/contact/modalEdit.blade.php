@@ -2,7 +2,6 @@
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
-            <!-- Modal Header -->
             <div class="modal-header">
                 <h3 class="modal-title">Editar Contato</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -10,7 +9,6 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <!-- Modal body -->
             <form class="form-dialog registerForm" id="contact-modal" action="{{ route('updateContact',$dados[0]->id) }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">

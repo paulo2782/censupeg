@@ -359,3 +359,21 @@ h3, .h3 {
         margin-top: 20px;
     }
 }
+
+//SWAL
+.swal-text {
+    font-size: 14px !important;
+    color: #313131;
+}
+.swal-button {
+    color: #313131;
+    background: #fff ;
+    font-size: 14px !important;
+    border: 1px solid $primary-color !important;
+}
+
+.swal-button:hover {
+    color: #fff;
+    background-color: $primary-color !important;
+    font-weight: bold;
+}

@@ -28,7 +28,7 @@
                 <tbody id="tabela">
                     @foreach($data as $data)
                     <tr>
-                        <td>{{ $data->Contact->name }}</td>
+                        <td><a href="{{ route('viewData',$data->contact_id) }}">{{ $data->Contact->name }}</a></td>
                         <td>{{ $data->Contact->phone }}</td>
                         <td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
                         <td>{{ date('d/m/Y',strtotime($data->date_return)) }}</td>

@@ -14,7 +14,6 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
                 <div class="form-row">
-
                     <div class="form-group col-12">
                         <label class="text-4">Curso</label>
                         <select class="c-select form-control" id="selectCourse" required>
@@ -44,7 +43,7 @@
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status</label>
                         <select class="c-select form-control" id="statusSchedule" name="status">
-                            <option value="">Selecione status</option>
+                            <option value="" selected>Selecione o status do curso</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>
                             <option value="Concluído">Concluído</option>

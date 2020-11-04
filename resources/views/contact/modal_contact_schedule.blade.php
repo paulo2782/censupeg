@@ -29,7 +29,7 @@
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status</label>
                         <select class="form-control" id="statusSchedule" name="status">
-                            <option value="">Selecione status</option>
+                            <option value="" selected>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
                             <option value="Conversará com a família">Conversará com a família</option>
                             <option value="Não tem o curso que deseja">Não tem o curso que deseja</option>

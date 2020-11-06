@@ -328,12 +328,12 @@ h3, .h3 {
 }
 
 .contact-info {
-  max-width: 860px;
   margin: 0 auto;
 }
 
-.contact-info .form-row .form-control {
-  font-size: 14px !important;
+.contact-info .form-row {
+  margin-left: 15px !important;
+  margin-right: 15px !important;
 }
 
 .footer {

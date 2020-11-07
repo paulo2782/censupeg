@@ -74,9 +74,9 @@
 							@foreach($dataInterests as $data)
 							<tr>				
 								<td> {{ $i }}</td>			
-								<td> {{ $data->course->course }}</td>
-								<td> {{ $data->course->course_type }}</td>
-								<td> {{ $data->course->level_course }}</td>
+								<td> {{ $data->course }}</td>
+								<td> {{ $data->course_type }}</td>
+								<td> {{ $data->level_course }}</td>
  								<td> {{ $data->status }}</td>
 								<td>
 									<!-- <a href="#" class="fa fa-pencil btnEdit" aria-hidden="true" title="Editar Registro"></a> -->

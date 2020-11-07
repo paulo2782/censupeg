@@ -19,6 +19,8 @@ $('#btnAdd').click(function(event) {
 });
    
 
+
+
 $('.btnDelete').click(function(event) {
    if(confirm('Confirma Excluir?')){
     

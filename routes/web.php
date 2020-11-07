@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('storeCourse', 'CourseController@storeCourse')->name('storeCourse');
 	Route::get('destroyCourse/{id}', 'CourseController@destroyCourse')->name('destroyCourse');
 	Route::get('listCourse','CourseController@listCourse')->name('listCourse');
+	Route::post('updateCourse','CourseController@updateCourse')->name('updateCourse');
+
 
 	Route::get('interestShow','InterestController@interestShow')->name('interestShow');
 	Route::get('routeForCorrect','InterestController@routeForCorrect')->name('routeForCorrect');

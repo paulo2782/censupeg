@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Contact;
 use App\Course;
@@ -111,8 +112,16 @@ class ContactController extends Controller
         $courses = Course::all();
         $dados = Contact::where('id',$request->id)->get();
         
-        $dataInterests = Interest::where('contact_id','=',$request->id)->get();
-        $dataCalls     = Call::where('contact_id','=',$request->id)->get(); 
+        // $dataInterests = Interest::where('contact_id','=',$request->id)->get();
+
+        $dataInterests = DB::table('interests')
+        ->join('courses','courses.id','=','interests.course_id')
+        ->select('interests.*','courses.course as course', 'courses.course_type as course_type','level_course as level_course')
+        ->orderby('courses.course')
+        ->get();
+
+
+        $dataCalls = Call::where('contact_id','=',$request->id)->get(); 
         return view('/contact/viewData',compact('dados','courses','dataInterests','dataCalls'));
     }
 }

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @include('course/viewDataModal')
+@include('course/editDataModal')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -19,7 +20,7 @@
                 @foreach($data_level_graduacao as $data_level1)
                 <li class="list-group-item">{{ $data_level1->course }}
                     <div class="pull-right">
-                        <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                        <a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true"></a>
                         <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level1->course }}"></a>
                     </div>
                     @endforeach
@@ -31,7 +32,7 @@
                     @foreach($data_level_pos as $data_level2)
                     <li class="list-group-item">{{ $data_level2->course }}
                         <div class="pull-right">
-                            <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                            <a href="#" onclick="callEditModal(id=`{{ $data_level2->id }}`)" class="fa fa-pencil " aria-hidden="true"></a>
                             <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level2->course }}"></a>
                         </div>
                     @endforeach
@@ -57,5 +58,37 @@
     if(exist){
       swal(
           "Censupeg",msg, 'error');
+    }
+
+    function callEditModal(id){
+        $.ajax({
+            url: "{{ route('searchCourse') }}",
+            method: 'GET',
+            dataType: 'json',
+            data: {id:id},
+            success:function(data){
+                $('#myModalEdit').modal('toggle')
+                $('#edtCourse').val(data.course)
+                $('#edtAdditional_information').val(data.additional_information)
+                $('#idCourse').val(data.id)
+
+                if(data.level_course == 'Graduação'){
+                    $('#level_courseG').attr('checked', true);
+                }else{
+                    $('#level_courseP').attr('checked', true);
+                }
+
+                let split = data.course_type.split(',');
+                
+                let i = split.length;
+
+                for(x = 0 ; x <= i-1 ; x++){
+                    let cType = split[x];
+                    $('#'+cType).attr('checked',true)
+                }
+
+
+            }
+        });
     }
 </script>

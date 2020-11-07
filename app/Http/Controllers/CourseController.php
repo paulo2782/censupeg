@@ -16,12 +16,36 @@ class CourseController extends Controller
     	return view('/course/course',compact('data_level_graduacao','data_level_pos'));
     }
 
-    public function listCourse(Request $request){
+    public function listCourse(Request $request, $id){
         $selectCourse = $request->selectCourse;
-
         $dados = Course::where('course',$selectCourse)->get();
-        return response()->json(['courses'=>$dados]);
+        return response()->json(['courses'=>$dados,'id'=>$id]);
     }
+
+    public function searchCourse(Request $request){
+        $dados = Course::where('id',$request->id)->get();
+        return response()->json(['course'=>$dados[0]->course,
+            'id'=>$dados[0]->id,
+            'level_course'=>$dados[0]->level_course,
+            'additional_information'=>$dados[0]->additional_information,
+            'course_type'=>$dados[0]->course_type]);
+    }
+
+    public function updateCourse(Request $request){
+        $id = $request->id;
+
+
+        $level_course = $request->level_course;
+        $course = $request->course;
+        $course_type = implode(",",$request->course_type);
+
+        $additional_information = $request->additional_information;
+
+        
+
+        Course::where('id','=',$id)->update(array('level_course'=>$level_course,'course'=>$course,'course_type'=>$course_type,'additional_information'=>$additional_information));
+        
+     }
 
     public function storeCourse(Request $request)
     {

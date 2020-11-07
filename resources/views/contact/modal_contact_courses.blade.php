@@ -61,7 +61,7 @@
 
 <script>
  $('#selectCourse').change(function(event) {
-  
+   
   $.ajax({
     url: "{{ route('listCourse') }}",
     method: 'GET',

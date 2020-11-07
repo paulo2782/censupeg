@@ -20,7 +20,7 @@
                 @foreach($data_level_graduacao as $data_level1)
                 <li class="list-group-item">{{ $data_level1->course }}
                     <div class="pull-right">
-                        <a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true"></a>
+                        <a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="{{ $data_level1->course }}"></a>
                         <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level1->course }}"></a>
                     </div>
                     @endforeach
@@ -32,7 +32,7 @@
                     @foreach($data_level_pos as $data_level2)
                     <li class="list-group-item">{{ $data_level2->course }}
                         <div class="pull-right">
-                            <a href="#" onclick="callEditModal(id=`{{ $data_level2->id }}`)" class="fa fa-pencil " aria-hidden="true"></a>
+                            <a href="#" onclick="callEditModal(id=`{{ $data_level2->id }}`)" class="fa fa-pencil " aria-hidden="true" title="{{ $data_level1->course }}"></a>
                             <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level2->course }}"></a>
                         </div>
                     @endforeach

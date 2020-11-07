@@ -16,10 +16,11 @@ class CourseController extends Controller
     	return view('/course/course',compact('data_level_graduacao','data_level_pos'));
     }
 
-    public function listCourse(Request $request, $id){
+    public function listCourse(Request $request){
         $selectCourse = $request->selectCourse;
+
         $dados = Course::where('course',$selectCourse)->get();
-        return response()->json(['courses'=>$dados,'id'=>$id]);
+        return response()->json(['courses'=>$dados,'id'=>$request->id]);
     }
 
     public function searchCourse(Request $request){

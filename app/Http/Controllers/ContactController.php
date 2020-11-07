@@ -115,6 +115,7 @@ class ContactController extends Controller
         // $dataInterests = Interest::where('contact_id','=',$request->id)->get();
 
         $dataInterests = DB::table('interests')
+        ->where('contact_id',$request->id)
         ->join('courses','courses.id','=','interests.course_id')
         ->select('interests.*','courses.course as course', 'courses.course_type as course_type','level_course as level_course')
         ->orderby('courses.course')

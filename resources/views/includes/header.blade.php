@@ -19,7 +19,7 @@
                     <a class="nav-link" style="color: #fff" href="{{ route('courseShow') }}">Cursos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="#">Relatório</a>
+                    <a class="nav-link" style="color: #fff" href="{{ route('reportShow') }}">Relatório</a>
                 </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">

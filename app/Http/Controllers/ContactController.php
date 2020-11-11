@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\User;
 use App\Contact;
 use App\Course;
 use App\Interest;
@@ -14,6 +15,7 @@ use App\Call;
 class ContactController extends Controller
 {
     public function contactShow(Request $request){
+    
         $search = $request->search;
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')

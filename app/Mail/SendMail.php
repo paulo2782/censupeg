@@ -31,7 +31,7 @@ class SendMail extends Mailable
         $this->subject('Assunto');
         $this->to($this->user->email, $this->user->name);
 
-        return $this->view('email.SendMail', [
+        return $this->view('auth/recovery_password', [
             'user' => $this->user
         ]);
     }

@@ -17,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/recovery-password',function(){
+	$user = new stdClass();
+	$user->name = 'censupeg';
+	$user->email = 'paulo2782@gmail.com';
+
+	return new \App\Mail\SendMail($user);
+	// \Mail::send(new \App\Mail\SendMail($user));
+});
+
 Auth::routes();
 
 Route::get('/',   'HomeController@index')->name('home');

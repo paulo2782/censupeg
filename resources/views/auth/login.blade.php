@@ -42,7 +42,7 @@
                     Para se registrar? <a onclick="window.location.href='register'" class="ml-2 login-a">Clique aqui</a>
                 </div>
                 <div class="d-flex justify-content-center text-4">
-                    <a href="#" class="mt-2 login-a">Esqueceu sua senha?</a>
+                    <a href="/recovery-password" class="mt-2 login-a">Esqueceu sua senha?</a>
                 </div>
             </div>                        
             <div id="message">

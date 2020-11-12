@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<form action="sendEmail" method="POST">
 <div id="login">
     <div class="container">
         <img class="login-img my-4" src="img/logo-censupeg.png" alt="Logo censupeg">
@@ -24,4 +25,5 @@
         </form>
     </div>
 </div>
+</form>
 @endsection

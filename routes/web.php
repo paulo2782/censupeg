@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +19,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/recovery-password',function(){
+Route::post('/sendEmail',function(Request $request){
 	$user = new stdClass();
 	$user->name = 'censupeg';
-	$user->email = 'paulo2782@gmail.com';
-
-	return new \App\Mail\SendMail($user);
-	// \Mail::send(new \App\Mail\SendMail($user));
+	$user->email = $request->email;
+	\Mail::send(new \App\Mail\SendMail($user));
+    return redirect('home');
 });
 
+Route::get('/recovery-password','\App\Http\Controllers\Auth\ForgotPasswordController@recoveryPassword')->name('recoveryPassword');
+ 
 Auth::routes();
 
 Route::get('/',   'HomeController@index')->name('home');

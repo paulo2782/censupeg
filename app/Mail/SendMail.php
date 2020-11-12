@@ -6,9 +6,12 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+<<<<<<< HEAD
+=======
 use Illuminate\Http\Request;
 
 use App\User;
+>>>>>>> 71b4acd5f4e77bc509ebc17c3257de102a6678ba
 
 class SendMail extends Mailable
 {
@@ -19,6 +22,11 @@ class SendMail extends Mailable
      *
      * @return void
      */
+<<<<<<< HEAD
+    public function __construct(\stdClass $user)
+    {
+        $this->user = $user;
+=======
     // public function __construct(\stdClass $user)
     // {
     //     $this->user = $user;
@@ -26,6 +34,7 @@ class SendMail extends Mailable
     public function __construct()
     {
         
+>>>>>>> 71b4acd5f4e77bc509ebc17c3257de102a6678ba
     }
 
     /**
@@ -33,6 +42,16 @@ class SendMail extends Mailable
      *
      * @return $this
      */
+<<<<<<< HEAD
+    public function build()
+    {
+        $this->subject('Assunto');
+        $this->to($this->user->email, $this->user->name);
+
+        return $this->view('auth/recovery_password', [
+            'user' => $this->user
+        ]);
+=======
     public function build(Request $request)
     {
         $data = User::where('email',$request->email)->get();
@@ -47,5 +66,6 @@ class SendMail extends Mailable
         }else{
             return $this->view('home');
         } 
+>>>>>>> 71b4acd5f4e77bc509ebc17c3257de102a6678ba
     }
 }

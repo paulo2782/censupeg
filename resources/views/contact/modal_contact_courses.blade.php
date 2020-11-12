@@ -13,7 +13,19 @@
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
-                <div class="form-row">
+                <div class="form-row">    
+                    <div class="form-group col-12">
+                        <div class="radio-course" id="level">
+                            <label>
+                                <input type="radio" name="level_course" id="level_course" value="Graduação">
+                                Graduação
+                            </label>
+                            <label>
+                                <input type="radio" name="level_course" id="level_course" value="Pós-graduação">
+                                Pós-graduação
+                            </label>
+                        </div>
+                    </div>
                     <div class="form-group col-12">
                         <label class="text-4">Curso</label>
                         <select class="c-select form-control" id="selectCourse" required>
@@ -32,18 +44,19 @@
                             <!-- <option value="presencial">Presencial</option> -->
                         </select>
                     </div>
-                    <div class="form-group col-12">
+                    <!--<div class="form-group col-12">
                         <label class="text-4">Nível</label>
                         <select class="c-select form-control" id="level">
-                            <!-- <option value="">Selecione status</option> -->
-                            <!-- <option value="graduacao">Graduação</option> -->
-                            <!-- <option value="pós-graduacao">Pós-graduação</option> -->
+                            <option value="">Selecione status</option>
+                            <option value="graduacao">Graduação</option>
+                            <option value="pós-graduacao">Pós-graduação</option>
                         </select>
-                    </div>
+                    </div>-->
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status</label>
                         <select class="c-select form-control" id="statusSchedule" name="status">
                             <option value="" selected>Selecione o status do curso</option>
+                            <option value="Cursando">Em interesse</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>
                             <option value="Concluído">Concluído</option>

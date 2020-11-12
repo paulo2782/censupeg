@@ -90,7 +90,7 @@
 									<h3 class="heading">Contato</h3>
 									<ul>
 										<li><span class="text">contato@decarlosolucoes.tech</span></li>
-										<li><span class="text">(48)9 8839-4210</span></a></li>
+										<li><span class="text">(48) 9 8839-4210</span></a></li>
 									</ul>
 								</div>
 							</td>

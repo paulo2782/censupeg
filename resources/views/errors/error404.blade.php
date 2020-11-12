@@ -12,7 +12,7 @@
                         Experimente atualizar a página ou clique no botão abaixo para voltar à página inicial. </p>
                     <div>
                     <div class="btn-error">
-                        <a href="/" class="btn btn-primary">Página Inicial</a>
+                        <a href="{{ route('contactShow') }}" class="btn btn-primary">Página Inicial</a>
                     </div>
                 </div>
             </div>
@@ -22,4 +22,3 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>  
 </html>
-

@@ -6,6 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Http\Request;
+use App\User;
 
 class SendMail extends Mailable
 {
@@ -16,9 +18,10 @@ class SendMail extends Mailable
      *
      * @return void
      */
-    public function __construct(\stdClass $user)
+
+    public function __construct()
     {
-        $this->user = $user;
+        
     }
 
     /**
@@ -26,13 +29,30 @@ class SendMail extends Mailable
      *
      * @return $this
      */
-    public function build()
-    {
-        $this->subject('Assunto');
-        $this->to($this->user->email, $this->user->name);
 
-        return $this->view('auth/recovery_password', [
-            'user' => $this->user
-        ]);
+    public function build(Request $request)
+    {
+        $data = User::where('email',$request->email)->get();
+        $token = $data[0]->remember_token;
+
+        $i = sizeof($data);
+        
+        if($i > 0){
+
+            $dateTime = date(now());
+
+            $token = bin2hex($data[0]->email.$token);
+            $user = User::find($data[0]->id);
+
+            $user->token = $token;
+            $user->save();
+
+            $this->subject('E-MAIL AUTOMÁTICO - NÃO RESPONDA');
+            $this->to($data[0]->email, $data[0]->name);
+
+            return $this->view('auth/send', compact('data','token'));
+        }else{
+            return $this->view('home');
+        } 
     }
 }

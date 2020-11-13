@@ -19,14 +19,20 @@ use Illuminate\Http\Request;
 //     return view('welcome');
 // });
 
-Route::get('/recovery-password',function(){
+
+Route::post('/sendEmail',function(Request $request){
 	$user = new stdClass();
 	$user->name = 'censupeg';
-	$user->email = 'paulo2782@gmail.com';
+	$user->email = $request->email;
+	$user->remember_token = $request->remember_token;
 
-	return new \App\Mail\SendMail($user);
-	// \Mail::send(new \App\Mail\SendMail($user));
+	\Mail::send(new \App\Mail\SendMail($user));
+    return redirect('home');
 });
+
+Route::get('/recovery-password','\App\Http\Controllers\Auth\ForgotPasswordController@recoveryPassword')->name('recoveryPassword');
+Route::get('/alter_new_password/{token}','\App\Http\Controllers\Auth\ForgotPasswordController@alter_new_password')->name('alter_new_password');
+Route::post('/updatePassword','\App\Http\Controllers\Auth\ForgotPasswordController@updatePassword')->name('updatePassword');
 
 Auth::routes();
 

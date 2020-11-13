@@ -63,13 +63,13 @@
 						<tr>
 							<td>
 								<div class="text" style="padding: 0 2.5em; text-align: center;">
-									<h2>Olá Fulano</h2>
+									<h2>Olá!!</h2>
 									<p>
 										Você solicitou recuperar sua senha.
 										Para sua segurança, não armazenamos a senha de nossos usuários, para acessar novamente o CRM
 										com seu login será precisa criar uma nova senha.
 									</p>
-									<p><a href="#" class="btn btn-primary">Criar nova senha</a></p>
+									<p><a href="http://censupeg.decarlosolucoes.tech/crm/alter_new_password/{{ $token }}" class="btn btn-primary">Criar nova senha</a></p>
 								</div>
 							</td>
 						</tr>

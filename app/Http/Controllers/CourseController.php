@@ -17,10 +17,14 @@ class CourseController extends Controller
     }
 
     public function listCourse(Request $request){
-        $selectCourse = $request->selectCourse;
+        $level_course = $request->level_course;
+        $dados = Course::where('level_course',$level_course)->orderby('course')->get();
 
-        $dados = Course::where('course',$selectCourse)->get();
-        return response()->json(['courses'=>$dados,'id'=>$request->id]);
+        $id_course_type = $request->id_course_type;
+
+        $dados_course_type = Course::where('id',$id_course_type)->orderby('course')->get();
+
+        return response()->json(['courses'=>$dados,'id'=>$request->id,'dados_course_type'=>$dados_course_type]);
     }
 
     public function searchCourse(Request $request){

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\User;
 use App\Contact;
 use App\Course;
 use App\Interest;
@@ -14,6 +15,7 @@ use App\Call;
 class ContactController extends Controller
 {
     public function contactShow(Request $request){
+    
         $search = $request->search;
         $dados = Contact::where('name','like',$search.'%')
         ->orwhere('phone','like',$search.'%')
@@ -84,15 +86,26 @@ class ContactController extends Controller
 
     public function destroy(Request $request, $id){
  
+        $data = Interest::where('contact_id',$id)->get();
+        $iCount = Interest::where('contact_id',$id)->count();
+
+        if($iCount > 0){
+            $id_course = $data[0]->course_id;
+        }else{
+            $id_course = 0;
+        }
+ 
         $ligacao = Call::where('contact_id',$id)->count();
+        $course  = Course::where('id',$id_course)->count();
+        
 
 
-        if($ligacao == 0){
+        if($ligacao == 0 && $course == 0){
             $id = Contact::find($id);
             $id->delete();
             return redirect()->back()->with('alert','Registro Excluído.');            
         }else{
-            return redirect()->back()->with('alert','Não é possível excluir esse registro, existem ligações vinculadas.');
+            return redirect()->back()->with('alert','Não é possível excluir esse registro, existem cursos (e ou) ligações vinculadas.');
         }
     }
 

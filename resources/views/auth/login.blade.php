@@ -9,18 +9,31 @@
         <form name="frmLogin" id="frmLogin">
             <div class="form-group">
                 <label for="username">Usuário:</label>
+                @if(isset($_COOKIE['user']))                  
+                <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control" value="{{ Cookie::get('user') }}">
+                @else
                 <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control">
+                @endif 
             </div>
             <div class="form-group">
                 <label for="password" >Senha:</label>
+                @if(isset($_COOKIE['user']))
+                <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control" value="{{ Cookie::get('password') }}">
+                @else
                 <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control">
+                @endif
             </div>
             <button type="submit" class="btn btn-primary form-control"> 
                 {{ __('Login') }}
             </button>
             <div class="form-group mt-2">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="checkLogin">
+                @if(isset($_COOKIE['user']))
+                    <input type="checkbox" class="form-check-input" id="checkLogin" name="remember" checked="true">
+                @else
+                    <input type="checkbox" class="form-check-input" id="checkLogin" name="remember">
+                @endif
+
                     <label class="form=check-label" for="checkLogin">Lembrar senha</label>
                 </div>
             </div>
@@ -29,7 +42,7 @@
                     Para se registrar? <a onclick="window.location.href='register'" class="ml-2 login-a">Clique aqui</a>
                 </div>
                 <div class="d-flex justify-content-center text-4">
-                    <a href="#" class="mt-2 login-a">Esqueceu sua senha?</a>
+                    <a href="recovery-password" class="mt-2 login-a">Esqueceu sua senha?</a>
                 </div>
             </div>                        
             <div id="message">
@@ -38,6 +51,7 @@
         </form>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/function.js') }}"></script>
+
+

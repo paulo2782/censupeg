@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Session;
+
 use Auth;
+use Cookie;
 
 class LoginController extends Controller
 {
@@ -41,10 +44,29 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+           
+        $remember = request()->has('remember');
+        if($remember == true){
+            if(auth()->attempt([
+                    'email'    => request()->input('email'),
+                    'password' => request()->input('password')
+            ], $remember) ){
+                return redirect('/contact')
+                ->withCookie(cookie('user', $request->email))
+                ->withCookie(cookie('password', $request->password));
+
+            }else{
+                return back()->withErrors(['messages'=>'Usuário ou senha inválido.']);
+            }          
+        }
+
         if(auth()->attempt([
                 'email'    => request()->input('email'),
                 'password' => request()->input('password')
-        ])){
+        ]) ){
+            Cookie::queue(Cookie::forget('user'));
+            Cookie::queue(Cookie::forget('password'));
+
             return redirect('/contact');
         }else{
             return back()->withErrors(['messages'=>'Usuário ou senha inválido.']);

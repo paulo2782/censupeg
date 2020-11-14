@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Contato - Ligações</h3>
+                <h3 class="modal-title">Contato - Ligações<span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -15,7 +15,7 @@
                 <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_contact">Data do contato</label>
+                        <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
                         <input type="date" class="form-control" name="date_contact" required/>
                     </div>
                     <div class="form-group col-12">
@@ -27,7 +27,7 @@
                         <input type="time" class="form-control" name="schedule" required/>    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status</label>
+                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
                         <select class="form-control" id="statusSchedule" name="status">
                             <option value="" selected>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>

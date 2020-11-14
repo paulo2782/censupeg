@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Novo Curso</h3>
+                <h3 class="modal-title">Novo Curso <span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -28,13 +28,13 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome do Curso</label>
+                        <label class="text-4" for="name">Nome do Curso <span>*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" name="course_type" id="course_type">    
-                        <label class="text-4" for="course_type">Modalidade</label>
+                        <label class="text-4" for="course_type">Modalidade <span>*</span></label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="course_type[]" id="1" value="EAD" >
                             <label class="form-check-label d-block" for="ead">EAD</label>

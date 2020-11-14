@@ -16,6 +16,7 @@
 endif
  -->
 
+ 
 <div id="container-main">
     <div class="container">
         <div class="content">
@@ -50,7 +51,7 @@ endif
                             <td> {{ $dado->user->name }}</td>
                             <td id='toview'>
                                 <div class='dropdown'>
-                                <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                                 <div class='dropdown-menu' aria-labelledby='dropdownImage'>
                                     <a href="{{ route('viewData',$dado->id) }}" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
                                     <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>

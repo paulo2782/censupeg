@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,21 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+
+Route::post('/sendEmail',function(Request $request){
+	$user = new stdClass();
+	$user->name = 'censupeg';
+	$user->email = $request->email;
+	$user->remember_token = $request->remember_token;
+
+	\Mail::send(new \App\Mail\SendMail($user));
+    return redirect('home');
+});
+
+Route::get('/recovery-password','\App\Http\Controllers\Auth\ForgotPasswordController@recoveryPassword')->name('recoveryPassword');
+Route::get('/alter_new_password/{token}','\App\Http\Controllers\Auth\ForgotPasswordController@alter_new_password')->name('alter_new_password');
+Route::post('/updatePassword','\App\Http\Controllers\Auth\ForgotPasswordController@updatePassword')->name('updatePassword');
 
 Auth::routes();
 

@@ -9,7 +9,11 @@ h2, .h2 { font-size: 18px !important; }
 
 h3, .h3 { font-size: 16px !important; }
 
+form span { color: #9E1D21; font-weight: bold; }
+
 .text-4 { font-size: 14px; font-weight: 500; line-height: 1.2; }
+
+span.text-5 { display: block; font-size: 12px; }
 
 .table { font-size: 14px; color: #181818; }
 
@@ -96,6 +100,8 @@ h3, .h3 { font-size: 16px !important; }
 #content-table td { padding: 5px 20px; border-bottom: 1px solid #eee; color: #6d6d6d; }
 
 #content-table td img { padding: 0px 5px; margin-left: 10px; }
+
+#content-table td:nth-child(2) { text-transform: lowercase; }
 
 #content-table a { text-decoration: none; color: #6d6d6d; }
 

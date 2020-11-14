@@ -44,7 +44,7 @@
                         <label class="text-4" for="statusSchedule">Status</label>
                         <select class="c-select form-control" id="statusSchedule" name="status">
                             <option value="" selected>Selecione o status do curso</option>
-                            <option value="Cursando">Em interesse</option>
+                            <option value="Em interesse">Em interesse</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>
                             <option value="Concluído">Concluído</option>

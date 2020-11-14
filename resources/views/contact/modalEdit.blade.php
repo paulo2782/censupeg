@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar Contato</h3>
+                <h3 class="modal-title">Editar Contato<span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -16,7 +16,7 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome Completo</label>
+                        <label class="text-4" for="name">Nome Completo <span>*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" value="{{ $dados[0]->name }}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
@@ -26,14 +26,14 @@
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="phone">Telefone</label>
+                        <label class="text-4" for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" value="{{ $dados[0]->phone }}" required />    
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    
-                        <label class="text-4" for="contact-origin">Escolaridade</label>
+                        <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
                         <select class="form-control schooling" id="schooling" name="schooling">
-                            <option value="">Selecione escolaridade</option>
+                            <option value="">Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                             <option value="Ensino médio completo">Ensino médio completo</option>
                             <option value="Ensino superior incompleto">Ensino superior incompleto</option>
@@ -43,9 +43,9 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="stateData" value="{{ $dados[0]->state }}"/>  
-                        <label class="text-4" for="contact-origin">Estado</label>
+                        <label class="text-4" for="contact-origin">Estado <span>*</span></label>
                         <select class="form-control" id="state" name="state">
-                            <option value="">Selecione um Estado</option>
+                            <option value="">Selecione o Estado</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
@@ -77,14 +77,14 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="cityData" value="{{ $dados[0]->city }}"/> 
-                        <label class="text-4" for="contact-origin">Cidade</label>
+                        <label class="text-4" for="contact-origin">Cidade <span>*</span></label>
                         <select class="form-control" id="city" name="city"></select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" >Origem do contato</label>
+                        <label class="text-4" >Origem do contato <span>*</span></label>
                         <input type="hidden" id="contactOriginData" value="{{ $dados[0]->contact_origin }}">
                         <select class="form-control" id="contactOrigin" name="contact_origin" required>
-                            <option selected>Selecione</option>
+                            <option value="">Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
                             <option value="Empresas Parceiras">Empresas parceiras</option>
                             <option value="ex-aluno">Ex-aluno</option>

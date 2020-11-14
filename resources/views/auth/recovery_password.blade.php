@@ -10,7 +10,7 @@
             @csrf
             <div class="form-group">
                 <label for="email">{{ __('E-Mail Address') }}</label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Informe seu email" required autocomplete="email">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary form-control">

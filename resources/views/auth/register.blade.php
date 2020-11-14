@@ -43,6 +43,11 @@
                     {{ __('Register') }}
                 </button>
             </div>
+            <div class="mt-2">
+                <div class="d-flex justify-content-center text-4">
+                    Voltar para a página de login?<a onclick="window.location.href='login'" class="ml-2 login-a">Clique aqui</a>
+                </div>
+            </div>
         </form>
     </div>
 </div>

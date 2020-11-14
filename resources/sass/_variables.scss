@@ -28,10 +28,22 @@ h3, .h3 {
     font-size: 16px !important;
 }
 
+form {
+    span {
+        color: $primary-color;
+        font-weight: bold;
+    }
+}
+
 .text-4{
     font-size: 14px;
     font-weight: 500;
     line-height: 1.2;
+}
+
+span.text-5{
+    display: block;
+    font-size: 12px;
 }
 
 .table {
@@ -240,7 +252,10 @@ h3, .h3 {
         img {
             padding: 0px 5px;
             margin-left: 10px;
-        }        
+        }
+        &:nth-child(2) {
+            text-transform: lowercase;;
+          }        
     }
     a {
         text-decoration: none;

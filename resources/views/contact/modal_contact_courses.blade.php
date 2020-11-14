@@ -29,34 +29,22 @@
                     <div class="form-group col-12">
                         <label class="text-4">Curso</label>
                         <select class="c-select form-control" id="selectCourse" required>
-                        <option value=""></option>
-                        @foreach($courses as $course)
-                            <option value="{{ $course->course }}">{{ $course->course }}</option>
-                        @endforeach
-                        </select>
+                        
+                       
+                         </select>
                         <input type="hidden" name="course_id" id="course_id">
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4">Modalidade</label>
-                        <select class="c-select form-control" id="modality">
-                            <!-- <option value="ead">EAD</option> -->
-                            <!-- <option value="semipresencial">Semipresencial</option> -->
-                            <!-- <option value="presencial">Presencial</option> -->
-                        </select>
+                        <input type="text" id="modality" class="form-control" readonly="">
+ 
                     </div>
-                    <!--<div class="form-group col-12">
-                        <label class="text-4">Nível</label>
-                        <select class="c-select form-control" id="level">
-                            <option value="">Selecione status</option>
-                            <option value="graduacao">Graduação</option>
-                            <option value="pós-graduacao">Pós-graduação</option>
-                        </select>
-                    </div>-->
+                    
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status</label>
                         <select class="c-select form-control" id="statusSchedule" name="status">
                             <option value="" selected>Selecione o status do curso</option>
-                            <option value="Cursando">Em interesse</option>
+                            <option value="Em interesse">Em interesse</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>
                             <option value="Concluído">Concluído</option>
@@ -73,20 +61,41 @@
 <script src="{{ asset('/js/course.js') }}"></script>
 
 <script>
- $('#selectCourse').change(function(event) {
-   
+$('input[type=radio][name=level_course]').on('change', function() {
+  level_course = this.value
+
   $.ajax({
     url: "{{ route('listCourse') }}",
     method: 'GET',
-    data:{selectCourse:$('#selectCourse').val()},
+    data:{level_course:level_course},
+    dataType: 'json',
+    success:function(data){
+      $('#selectCourse').html('')  
+      $('#selectCourse').append("<option value=''></option>")
+      for(i = 0 ; i <= data.courses.length-1 ; i++) {
+         $('#selectCourse').append("<option value='"+data.courses[i].id+"'>"+data.courses[i].course+"</option>")
+      }
+    },
+    error:function(error){
+        alert('Erro na requisição.')
+    }
+  });  
+
+})
+
+$('#selectCourse').change(function(event) {
+
+  id_course_type = this.value
+  $('#course_id').val(id_course_type)
+
+  $.ajax({
+    url: "{{ route('listCourse') }}",
+    method: 'GET',
+    data:{id_course_type:id_course_type},
     dataType: 'json',
     success:function(data){
       $('#modality').html('');
-      $('#modality').append("<option value=''>"+data.courses[0].course_type)
-      $('#level').html('');
-      $('#level').append("<option value=''>"+data.courses[0].level_course)
-      $('#course_id').val(data.courses[0].id)
-      
+      $('#modality').val(data.dados_course_type[0].course_type)
     },
     error:function(error){
         alert('Erro na requisição.')

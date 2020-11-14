@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Contato - Cursos</h3>
+                <h3 class="modal-title">Contato - Cursos<span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Curso</label>
+                        <label class="text-4">Curso <span>*</span></label>
                         <select class="c-select form-control" id="selectCourse" required>
                         
                        
@@ -41,7 +41,7 @@
                     </div>
                     
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status</label>
+                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
                         <select class="c-select form-control" id="statusSchedule" name="status">
                             <option value="" selected>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>

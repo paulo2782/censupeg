@@ -71,4 +71,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('report', 	  'ReportController@reportShow')->name('reportShow');
 
 	Route::put('updateRegister/{id}','InterestController@updateRegister')->name('updateRegister');
+
+
 });

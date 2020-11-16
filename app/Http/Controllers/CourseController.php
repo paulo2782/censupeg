@@ -36,17 +36,14 @@ class CourseController extends Controller
             'course_type'=>$dados[0]->course_type]);
     }
 
-    public function updateCourse(Request $request){
+    public function updateCourse(Request $request){        
         $id = $request->id;
-
 
         $level_course = $request->level_course;
         $course = $request->course;
         $course_type = implode(",",$request->course_type);
 
         $additional_information = $request->additional_information;
-
-        
 
         Course::where('id','=',$id)->update(array('level_course'=>$level_course,'course'=>$course,'course_type'=>$course_type,'additional_information'=>$additional_information));
         

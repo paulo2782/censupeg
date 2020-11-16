@@ -4,6 +4,7 @@
 
 @include('contact/modal_contact_courses')
 @include('contact/modal_contact_schedule')
+@include('contact/modal_contact_edit_courses')
 
 <body id="body-container">
 <div id="container-main">
@@ -79,7 +80,8 @@
 								<td> {{ $data->level_course }}</td>
  								<td> {{ $data->status }}</td>
 								<td>
-									<!-- <a href="#" class="fa fa-pencil btnEdit" aria-hidden="true" title="Editar Registro"></a> -->
+									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar Registro" id="{{ $data->id }}"></a>
+
 									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
 								</td>
 							</tr>
@@ -115,7 +117,7 @@
 								<td>{{ date('H:m', strtotime($data->schedule)) }}</td>
 								<td>{{ $data->status }}</td>
 								<td>
-									<!-- <a href="#" class="fa fa-pencil" aria-hidden="true"></a> -->
+									<!-- <a href="{{ route('editCallContact',[$data->id,$data->contact_id]) }}" class="fa fa-pencil" aria-hidden="true"></a> -->
 									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
 								</td>
 							@php $i++; @endphp
@@ -130,3 +132,36 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('/js/contact.js') }}"></script>
+
+<script>
+$('.btnEditCourse').click(function(event) {
+    $('#myModalEditCourse').modal('toggle')
+    $('#interest_id_edit').val(this.id)
+
+    
+    $.ajax({
+    	url: "{{ route('searchInterest')}}",
+    	method: 'GET',
+    	dataType:'json',
+    	data: {id: $('#interest_id_edit').val()},
+    	success:function(data)
+    	{
+    		console.log(data)
+    		if(data.level_course == 'Graduação'){
+    			$('#Graduacao').trigger('click')
+			    $('#modalityEdit').val(data.course_type)
+			    $('#course_id_edit').val(data.course_id);
+			    $('#statusEdit').val(data.status)
+    		}
+    		if(data.level_course == 'Pós-graduação'){
+    			$('#PosGraduacao').trigger('click')
+			    $('#modalityEdit').val(data.course_type)
+				$('#course_id_edit').val(data.course_id);
+				$('#statusEdit').val(data.status)
+    		}
+    	}
+    });
+    
+});
+</script>
+

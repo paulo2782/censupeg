@@ -22,6 +22,7 @@
                         <th>Telefone</th>
                         <th>Ligação</th>
                         <th>Retorno</th>
+                        <th>Horário</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -32,6 +33,7 @@
                         <td>{{ $data->Contact->phone }}</td>
                         <td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
                         <td>{{ date('d/m/Y',strtotime($data->date_return)) }}</td>
+                        <td>{{ date('H:m', strtotime($data->schedule)) }}</td>
                         <td id='toview'>
                             <div class='dropdown'>
                                 <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>

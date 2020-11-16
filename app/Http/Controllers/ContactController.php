@@ -32,6 +32,11 @@ class ContactController extends Controller
         return back();
     }
 
+    public function editCourseContact(Request $request)
+    {
+            
+    }
+
     public function store(Request $request)
     { 
         

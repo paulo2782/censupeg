@@ -16,7 +16,20 @@ class InterestController extends Controller
      Interest::create($dados);
      return back();
    }
- 
+
+   public function searchInterest(Request $request)
+   {
+    $dados = Interest::find($request->id);
+
+
+    return response()->json([
+      'course_id'=>$dados->course_id,
+      'level_course'=>$dados->course->level_course,
+      'status'=>$dados->status,
+      'course'=>$dados->course->course,
+      'course_type'=>$dados->course->course_type]);
+   }
+
    public function routeForCorrect(){
       $dados = DB::table('contacts')
       ->whereNull('updated_at')
@@ -37,6 +50,18 @@ class InterestController extends Controller
       return view('/correct/correctRegister',compact('dados','dataCourses'));
     }
 
+    public function updateInterestCourse(Request $request)
+    {
+        $interest_id_edit = $request->interest_id_edit;
+
+        Interest::where('id',$interest_id_edit)->update(array(
+          'course_id'=>$request->id_selectCourse,
+          'contact_id'=>$request->contact_id,
+          'status'=>$request->status
+        ));
+
+        return response()->json(["mensagem"=>$interest_id_edit]);
+    }
     public function updateRegister(Request $request, $id){
         $dados = $request->all();
         Contact::find($id)->update($dados);

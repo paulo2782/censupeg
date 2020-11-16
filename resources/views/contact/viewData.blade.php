@@ -79,7 +79,7 @@
 								<td> {{ $data->level_course }}</td>
  								<td> {{ $data->status }}</td>
 								<td>
-									<!-- <a href="#" class="fa fa-pencil btnEdit" aria-hidden="true" title="Editar Registro"></a> -->
+									<a href="#" class="fa fa-pencil btnEdit" aria-hidden="true" title="Editar Registro"></a>
 									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
 								</td>
 							</tr>
@@ -115,7 +115,7 @@
 								<td>{{ date('H:m', strtotime($data->schedule)) }}</td>
 								<td>{{ $data->status }}</td>
 								<td>
-									<!-- <a href="#" class="fa fa-pencil" aria-hidden="true"></a> -->
+									<a href="#" class="fa fa-pencil" aria-hidden="true"></a>
 									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
 								</td>
 							@php $i++; @endphp

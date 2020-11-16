@@ -15,6 +15,74 @@
                     <a href="#" class="fa fa-angle-double-right"></a>
                 </div>
             </div>
+            <div class="show-details-block">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-pricing popular shadow text-center px-2 mb-2">
+                            <span class="text-4 w-60 mx-auto px-2 py-1 rounded-bottom bg-title text-white shadow-sm">Contatos</span>
+                            <div class="bg-transparent card-header pt-2 border-0">
+                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">6254</span><span class="text-4 text-muted ml-2">/ contato(s)</span></h3>
+                            </div>
+                            <hr />
+                            <div class="card-body pt-0">
+                                <ul class="list-unstyled mb-2">
+                                    <li><span class="font-weight-normal text-center mb-0"><span class="text-item">2</span><span class="text-4 text-muted ml-2">/ novo(s) contato(s)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-pricing popular shadow text-center px-2 mb-2">
+                            <span class="text-4 w-60 mx-auto px-2 py-1 rounded-bottom bg-title text-white shadow-sm">Ligações</span>
+                            <div class="bg-transparent card-header pt-2 border-0">
+                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">2</span><span class="text-4 text-muted ml-2">/ ligação(ões)</span></h3>
+                            </div>
+                            <hr />
+                            <div class="card-body pt-0">
+                                <ul class="list-unstyled mb-2">
+                                    <li><span class="font-weight-normal text-center mb-0"><span class="text-item">2</span><span class="text-4 text-muted ml-2">/ nova(s) ligação(ões)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-pricing popular shadow text-center px-2 mb-2">
+                            <span class="text-4 w-60 mx-auto px-2 py-1 rounded-bottom bg-title text-white shadow-sm">Operadores</span>
+                            <div class="bg-transparent card-header pt-2 border-0">
+                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">2</span><span class="text-4 text-muted ml-2">/ operador(es)</span></h3>
+                            </div>
+                            <hr />
+                            <div class="card-body pt-0">
+                                <ul class="list-unstyled mb-2">
+                                    <li><span class="font-weight-normal text-center mb-0"><span class="text-item">2</span><span class="text-4 text-muted ml-2">/ novo(s) operador(es)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-3">
+                        <div class="card card-pricing popular shadow text-center px-2 mb-2">
+                            <span class="text-4 w-60 mx-auto px-2 py-1 rounded-bottom bg-title text-white shadow-sm">Cursos</span>
+                            <div class="bg-transparent card-header pt-2 border-0">
+                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">13</span><span class="text-4 text-muted ml-2">/ graduação</span></h3>
+                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">13</span><span class="text-4 text-muted ml-2">/ pós-graduação</span></h3>
+                            </div>
+                            <hr />
+                            <div class="card-body pt-0">
+                                <ul class="list-unstyled mb-2">
+                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">13</span><span class="text-4 text-muted ml-2">/ pós-graduação</span></h3>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="show-details-block">
+                <h2>Ligações</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

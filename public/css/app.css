@@ -155,6 +155,8 @@ span.text-5 { display: block; font-size: 12px; }
 
 .swal-button:hover { color: #fff; background-color: #9E1D21 !important; font-weight: bold; }
 
+
+/*REPORT*/
 .top-bar-report{
     height: 70px; background-color: #fff; margin-bottom: 20px; 
 }
@@ -180,4 +182,28 @@ span.text-5 { display: block; font-size: 12px; }
 
 .top-bar-report .period-bar .fa {
     padding: 0 2px;
+}
+
+.show-details-block .container {
+    max-width: 900px !important;
+}
+.show-details-block .card-pricing.popular {
+    z-index: 1;
+    border: 3px solid #9E1D21;
+}
+.show-details-block .card-pricing .list-unstyled li {
+    padding: .5rem 0;
+    color: #9E1D21;
+}
+
+.show-details-block .text-title {
+    color: #9E1D21;
+    font-size: 18px;
+}
+.show-details-block .text-item {
+    color: #9E1D21;
+}
+
+.show-details-block .bg-title {
+    background-color:#9E1D21;
 }

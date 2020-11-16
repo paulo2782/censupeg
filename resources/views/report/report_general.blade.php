@@ -4,54 +4,17 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body id="body-container">
   @include('includes/header')
-<div id="container-main">
+  <div id="container-main">
     <div class="container">
         <div class="content-details">
             <div class="top-bar-report">
                 <h1>Relatórios</h1>
                 <div class="period-bar">
-                    <a href="#" class="previous round">&#8249;</a>
+                    <a href="#" class="fa fa-angle-double-left"></a>
                         Novembro de 2020
-                    <a href="#" class="next round">&#8250;</a>
+                    <a href="#" class="fa fa-angle-double-right"></a>
                 </div>
             </div>
-            <div class="show-details-block">
-                <div class="row">
-                    <div class="col-md-3">Contatos</div>
-                    <div class="col-md-3">Cursos</div>
-                    <div class="col-md-3">Ligações</div>
-                </div>
-            </div>
-            <div class="show-details-block">
-                <h2>Contatos</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            Escolaridade
-                        </div>
-                        <div class="col-md-6">
-                            Origem do contato
-                        </div>
-                    </div>
-            </div>
-            <div class="show-details-block">
-                <h2>Cursos</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            Graduação
-                        </div>
-                        <div class="col-md-6">
-                            Pós-graduação
-                        </div>
-                    </div>
-            </div>
-            <div class="show-details-block">
-                <h2>Ligações</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            Status
-                        </div>
-                    </div>
-            </div>            
         </div>
     </div>
 </div>

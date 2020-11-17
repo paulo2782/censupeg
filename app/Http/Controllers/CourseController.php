@@ -33,19 +33,25 @@ class CourseController extends Controller
             'id'=>$dados[0]->id,
             'level_course'=>$dados[0]->level_course,
             'additional_information'=>$dados[0]->additional_information,
-            'course_type'=>$dados[0]->course_type]);
+            'course_type'=>$dados[0]->course_type,
+            'price'=>$dados[0]->price,
+            'time_duration'=>$dados[0]->time_duration,
+            'link'=>$dados[0]->link]);
     }
 
     public function updateCourse(Request $request){        
         $id = $request->id;
 
-        $level_course = $request->level_course;
-        $course = $request->course;
-        $course_type = implode(",",$request->course_type);
+        $level_course   = $request->level_course;
+        $course         = $request->course;
+        $course_type    = implode(",",$request->course_type);
+        $price          = $request->price;
+        $time_duration  = $request->time_duration;
+        $link           = $request->link;
 
         $additional_information = $request->additional_information;
 
-        Course::where('id','=',$id)->update(array('level_course'=>$level_course,'course'=>$course,'course_type'=>$course_type,'additional_information'=>$additional_information));
+        Course::where('id','=',$id)->update(array('level_course'=>$level_course,'course'=>$course,'price'=>$price,'time_duration'=>$time_duration,'link'=>$link,'course_type'=>$course_type,'additional_information'=>$additional_information));
         
      }
 
@@ -76,6 +82,9 @@ class CourseController extends Controller
     		'course'=>$request['course'],
     		'level_course'=>$request['level_course'],
     		'course_type'=>$course_type,
+            'price'=>$request['price'],
+            'time_duration'=>$request['time_duration'],
+            'link'=>$request['link'],
             'additional_information'=>$request['additional_information']
     	]);
  		return redirect('/course');

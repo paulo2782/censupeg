@@ -45,16 +45,16 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="valueCourse">Valor</label>
-                        <input type="text" class="form-control" id="valueCourse" name="value" value="" />
+                        <label class="text-4" for="price">Valor</label>
+                        <input type="text" class="form-control" id="edtPrice" name="price" value="" />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="durationCourse">Tempo de duração</label>
-                        <input type="text" class="form-control" id="duration" name="duration" value="" />    
+                        <label class="text-4" for="time_duration">Tempo de duração</label>
+                        <input type="time" class="form-control" id="edtTime_duration" name="time_duration" value="" />    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="linkCourse">Link curso</label>
-                        <input type="url" class="form-control" id="link" name="link" value=""/>
+                        <input type="url" class="form-control" id="edtLink" name="link" value=""/>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>

@@ -27,16 +27,16 @@
 							<input type="text" class="form-control" readonly="readonly" id="levelCourse" name="level" value=""/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
-							<label class="text-4" for="valueCourse">Valor</label>
-							<input type="text" class="form-control" readonly="readonly" id="valueCourse" name="value" value=""/>    
+							<label class="text-4" for="price">Valor</label>
+							<input type="text" class="form-control" readonly="readonly" id="price" name="price" value=""/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
-							<label class="text-4" for="durationCourse">Tempo de duração</label>
-							<input type="text" class="form-control" readonly="readonly" id="durationCourse" name="duration" value=""/>    
+							<label class="text-4" for="time_duration">Tempo de duração</label>
+							<input type="time" class="form-control" readonly="readonly" id="time_duration" name="time_duration" value=""/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
-							<label class="text-4" for="linkCourse">Link Censupeg</label>
-							<input type="url" class="form-control" readonly="readonly" id="linkCourse" name="link" value=""/>    
+							<label class="text-4" for="link">Link Censupeg</label>
+							<input type="url" class="form-control" readonly="readonly" id="link" name="link" value=""/>    
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="observation">Informações adicionais</label>

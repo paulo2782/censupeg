@@ -16,27 +16,27 @@
 					<div class="form-row">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameCourse">Curso</label>
-							<input type="text" class="form-control" readonly="readonly" id="nameCourse" name="course" value="#" />
+							<input type="text" class="form-control" readonly="readonly" id="nameCourse" name="course" value="" />
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="emailContact">Modalidade</label>
-							<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="#" />
+							<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="" />
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="levelCourse">Nível</label>
-							<input type="text" class="form-control" readonly="readonly" id="levelCourse" name="level" value="#"/>    
+							<input type="text" class="form-control" readonly="readonly" id="levelCourse" name="level" value=""/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="valueCourse">Valor</label>
-							<input type="text" class="form-control" readonly="readonly" id="valueCourse" name="value" value="{{ $dados[0]->city }}"/>    
+							<input type="text" class="form-control" readonly="readonly" id="valueCourse" name="value" value=""/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="durationCourse">Tempo de duração</label>
-							<input type="text" class="form-control" readonly="readonly" id="durationCourse" name="duration" value="#"/>    
+							<input type="text" class="form-control" readonly="readonly" id="durationCourse" name="duration" value=""/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="linkCourse">Link Censupeg</label>
-							<input type="url" class="form-control" readonly="readonly" id="linkCourse" name="origin" value="#"/>    
+							<input type="url" class="form-control" readonly="readonly" id="linkCourse" name="link" value=""/>    
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="observation">Informações adicionais</label>

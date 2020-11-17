@@ -44,6 +44,18 @@
                             <label class="form-check-label d-block" for="semipresencial">Semipresencial</label>
                         </div>
                     </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label class="text-4" for="valueCourse">Valor</label>
+                        <input type="text" class="form-control" id="valueCourse" name="value" value="" />
+                    </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label class="text-4" for="durationCourse">Tempo de duração</label>
+                        <input type="text" class="form-control" id="duration" name="duration" value="" />    
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="text-4" for="linkCourse">Link curso</label>
+                        <input type="url" class="form-control" id="link" name="link" value=""/>
+                    </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>

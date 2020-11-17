@@ -15,28 +15,28 @@
 				<form class="contact-info" method="post">
 					<div class="form-row">
 						<div class="form-group col-12">
-							<label class="text-4" for="nameContact">Curso</label>
-							<input type="text" class="form-control" readonly="readonly" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
+							<label class="text-4" for="nameCourse">Curso</label>
+							<input type="text" class="form-control" readonly="readonly" id="nameCourse" name="course" value="#" />
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="emailContact">Modalidade</label>
-							<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="{{ $dados[0]->email }}" />
+							<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="#" />
 						</div>
 						<div class="form-group col-md-6 col-12">
-							<label class="text-4" for="phoneContact">Nível</label>
-							<input type="text" class="form-control" readonly="readonly" id="phoneContact" name="phone" value="{{ $dados[0]->phone }}"/>    
+							<label class="text-4" for="levelCourse">Nível</label>
+							<input type="text" class="form-control" readonly="readonly" id="levelCourse" name="level" value="#"/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
-							<label class="text-4" for="cityContact">Valor</label>
-							<input type="text" class="form-control" readonly="readonly" id="cityContact" name="city" value="{{ $dados[0]->city }}"/>    
+							<label class="text-4" for="valueCourse">Valor</label>
+							<input type="text" class="form-control" readonly="readonly" id="valueCourse" name="value" value="{{ $dados[0]->city }}"/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
-							<label class="text-4" for="schoolContact">Tempo de duração</label>
-							<input type="text" class="form-control" readonly="readonly" id="schoolContact" name="school" value="{{ $dados[0]->schooling }}"/>    
+							<label class="text-4" for="durationCourse">Tempo de duração</label>
+							<input type="text" class="form-control" readonly="readonly" id="durationCourse" name="duration" value="#"/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
-							<label class="text-4" for="originContact">Link Censupeg</label>
-							<input type="text" class="form-control" readonly="readonly" id="originContact" name="origin" value="{{ $dados[0]->contact_origin }}"/>    
+							<label class="text-4" for="linkCourse">Link Censupeg</label>
+							<input type="url" class="form-control" readonly="readonly" id="linkCourse" name="origin" value="#"/>    
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="observation">Informações adicionais</label>

@@ -45,20 +45,17 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="email">Valor</label>
-                        <input type="email" class="form-control" id="email" name="email" 
-                               value="{{Session::get('email')}}" placeholder="fulano@email.com"
-                               pattern= "^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$" title="fulano@email.com"/>
+                        <label class="text-4" for="valueCourse">Valor</label>
+                        <input type="text" class="form-control" id="valueCourse" name="value" value="#" />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="phone">Tempo de duração <span>*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" 
-                                value="{{Session::get('phone')}}"  placeholder= "XXXXXXXXXXX" 
-                                required title="2 anos e 6 meses"/>    
+                        <label class="text-4" for="durationCourse">Tempo de duração</label>
+                        <input type="text" class="form-control" id="duration" name="duration" 
+                                value="#" />    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Link curso</label>
-                        <input type="url" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
+                        <label class="text-4" for="linkCourse">Link curso</label>
+                        <input type="url" class="form-control" id="link" name="link" value="#"/>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>

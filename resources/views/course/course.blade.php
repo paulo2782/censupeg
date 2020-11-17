@@ -72,6 +72,9 @@
                 $('#edtCourse').val(data.course)
                 $('#edtAdditional_information').val(data.additional_information)
                 $('#idCourse').val(data.id)
+                $('#edtLink').val(data.link)
+                $('#edtPrice').val(data.price)
+                $('#edtTime_duration').val(data.time_duration)
 
                 if(data.level_course == 'Graduação'){
                     $('#level_courseG').attr('checked', true);

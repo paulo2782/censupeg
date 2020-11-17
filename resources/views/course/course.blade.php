@@ -17,14 +17,15 @@
             <div class="show-details-block">
                 <h2>Graduação</h2>
                 <ul class="list-group list-group-flush">
-                @foreach($data_level_graduacao as $data_level1)
-                <li class="list-group-item">{{ $data_level1->course }}
-                    <div class="pull-right">
-                        <a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="{{ $data_level1->course }}"></a>
-                        <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level1->course }}"></a>
-                    </div>
-                    @endforeach
-                </li>
+                    @foreach($data_level_graduacao as $data_level1)
+                    <li class="list-group-item">{{ $data_level1->course }}
+                        <div class="pull-right">
+                            <a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="{{ $data_level1->course }}"></a>
+                            <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level1->course }}"></a>
+                        </div>
+                        @endforeach
+                    </li>
+                </ul>
             </div>
             <div class="show-details-block">
                 <h2>Pós-graduação</h2>

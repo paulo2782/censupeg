@@ -5,6 +5,7 @@
 @include('contact/modal_contact_courses')
 @include('contact/modal_contact_schedule')
 @include('contact/modal_contact_edit_courses')
+@include('contact/modal_contact_edit_schedule')
 
 <body id="body-container">
 <div id="container-main">
@@ -114,10 +115,10 @@
 								<td>{{ $i }}</th>
 								<td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
 								<td>{{ date('d/m/Y',strtotime($data->date_return)) }}</td>
-								<td>{{ date('H:m', strtotime($data->schedule)) }}</td>
+								<td>{{ date('H:i', strtotime($data->schedule)) }}</td>
 								<td>{{ $data->status }}</td>
 								<td>
-									<!-- <a href="{{ route('editCallContact',[$data->id,$data->contact_id]) }}" class="fa fa-pencil" aria-hidden="true"></a> -->
+									<a href="#" class="btnEditCall fa fa-pencil" aria-hidden="true" id="{{ $data->id }}"></a>
 									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
 								</td>
 							@php $i++; @endphp
@@ -162,6 +163,29 @@ $('.btnEditCourse').click(function(event) {
     	}
     });
     
+});
+
+$('.btnEditCall').click(function(event) {
+    $('#myModalEditCall').modal('toggle')
+    $('#call_id_edit').val(this.id)
+    $.ajax({
+	    url: "{{ route('searchCallEdit') }}",
+	    method: 'GET',
+	    dataType: 'json',
+	    data: {
+	            id:$('#call_id_edit').val()
+	    },
+	    success:function(data)
+	    {
+	    	
+	    	$('#date_contact_edit').val(data.date_contact)
+	    	$('#date_return_edit').val(data.date_return)
+	    	$('#schedule_edit').val(data.schedule)
+      		$('#statusSchedule option[value="'+data.status+'"]').prop('selected',true)
+	        console.log(data)
+	    }
+	});
+
 });
 </script>
 

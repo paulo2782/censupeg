@@ -53,6 +53,9 @@ Route::group(['middleware' => 'auth'], function() {
 	
 	Route::get('call', 'CallController@callShow')->name('callShow');
 	Route::get('searchCall','CallController@searchCall')->name('searchCall');
+	Route::get('searchCallEdit','CallController@searchCallEdit')->name('searchCallEdit');
+	Route::post('updateCall','CallController@updateCall')->name('updateCall');
+
 	Route::post('storeCall','CallController@storeCall')->name('storeCall');
 	Route::get('destroyCall/{id}','CallController@destroyCall')->name('destroyCall');
 

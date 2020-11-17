@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="time_duration">Tempo de duração</label>
-                        <input type="time" class="form-control" id="edtTime_duration" name="time_duration" value="" />    
+                        <input type="text" class="form-control" id="edtTime_duration" name="time_duration" value="" />    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="linkCourse">Link curso</label>
@@ -68,9 +68,7 @@
         </div>
    </div>
 </div>
- 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <script>
     $('#updateCourse').click(function(event) {
         var form = $('#updateForm') 

@@ -46,11 +46,11 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="valueCourse">Valor</label>
-                        <input type="number" class="form-control" id="price" name="price" value="{{Session::get('price')}}" min="0" />
+                        <input type="text" class="form-control" id="price" name="price" value="{{Session::get('price')}}" min="0" />
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="time_duration">Tempo de duração</label>
-                        <input type="time" class="form-control" id="time_duration" name="time_duration" value="{{Session::get('time_duration')}}" />    
+                        <input type="text" class="form-control" id="time_duration" name="time_duration" value="{{Session::get('time_duration')}}" />    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="linkCourse">Link curso</label>

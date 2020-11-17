@@ -13,6 +13,8 @@ h3, .h3 { font-size: 16px !important; }
 
 form span { color: #9E1D21; font-weight: bold; }
 
+label { color: #333; font-size: 14px; }
+
 .text-4 { font-size: 14px; font-weight: 500; line-height: 1.2; }
 
 span.text-5 { display: block; font-size: 12px; }
@@ -27,7 +29,7 @@ span.text-5 { display: block; font-size: 12px; }
 
 #login .container .login-img { display: block; margin: 20px auto; }
 
-#login .container label { font-size: 14px; font-weight: 500; }
+#login .container label { font-weight: 500; }
 
 #login .container input { font-size: 14px; }
 

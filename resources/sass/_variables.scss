@@ -42,6 +42,11 @@ form {
     }
 }
 
+label {
+    color: $color-text-title;
+    font-size: 14px;
+}
+
 .text-4{
     font-size: 14px;
     font-weight: 500;
@@ -73,7 +78,6 @@ span.text-5{
             margin: 20px auto;
         }
         label {
-            font-size: 14px;
             font-weight: 500;
         }
         input {

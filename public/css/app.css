@@ -13,7 +13,7 @@ h3, .h3 { font-size: 16px !important; }
 
 form span { color: #9E1D21; font-weight: bold; }
 
-label { color: #333; font-size: 14px; }
+label, p { color: #333; font-size: 14px; }
 
 .text-4 { font-size: 14px; font-weight: 500; line-height: 1.2; }
 
@@ -21,7 +21,7 @@ span.text-5 { display: block; font-size: 12px; }
 
 .table { font-size: 14px; }
 
-.form-control { font-size: 14px !important; color: #555 !important; }
+.form-control { font-size: 14px !important; }
 
 #login { width: 100%; }
 

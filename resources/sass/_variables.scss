@@ -42,7 +42,8 @@ form {
     }
 }
 
-label {
+label, 
+p {
     color: $color-text-title;
     font-size: 14px;
 }
@@ -64,7 +65,6 @@ span.text-5{
 
 .form-control {
     font-size: 14px !important;
-    color: $color-text-standard !important; 
 }
 
 // LOGIN

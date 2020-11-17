@@ -30,7 +30,7 @@
                     <div class="form-group col-md-5 col-12">
                         <label class="text-4" for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" 
-                                value="{{Session::get('phone')}}"  placeholder= "XXXXXXXXXXX" 
+                                value="{{Session::get('phone')}}"  placeholder= "XXXXXXXXXXX" data-mask="(00) 00000-0000" 
                                 pattern= "^(\d{2})\d{4,5}\d{4}$" required title="4899994477 ou 4833442277"/>    
                     </div>
                     <div class="form-group col-12">

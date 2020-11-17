@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="show-details-block">
-                <div class="row">
+                <!--<div class="row">
                     <div class="col-md-4">
                         <div class="card card-pricing popular shadow text-center px-2 mb-2">
                             <span class="text-4 w-60 mx-auto px-2 py-1 rounded-bottom bg-title text-white shadow-sm">Contatos</span>
@@ -59,35 +59,54 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="col-md-3">
-                        <div class="card card-pricing popular shadow text-center px-2 mb-2">
-                            <span class="text-4 w-60 mx-auto px-2 py-1 rounded-bottom bg-title text-white shadow-sm">Cursos</span>
-                            <div class="bg-transparent card-header pt-2 border-0">
-                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">13</span><span class="text-4 text-muted ml-2">/ graduação</span></h3>
-                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">13</span><span class="text-4 text-muted ml-2">/ pós-graduação</span></h3>
-                            </div>
-                            <hr />
-                            <div class="card-body pt-0">
-                                <ul class="list-unstyled mb-2">
-                                <h3 class="h3 font-weight-normal text-center mb-0"><span class="text-title">13</span><span class="text-4 text-muted ml-2">/ pós-graduação</span></h3>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>-->
-                </div>
-            </div>
-            <div class="show-details-block">
-                <h2>Ligações</h2>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
+                </div>-->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactReport">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#callReport">Ligações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courseReport">Cursos</a>
                     </li>
                 </ul>
+            </div>
+            <div id="contactReport" class="show-details-block">
+                <h2>Contatos</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Escolaridade</h3>
+                            <div id="escolaridade"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Origem dos contatos</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="callReport" class="show-details-block">
+                <h2>Contatos</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Escolaridade</h3>
+                            <div id="escolaridade"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Origem dos contatos</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('/js/course.js') }}"></script>
 </body>  
 </html>
+<script src="{{ asset('js/charts.js') }}"></script> 
 <script src="{{ asset('js/function.js') }}"></script> 

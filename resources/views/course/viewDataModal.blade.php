@@ -44,6 +44,22 @@
                             <label class="form-check-label d-block" for="semipresencial">Semipresencial</label>
                         </div>
                     </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label class="text-4" for="email">Valor</label>
+                        <input type="email" class="form-control" id="email" name="email" 
+                               value="{{Session::get('email')}}" placeholder="fulano@email.com"
+                               pattern= "^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$" title="fulano@email.com"/>
+                    </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label class="text-4" for="phone">Tempo de duração <span>*</span></label>
+                        <input type="text" class="form-control" id="phone" name="phone" 
+                                value="{{Session::get('phone')}}"  placeholder= "XXXXXXXXXXX" 
+                                required title="2 anos e 6 meses"/>    
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="text-4" for="observation">Link curso</label>
+                        <input type="url" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
+                    </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>

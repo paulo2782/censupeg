@@ -1,11 +1,5 @@
 @extends('layouts.app')
 @include('includes/header')
-@include('contact/modalEdit')
-
-@include('contact/modal_contact_courses')
-@include('contact/modal_contact_schedule')
-@include('contact/modal_contact_edit_courses')
-@include('contact/modal_contact_edit_schedule')
 
 <body id="body-container">
 <div id="container-main">
@@ -50,43 +44,6 @@
 						</div>
 					</div>
 				</form>
-			</div>
-			<div class="show-details-block">
-				<h2>Cursos
-					<a href="#" class="fa fa-plus-circle" aria-hidden="true" id="btnAddCourse"> </a>
-				</h2>
-				<div id="content-table" class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Curso</th>
-								<th>Modalidade</th>
-								<th>Nível</th>
-								<th>Status</th>
-								<th>Ação</th>
-							</tr>
-						</thead>
-						<tbody>
-							@php $i = 1; @endphp
-							@foreach($dataInterests as $data)
-							<tr>				
-								<td> {{ $i }}</td>			
-								<td> {{ $data->course }}</td>
-								<td> {{ $data->course_type }}</td>
-								<td> {{ $data->level_course }}</td>
- 								<td> {{ $data->status }}</td>
-								<td>
-									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar Registro" id="{{ $data->id }}"></a>
-
-									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
-								</td>
-							</tr>
-							@php $i++; @endphp
-							@endforeach
-						</tbody>
-					</table>
-				</div>
 			</div>
 		</div>
 	</div>

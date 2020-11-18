@@ -62,6 +62,9 @@
     }
 
     function callEditModal(id){
+        $('#EAD').prop('checked',false)
+        $('#Presencial').prop('checked',false)
+        $('#Semipresencial').prop('checked',false)
         $.ajax({
             url: "{{ route('searchCourse') }}",
             method: 'GET',
@@ -88,7 +91,7 @@
 
                 for(x = 0 ; x <= i-1 ; x++){
                     let cType = split[x];
-                    $('#'+cType).attr('checked',true)
+                    $('#'+cType).prop('checked',true)
                 }
 
 

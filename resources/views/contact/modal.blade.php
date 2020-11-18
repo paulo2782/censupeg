@@ -1,5 +1,6 @@
 @section('content')
-
+<script src="{{ asset('js/jquery.mask.min.js') }}"></script> 
+<script src="{{ asset('js/contact.js') }}"></script> 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -17,21 +18,20 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Nome Completo <span>*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{Session::get('name')}}" required autocomplete="name" autofocus/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
+                               placeholder= "Informe o nome" value="{{Session::get('name')}}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label class="text-4" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" 
-                               value="{{Session::get('email')}}" placeholder="fulano@email.com"
-                               pattern= "^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$" title="fulano@email.com"/>
+                        <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" 
+                               placeholder="fulano@email.com" title="fulano@email.com"/>
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label class="text-4" for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" 
-                                value="{{Session::get('phone')}}"  placeholder= "XXXXXXXXXXX" data-mask="(00) 00000-0000" 
-                                pattern= "^(\d{2})\d{4,5}\d{4}$" required title="4899994477 ou 4833442277"/>    
+                               placeholder= "(00) 0000-0000" value="{{Session::get('phone')}}" required/>   
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>

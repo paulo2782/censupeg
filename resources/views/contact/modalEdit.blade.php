@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -17,17 +16,18 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Nome Completo <span>*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" value="{{ $dados[0]->name }}" required autocomplete="name" autofocus/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
+                        placeholder= "Informe o nome" value="{{ $dados[0]->name }}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label class="text-4" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{ $dados[0]->email }}" />
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="{{ $dados[0]->email }}" />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label class="text-4" for="phone">Telefone <span>*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" value="{{ $dados[0]->phone }}" required />    
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00) 0000-0000" value="{{ $dados[0]->phone }}" required />    
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    

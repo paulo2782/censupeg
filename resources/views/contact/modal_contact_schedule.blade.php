@@ -20,11 +20,11 @@
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="date_return">Data de retorno</label>
-                        <input type="date" class="form-control" name="date_return" required/>    
+                        <input type="date" class="form-control" name="date_return"/>    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="schedule">Horário</label>
-                        <input type="time" class="form-control" name="schedule" required/>    
+                        <input type="time" class="form-control" name="schedule"/>    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status <span>*</span></label>

@@ -596,13 +596,9 @@
         $.applyDataMask();
     }
 
-<<<<<<< HEAD
     setInterval(function() {
         if ($.jMaskGlobals.watchDataMask) {
             $.applyDataMask();
         }
     }, globals.watchInterval);
 }, window.jQuery, window.Zepto));
-=======
-}));
->>>>>>> 22a7c0d2060dfd2c0fe99340ebec386c94cc9a33

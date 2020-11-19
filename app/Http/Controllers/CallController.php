@@ -60,8 +60,7 @@ class CallController extends Controller
 
         $validator = Validator::make($request->all(),[
           'date_contact'=>'required',
-          'date_return'=>'required',
-          'schedule'=>'required'
+          'date_return'=>'required'
         ]);
         if($validator->fails()){
             $date_contact  = $request->date_contact;

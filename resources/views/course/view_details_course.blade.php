@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="content-details">
 			<div class="top-bar-block">
-				<h3 class="py-4 text-center">{{ $dados[0]->name }}</h3>
+				<h3 class="py-4 text-center">{{ $dados[0]->course }}</h3>
 			</div>
 			<div class="show-details-block">
 				<h2>Dados básicos

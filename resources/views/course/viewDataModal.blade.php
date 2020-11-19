@@ -1,5 +1,5 @@
 @section('content')
-<script src="{{ asset('js/jquery.mask.min.js') }}"></script> 
+<script src="{{ asset('/js/jquery.maskMoney.js') }}"></script> 
 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="valueCourse">Valor</label>
-                        <input type="text" class="form-control" id="price" name="price" placeholder="R$ 0,00" value="{{Session::get('price')}}" onkeypress="$(this).mask('R$ 999.990,00')" />
+                        <input type="text" class="form-control" id="price" name="price" placeholder="R$ 0,00" value="{{Session::get('price')}}" />
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="time_duration">Tempo de duração</label>
@@ -70,3 +70,10 @@
 </div>
 @endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(function() {
+    $("#price").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'', decimal:'.', affixesStay: false});
+});
+
+</script>

@@ -16,6 +16,13 @@ class CourseController extends Controller
     	return view('/course/course',compact('data_level_graduacao','data_level_pos'));
     }
 
+    public function view_details_course(Request $request, $id)
+    {
+
+        $dados = Course::where('id',$id)->get();
+        return view('/course/view_details_course',compact('dados'));
+    }
+
     public function listCourse(Request $request){
         $level_course = $request->level_course;
         $dados = Course::where('level_course',$level_course)->orderby('course')->get();
@@ -78,6 +85,8 @@ class CourseController extends Controller
         }
 
     	$course_type = implode(",",$request->course_type);
+
+
     	Course::create([
     		'course'=>$request['course'],
     		'level_course'=>$request['level_course'],

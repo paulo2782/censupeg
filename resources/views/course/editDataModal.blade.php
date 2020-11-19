@@ -1,3 +1,4 @@
+<script src="{{ asset('/js/jquery.maskMoney.js') }}"></script> 
  
 <div class="modal fade" id="myModalEdit">
     <div class="modal-dialog">
@@ -84,4 +85,8 @@
             }
         });
     });
+    $(function() {
+        $("#edtPrice").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'', decimal:'.', affixesStay: false});
+    });
+
 </script>

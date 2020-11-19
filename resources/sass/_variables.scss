@@ -1,7 +1,9 @@
 // COLORS
 $primary-color: #9E1D21;
+$secondary-color: #F8F8F8;
 $white: #fff;
-
+$color-text-standard: #555;
+$color-text-title: #333;
 // TYPOGRAPH
 $font-family-primary: 'Open Sans', sans-serif;
 
@@ -15,13 +17,16 @@ a {
 }
 
 .list-group-item {
-    border: 0px !important;
     padding: 0.35rem 1rem !important;
     font-size: 14px;
+    &:first-child {
+        border-top: 0px !important;
+    }
 }
 
 h1 {
     font-size: 20px !important;
+    color: $color-text-title !important;
 }
 
 h2, .h2 {
@@ -39,6 +44,12 @@ form {
     }
 }
 
+label, 
+p {
+    color: $color-text-title;
+    font-size: 14px;
+}
+
 .text-4{
     font-size: 14px;
     font-weight: 500;
@@ -52,8 +63,6 @@ span.text-5{
 
 .table {
     font-size: 14px;
-    //margin: 10px !important;
-    color: #181818;
 }
 
 .form-control {
@@ -71,7 +80,6 @@ span.text-5{
             margin: 20px auto;
         }
         label {
-            font-size: 14px;
             font-weight: 500;
         }
         input {
@@ -80,7 +88,7 @@ span.text-5{
         .login-a {
             text-decoration: none;
             text-align: center;
-            color: #313131;
+            color: $color-text-standard;
             cursor: pointer;
             &:hover {
                 text-decoration: none;
@@ -104,7 +112,7 @@ span.text-5{
             background-color: $white;
         }
         .nav-link {
-            color: #eee;
+            color: $secondary-color;
             font-size: 14px;
             text-transform: uppercase;
             &:hover {
@@ -181,7 +189,7 @@ span.text-5{
 
 // MOSTRUÁRIO
 #body-container {
-    background-color: #ebebeb;
+    background-color: $secondary-color;
 }
   
 #container-main {
@@ -198,7 +206,6 @@ span.text-5{
     height: 70px;
     h1 {
         display: inline-block;
-        color: #797979;
         margin: 13px 20px;
         padding: 10px 0px;
     }
@@ -243,16 +250,16 @@ span.text-5{
 #content-table {
     width: 100%;
     font-size: 14px;
-    color: #181818;
+    color: $color-text-title;
     th {
         padding: 10px 20px;
         border-bottom: 1px solid #eee;
-        color: #181818;
+        color: $color-text-title;
     }
     td {
         padding: 5px 20px;
         border-bottom: 1px solid #eee;
-        color: #6d6d6d;        
+        color: $color-text-standard;        
         img {
             padding: 0px 5px;
             margin-left: 10px;
@@ -263,7 +270,7 @@ span.text-5{
     }
     a {
         text-decoration: none;
-        color: #6d6d6d;
+        color: $color-text-standard;
         &:hover {
             font-weight: 500;
         }
@@ -303,7 +310,6 @@ span.text-5{
     margin-bottom: 20px;
     h1 {
         display: inline-block;
-        color: #797979;
         margin: 13px 20px;
         padding: 10px 0px;
     }
@@ -366,7 +372,7 @@ span.text-5{
     .error-desc {
         font-size: 1em;
         padding: 20px 0;
-        color: #797979;
+        color: $color-text-standard;
     }
     .btn-error {
         margin-top: 20px;
@@ -376,10 +382,10 @@ span.text-5{
 //SWAL
 .swal-text {
     font-size: 14px !important;
-    color: #313131;
+    color: $color-text-standard;
 }
 .swal-button {
-    color: #313131;
+    color: $color-text-title;
     background: $white;
     font-size: 14px !important;
     border: 1px solid $primary-color !important;

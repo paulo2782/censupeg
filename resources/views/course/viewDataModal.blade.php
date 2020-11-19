@@ -1,4 +1,5 @@
 @section('content')
+<script src="{{ asset('js/jquery.mask.min.js') }}"></script> 
 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
@@ -29,7 +30,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Nome do Curso <span>*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" placeholder="Informe o curso" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">
@@ -46,15 +47,15 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="valueCourse">Valor</label>
-                        <input type="number" class="form-control" id="price" name="price" value="{{Session::get('price')}}" min="0" />
+                        <input type="text" class="form-control" id="price" name="price" placeholder="R$ 0,00" value="{{Session::get('price')}}" onkeypress="$(this).mask('R$ 999.990,00')" />
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="time_duration">Tempo de duração</label>
-                        <input type="time" class="form-control" id="time_duration" name="time_duration" value="{{Session::get('time_duration')}}" />    
+                        <input type="text" class="form-control" id="time_duration" name="time_duration" value="{{Session::get('time_duration')}}" />    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="linkCourse">Link curso</label>
-                        <input type="url" class="form-control" id="link" name="link" value="{{Session::get('link')}}"/>
+                        <input type="url" class="form-control" id="link" name="link" placeholder="http://www.exemplo.com.br" value="{{Session::get('link')}}"/>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>

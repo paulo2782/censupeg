@@ -31,7 +31,7 @@
                 <h2>Pós-graduação</h2>
                 <ul class="list-group list-group-flush">
                     @foreach($data_level_pos as $data_level2)
-                    <li class="list-group-item">{{ $data_level2->course }}
+                    <li class="list-group-item"><a href="#">{{ $data_level2->course }}</a>
                         <div class="pull-right">
                             <a href="#" onclick="callEditModal(id=`{{ $data_level2->id }}`)" class="fa fa-pencil " aria-hidden="true" title="{{ $data_level1->course }}"></a>
                             <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level2->course }}"></a>

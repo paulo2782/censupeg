@@ -16,27 +16,28 @@
 					<div class="form-row">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameCourse">Curso</label>
-							<input type="text" class="form-control" readonly="readonly" id="nameCourse" name="course" value="" />
+							<input type="text" class="form-control" readonly="" id="nameCourse" name="course" value="{{ $dados[0]->course }}" />
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="emailContact">Modalidade</label>
-							<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="" />
+							<input type="email" class="form-control" readonly="" id="emailContact" name="email" value="{{ $dados[0]->course_type }}" />
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="levelCourse">Nível</label>
-							<input type="text" class="form-control" readonly="readonly" id="levelCourse" name="level" value=""/>    
+							<input type="text" class="form-control" readonly="" id="levelCourse" name="level" value="{{ $dados[0]->level_course }}"/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="price">Valor</label>
-							<input type="text" class="form-control" readonly="readonly" id="price" name="price" value=""/>    
+							<input type="text" class="form-control" readonly="" id="price" name="price" 
+							value="{{ $dados[0]->price }}"/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="time_duration">Tempo de duração</label>
-							<input type="time" class="form-control" readonly="readonly" id="time_duration" name="time_duration" value=""/>    
+							<input type="text" class="form-control" readonly="readonly" id="time_duration" name="time_duration" value="{{ $dados[0]->time_duration }}"/>    
 						</div>
 						<div class="form-group col-md-6 col-12">
 							<label class="text-4" for="link">Link Censupeg</label>
-							<input type="url" class="form-control" readonly="readonly" id="link" name="link" value=""/>    
+							<input type="url" class="form-control" readonly="readonly" id="link" name="link" value="{{ $dados[0]->link }}"/>    
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="observation">Informações adicionais</label>

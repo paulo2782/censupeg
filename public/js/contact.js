@@ -49,3 +49,8 @@ function habilitar_outros() {
         text.style.display = "none";
     }
 }
+
+/* VALIDATION PHONE */
+$(document).ready(function(){ 
+   $('input[name=phone]').mask('(00) 0000-00009');
+});

@@ -1,5 +1,5 @@
 @section('content')
-<script src="{{ asset('js/jquery.mask.min.js') }}"></script> 
+<script src="{{ asset('js/jquery.mask.js') }}"></script> 
 <script src="{{ asset('js/contact.js') }}"></script> 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">

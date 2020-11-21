@@ -1,5 +1,4 @@
-
-
+//ADICIONAR CURSO
 $('#btnAdd').click(function(event) {
     $('#status').val($('#hiddenStatus').val());
     $('#contact_origin').val($('#hiddenContact_origin').val());
@@ -18,9 +17,7 @@ $('#btnAdd').click(function(event) {
 
 });
    
-
-
-
+//DELETAR CURSO
 $('.btnDelete').click(function(event) {
    if(confirm('Confirma Excluir?')){
     

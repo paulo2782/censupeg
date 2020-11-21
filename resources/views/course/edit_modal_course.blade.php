@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar Curso <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Curso <span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="price">Valor</label>
-                        <input type="text" class="form-control" id="edtPrice" name="price" placeholder="R$ 0,00" value="" onkeypress="$(this).mask('R$ 999.990,00')"/>
+                        <input type="text" class="form-control" id="edtPrice" name="price" placeholder="R$ 0,00" value=""/>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="time_duration">Tempo de duração</label>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="line-horizontal"></div>
                 <input type="hidden" id="idCourse" name="id">
-                <button type="button" id="updateCourse" class="btn btn-primary" data-dismiss=" ">Atualizar</button>            
+                <button type="button" id="updateCourse" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
    </div>

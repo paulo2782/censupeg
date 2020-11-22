@@ -8,29 +8,50 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="contact-modal" action="{{ route('updateContact',$dados[0]->id) }}" method="post">
-                <meta name="csrf-token" content="{{ csrf_token() }}">
+            <form class="form-dialog registerForm" id="contact-modal" action="<?php echo e(route('updateContact',$dados[0]->id)); ?>" method="post">
+                <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
                 <input type="hidden" name="_method" value="PUT">
-                @csrf
-                <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                <?php echo csrf_field(); ?>
+                <input type="hidden" name="id" value="<?php echo e(auth()->user()->id); ?>">
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Nome Completo <span>*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
-                        placeholder= "Informe o nome" value="{{ $dados[0]->name }}" required autocomplete="name" autofocus/>
-                        @error('name') {{$message}} @enderror                                     
+                        <input type="text" class="form-control <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="namxe" name="name" 
+                        placeholder= "Informe o nome" value="<?php echo e($dados[0]->name); ?>" required autocomplete="name" autofocus/>
+                        <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <?php echo e($message); ?> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label class="text-4" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="{{ $dados[0]->email }}" />
-                        @error('email') {{$message}} @enderror
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="<?php echo e($dados[0]->email); ?>" />
+                        <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <?php echo e($message); ?> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label class="text-4" for="phone">Telefone <span>*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="{{ $dados[0]->phone }}" required />    
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="<?php echo e($dados[0]->phone); ?>" required />    
                     </div>
                     <div class="form-group col-12">
-                        <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    
+                        <input type="hidden" id="schoolingData" value="<?php echo e($dados[0]->schooling); ?>"/>    
                         <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
                         <select class="form-control schooling" id="schooling" name="schooling" required>
                             <option value="">Selecione a escolaridade</option>
@@ -42,7 +63,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <input type="hidden" id="stateData" value="{{ $dados[0]->state }}"/>  
+                        <input type="hidden" id="stateData" value="<?php echo e($dados[0]->state); ?>"/>  
                         <label class="text-4" for="contact-origin">Estado <span>*</span></label>
                         <select class="form-control" id="state" name="state" required>
                             <option value="">Selecione o Estado</option>
@@ -76,13 +97,13 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <input type="hidden" id="cityData" value="{{ $dados[0]->city }}"/> 
+                        <input type="hidden" id="cityData" value="<?php echo e($dados[0]->city); ?>"/> 
                         <label class="text-4" for="contact-origin">Cidade <span>*</span></label>
                         <select class="form-control" id="city" name="city" required></select>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" >Origem do contato <span>*</span></label>
-                        <input type="hidden" id="contactOriginData" value="{{ $dados[0]->contact_origin }}">
+                        <input type="hidden" id="contactOriginData" value="<?php echo e($dados[0]->contact_origin); ?>">
                         <select class="form-control" id="contactOrigin" name="contact_origin" required>
                             <option value="">Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
@@ -105,7 +126,8 @@
                     <div class="form-group col-12">
                         
                         <label class="text-4" for="observation">Informações adicionais</label>
-                        <textarea class="form-control" id="additional_information" name="additional_information">{{ $dados[0]->additional_information }}
+                        <textarea class="form-control" id="additional_information" name="additional_information"><?php echo e($dados[0]->additional_information); ?>
+
                         </textarea>
                     </div>
                 </div>                
@@ -118,3 +140,4 @@
  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  
+<?php /**PATH C:\censupeg\resources\views/contact/modalEdit.blade.php ENDPATH**/ ?>

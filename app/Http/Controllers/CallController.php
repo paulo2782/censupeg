@@ -59,8 +59,7 @@ class CallController extends Controller
     public function storeCall(Request $request){
 
         $validator = Validator::make($request->all(),[
-          'date_contact'=>'required',
-          'date_return'=>'required'
+          'date_contact'=>'required'
         ]);
         if($validator->fails()){
             $date_contact  = $request->date_contact;

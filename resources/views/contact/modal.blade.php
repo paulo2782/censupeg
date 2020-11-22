@@ -1,6 +1,7 @@
 @section('content')
+
 <script src="{{ asset('js/jquery.mask.js') }}"></script> 
-<script src="{{ asset('js/contact.js') }}"></script> 
+<script src="{{ asset('js/contact.js?(new Date()).getTime() ') }}"></script> 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -31,7 +32,7 @@
                     <div class="form-group col-md-5 col-12">
                         <label class="text-4" for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" 
-                               placeholder= "(00) 0000-0000" value="{{Session::get('phone')}}" required/>   
+                               placeholder= "(00)0000-0000" value="{{Session::get('phone')}}" required/>   
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>

@@ -32,7 +32,7 @@
                     <div class="form-group col-12">
                         <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    
                         <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
-                        <select class="form-control schooling" id="schooling" name="schooling">
+                        <select class="form-control schooling" id="schooling" name="schooling" required>
                             <option value="">Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                             <option value="Ensino médio completo">Ensino médio completo</option>
@@ -44,7 +44,7 @@
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="stateData" value="{{ $dados[0]->state }}"/>  
                         <label class="text-4" for="contact-origin">Estado <span>*</span></label>
-                        <select class="form-control" id="state" name="state">
+                        <select class="form-control" id="state" name="state" required>
                             <option value="">Selecione o Estado</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -78,7 +78,7 @@
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="cityData" value="{{ $dados[0]->city }}"/> 
                         <label class="text-4" for="contact-origin">Cidade <span>*</span></label>
-                        <select class="form-control" id="city" name="city"></select>
+                        <select class="form-control" id="city" name="city" required></select>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" >Origem do contato <span>*</span></label>
@@ -110,7 +110,7 @@
                     </div>
                 </div>                
                 <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Atualizar</button>            
+                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

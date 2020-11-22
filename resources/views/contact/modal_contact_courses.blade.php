@@ -42,7 +42,7 @@
                     
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status <span>*</span></label>
-                        <select class="c-select form-control" id="statusSchedule" name="status">
+                        <select class="c-select form-control" id="statusSchedule" name="status" required>
                             <option value="" selected>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>
                             <option value="Cursando">Cursando</option>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary">Adicionar</button>            
+                <button type="submit" id="add" class="btn btn-primary">Salvar</button>            
             </form>
         </div>
     </div>

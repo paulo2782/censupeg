@@ -105,7 +105,7 @@
 								<th>Retorno</th>
 								<th>Horário</th>
 								<th>Status</th>
-								<th>Ação</th>
+								<th>Operador</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -117,10 +117,11 @@
 								<td>{{ date('d/m/Y',strtotime($data->date_return)) }}</td>
 								<td>{{ date('H:i', strtotime($data->schedule)) }}</td>
 								<td>{{ $data->status }}</td>
-								<td>
+								<td> Usuário</td>
+								<!--<td>
 									<a href="#" class="btnEditCall fa fa-pencil" aria-hidden="true" id="{{ $data->id }}"></a>
 									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
-								</td>
+								</td>-->
 							@php $i++; @endphp
 							@endforeach
 							</tr>
@@ -188,4 +189,3 @@ $('.btnEditCall').click(function(event) {
 
 });
 </script>
-

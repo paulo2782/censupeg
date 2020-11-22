@@ -11,25 +11,29 @@
             <div id="callback"></div>
             <form class="form-dialog registerForm" id="contact-modal" action="{{ route('storeCall') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
-                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
                 <div class="form-row">
-                    <div class="form-group col-12">
+                    <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
                         <input type="date" class="form-control" name="date_contact" required/>
                     </div>
-                    <div class="form-group col-12">
-                        <label class="text-4" for="date_return">Data de retorno</label>
-                        <input type="date" class="form-control" name="date_return" required/>    
+                    <div class="form-group col-md-6 col-12">
+                        <label class="text-4" for="hour_date_contact">Horário <span>*</span></label>
+                        <input type="time" class="form-control" name="hour_date_contact"/>    
                     </div>
-                    <div class="form-group col-12">
+                    <div class="form-group col-md-6 col-12">
+                        <label class="text-4" for="date_return">Data de retorno</label>
+                        <input type="date" class="form-control" name="date_return"/>    
+                    </div>
+                    <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="schedule">Horário</label>
-                        <input type="time" class="form-control" name="schedule" required/>    
+                        <input type="time" class="form-control" name="schedule"/>    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status <span>*</span></label>
-                        <select class="form-control" id="statusSchedule" name="status">
-                            <option value="" selected>Selecione status da ligação</option>
+                        <select id="statusSchedule" class="form-control" name="status">
+                            <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
                             <option value="Conversará com a família">Conversará com a família</option>
                             <option value="Não tem o curso que deseja">Não tem o curso que deseja</option>
@@ -38,9 +42,13 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
+                    <div class="form-group col-12">
+                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <textarea id="additional_information" class="form-control" name="additional_information"></textarea>
+                    </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Adicionar</button>            
+                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

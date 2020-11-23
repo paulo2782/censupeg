@@ -56,3 +56,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/function.js') }}"></script>
 <script src="{{ asset('js/login.js') }}"></script>
+
+<script>
+$(document).ready(function(){
+  $('.price').mask('000.000.000.000.000,00', {reverse: true});
+});
+
+</script>

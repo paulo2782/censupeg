@@ -25,3 +25,8 @@ $('.btnDelete').click(function(event) {
     return false;
    }
  });
+
+ //VALIDAR DINHEIRO
+ $(function() {
+  $("#price").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'', decimal:'.', affixesStay: false});
+});

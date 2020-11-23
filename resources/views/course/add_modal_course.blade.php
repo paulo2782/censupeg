@@ -1,6 +1,5 @@
 @section('content')
 <script src="{{ asset('js/jquery.mask.js') }}"></script> 
-
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -70,10 +69,4 @@
 </div>
 @endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-$(function() {
-    $("#price").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'', decimal:'.', affixesStay: false});
-});
-
-</script>
+<script src="{{ asset('js/course.js') }}"></script>

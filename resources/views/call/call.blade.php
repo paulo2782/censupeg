@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('contact/modal')
 <body id="body-container">
-  @include('includes/header')
+@include('includes/header')
 <div id="container-main">
     <div class="container">
         <div class="content">

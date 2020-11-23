@@ -36,7 +36,7 @@
                         <td>{{ date('H:m', strtotime($data->schedule)) }}</td>
                         <td id='toview'>
                             <div class='dropdown'>
-                                <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                                 <div class='dropdown-menu' aria-labelledby='dropdownImage'>
                                     <a href="{{ route('viewData',$data->contact_id) }}" class='dropdown-item btnToView'>Visualizar</a>
                                 </div>

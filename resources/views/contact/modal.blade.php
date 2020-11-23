@@ -1,6 +1,7 @@
 @section('content')
+
 <script src="{{ asset('js/jquery.mask.js') }}"></script> 
-<script src="{{ asset('js/contact.js') }}"></script> 
+<script src="{{ asset('js/contact.js?(new Date()).getTime() ') }}"></script> 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -25,17 +26,17 @@
                     <div class="form-group col-md-7 col-12">
                         <label class="text-4" for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" 
-                               placeholder="fulano@email.com" title="fulano@email.com"/>
+                               placeholder="fulano@email.com"/>
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label class="text-4" for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" 
-                               placeholder= "(00) 0000-0000" value="{{Session::get('phone')}}" required/>   
+                               placeholder= "(00)0000-0000" value="{{Session::get('phone')}}" required/>   
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
-                        <select class="form-control" id="schooling" name="schooling">
+                        <select class="form-control" id="schooling" name="schooling" required>
                             <option value="">Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                             <option value="Ensino médio completo">Ensino médio completo</option>
@@ -46,7 +47,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="contact-origin">Estado <span>*</span></label>
-                        <select class="form-control" id="state" name="state">
+                        <select class="form-control" id="state" name="state" required>
                             <option value="" selected>Selecione o Estado</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -79,7 +80,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="contact-origin">Cidade <span>*</span></label>
-                        <select class="form-control" id="city" name="city"></select>
+                        <select class="form-control" id="city" name="city" required></select>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Origem do contato <span>*</span></label>

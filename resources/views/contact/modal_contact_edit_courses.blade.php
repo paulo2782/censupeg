@@ -41,7 +41,7 @@
                          </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Modalidade</label>
+                        <label class="text-4">Modalidade <span>*</span></label>
                         <input type="text" id="modalityEdit" class="form-control" readonly="">
  
                     </div>

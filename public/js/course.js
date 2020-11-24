@@ -1,5 +1,4 @@
-
-
+//ADICIONAR CURSO
 $('#btnAdd').click(function(event) {
     $('#status').val($('#hiddenStatus').val());
     $('#contact_origin').val($('#hiddenContact_origin').val());
@@ -18,9 +17,7 @@ $('#btnAdd').click(function(event) {
 
 });
    
-
-
-
+//DELETAR CURSO
 $('.btnDelete').click(function(event) {
    if(confirm('Confirma Excluir?')){
     
@@ -28,3 +25,8 @@ $('.btnDelete').click(function(event) {
     return false;
    }
  });
+
+ //VALIDAR DINHEIRO - NOVO CURSO
+ $(document).ready(function(){
+  $("#price").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'', decimal:'.', affixesStay: false});
+});

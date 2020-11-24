@@ -29,7 +29,8 @@
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Nome do Curso <span>*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" placeholder="Informe o curso" value="{{Session::get('course')}}" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" 
+                               placeholder="Informe o curso" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">

@@ -26,7 +26,7 @@ $('.btnDelete').click(function(event) {
    }
  });
 
- //VALIDAR DINHEIRO
+ //VALIDAR DINHEIRO - NOVO CURSO
  $(document).ready(function(){
   $("#price").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'', decimal:'.', affixesStay: false});
 });

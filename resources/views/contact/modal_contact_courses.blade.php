@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4">Modalidade <span>*</span></label>
-                        <input type="text" id="modality" class="form-control" readonly="">
+                        <input type="text" id="modality" class="form-control" readonly="" required>
  
                     </div>
                     

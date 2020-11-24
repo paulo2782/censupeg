@@ -33,7 +33,7 @@
                         <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    
                         <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
                         <select class="form-control schooling" id="schooling" name="schooling" required>
-                            <option value="">Selecione a escolaridade</option>
+                            <option value="" disabled selected hidden>Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                             <option value="Ensino médio completo">Ensino médio completo</option>
                             <option value="Ensino superior incompleto">Ensino superior incompleto</option>

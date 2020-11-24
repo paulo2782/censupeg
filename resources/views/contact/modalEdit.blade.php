@@ -44,8 +44,8 @@
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="stateData" value="{{ $dados[0]->state }}"/>  
                         <label class="text-4" for="contact-origin">Estado <span>*</span></label>
-                        <select class="form-control" id="state" name="state">
-                            <option value="">Selecione o Estado</option>
+                        <select class="form-control" id="state" name="state" required>
+                            <option value="" disabled selected hidden>Selecione o Estado</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
@@ -84,7 +84,7 @@
                         <label class="text-4" >Origem do contato <span>*</span></label>
                         <input type="hidden" id="contactOriginData" value="{{ $dados[0]->contact_origin }}">
                         <select class="form-control" id="contactOrigin" name="contact_origin" required>
-                            <option value="">Selecione a origem do contato</option>
+                            <option value="" disabled selected hidden>Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
                             <option value="Empresas Parceiras">Empresas parceiras</option>
                             <option value="ex-aluno">Ex-aluno</option>

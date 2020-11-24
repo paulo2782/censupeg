@@ -35,15 +35,15 @@
                         <input type="hidden" name="course_id" id="course_id">
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Modalidade</label>
+                        <label class="text-4">Modalidade <span>*</span></label>
                         <input type="text" id="modality" class="form-control" readonly="">
  
                     </div>
                     
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status <span>*</span></label>
-                        <select class="c-select form-control" id="statusSchedule" name="status">
-                            <option value="" selected>Selecione o status do curso</option>
+                        <select class="c-select form-control" id="statusSchedule" name="status" required>
+                            <option value="" disabled selected hidden>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>

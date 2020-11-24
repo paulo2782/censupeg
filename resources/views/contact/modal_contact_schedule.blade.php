@@ -14,19 +14,15 @@
                 <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
                 <div class="form-row">
-                    <div class="form-group col-md-6 col-12">
+                    <div class="form-group col-12">
                         <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
                         <input type="date" class="form-control" name="date_contact" required/>
                     </div>
-                    <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="hour_date_contact">Horário <span>*</span></label>
-                        <input type="time" class="form-control" name="hour_date_contact"/>    
-                    </div>
-                    <div class="form-group col-md-6 col-12">
+                    <div class="form-group col-12">
                         <label class="text-4" for="date_return">Data de retorno</label>
                         <input type="date" class="form-control" name="date_return"/>    
                     </div>
-                    <div class="form-group col-md-6 col-12">
+                    <div class="form-group col-12">
                         <label class="text-4" for="schedule">Horário</label>
                         <input type="time" class="form-control" name="schedule"/>    
                     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('contact/modal')
 <body id="body-container">
-  @include('includes/header')
+@include('includes/header')
 <div id="container-main">
     <div class="container">
         <div class="content">
@@ -36,7 +36,7 @@
                         <td>{{ date('H:m', strtotime($data->schedule)) }}</td>
                         <td id='toview'>
                             <div class='dropdown'>
-                                <img src='/img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                                 <div class='dropdown-menu' aria-labelledby='dropdownImage'>
                                     <a href="{{ route('viewData',$data->contact_id) }}" class='dropdown-item btnToView'>Visualizar</a>
                                 </div>

@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary">Adicionar</button>            
+                <button type="submit" id="add" class="btn btn-primary">Salvar</button>            
             </form>
         </div>
     </div>

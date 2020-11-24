@@ -114,8 +114,12 @@
 							<tr>
 								<td>{{ $i }}</th>
 								<td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
-								<td>{{ date('d/m/Y',strtotime($data->date_return)) }}</td>
-								<td>{{ date('H:i', strtotime($data->schedule)) }}</td>
+								<td>@if($data->date_return != null) 
+									<td>{{ date('d/m/Y',strtotime($data->date_return)) }}
+									@endif </td>
+								<td>@if($data->schedule != null) 
+										{{ date('H:i', strtotime($data->schedule)) }}
+								 	@endif </td>
 								<td>{{ $data->status }}</td>
 								<td> Usuário</td>
 								<!--<td>

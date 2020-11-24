@@ -18,9 +18,11 @@
             <div class="form-group">
                 <label for="password" >Senha</label>
                 @if(isset($_COOKIE['user']))
-                <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control" value="{{ Cookie::get('password') }}">
+                <input type="password" id="password" class="form-control" name="password" value="{{ Cookie::get('password') }}" placeholder="Informe sua senha" />
+                <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                 @else
-                <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control">
+                <input type="password" id="password" class="form-control" name="password" placeholder="Informe sua senha" >
+                <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                 @endif
             </div>
             <button type="submit" class="btn btn-primary form-control"> 
@@ -53,5 +55,4 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/function.js') }}"></script>
-
-
+<script src="{{ asset('js/login.js') }}"></script>

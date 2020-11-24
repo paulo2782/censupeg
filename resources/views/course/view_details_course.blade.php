@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @include('includes/header')
-@include('course/editDataModal')
+@include('course/edit_modal_course')
 
 <body id="body-container">
 <div id="container-main">

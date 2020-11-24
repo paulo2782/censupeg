@@ -20,15 +20,15 @@
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="date_return">Data de retorno</label>
-                        <input type="date" class="form-control" name="date_return" id="date_return_edit" required/>    
+                        <input type="date" class="form-control" name="date_return" id="date_return_edit"/>    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="schedule">Horário</label>
-                        <input type="time" class="form-control" name="schedule" id="schedule_edit" required/>    
+                        <input type="time" class="form-control" name="schedule" id="schedule_edit"/>    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status <span>*</span></label>
-                        <select class="form-control" id="statusSchedule" name="status">
+                        <select class="form-control" id="statusSchedule" name="status" required>
                             <option value="" selected>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
                             <option value="Conversará com a família">Conversará com a família</option>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <input type="button"  class="btnUpdateEditCall btn btn-primary" data-dismiss=" " value="Atualizar">            
+                <input type="button"  class="btnUpdateEditCall btn btn-primary" data-dismiss=" " value="Salvar">            
             </form>
         </div>
     </div>

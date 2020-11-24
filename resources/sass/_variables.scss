@@ -75,36 +75,6 @@ span.text-5{
     font-size: 14px !important;
 }
 
-// LOGIN
-#login {
-    width: 100%;
-    .container {
-        max-width: 500px;
-        height: 320px;
-        .login-img {
-            display: block;
-            margin: 20px auto;
-        }
-        label {
-            font-weight: 500;
-        }
-        input {
-            font-size: 14px; 
-        }
-        .login-a {
-            text-decoration: none;
-            text-align: center;
-            color: $color-text-standard;
-            cursor: pointer;
-            &:hover {
-                text-decoration: none;
-                color: $primary-color;
-                font-weight: bold;
-            }
-        }
-    }
-}
-
 // HEADER
 #header {
     background: $primary-color;
@@ -270,9 +240,6 @@ span.text-5{
             padding: 0px 5px;
             margin-left: 10px;
         }
-        &:nth-child(2) {
-            text-transform: lowercase;;
-          }        
     }
     a {
         text-decoration: none;

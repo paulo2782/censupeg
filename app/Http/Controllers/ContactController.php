@@ -42,7 +42,6 @@ class ContactController extends Controller
         
     	$validator = Validator::make($request->all(),[
 		  'name'=>'required|min:5',
-		  'email'=>'required|unique:contacts',
           'contact_origin'=>'required'
 		]);
 		if($validator->fails()){

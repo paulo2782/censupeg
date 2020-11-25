@@ -6,6 +6,7 @@
 @include('contact/modal_contact_schedule')
 @include('contact/modal_contact_edit_courses')
 @include('contact/modal_contact_edit_schedule')
+@include('contact/modal_contact_view_schedule')
 
 <body id="body-container">
 <div id="container-main">
@@ -125,12 +126,8 @@
 								<td>{{ $data->status }}</td>
 								<td>{{ $data->user->name }}</td>
 								<td>
-									<a href="#" class="btnEditCall fa fa-eye" aria-hidden="true" title="Visualizar Registro"></a>
+									<a href="#" class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar Registro" id="{{ $data->id }}"></a></a>
 								</td>
-								<!--<td>
-									<a href="#" class="btnEditCall fa fa-pencil" aria-hidden="true" id="{{ $data->id }}"></a>
-									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
-								</td>-->
 							@php $i++; @endphp
 							@endforeach
 							</tr>
@@ -175,6 +172,30 @@ $('.btnEditCourse').click(function(event) {
     
 });
 
+$('.btnViewCall').click(function(event) {
+    $('#myModalViewCall').modal('toggle')
+    $('#call_id_edit').val(this.id)
+    $.ajax({
+	    url: "{{ route('searchCallEdit') }}",
+	    method: 'GET',
+	    dataType: 'json',
+	    data: {
+	            id:$('#call_id_edit').val()
+	    },
+	    success:function(data)
+	    {
+	    	console.log(data)
+	    	$('#date_contact_view').val(data.date_contact)
+	    	$('#date_return_view').val(data.date_return)
+	    	$('#schedule_view').val(data.schedule)
+      		$('#statusScheduleView option[value="'+data.status+'"]').prop('selected',true)
+      		$('#additional_information_view').html(data.additional_information)
+	        // console.log(data)
+	    }
+	});
+
+});
+
 $('.btnEditCall').click(function(event) {
     $('#myModalEditCall').modal('toggle')
     $('#call_id_edit').val(this.id)
@@ -187,11 +208,12 @@ $('.btnEditCall').click(function(event) {
 	    },
 	    success:function(data)
 	    {
-	    	
+	    	console.log(data)
 	    	$('#date_contact_edit').val(data.date_contact)
 	    	$('#date_return_edit').val(data.date_return)
 	    	$('#schedule_edit').val(data.schedule)
       		$('#statusSchedule option[value="'+data.status+'"]').prop('selected',true)
+      		$('#additional_information_edit').html(data.additional_information)
 	        console.log(data)
 	    }
 	});

@@ -106,6 +106,7 @@
 								<th>Horário</th>
 								<th>Status</th>
 								<th>Operador</th>
+								<th>Ação</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -123,6 +124,9 @@
 								 	@endif </td>
 								<td>{{ $data->status }}</td>
 								<td>{{ $data->user->name }}</td>
+								<td>
+									<a href="#" class="btnEditCall fa fa-eye" aria-hidden="true" title="Visualizar Registro"></a>
+								</td>
 								<!--<td>
 									<a href="#" class="btnEditCall fa fa-pencil" aria-hidden="true" id="{{ $data->id }}"></a>
 									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>

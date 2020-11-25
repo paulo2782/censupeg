@@ -28,6 +28,20 @@
                     </li>
                 </ul>
             </div>
+            <div class="contact-reports">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-12 contact-reports-charts">
+                            <h3>Escolaridade</h3>
+                            <div id="escolaridade"></div>
+                        </div>
+                        <div class="col-md-6 col-12 contact-reports-charts">
+                            <h3>Origem dos contatos</h3>
+                            <div id="origem-contato"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

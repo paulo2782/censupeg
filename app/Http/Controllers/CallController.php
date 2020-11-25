@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -37,7 +37,8 @@ class CallController extends Controller
             'date_contact'=>$data[0]->date_contact,
             'date_return'=>$data[0]->date_return,
             'schedule'=>$data[0]->schedule,
-            'status'=>$data[0]->status
+            'status'=>$data[0]->status,
+            'additional_information'=>$data[0]->additional_information
         ]);
 
     }

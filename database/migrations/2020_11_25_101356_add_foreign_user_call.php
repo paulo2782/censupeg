@@ -15,7 +15,7 @@ class AddForeignUserCall extends Migration
     {
         Schema::table('calls', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('user_id');
+           // $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
         });

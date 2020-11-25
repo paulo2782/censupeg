@@ -14,3 +14,4 @@ class Call extends Model
     	return $this->belongsTo(Contact::class);
     }
 }
+ 

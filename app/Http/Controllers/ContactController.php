@@ -143,3 +143,4 @@ class ContactController extends Controller
         return view('/contact/viewData',compact('dados','courses','dataInterests','dataCalls'));
     }
 }
+ 

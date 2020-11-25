@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('includes/header')
 @include('contact/modalEdit')
-
+ 
 @include('contact/modal_contact_courses')
 @include('contact/modal_contact_schedule')
 @include('contact/modal_contact_edit_courses')

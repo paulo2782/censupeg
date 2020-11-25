@@ -66,9 +66,10 @@ class CallController extends Controller
             $date_return   = $request->date_return;
             $schedule      = $request->schedule;
             $status        = $request->status;
+            $additional_information = $request->additional_information;
 
             return redirect()->back()->with([
-                'date_contact'=>$date_contact,'date_return'=>$date_return,'schedule'=>$schedule,'status'=>$status])
+                'date_contact'=>$date_contact,'date_return'=>$date_return,'schedule'=>$schedule,'status'=>$status,'additional_information'=>$additional_information])
             ->withErrors($validator);
         }
 

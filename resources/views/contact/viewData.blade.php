@@ -115,13 +115,14 @@
 								<td>{{ $i }}</th>
 								<td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
 								<td>@if($data->date_return != null) 
-									<td>{{ date('d/m/Y',strtotime($data->date_return)) }}
-									@endif </td>
+									{{ date('d/m/Y',strtotime($data->date_return)) }}
+									@endif 
+								</td>
 								<td>@if($data->schedule != null) 
 										{{ date('H:i', strtotime($data->schedule)) }}
 								 	@endif </td>
 								<td>{{ $data->status }}</td>
-								<td> Usuário</td>
+								<td>{{ $data->user->name }}</td>
 								<!--<td>
 									<a href="#" class="btnEditCall fa fa-pencil" aria-hidden="true" id="{{ $data->id }}"></a>
 									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>

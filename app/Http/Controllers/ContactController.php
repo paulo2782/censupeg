@@ -139,7 +139,7 @@ class ContactController extends Controller
         ->get();
 
 
-        $dataCalls = Call::where('contact_id','=',$request->id)->get(); 
+        $dataCalls = Call::where('contact_id','=',$request->id)->orderby('date_return')->orderby('schedule')->get(); 
         return view('/contact/viewData',compact('dados','courses','dataInterests','dataCalls'));
     }
 }

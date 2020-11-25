@@ -13,6 +13,8 @@
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="date_contact">Data do contato <span>*</span></label>

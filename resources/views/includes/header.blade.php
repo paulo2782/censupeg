@@ -16,13 +16,19 @@
                         <a class="nav-link" href="{{ route('callShow') }}">Ligações</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('courseShow') }}">Cursos</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('reportShow') }}">Relatório</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('userShow') }}">Usuários</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Configurações
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('courseShow') }}">Cursos</a>
+                            <a class="dropdown-item" href="{{ route('userShow') }}">Usuários</a>
+                        </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">

@@ -107,7 +107,7 @@ class ContactController extends Controller
         if($ligacao == 0 && $course == 0){
             $id = Contact::find($id);
             $id->delete();
-            return redirect()->back()->with('alert','Registro Excluído.');            
+            return redirect()->back()->with('alert','Registro excluído.');            
         }else{
             return redirect()->back()->with('alert','Não é possível excluir esse registro, existem cursos (e ou) ligações vinculadas.');
         }

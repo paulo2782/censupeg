@@ -82,9 +82,9 @@
 								<td> {{ $data->level_course }}</td>
  								<td> {{ $data->status }}</td>
 								<td>
-									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar Registro" id="{{ $data->id }}"></a>
+									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar registro" id="{{ $data->id }}"></a>
 
-									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
+									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar registro"></a>
 								</td>
 							</tr>
 							@php $i++; @endphp
@@ -126,7 +126,7 @@
 								<td>{{ $data->status }}</td>
 								<td>{{ $data->user->name }}</td>
 								<td>
-									<a href="#" class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar Registro" id="{{ $data->id }}"></a></a>
+									<a href="#" class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar registro" id="{{ $data->id }}"></a></a>
 								</td>
 							@php $i++; @endphp
 							@endforeach

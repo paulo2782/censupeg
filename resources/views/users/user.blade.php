@@ -7,8 +7,10 @@
 	<div id="container-main">
 		<div class="container">
 			<div class="content">
-				<div class="aux-bar">
-					<h2>Usuários </h2>
+				<div class="top-bar">
+					<h1>Usuários</h1>
+					<a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
+	                <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
 				</div>
 				<div id="content-table" class="table-responsive">
 					<table class="table">
@@ -17,6 +19,7 @@
 								<th>Nome</th>
 								<th>Usuário</th>
 								<th>Permissão</th>
+								<th>Ação</th>
 							</tr>
 					</thead>  
 						<tbody id="tabela">
@@ -24,7 +27,11 @@
 							<tr>
 								<td> {{ $dado->name }} </td>
 								<td> {{ $dado->email }} </td>
-								<td> </td>
+								<td> Operador </td>
+								<td>
+									<a href="#" class="fa fa-pencil" aria-hidden="true" title="Editar usuário"></a>
+									<a href="#" class="fa fa-trash" aria-hidden="true" title="Apagar usuário"></a>
+								</td>
 							</tr>
 							@endforeach
 						</tbody>

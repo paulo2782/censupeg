@@ -8,8 +8,7 @@
 		<div class="container">
 			<div class="content">
 				<div class="top-bar">
-					<h1>Contatos</h1>
-					<a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
+					<h1>Usuários</h1>
 				</div>
 				<div class="aux-bar">
 					<h2>Usuários </h2>

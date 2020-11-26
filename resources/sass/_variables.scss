@@ -75,35 +75,6 @@ span.text-5{
     font-size: 14px !important;
 }
 
-// HEADER
-#header {
-    background: $primary-color;
-    .container {
-        min-width: 100%;
-        min-height: 70px;
-        .navbar {
-            min-height: 70px;
-        }
-        .navbar-toggler {
-            background-color: $white;
-        }
-        .nav-link {
-            color: $secondary-color;
-            font-size: 14px;
-            text-transform: uppercase;
-            &:hover {
-                color: $white;
-                font-weight: bold;
-            }
-        }
-        .username {
-            font-weight: bold;
-            color: $white;
-            text-transform: uppercase;
-        }
-    }
-}
-
 .botao {
     width: 100%;
     font-size: 1em;

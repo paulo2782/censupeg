@@ -9,30 +9,29 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('contactShow') }}">Contatos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('callShow') }}">Ligações</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('courseShow') }}">Cursos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('reportShow') }}">Relatório</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('userShow') }}">Usuários</a>
-                </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contactShow') }}">Contatos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('callShow') }}">Ligações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('courseShow') }}">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('reportShow') }}">Relatório</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('userShow') }}">Usuários</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link username"><strong>{{ auth()->user()->name }}</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('logout') }}">Sair</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link username"><strong>{{ auth()->user()->name }}</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}">Sair</a>
+                    </li>
                 </ul>
             </div>
         </nav>

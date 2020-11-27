@@ -17,7 +17,7 @@
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">       
-                    <div class="form-group">
+                    <div class="form-group col-12">
                         <label for="name">Tipo de usuário<span>*</span></label>
                         <select class="c-select form-control" required>
                             <option value="" disabled selected hidden>Selecione tipo de usuário</option>
@@ -25,7 +25,7 @@
                             <option value="1">Administrador</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-12">
                         <label for="name">{{ __('Name') }}<span>*</span></label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Informe seu nome">
                             @error('name')
@@ -34,7 +34,7 @@
                                 </span>
                             @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-12">
                         <label for="email">{{ __('E-Mail Address') }}<span>*</span></label>
                         <input type="email"  id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Informe seu email">
                             @error('email')
@@ -43,7 +43,7 @@
                                 </span>
                             @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-6 col-12">
                         <label for="password">{{ __('Password') }}<span>*</span></label>
                         <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Informe sua senha">
                         <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>    
@@ -53,19 +53,16 @@
                                 </span>
                             @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-6 col-12">
                         <label for="password-confirm">{{ __('Confirm Password') }}<span>*</span></label>
                         <input type="password" id="password-confirm" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirme sua senha">
                         <span toggle="#password-confirm" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary form-control">
-                            {{ __('Register') }}
-                        </button>
-                    </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
+                <button type="submit" class="btn btn-primary">
+                            {{ __('Register') }}
+                </button>
             </form>
         </div>
    </div>

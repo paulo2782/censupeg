@@ -9,24 +9,21 @@
             </div>
             <div id="callback"></div>
             <form class="form-dialog registerForm" id="updateForm">
- 
              <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-
                  <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Senha atual <span>*</span></label>
-                        <input type="password" class="form-control @error('name') is-invalid @enderror" id="edtCourse" name="course" placeholder="Informe o curso" required autocomplete="course" autofocus/>
+                        <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Informe a senha atual" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Nova senha <span>*</span></label>
-                        <input type="password" class="form-control @error('name') is-invalid @enderror" id="edtCourse" name="course" placeholder="Informe o curso" required autocomplete="course" autofocus/>
+                        <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Informe a nova senha" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Repetir nova senha <span>*</span></label>
-                        <input type="password" class="form-control @error('name') is-invalid @enderror" id="edtCourse" name="course" placeholder="Informe o curso" required autocomplete="course" autofocus/>
+                        <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Repetir nova senha" required autocomplete="course" autofocus/>
                     </div>
-
                 </div>
                 <div class="line-horizontal"></div>
                 <input type="hidden" id="idCourse" name="id">

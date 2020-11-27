@@ -9,14 +9,14 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="contact-modal" action="{{ route('storeCourse') }}" method="post">
+            <form class="form-dialog registerForm" id="contact-modal" action="{{ route('register') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">       
                     <div class="form-group col-12">
                         <label for="name">Tipo de usuário<span>*</span></label>
-                        <select class="c-select form-control" required>
+                        <select class="c-select form-control" name="level" required>
                             <option value="" disabled selected hidden>Selecione tipo de usuário</option>
                             <option value="0">Operador</option>
                             <option value="1">Administrador</option>

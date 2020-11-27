@@ -157,22 +157,24 @@ span.text-5 { display: block; font-size: 12px; }
 
 #header .container .nav-link:hover { color: #fff; }
 
+#header .container a.dropdown-item { font-size: 14px; color: #333; }
+
+#header .container a.dropdown-item:hover { color: #9E1D21; }
+
 #header .container .username { font-weight: bold; color: #fff; text-transform: uppercase; }
 
-/*
-#login { width: 100%; }
+#user { width: 100%; }
 
-#login .container { max-width: 500px; height: 320px; }
+#user .container { max-width: 500px; height: 320px; }
 
-#login .container .login-img { display: block; margin: 20px auto; }
+#user .container .login-img { display: block; margin: 20px auto; }
 
-#login .container .form-group label { font-weight: 500; }
+#user .container .form-group label { font-weight: 500; }
 
-#login .container .form-group input { font-size: 14px; }
+#user .container .form-group input { font-size: 14px; }
 
-#login .container .form-group .field_icon { float: right; margin-top: -25px; margin-right: 5px; position: relative; z-index: 2; }
+#user .container .form-group .field_icon { float: right; margin-top: -25px; margin-right: 5px; position: relative; z-index: 2; }
 
-#login .container .login-a { text-decoration: none; text-align: center; color: #555; cursor: pointer; }
+#user .container .login-a { text-decoration: none; text-align: center; color: #555; cursor: pointer; }
 
-#login .container .login-a:hover { text-decoration: none; color: #9E1D21; font-weight: bold; }
-*/
+#user .container .login-a:hover { text-decoration: none; color: #9E1D21; font-weight: bold; }

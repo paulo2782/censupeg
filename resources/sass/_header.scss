@@ -17,6 +17,13 @@
                 color: $white;
             }
         }
+        a.dropdown-item{
+            font-size: 14px;
+            color: $color-text-title;
+            &:hover{
+                color: $primary-color;
+            }
+        }
         .username {
             font-weight: bold;
             color: $white;

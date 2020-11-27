@@ -13,6 +13,9 @@
 					<a data-toggle="modal" href="#myModalAdd"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
 	                <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
 				</div>
+				<div class="aux-bar">
+					<h2>Usuários</h2>
+				</div>
 				<div id="content-table" class="table-responsive">
 					<table class="table">
 						<thead>

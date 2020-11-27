@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Novo Usuário <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Editar Usuário <span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -49,9 +49,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="submit" class="btn btn-primary">
-                            {{ __('Register') }}
-                </button>
+                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>
             </form>
         </div>
    </div>

@@ -57,9 +57,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="submit" class="btn btn-primary">
-                            {{ __('Register') }}
-                </button>
+                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>
             </form>
         </div>
    </div>

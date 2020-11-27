@@ -7,33 +7,30 @@
     <div class="container">
         <div class="content-details">
             <div class="top-bar-block">
-                <h1>Cursos</h1>
+                <h1>Minha conta</h1>
             </div>
             <div class="show-details-block">
-                <h2>Graduação</h2>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Blablabla</a>
-                        <div class="pull-right">
-                            <a href="#" class="fa fa-pencil btnEdit" aria-hidden="true" ></a>
-                            <a href="#" class="fa fa-trash btnDelete" aria-hidden="true" ></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="show-details-block">
-                <h2>Pós-graduação</h2>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Blablabla</a>
-                        <div class="pull-right">
-                            <a href="#" class="fa fa-pencil " aria-hidden="true"></a>
-                            <a href="#" class="fa fa-trash btnDelete" aria-hidden="true"></a>
-                        </div>
-                </ul>
-            </div>
+                <h3 class="py-4 text-center">FULANO</h3>
+				<form class="contact-info" method="post">
+					<div class="form-row">
+						<div class="form-group col-12">
+							<label class="text-4" for="nameCourse">Fulano</label>
+							<input type="text" class="form-control" readonly="" id="nameCourse" name="course" value="#" />
+						</div>
+						<div class="form-group col-md-6 col-12">
+							<label class="text-4" for="emailContact">Email</label>
+							<input type="email" class="form-control" readonly="" id="emailContact" name="email" value="#" />
+						</div>
+						<div class="form-group col-md-6 col-12">
+							<label class="text-4" for="levelCourse">Senha</label>
+							<input type="text" class="form-control" readonly="" id="levelCourse" name="level" value="#"/>    
+						</div>
+					</div>
+				</form>
+			</div>        
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/course.js') }}"></script>
 </body>  
 </html>

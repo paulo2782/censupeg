@@ -2,7 +2,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Alterar senha <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Alterar senha </h3>
+                <span class="text-5">Para sua segurança, use uma senha que contenha números, letras maiúsculas, minúsculas e caracteres especiais, e com no mínimo 8 caracteres</span>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,15 +14,15 @@
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                  <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Senha atual <span>*</span></label>
+                        <label class="text-4" for="name">Senha atual</label>
                         <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Informe a senha atual" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nova senha <span>*</span></label>
+                        <label class="text-4" for="name">Nova senha</label>
                         <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Informe a nova senha" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Repetir nova senha <span>*</span></label>
+                        <label class="text-4" for="name">Repetir nova senha</label>
                         <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Repetir nova senha" required autocomplete="course" autofocus/>
                     </div>
                 </div>

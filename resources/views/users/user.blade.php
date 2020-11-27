@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @include('includes/header')
 @include('users/add_modal_user')
+@include('users/edit_modal_user')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <body id="body-container">
@@ -9,7 +10,7 @@
 			<div class="content">
 				<div class="top-bar">
 					<h1>Usuários</h1>
-					<a data-toggle="modal" href="#myModal"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
+					<a data-toggle="modal" href="#myModalAdd"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
 	                <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
 				</div>
 				<div id="content-table" class="table-responsive">
@@ -29,7 +30,7 @@
 								<td> {{ $dado->email }} </td>
 								<td> Operador </td>
 								<td>
-									<a href="#" class="fa fa-pencil" aria-hidden="true" title="Editar usuário"></a>
+									<a data-toggle="modal" href="#myModalEdit" class="fa fa-pencil" aria-hidden="true" title="Editar usuário"></a>
 									<a href="#" class="fa fa-trash" aria-hidden="true" title="Apagar usuário"></a>
 								</td>
 							</tr>

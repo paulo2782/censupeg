@@ -1,6 +1,5 @@
-@section('content')
-
-<div class="modal fade" id="myModal">
+@extends('layouts.app')
+<div class="modal fade" id="myModalEdit">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,4 +61,4 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/login.js') }}"></script>
-@endsection
+

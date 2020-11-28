@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <input type="button" class="btnUpdateEditCall btn btn-primary" data-dismiss=" " value="Salvar">            
+                <input type="button" class="btnUpdateEditCall btn btn-success" data-dismiss=" " value="Salvar">            
             </form>
         </div>
     </div>

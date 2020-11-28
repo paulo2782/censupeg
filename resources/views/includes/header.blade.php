@@ -24,6 +24,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('courseShow') }}">Cursos</a>
+                            <a class="dropdown-item" href="{{ route('courseShow') }}">Minha conta</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('userShow') }}">Usuários</a>
                         </div>
                     </li>

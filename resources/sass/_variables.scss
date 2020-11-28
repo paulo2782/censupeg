@@ -302,15 +302,13 @@ span.text-5{
         margin: 0px 20px;
         padding: 10px 0px;
     }
-}
-
-// CONTACT INFO
-.contact-info {
-    margin: 0 auto;
-    .form-row {
-        margin-left: 15px !important;
-        margin-right: 15px !important;
-    }    
+    #contact-info {
+        margin: 10px auto;
+        > .form-row {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
 }
 
 // FOOTER

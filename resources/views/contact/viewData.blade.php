@@ -19,7 +19,7 @@
 				<h2>Dados básicos
 					<a href="#" class="fa fa-pencil" aria-hidden="true" id="btnAdd"></a>
 				</h2>
-				<form class="contact-info" method="post">
+				<form id="contact-info" method="post">
 					<div class="form-row">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameContact">Nome Completo</label>

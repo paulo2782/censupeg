@@ -13,7 +13,7 @@
 				<h2>Dados básicos
                     <a href="#" onclick="callEditModal(id=`{{ $dados[0]->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="{{ $dados[0]->course }}"></a>
 				</h2>
-				<form class="contact-info" method="post">
+				<form id="contact-info" method="post">
 					<div class="form-row">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameCourse">Curso</label>

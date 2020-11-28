@@ -57,7 +57,7 @@
                 </div>
                 <div class="line-horizontal"></div>
                 <input type="hidden" id="idCourse" name="id">
-                <button type="button" id="updateCourse" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
+                <button type="submit" id="updateCourse" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

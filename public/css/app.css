@@ -39,6 +39,8 @@ span.text-5 { display: block; font-size: 12px; }
 
 .modal-content .form-control { font-size: 14px !important; }
 
+.modal-content .field_icon { float: right; margin-top: -25px; margin-right: 5px; position: relative; z-index: 2; }
+
 .modal-content .btn-primary { color: #313131 !important; background: #fff !important; font-size: 14px !important; border: 1px solid #9E1D21 !important; }
 
 .modal-content .btn-primary:hover { color: #fff !important; background-color: #9E1D21 !important; font-weight: bold; }
@@ -162,19 +164,3 @@ span.text-5 { display: block; font-size: 12px; }
 #header .container a.dropdown-item:hover { color: #9E1D21; }
 
 #header .container .username { font-weight: bold; color: #fff; text-transform: uppercase; }
-
-#user { width: 100%; }
-
-#user .container { max-width: 500px; height: 320px; }
-
-#user .container .login-img { display: block; margin: 20px auto; }
-
-#user .container .form-group label { font-weight: 500; }
-
-#user .container .form-group input { font-size: 14px; }
-
-#user .container .form-group .field_icon { float: right; margin-top: -25px; margin-right: 5px; position: relative; z-index: 2; }
-
-#user .container .login-a { text-decoration: none; text-align: center; color: #555; cursor: pointer; }
-
-#user .container .login-a:hover { text-decoration: none; color: #9E1D21; font-weight: bold; }

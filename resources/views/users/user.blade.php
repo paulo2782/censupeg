@@ -2,8 +2,11 @@
 @include('includes/header')
 @include('users/add_modal_user')
 @include('users/edit_modal_user')
+@include('users/delete_modal_user')
+
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+<form name="addUser" action="{{ route('register') }}" method="POST">
 <body id="body-container">
 	<div id="container-main">
 		<div class="container">
@@ -42,7 +45,7 @@
 								<td> {{ $level }} </td>
 								<td>
 									<a data-toggle="modal" href="#myModalEdit" class="fa fa-pencil" aria-hidden="true" title="Editar usuário"></a>
-									<a href="#" class="fa fa-trash" aria-hidden="true" 
+									<a href="#" class="fa fa-trash deleteUser" aria-hidden="true" 
 									   title="Apagar usuário" 
 									   data-id="{{ $dado->id }}"
 									   data-name="{{ $dado->name }}">
@@ -56,35 +59,8 @@
 			</div>
 		</div>
 	</div>
+</body>
+</form>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</body>  
-
-<div id="modalDelete" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-<div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">CENSUPEG</h4>
-    </div>
-    <div class="modal-body">
-      Deseja mesmo apagar ? USUÁRIO: <span class="name"></span>
-    </div>
-    <div class="modal-footer">
-      <a href="#" type="button" class="btn btn-default delete-yes">Sim</a>
-      <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-    </div>
-  </div>
-   </div>
-   </div>
-
-</html>
-
-<script>
-	$('.fa-trash').click(function(event) {
-		/* Act on the event */
-		id = $(this).attr('data-id');
-		name = $(this).attr('data-name');
-		$('.name').html(name)
-		$('#modalDelete').modal('show');
-	});
-</script>
+<script src="{{ asset('/js/user.js') }}"></script>

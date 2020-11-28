@@ -23,10 +23,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-
-$('#btnDelete').click(function(event) {
-  /* Act on the event */
-  $('#deleteUser').attr('action','destroyUser')
-  $('#deleteUser').submit()
-});
 </script>

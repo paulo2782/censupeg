@@ -12,6 +12,12 @@ $('.deleteUser').click(function(event) {
 	$('#modalDelete').modal('show');
 });
 
+$('#btnDelete').click(function(event) {
+  /* Act on the event */
+  $('#deleteUser').attr('action','destroyUser')
+  $('#deleteUser').submit()
+});
+
 $(".toggle-password").click(function() {
     $(this).toggleClass("fa-eye fa-eye-slash");
     var input = $($(this).attr("toggle"));

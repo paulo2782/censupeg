@@ -81,4 +81,5 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('updateInterestCourse','InterestController@updateInterestCourse')->name('updateInterestCourse');
 	Route::get('searchInterest','InterestController@searchInterest')->name('searchInterest');
 
+	Route::delete('destroyUser', 'UserController@destroyUser')->name('destroyUser');
 });

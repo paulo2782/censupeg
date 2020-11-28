@@ -19,6 +19,7 @@
 				<div class="aux-bar">
 					<h2>Usuários</h2>
 				</div>
+				<span id="alert"> {{ Session::get('alert') }} </span>
 				<div id="content-table" class="table-responsive">
 					<table class="table">
 						<thead>
@@ -63,4 +64,6 @@
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/user.js') }}"></script>
+<script src="{{ asset('/js/users.js?Date(d-m-Y,h:i:s)') }}"></script>
+
+

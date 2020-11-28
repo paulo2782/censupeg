@@ -1,3 +1,17 @@
+if($('#alert').is(':visible')){
+	$('#alert').fadeOut(4000);
+}
+
+$('.deleteUser').click(function(event) {
+	/* Act on the event */
+	id   = $(this).attr('data-id');
+	name = $(this).attr('data-name');
+	$('.name').html(name)
+	$('#id').val(id)
+
+	$('#modalDelete').modal('show');
+});
+
 $(".toggle-password").click(function() {
     $(this).toggleClass("fa-eye fa-eye-slash");
     var input = $($(this).attr("toggle"));

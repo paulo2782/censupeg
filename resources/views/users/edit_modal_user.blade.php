@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="line-horizontal"></div>
-                    <button type="button" id="#" class="btn btn-success" data-dismiss=" ">Salvar</button>            
+                    <button type="button" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
                 </form>
             </div>
         </div>

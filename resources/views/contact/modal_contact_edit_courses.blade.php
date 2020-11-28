@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <input type="button"  class="btnUpdateContactCourse btn btn-success" value="Salvar">            
+                <input type="button"  class="btnUpdateContactCourse btn btn-outline-success" value="Salvar">            
             </form>
         </div>
     </div>

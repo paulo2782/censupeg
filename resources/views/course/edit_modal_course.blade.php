@@ -64,7 +64,7 @@
                 </div>
                 <div class="line-horizontal"></div>
                 <input type="hidden" id="idCourse" name="id">
-                <button type="button" id="updateCourse" class="btn btn-success" data-dismiss=" ">Salvar</button>            
+                <button type="button" id="updateCourse" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
    </div>

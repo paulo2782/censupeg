@@ -10,7 +10,7 @@
             <div class="modal-body">
               <p>Você tem certeza que deseja excluir o usuário "<span class="name"></span>" ? </p>
               <div class="line-horizontal"></div>
-              <button type="button" id="#" class="btn btn-danger" data-dismiss=" ">Excluir</button>
+              <button type="button" id="#" class="btn btn-outline-danger" data-dismiss=" ">Excluir</button>
             </div>
         </div>
     </div>

@@ -69,7 +69,9 @@
 								<th>Modalidade</th>
 								<th>Nível</th>
 								<th>Status</th>
+                                @if(auth()->user()->level == 1)
 								<th>Ação</th>
+								@endif
 							</tr>
 						</thead>
 						<tbody>
@@ -81,11 +83,13 @@
 								<td> {{ $data->course_type }}</td>
 								<td> {{ $data->level_course }}</td>
  								<td> {{ $data->status }}</td>
+ 								@if(auth()->user()->level == 1)
 								<td>
 									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar registro" id="{{ $data->id }}"></a>
 
 									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar registro"></a>
 								</td>
+								@endif
 							</tr>
 							@php $i++; @endphp
 							@endforeach

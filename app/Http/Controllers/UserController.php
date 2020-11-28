@@ -26,4 +26,12 @@ class UserController extends Controller
 	    	return redirect()->back()->with('alert','Não foi possível apagar existe ligações ou contatos vinculados');
 	    }
     }
+
+    public function updateUser(Request $request)
+    {
+        $data = $request->all();
+        User::find($request->id)->update($data);
+        return redirect()->back()->with('alert','Registro Alterado');
+
+    }
 }

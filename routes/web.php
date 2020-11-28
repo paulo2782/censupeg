@@ -82,4 +82,5 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('searchInterest','InterestController@searchInterest')->name('searchInterest');
 
 	Route::delete('destroyUser', 'UserController@destroyUser')->name('destroyUser');
+	Route::put('updateUser', 'UserController@updateUser')->name('updateUser');	
 });

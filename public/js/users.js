@@ -12,6 +12,25 @@ $('.deleteUser').click(function(event) {
 	$('#modalDelete').modal('show');
 });
 
+$('.editUser').click(function(event) {
+  /* Act on the event */
+  id    = $(this).attr('data-id')
+  level = $(this).attr('data-level')
+  name  = $(this).attr('data-name')
+  email = $(this).attr('data-email')
+
+  $('#level_edit').val(level)
+  $('#name_edit').val(name)
+  $('#email_edit').val(email)
+  $('#id_edit').val(id)
+});
+
+$('#btnUpdate').click(function(event) {
+  /* Act on the event */
+  $('#updateUser').attr('action','updateUser')
+  $('#updateUser').submit()
+});
+
 $('#btnDelete').click(function(event) {
   /* Act on the event */
   $('#deleteUser').attr('action','destroyUser')

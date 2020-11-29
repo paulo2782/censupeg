@@ -290,16 +290,15 @@
                                         </thead>  
                                         <tbody id="tabela">
                                             <tr>
-                                                <td>joao manuel </td>
+                                                <td><a href="#">joao manuel</a></td>
                                                 <td>29/11/2020 11:10 </td>
                                                 <td>29/11/2020 11:10 </td>
                                                 <td>Educação Física</td>
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
                                                         <div class="pull-right">
-                                                            <a href="#" class="fa fa-view " aria-hidden="true" title="#"></a>                                                            
-                                                            <a href="#" class="fa fa-pencil " aria-hidden="true" title="#"></a>
-                                                            <a href="#" class="fa fa-trash" aria-hidden="true" title="#"></a>
+                                                            <a href="#" data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Delete" data-toggle="modal" data-target="#edit" ><span class="fa fa-pencil"></span></button></a>
+                                                            <a href="#" data-placement="top" data-toggle="tooltip" title="Excluir"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="fa fa-trash"></span></button></a>
                                                         </div>
                                                 </td>
                                             </tr>
@@ -318,5 +317,6 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('/js/mailing.js') }}"></script>
 </body>  
 </html>

@@ -1,32 +1,23 @@
 @extends('layouts.app')
-@include('contact/modal')
+@include('mailing/add_modal_mailing')
+@include('mailing/edit_modal_mailing')
+@include('mailing/delete_modal_mailing')
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body id="body-container">
 @include('includes/header')
 
-<!-- if(session('alert'))
-<center>
-    <div class="alert alert-success">
-          session('alert') }}
-    </div>
-</center>
-endif
- -->
-
- 
 <div id="container-main">
     <div class="container">
         <div class="content">
             <div class="top-bar">
-                <h1>Contatos</h1>
+                <h1>Mailing</h1>
                 <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                 <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
             </div>
             <div class="aux-bar">
-                <h2>Contatos </h2>
+                <h2>Mailing </h2>
                 <form class="search-contact" action="{{ route('searchContact') }}">
                     <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar contato" />
                 </form>
@@ -43,25 +34,21 @@ endif
                         </tr>
                     </thead>  
                     <tbody id="tabela">
-                    @foreach($dados as $dado)
                         <tr>
-                            <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->name }} </a></td>
-                            <td>{{ $dado->email }} </td>
-                            <td> {{ $dado->phone }} </td>
-                            <td> {{ $dado->user->name }}</td>
+                            <td><a href="#"> nome </td> </a>
+                            <td>email </td>
+                            <td> phone </td>
+                            <td> operador</td>
                             <td id='toview'>
                                 <div class='dropdown'>
                                 <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                                 <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                    <a href="{{ route('viewData',$dado->id) }}" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
-                                    @if(auth()->user()->level == 1)
-                                    <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
-                                    @endif
+                                    <a href="#" class='dropdown-item btnToView' id="">Visualizar</a>
+                                    <a href="#" class='dropdown-item btnDelete'>Excluir</a>
                                 </div>
                                 </div>
                             </td>
                         </tr>
-                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -69,23 +56,12 @@ endif
         <div class="content">
             <ul class="pagination">
                 <li>
-                    <span class="text-4">{{ $dados->appends(['search'=>$search])->links() }}</span>
+                    <span class="text-4"></span>
                 </li>
             </ul>
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/contact.js') }}"></script>
 </body>  
 </html>
-<script src="{{ asset('js/function.js') }}"></script> 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script>
-    var msg = '{{Session::get('alert')}}';
-    var exist = '{{Session::has('alert')}}';
-    if(exist){
-      swal("Censupeg",msg, 'error');
-    }
-</script>

@@ -1,17 +1,17 @@
 #month {
-    padding: 15px 30px;
     width: 100%;
-    background: #1abc9c;
+    padding: 15px 30px;
     text-align: center;
+    font-weight: bold;
     ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         li {
-            color: white;
+            color: $color-text-title;
             font-size: 20px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             a {
                 text-decoration: none;
             }

@@ -155,11 +155,11 @@ span.text-5 { display: block; font-size: 12px; }
 
 .line-horizontal { margin-bottom: 10px; border: 1px solid #9E1D21; }
 
-#month { padding: 15px 30px; width: 100%; background: #1abc9c; text-align: center; }
+#month { width: 100%; padding: 15px 30px; text-align: center; font-weight: bold; }
 
 #month ul { list-style-type: none; margin: 0; padding: 0; }
 
-#month ul li { color: white; font-size: 20px; text-transform: uppercase; letter-spacing: 3px; }
+#month ul li { color: #333; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; }
 
 #month ul li a { text-decoration: none; }
 

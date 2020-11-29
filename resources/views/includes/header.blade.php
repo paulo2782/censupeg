@@ -9,41 +9,43 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('contactShow') }}">Contatos</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Atividades
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('mailingShow') }}">Mailing</a>
-                        <a class="dropdown-item" href="{{ route('callShow') }}">Ligações</a>
-                        <a class="dropdown-item" href="#">Agenda</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('reportShow') }}">Relatório</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Configurações
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Minha conta</a>
-                    <a class="dropdown-item" href="{{ route('courseShow') }}">Cursos</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Usuários</a>
-                    </div>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contactShow') }}">Contatos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Atividades
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('mailingShow') }}">Mailing</a>
+                            <a class="dropdown-item" href="{{ route('callShow') }}">Ligações</a>
+                            <a class="dropdown-item" href="#">Agenda</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('reportShow') }}">Relatório</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Configurações
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('courseShow') }}">Cursos</a>
+                            <a class="dropdown-item" href="{{ route('courseShow') }}">Minha conta</a>
+                            @if(auth()->user()->level == 1)
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('userShow') }}">Usuários</a>
+                            @endif
+                        </div>
+                    </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link username"><strong>{{ auth()->user()->name }}</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: #fff" href="{{ route('logout') }}">Sair</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link username"><strong>{{ auth()->user()->name }}</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}">Sair</a>
+                    </li>
                 </ul>
             </div>
         </nav>

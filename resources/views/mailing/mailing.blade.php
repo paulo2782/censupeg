@@ -57,10 +57,10 @@
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
                                                     <div class='dropdown'>
-                                                    <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                        <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                    </div>
+                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -72,10 +72,10 @@
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
                                                     <div class='dropdown'>
-                                                    <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                        <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                    </div>
+                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -117,10 +117,10 @@
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
                                                     <div class='dropdown'>
-                                                    <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                        <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                    </div>
+                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -162,10 +162,10 @@
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
                                                     <div class='dropdown'>
-                                                    <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                        <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                    </div>
+                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -207,10 +207,10 @@
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
                                                     <div class='dropdown'>
-                                                    <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                        <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                    </div>
+                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -252,10 +252,10 @@
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
                                                     <div class='dropdown'>
-                                                    <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                        <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                    </div>
+                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
+                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
+                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -296,12 +296,11 @@
                                                 <td>Educação Física</td>
                                                 <td>Tem interesse</td>
                                                 <td id='toview'>
-                                                    <div class='dropdown'>
-                                                    <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                    <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                        <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                    </div>
-                                                    </div>
+                                                        <div class="pull-right">
+                                                            <a href="#" class="fa fa-view " aria-hidden="true" title="#"></a>                                                            
+                                                            <a href="#" class="fa fa-pencil " aria-hidden="true" title="#"></a>
+                                                            <a href="#" class="fa fa-trash" aria-hidden="true" title="#"></a>
+                                                        </div>
                                                 </td>
                                             </tr>
                                         </tbody>

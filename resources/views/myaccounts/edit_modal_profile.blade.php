@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar Usuário <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Editar Perfil <span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,16 +12,7 @@
                 {{ method_field('PUT') }}
                 {!! csrf_field() !!}
                 <input type="hidden" name="id" id="id_edit">
-
                 <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="name">Tipo de usuário <span>*</span></label>
-                        <select class="c-select form-control" name="level" id="level_edit" required>
-                            <option value="" disabled selected hidden>Selecione tipo de usuário</option>
-                            <option value="0">Operador</option>
-                            <option value="1">Administrador</option>
-                        </select>
-                    </div>
                     <div class="form-group col-12">
                         <label for="name">{{ __('Name') }} <span>*</span></label>
                         <input id="name_edit" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Informe seu nome">
@@ -42,7 +33,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="button" id="btnUpdate" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
+                <button type="button" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

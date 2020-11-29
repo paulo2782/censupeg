@@ -16,12 +16,12 @@
 						<div class="form-group col-12">
 							<label class="text-4" for="nameContact">Nome Completo</label>
 							<a href="#" class="fa fa-pencil" aria-hidden="true" id="#"></a>
-							<input type="text" class="form-control" id="nameContact" name="name" value="#" />
+							<input type="text" class="form-control" readonly="readonly" id="nameContact" name="name" value="#" />
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="emailContact">Email</label>
 							<a href="#" class="fa fa-pencil" aria-hidden="true" id="#"></a>
-							<input type="email" class="form-control" id="emailContact" name="email" value="#" />
+							<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="#" />
 						</div>						
 						<div class="form-group col-12">
 							<label class="text-4" for="stateContact">Tipo de usuário</label>

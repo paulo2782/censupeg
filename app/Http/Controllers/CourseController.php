@@ -106,7 +106,7 @@ class CourseController extends Controller
         if($interest == 0){
             $id = Course::find($id);
             $id->delete();
-            return redirect()->back()->with('alert','Registro Excluído.');            
+            return redirect()->back()->with('alert','Registro excluído.');            
         }else{
             return redirect()->back()->with('alert','Não é possível excluir esse registro, existe contatos vinculadas.');
 

@@ -41,6 +41,8 @@ Route::get('/home',   'HomeController@index')->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function() {
+	Route::get('user', 'UserController@userShow')->name('userShow');
+
 	Route::get('contact',      'ContactController@contactShow')->name('contactShow');
 	Route::post('store',       'ContactController@store')->name('store');
 	Route::put('updateContact/{id}','ContactController@updateContact')->name('updateContact');
@@ -79,4 +81,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('updateInterestCourse','InterestController@updateInterestCourse')->name('updateInterestCourse');
 	Route::get('searchInterest','InterestController@searchInterest')->name('searchInterest');
 
+	Route::delete('destroyUser', 'UserController@destroyUser')->name('destroyUser');
+	Route::put('updateUser', 'UserController@updateUser')->name('updateUser');	
 });

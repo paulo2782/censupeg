@@ -14,23 +14,26 @@
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                  <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Senha atual</label>
-                        <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Informe a senha atual" required autocomplete="course" autofocus/>
+                        <label class="text-4" for="password">Senha atual</label>
+                        <input type="password" class="form-control" id="password" name="#" placeholder="Informe a senha atual" required autofocus/>
+                        <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nova senha</label>
-                        <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Informe a nova senha" required autocomplete="course" autofocus/>
+                        <label class="text-4" for="new-password">Nova senha</label>
+                        <input type="password" class="form-control" id="new-password" name="#" placeholder="Informe a nova senha" required autofocus/>
+                        <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Repetir nova senha</label>
-                        <input type="password" class="form-control" id="edtCourse" name="course" placeholder="Repetir nova senha" required autocomplete="course" autofocus/>
+                        <label class="text-4" for="confirm-password">Repetir nova senha</label>
+                        <input type="password" class="form-control" id="confirm-password" name="#" placeholder="Repetir nova senha" required autofocus/>
+                        <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <input type="hidden" id="idCourse" name="id">
-                <button type="button" id="updateCourse" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
+                <button type="button" id="#" class="btn btn-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('/js/my_accounts.js') }}"></script>

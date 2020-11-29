@@ -75,6 +75,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('correctRegister/{id}','InterestController@correctRegister')->name('correctRegister');
 	Route::post('interestStore','InterestController@interestStore')->name('interestStore');
 	Route::get('destroyInterestCourse/{id}','InterestController@destroyInterestCourse')->name('destroyInterestCourse');
+	Route::get('mailing', 	  'MailingController@mailingShow')->name('mailingShow');
 	Route::get('report', 	  'ReportController@reportShow')->name('reportShow');
 	Route::get('myaccount', 	  'MyAccountController@myaccountShow')->name('myaccountShow');
 

@@ -12,8 +12,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contactShow') }}">Contatos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('callShow') }}">Ligações</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Atividades
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('mailingShow') }}">Mailing</a>
+                            <a class="dropdown-item" href="{{ route('callShow') }}">Ligações</a>
+                            <a class="dropdown-item" href="#">Agenda</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('reportShow') }}">Relatório</a>

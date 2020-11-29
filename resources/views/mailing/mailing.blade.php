@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@include('mailing/add_modal_mailing')
+@include('mailing/edit_modal_mailing')
+@include('mailing/delete_modal_mailing')
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">

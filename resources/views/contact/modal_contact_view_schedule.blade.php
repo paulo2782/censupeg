@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <input type="button" class="btnViewCall btn btn-primary" data-dismiss=" " value="FECHAR">            
+                <input type="button" class="btnViewCall btn btn-outline-primary" data-dismiss=" " value="Fechar">            
             </form>
         </div>
     </div>

@@ -31,7 +31,6 @@
                             @endif
                         </div>
                     </li>
->>>>>>> a14086a8c764a589ab7bf8e6117cb179b78a470e
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
                     <li class="nav-item">

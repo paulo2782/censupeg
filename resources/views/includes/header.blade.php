@@ -10,16 +10,26 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #fff" href="{{ route('contactShow') }}">Contatos</a>
+                        <a class="nav-link" href="{{ route('contactShow') }}">Contatos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #fff" href="{{ route('callShow') }}">Ligações</a>
+                        <a class="nav-link" href="{{ route('callShow') }}">Ligações</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #fff" href="{{ route('courseShow') }}">Cursos</a>
+                        <a class="nav-link" href="{{ route('reportShow') }}">Relatório</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: #fff" href="{{ route('reportShow') }}">Relatório</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Configurações
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('courseShow') }}">Cursos</a>
+                            <a class="dropdown-item" href="{{ route('myaccountShow') }}">Minha conta</a>
+                            @if(auth()->user()->level == 1)
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('userShow') }}">Usuários</a>
+                            @endif
+                        </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
@@ -27,7 +37,11 @@
                         <a class="nav-link username"><strong>{{ auth()->user()->name }}</strong></a>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" style="color: #fff" href="{{ route('logout') }}">Sair</a>
+=======
+                        <a class="nav-link" href="{{ route('logout') }}">Sair</a>
+>>>>>>> ab82068f0242f2fb303e12f49ee8a1b6977bfa8e
                     </li>
                 </ul>
             </div>

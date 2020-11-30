@@ -37,7 +37,7 @@
                     <div class="form-group col-12">
                         <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
                         <select class="form-control" id="schooling" name="schooling" required>
-                            <option value="">Selecione a escolaridade</option>
+                            <option value="" disabled selected hidden>Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                             <option value="Ensino médio completo">Ensino médio completo</option>
                             <option value="Ensino superior incompleto">Ensino superior incompleto</option>
@@ -48,7 +48,7 @@
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="contact-origin">Estado <span>*</span></label>
                         <select class="form-control" id="state" name="state" required>
-                            <option value="" selected>Selecione o Estado</option>
+                            <option value="" disabled selected hidden>Selecione o Estado</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
@@ -86,7 +86,7 @@
                         <label class="text-4" for="contact-origin">Origem do contato <span>*</span></label>
                         <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="{{Session::get('hiddenContact_origin')}}">
                         <select class="form-control" id="contact_origin" name="contact_origin" required>
-                            <option value="" selected>Selecione a origem do contato</option>
+                            <option value="" disabled selected hidden>Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
                             <option value="Empresas Parceiras">Empresas parceiras</option>
                             <option value="ex-aluno">Ex-aluno</option>
@@ -110,7 +110,7 @@
                     </div>
                 </div>                
                 <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
+                <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

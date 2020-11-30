@@ -8,6 +8,13 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="form-group">
+                <label for="name">Nível</label>
+                <select class="c-select form-control" name="level">
+                    <option value="0">Operador</option>
+                    <option value="1">Administrador</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="name">{{ __('Name') }}</label>
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Informe seu nome">
                     @error('name')
@@ -47,7 +54,7 @@
             </div>
             <div class="mt-2">
                 <div class="d-flex justify-content-center text-4">
-                    Voltar para a página de login?<a onclick="window.location.href='login'" class="ml-2 login-a">Clique aqui</a>
+                    Voltar para a página de login?<a onclick="window.location.href='logout'" class="ml-2 login-a">Clique aqui</a>
                 </div>
             </div>
         </form>

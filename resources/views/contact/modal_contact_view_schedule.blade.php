@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModalEditCall">
+<div class="modal fade" id="myModalViewCall">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -16,19 +16,19 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
-                        <input type="date" id="date_contact_edit" class="form-control" name="date_contact" required/>
+                        <input type="date" id="date_contact_view" class="form-control" name="date_contact" readonly />
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="date_return">Data de retorno</label>
-                        <input type="date" id="date_return_edit" class="form-control" name="date_return"/>    
+                        <input type="date" id="date_return_view" class="form-control" name="date_return" readonly />    
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="schedule">Horário</label>
-                        <input type="time" class="form-control" name="schedule" id="schedule_edit"/>    
+                        <input type="time" class="form-control" name="schedule" id="schedule_view" readonly />    
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status <span>*</span></label>
-                        <select class="form-control" id="statusSchedule" name="status" required>
+                        <select class="form-control" id="statusScheduleView" name="status" disabled="">
                             <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
                             <option value="Conversará com a família">Conversará com a família</option>
@@ -40,11 +40,11 @@
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>
-                        <textarea id="additional_information_edit" class="form-control" name="additional_information"></textarea>
+                        <textarea id="additional_information_view" class="form-control" name="additional_information" readonly></textarea>
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <input type="button" class="btnUpdateEditCall btn btn-outline-success" data-dismiss=" " value="Salvar">            
+                <input type="button" class="btnViewCall btn btn-outline-primary" data-dismiss=" " value="Fechar">            
             </form>
         </div>
     </div>
@@ -52,22 +52,5 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-$('.btnUpdateEditCall').click(function(event) {
-    /* Act on the event */            
-    var form = $('#updateFormCall') 
-    $.ajax({
-        url: "{{ route('updateCall') }}",
-        type: 'POST',
-        data:form.serialize(),
-        success:function(data){
-            location.reload(true);
-            // console.log(data)
-         },
-         error:function(xhr, status, error){
-            console.log(status)
-         }
-    });
-    
-});
 
 </script>

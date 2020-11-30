@@ -107,7 +107,7 @@ class ContactController extends Controller
         if($ligacao == 0 && $course == 0){
             $id = Contact::find($id);
             $id->delete();
-            return redirect()->back()->with('alert','Registro Excluído.');            
+            return redirect()->back()->with('alert','Registro excluído.');            
         }else{
             return redirect()->back()->with('alert','Não é possível excluir esse registro, existem cursos (e ou) ligações vinculadas.');
         }
@@ -139,7 +139,8 @@ class ContactController extends Controller
         ->get();
 
 
-        $dataCalls = Call::where('contact_id','=',$request->id)->get(); 
+        $dataCalls = Call::where('contact_id','=',$request->id)->orderby('date_return')->orderby('schedule')->get(); 
         return view('/contact/viewData',compact('dados','courses','dataInterests','dataCalls'));
     }
 }
+ 

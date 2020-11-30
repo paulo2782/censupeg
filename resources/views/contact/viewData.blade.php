@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @include('includes/header')
 @include('contact/modalEdit')
-
+ 
 @include('contact/modal_contact_courses')
 @include('contact/modal_contact_schedule')
 @include('contact/modal_contact_edit_courses')
 @include('contact/modal_contact_edit_schedule')
+@include('contact/modal_contact_view_schedule')
 
 <body id="body-container">
 <div id="container-main">
@@ -18,7 +19,7 @@
 				<h2>Dados básicos
 					<a href="#" class="fa fa-pencil" aria-hidden="true" id="btnAdd"></a>
 				</h2>
-				<form class="contact-info" method="post">
+				<form id="contact-info" method="post">
 					<div class="form-row">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameContact">Nome Completo</label>
@@ -68,7 +69,9 @@
 								<th>Modalidade</th>
 								<th>Nível</th>
 								<th>Status</th>
+                                @if(auth()->user()->level == 1)
 								<th>Ação</th>
+								@endif
 							</tr>
 						</thead>
 						<tbody>
@@ -80,11 +83,13 @@
 								<td> {{ $data->course_type }}</td>
 								<td> {{ $data->level_course }}</td>
  								<td> {{ $data->status }}</td>
+ 								@if(auth()->user()->level == 1)
 								<td>
-									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar Registro" id="{{ $data->id }}"></a>
+									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar registro" id="{{ $data->id }}"></a>
 
-									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
+									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar registro"></a>
 								</td>
+								@endif
 							</tr>
 							@php $i++; @endphp
 							@endforeach
@@ -105,6 +110,7 @@
 								<th>Retorno</th>
 								<th>Horário</th>
 								<th>Status</th>
+								<th>Operador</th>
 								<th>Ação</th>
 							</tr>
 						</thead>
@@ -115,15 +121,16 @@
 								<td>{{ $i }}</th>
 								<td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
 								<td>@if($data->date_return != null) 
-									<td>{{ date('d/m/Y',strtotime($data->date_return)) }}
-									@endif </td>
+									{{ date('d/m/Y',strtotime($data->date_return)) }}
+									@endif 
+								</td>
 								<td>@if($data->schedule != null) 
 										{{ date('H:i', strtotime($data->schedule)) }}
 								 	@endif </td>
 								<td>{{ $data->status }}</td>
+								<td>{{ $data->user->name }}</td>
 								<td>
-									<a href="#" class="btnEditCall fa fa-pencil" aria-hidden="true" id="{{ $data->id }}"></a>
-									<a href="{{ route('destroyCall',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar Registro"></a>
+									<a href="#" class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar registro" id="{{ $data->id }}"></a></a>
 								</td>
 							@php $i++; @endphp
 							@endforeach
@@ -169,6 +176,30 @@ $('.btnEditCourse').click(function(event) {
     
 });
 
+$('.btnViewCall').click(function(event) {
+    $('#myModalViewCall').modal('toggle')
+    $('#call_id_edit').val(this.id)
+    $.ajax({
+	    url: "{{ route('searchCallEdit') }}",
+	    method: 'GET',
+	    dataType: 'json',
+	    data: {
+	            id:$('#call_id_edit').val()
+	    },
+	    success:function(data)
+	    {
+	    	console.log(data)
+	    	$('#date_contact_view').val(data.date_contact)
+	    	$('#date_return_view').val(data.date_return)
+	    	$('#schedule_view').val(data.schedule)
+      		$('#statusScheduleView option[value="'+data.status+'"]').prop('selected',true)
+      		$('#additional_information_view').html(data.additional_information)
+	        // console.log(data)
+	    }
+	});
+
+});
+
 $('.btnEditCall').click(function(event) {
     $('#myModalEditCall').modal('toggle')
     $('#call_id_edit').val(this.id)
@@ -181,15 +212,15 @@ $('.btnEditCall').click(function(event) {
 	    },
 	    success:function(data)
 	    {
-	    	
+	    	console.log(data)
 	    	$('#date_contact_edit').val(data.date_contact)
 	    	$('#date_return_edit').val(data.date_return)
 	    	$('#schedule_edit').val(data.schedule)
       		$('#statusSchedule option[value="'+data.status+'"]').prop('selected',true)
+      		$('#additional_information_edit').html(data.additional_information)
 	        console.log(data)
 	    }
 	});
 
 });
 </script>
-

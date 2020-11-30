@@ -41,7 +41,7 @@
                          </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Modalidade</label>
+                        <label class="text-4">Modalidade <span>*</span></label>
                         <input type="text" id="modalityEdit" class="form-control" readonly="">
  
                     </div>
@@ -49,7 +49,7 @@
                     <div class="form-group col-12">
                         <label class="text-4" for="statusSchedule">Status <span>*</span></label>
                         <select class="c-select form-control" id="statusSchedule" name="status" required>
-                            <option value="" selected>Selecione o status do curso</option>
+                            <option value="" disabled selected hidden>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <input type="button"  class="btnUpdateContactCourse btn btn-primary" value="Salvar">            
+                <input type="button"  class="btnUpdateContactCourse btn btn-outline-success" value="Salvar">            
             </form>
         </div>
     </div>

@@ -77,6 +77,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('destroyInterestCourse/{id}','InterestController@destroyInterestCourse')->name('destroyInterestCourse');
 	Route::get('mailing', 	  'MailingController@mailingShow')->name('mailingShow');
 	Route::get('report', 	  'ReportController@reportShow')->name('reportShow');
+	Route::get('myaccount', 	  'MyAccountController@myaccountShow')->name('myaccountShow');
 
 	Route::put('updateRegister/{id}','InterestController@updateRegister')->name('updateRegister');
 	Route::post('updateInterestCourse','InterestController@updateInterestCourse')->name('updateInterestCourse');
@@ -84,4 +85,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::delete('destroyUser', 'UserController@destroyUser')->name('destroyUser');
 	Route::put('updateUser', 'UserController@updateUser')->name('updateUser');	
+	Route::get('updatePassword', 'UserController@updatePassword')->name('updatePassword');	
+
 });

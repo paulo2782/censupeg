@@ -8,8 +8,9 @@ $(".toggle-password").click(function() {
     }
 });
 $('.fa-pencil').click(function(event) {
-	/* Act on the event */
-	$('#id_edt_modal').val($('#id').val())
+  /* Act on the event */
+  $('#id_edt_modal').val($('#id').val())
+  $('#id_edt_profile').val($('#id').val())
 })
 if($('#alert').is(':visible')){
 	$('#alert').fadeOut(6000)

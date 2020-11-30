@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalEdit">
+<div class="modal fade" id="modalEditProfile">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,14 +8,14 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="updateUser" method="POST">
+            <form class="form-dialog registerForm" id="updateUser" method="POST" action="{{ route('updateUser') }}">
                 {{ method_field('PUT') }}
                 {!! csrf_field() !!}
-                <input type="hidden" name="id" id="id_edit">
+                <input type="hidden" name="id" id="id_edt_profile">
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="name">{{ __('Name') }} <span>*</span></label>
-                        <input id="name_edit" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Informe seu nome">
+                        <input id="name_edit" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{ $dados[0]->name }}" required autocomplete="name" autofocus placeholder="Informe seu nome">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="email">{{ __('E-Mail Address') }} <span>*</span></label>
-                        <input type="email"  id="email_edit" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" placeholder="Informe seu email">
+                        <input type="email"  id="email_edit" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" value="{{ $dados[0]->email }}" placeholder="Informe seu email">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="line-horizontal"></div>
-                <button type="button" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
+                <button type="submit" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

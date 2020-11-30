@@ -19,7 +19,7 @@
 						<input type="hidden" value="{{ $dados[0]->id }}" id="id">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameContact">Nome Completo</label>
-							<a data-toggle="modal" href="#myModalEdit" class="fa fa-pencil" aria-hidden="true"></a>
+							<a data-toggle="modal" href="#modalEditProfile" class="fa fa-pencil" aria-hidden="true"></a>
 							<input type="text" class="form-control" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
 						</div>
 						<div class="form-group col-12">
@@ -42,5 +42,4 @@
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/my_account.js') }}"></script>
-
+<script src="{{ asset('/js/myaccount.js?Date(d-m-Y,h:i:s)') }}"></script>

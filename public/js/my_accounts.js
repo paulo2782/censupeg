@@ -7,3 +7,13 @@ $(".toggle-password").click(function() {
       input.attr("type", "password");
     }
 });
+$('.fa-pencil').click(function(event) {
+	/* Act on the event */
+	$('#id_edt_modal').val($('#id').val())
+})
+if($('#alert').is(':visible')){
+	$('#alert').fadeOut(6000)
+}
+if($('#message').is(':visible')){
+	$('#message').fadeOut(6000)
+}

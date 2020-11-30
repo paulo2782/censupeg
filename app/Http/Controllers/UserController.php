@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Call;
 use App\Contact;
+use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -34,4 +37,30 @@ class UserController extends Controller
         return redirect()->back()->with('alert','Registro Alterado');
 
     }
+
+    public function updatePassword(Request $request)
+    {
+        $id = $request->id;
+
+        $validator = Validator::make($request->all(),[
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        if($validator->fails()){
+            $old_password  = $request->old_password;
+            return redirect()->back()->withErrors($validator);
+        }else{
+            if(Auth::attempt(['id'=>$id,'password'=>$request->old_password])){
+                $user = User::where('id',$id)->get();
+
+                $user[0]->password = Hash::make($request['password']);
+                $user[0]->save();
+
+                return back()->with(['alert'=>'Senha alterada.']);            
+            }else{
+                return back()->with(['alert'=>'Senha atual não confere.']);
+            }
+        } 
+    }
+
 }

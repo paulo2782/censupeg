@@ -70,6 +70,7 @@
 										com seu login será precisa criar uma nova senha.
 									</p>
 									<p><a href="http://censupeg.decarlosolucoes.tech/crm/alter_new_password/{{ $token }}" class="btn btn-primary">Criar nova senha</a></p>
+									<!-- <p><a href="http://localhost:8081/alter_new_password/{{ $token }}" class="btn btn-primary">Criar nova senha</a></p> -->
 								</div>
 							</td>
 						</tr>

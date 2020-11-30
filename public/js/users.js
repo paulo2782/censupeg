@@ -45,4 +45,4 @@ $(".toggle-password").click(function() {
     } else {
       input.attr("type", "password");
     }
-  });
+});

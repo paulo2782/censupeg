@@ -84,4 +84,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::delete('destroyUser', 'UserController@destroyUser')->name('destroyUser');
 	Route::put('updateUser', 'UserController@updateUser')->name('updateUser');	
+	Route::get('updatePassword', 'UserController@updatePassword')->name('updatePassword');	
+
 });

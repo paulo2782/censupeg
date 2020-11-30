@@ -47,7 +47,7 @@ class ForgotPasswordController extends Controller
         }else{
 
             $user = User::where('token',$request->token)->get();
-
+            
             $user[0]->password = Hash::make($request['password']);
             $user[0]->token    = '';
             $user[0]->save();

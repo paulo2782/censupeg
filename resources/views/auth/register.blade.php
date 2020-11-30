@@ -9,7 +9,7 @@
             @csrf
             <div class="form-group">
                 <label for="name">Nível</label>
-                <select class="c-select form-control">
+                <select class="c-select form-control" name="level">
                     <option value="0">Operador</option>
                     <option value="1">Administrador</option>
                 </select>

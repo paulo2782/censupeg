@@ -43,17 +43,5 @@
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('/js/my_account.js') }}"></script>
 
-<script>
-$('.fa-pencil').click(function(event) {
-	/* Act on the event */
-	$('#id_edt_modal').val($('#id').val())
-})
-if($('#alert').is(':visible')){
-	$('#alert').fadeOut(6000)
-}
-if($('#message').is(':visible')){
-	$('#message').fadeOut(6000)
-}
-
-</script>

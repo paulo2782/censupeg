@@ -29,7 +29,7 @@ span.text-5 { display: block; font-size: 12px; }
 
 .botao { width: 100%; font-size: 1em; border-radius: 5px; padding: 5px; margin-top: 20px; transition: all 0.5s; }
 
-.botao:hover { background: #9E1D21; color: #fff; }
+.botao:hover { color: #9E1D21; background: #fffafa; }
 
 .radio-course label { display: block; }
 
@@ -131,7 +131,7 @@ span.text-5 { display: block; font-size: 12px; }
 
 #header .container a.dropdown-item { font-size: 14px; color: #333; }
 
-#header .container a.dropdown-item:hover { color: #9E1D21; }
+#header .container a.dropdown-item:hover { color: #9E1D21; background: #fffafa; }
 
 #header .container .username { font-weight: bold; color: #fff; text-transform: uppercase; }
 

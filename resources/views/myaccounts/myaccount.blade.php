@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('includes/header') 
 @include('myaccounts/edit_modal_password')
-
+@include('myaccounts/edit_modal_profile')
 <body id="body-container">
 <div id="container-main">
 	<div class="container">
@@ -24,7 +24,6 @@
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="emailContact">Email</label>
-							<a data-toggle="modal" href="#myModalEdit" class="fa fa-pencil" aria-hidden="true" id="#"></a>
 							<input type="email" class="form-control" id="emailContact" name="email" value="{{ $dados[0]->email }}" />
 						</div>						
 						<div class="form-group col-12">

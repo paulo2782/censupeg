@@ -28,14 +28,14 @@
             <!--Accordion wrapper-->
                 <div class="accordion md-accordion accordion-blocks" id="accordionMailing" role="tablist"
                     aria-multiselectable="true">
-                    <!-- Accordion card -->
+
                     <div class="card">
                         <!-- Card header -->
                         <div class="card-header" role="tab" id="heading01">
                             <!-- Heading -->
                             <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse01" aria-expanded="true"
                                 aria-controls="collapse01">
-                                <h6>
+                                <h6 class="ml-3">
                                     <span>01/01</span>
                                     <i class="fas fa-angle-down rotate-icon"></i>
                                 </h6>
@@ -104,16 +104,15 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Accordion card -->
-                    <div class="line-horizontal"></div>
-                    <!-- Accordion card -->
+                    <div class="dropdown-divider"></div>
+                    
                     <div class="card">
                         <!-- Card header -->
                         <div class="card-header" role="tab" id="heading02">
                             <!-- Heading -->
                             <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse02" aria-expanded="true"
                                 aria-controls="collapse02">
-                                <h6>
+                                <h6 class="ml-3">
                                     <span>02/01</span>
                                     <i class="fas fa-angle-down rotate-icon"></i>
                                 </h6>
@@ -182,16 +181,15 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Accordion card -->
-                    <div class="line-horizontal"></div>
-                    <!-- Accordion card -->
+                    <div class="dropdown-divider"></div>
+
                     <div class="card">
                         <!-- Card header -->
                         <div class="card-header" role="tab" id="heading03">
                             <!-- Heading -->
                             <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse03" aria-expanded="true"
                                 aria-controls="collapse03">
-                                <h6>
+                                <h6 class="ml-3">
                                     <span>03/01</span>
                                     <i class="fas fa-angle-down rotate-icon"></i>
                                 </h6>
@@ -200,7 +198,6 @@
                                 <a href="#">Exportar</a>
                             </span>-->
                         </div>
-                
                         <!-- Card body -->
                         <div id="collapse03" class="collapse" role="tabpanel" aria-labelledby="heading03"
                             data-parent="#accordionMailing">
@@ -261,7 +258,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Accordion card -->        
+                    <div class="dropdown-divider"></div>
                 <!--/.Accordion wrapper-->
                 </div>
             </div>

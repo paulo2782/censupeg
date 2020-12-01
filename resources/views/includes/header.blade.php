@@ -19,7 +19,6 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('mailingShow') }}">Mailing</a>
                             <a class="dropdown-item" href="{{ route('callShow') }}">Ligações</a>
-                            <a class="dropdown-item" href="#">Agenda</a>
                         </div>
                     </li>
                     <li class="nav-item">

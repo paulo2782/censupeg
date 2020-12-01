@@ -15,6 +15,8 @@ h2, .h2 { font-size: 18px !important; }
 
 h3, .h3 { font-size: 16px !important; }
 
+form .form-control { font-size: 14px !important; }
+
 form span { color: #9E1D21; font-weight: bold; }
 
 label, p { color: #333; font-size: 14px; }
@@ -24,8 +26,6 @@ label, p { color: #333; font-size: 14px; }
 span.text-5 { display: block; font-size: 12px; }
 
 .table { font-size: 14px; }
-
-.form-control { font-size: 14px !important; }
 
 .botao { width: 100%; font-size: 1em; border-radius: 5px; padding: 5px; margin-top: 20px; transition: all 0.5s; }
 
@@ -166,6 +166,12 @@ span.text-5 { display: block; font-size: 12px; }
 #month .prev { float: left; padding: 3px; }
 
 #month .next { float: right; padding: 3px; }
+
+.export-file { float: right; padding: 5px; margin: 7px; }
+
+.export-file a { color: #555; }
+
+.export-file a:hover { text-decoration: none; }
 
 #error-404 { margin: 0 auto; text-align: center; padding: 20px 0px; }
 

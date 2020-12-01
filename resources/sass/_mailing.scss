@@ -23,3 +23,15 @@
         padding: 3px;
     }
 }
+
+.export-file {
+    float: right;
+    padding: 5px;
+    margin: 7px;
+    a {
+        color: $color-text-standard;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

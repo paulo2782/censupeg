@@ -30,20 +30,22 @@ body {
     }
 }
 
+//HEADINGS
 h1 {
     font-size: 20px !important;
     color: $color-text-title !important;
 }
-
 h2, .h2 {
     font-size: 18px !important;
 }
-
 h3, .h3 {
     font-size: 16px !important;
 }
 
 form {
+    .form-control {
+        font-size: 14px !important;
+    }    
     span {
         color: $primary-color;
         font-weight: bold;
@@ -69,10 +71,6 @@ span.text-5{
 
 .table {
     font-size: 14px;
-}
-
-.form-control {
-    font-size: 14px !important;
 }
 
 .botao {

@@ -26,7 +26,7 @@
             </div>
             <div class="show-details-block">
             <!--Accordion wrapper-->
-            <div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist"
+            <div class="accordion md-accordion accordion-blocks" id="accordionMailing" role="tablist"
                 aria-multiselectable="true">
 
                 <!-- Accordion card -->
@@ -34,23 +34,23 @@
                     <!-- Card header -->
                     <div class="card-header" role="tab" id="heading01">
                         <!-- Heading -->
-                        <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse01" aria-expanded="true"
+                        <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse01" aria-expanded="true"
                             aria-controls="collapse01">
                             <h6>
                                 <span>01/01</span>
                                 <i class="fas fa-angle-down rotate-icon"></i>
                             </h6>
                         </a>
-                        <span class="export-file">
+                        <!--<span class="export-file">
                             <a href="#">Exportar</a>
-                        </span>
+                        </span>-->
                     </div>
                     <!-- Card body -->
                     <div id="collapse01" class="collapse" role="tabpanel" aria-labelledby="heading01"
-                        data-parent="#accordionEx78">
+                        data-parent="#accordionMailing">
                         <div class="card-body">
                         <!-- Table responsive wrapper -->
-                        <div class="table-responsive mx-3">
+                        <div class="table-responsive">
                             <!--Table-->
                             <table class="table table-hover mb-0">
                                 <!--Table head-->
@@ -69,39 +69,39 @@
                                 <!--Table body-->
                                 <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <td>1</th>
                                         <td><a href="#">joao manuel</td>
                                         <td>01/01/2020 11:00</td>
                                         <td>02/01/2020 12:00</td>
                                         <td>História</td>
                                         <td>Tem interesse</td>
                                         <td>
-                                            <a><i class="fas fa-pen-square mx-1"></i></a>
-                                            <a><i class="fas fa-times mx-1"></i></a>
+                                            <a href="#"><i class="fas fa-pen-square"></i></a>
+                                            <a href="#"><i class="fas fa-times"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">2</th>
+                                        <td>2</th>
                                         <td><a href="#">joao manuel</td>
                                         <td>01/01/2020 11:00</td>
                                         <td>02/01/2020 12:00</td>
                                         <td>História</td>
                                         <td>Tem interesse</td>
                                         <td>
-                                            <a><i class="fas fa-pen-square mx-1"></i></a>
-                                            <a><i class="fas fa-times mx-1"></i></a>
+                                            <a href="#"><i class="fas fa-pen-square"></i></a>
+                                            <a href="#"><i class="fas fa-times"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">3</th>
+                                        <td>3</th>
                                         <td><a href="#">joao manuel</td>
                                         <td>01/01/2020 11:00</td>
                                         <td>02/01/2020 12:00</td>
                                         <td>História</td>
                                         <td>Tem interesse</td>
                                         <td>
-                                            <a><i class="fas fa-pen-square mx-1"></i></a>
-                                            <a><i class="fas fa-times mx-1"></i></a>
+                                            <a href="#"><i class="fas fa-pen-square"></i></a>
+                                            <a href="#"><i class="fas fa-times"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -114,29 +114,29 @@
                     </div>
                 </div>
                 <!-- Accordion card -->
-
+                <div class="line-horizontal"></div>
                 <!-- Accordion card -->
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header" role="tab" id="heading02">
                         <!-- Heading -->
-                        <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse02" aria-expanded="true"
+                        <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse02" aria-expanded="true"
                             aria-controls="collapse02">
                             <h6>
                                 <span>02/01</span>
                                 <i class="fas fa-angle-down rotate-icon"></i>
                             </h6>
                         </a>
-                        <span class="export-file">
+                        <!--<span class="export-file">
                             <a href="#">Exportar</a>
-                        </span>
+                        </span>-->
                     </div>
                     <!-- Card body -->
                     <div id="collapse02" class="collapse" role="tabpanel" aria-labelledby="heading02"
-                        data-parent="#accordionEx78">
+                        data-parent="#accordionMailing">
                         <div class="card-body">
                         <!-- Table responsive wrapper -->
-                        <div class="table-responsive mx-3">
+                        <div class="table-responsive">
                             <!--Table-->
                             <table class="table table-hover mb-0">
                                 <!--Table head-->
@@ -155,39 +155,39 @@
                                 <!--Table body-->
                                 <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <td>1</th>
                                         <td><a href="#">joao manuel</td>
                                         <td>01/01/2020 11:00</td>
                                         <td>02/01/2020 12:00</td>
                                         <td>História</td>
                                         <td>Tem interesse</td>
                                         <td>
-                                            <a><i class="fas fa-pen-square mx-1"></i></a>
-                                            <a><i class="fas fa-times mx-1"></i></a>
+                                            <a href="#"><i class="fas fa-pen-square"></i></a>
+                                            <a href="#"><i class="fas fa-times"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <td>1</th>
                                         <td><a href="#">joao manuel</td>
                                         <td>01/01/2020 11:00</td>
                                         <td>02/01/2020 12:00</td>
                                         <td>História</td>
                                         <td>Tem interesse</td>
                                         <td>
-                                            <a><i class="fas fa-pen-square mx-1"></i></a>
-                                            <a><i class="fas fa-times mx-1"></i></a>
+                                            <a href="#"><i class="fas fa-pen-square"></i></a>
+                                            <a href="#"><i class="fas fa-times"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <td>1</th>
                                         <td><a href="#">joao manuel</td>
                                         <td>01/01/2020 11:00</td>
                                         <td>02/01/2020 12:00</td>
                                         <td>História</td>
                                         <td>Tem interesse</td>
                                         <td>
-                                            <a><i class="fas fa-pen-square mx-1"></i></a>
-                                            <a><i class="fas fa-times mx-1"></i></a>
+                                            <a href="#"><i class="fas fa-pen-square"></i></a>
+                                            <a href="#"><i class="fas fa-times"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -200,30 +200,30 @@
                     </div>
                 </div>
                 <!-- Accordion card -->
-            
+                <div class="line-horizontal"></div>
                 <!-- Accordion card -->
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header" role="tab" id="heading03">
                         <!-- Heading -->
-                        <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse03" aria-expanded="true"
+                        <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse03" aria-expanded="true"
                             aria-controls="collapse03">
                             <h6>
                                 <span>03/01</span>
                                 <i class="fas fa-angle-down rotate-icon"></i>
                             </h6>
                         </a>
-                        <span class="export-file">
+                        <!--<span class="export-file">
                             <a href="#">Exportar</a>
-                        </span>
+                        </span>-->
                     </div>
             
                     <!-- Card body -->
                     <div id="collapse03" class="collapse" role="tabpanel" aria-labelledby="heading03"
-                        data-parent="#accordionEx78">
+                        data-parent="#accordionMailing">
                         <div class="card-body">
                             <!-- Table responsive wrapper -->
-                            <div class="table-responsive mx-3">
+                            <div class="table-responsive">
                                 <!--Table-->
                                 <table class="table table-hover mb-0">
                                     <!--Table head-->
@@ -242,39 +242,39 @@
                                     <!--Table body-->
                                     <tbody>
                                         <tr>
-                                            <th scope="row">1</th>
+                                            <td>1</th>
                                             <td><a href="#">joao manuel</td>
                                             <td>01/01/2020 11:00</td>
                                             <td>02/01/2020 12:00</td>
                                             <td>História</td>
                                             <td>Tem interesse</td>
                                             <td>
-                                                <a><i class="fas fa-pen-square mx-1"></i></a>
-                                                <a><i class="fas fa-times mx-1"></i></a>
+                                                <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                <a href="#"><i class="fas fa-times"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
+                                            <td>1</th>
                                             <td><a href="#">joao manuel</td>
                                             <td>01/01/2020 11:00</td>
                                             <td>02/01/2020 12:00</td>
                                             <td>História</td>
                                             <td>Tem interesse</td>
                                             <td>
-                                                <a><i class="fas fa-pen-square mx-1"></i></a>
-                                                <a><i class="fas fa-times mx-1"></i></a>
+                                                <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                <a href="#"><i class="fas fa-times"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
+                                            <td>1</th>
                                             <td><a href="#">joao manuel</td>
                                             <td>01/01/2020 11:00</td>
                                             <td>02/01/2020 12:00</td>
                                             <td>História</td>
                                             <td>Tem interesse</td>
                                             <td>
-                                                <a><i class="fas fa-pen-square mx-1"></i></a>
-                                                <a><i class="fas fa-times mx-1"></i></a>
+                                                <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                <a href="#"><i class="fas fa-times"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>

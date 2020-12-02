@@ -81,6 +81,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="dropdown-divider"></div>
                     </div>
                 </div>
             </div>

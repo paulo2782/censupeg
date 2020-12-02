@@ -23,3 +23,5 @@ class MailingController extends Controller
     }
 
 }
+
+

@@ -37,7 +37,7 @@
                         <div class = "panel panel-default">
                             <div class = "panel-heading">
                                 <div class = "panel-title">
-                                    <a data-toggle = "collapse" href = "#test1">
+                                    <a data-toggle = "collapse" href = "#test{{$i}}">
                                         @if($i < 10) 0{{ $i }} / @else {{ $i }} / @endif
                                         @if($iMonth < 10) 0{{ $iMonth }} @else {{ $iMonth }} @endif
 
@@ -49,7 +49,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div id = "test1" class="panel-collapse collapse">
+                            <div id = "test{{$i}}" class="panel-collapse collapse">
                                 <div class="table-responsive">
                                     <table class="table table-hover mb-0">
                                         <thead>

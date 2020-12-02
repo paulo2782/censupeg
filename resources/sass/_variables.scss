@@ -30,20 +30,22 @@ body {
     }
 }
 
+//HEADINGS
 h1 {
     font-size: 20px !important;
     color: $color-text-title !important;
 }
-
 h2, .h2 {
     font-size: 18px !important;
 }
-
 h3, .h3 {
     font-size: 16px !important;
 }
 
 form {
+    .form-control {
+        font-size: 14px !important;
+    }    
     span {
         color: $primary-color;
         font-weight: bold;
@@ -71,10 +73,6 @@ span.text-5{
     font-size: 14px;
 }
 
-.form-control {
-    font-size: 14px !important;
-}
-
 .botao {
     width: 100%;
     font-size: 1em;
@@ -83,8 +81,8 @@ span.text-5{
     margin-top: 20px;
     transition: all 0.5s;
     &:hover {
-        background: $primary-color;
-        color: $white;    
+        color: $primary-color;
+        background: #fffafa;
     }
 }
   

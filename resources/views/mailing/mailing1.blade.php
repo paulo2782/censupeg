@@ -5,7 +5,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-
 <body id="body-container">
 @include('includes/header')
 <div id="container-main">
@@ -26,20 +25,29 @@
                 </div>
             </div>
             <div class="show-details-block">
-                <div class = "container">
-                    <div class = "panel-group">
-                        <div class = "panel panel-default">
-                            <div class = "panel-heading">
-                                <div class = "panel-title">
-                                    <a data-toggle = "collapse" href = "#test1">01/11
-                                        <i class="fas fa-angle-down rotate-icon"></i>
-                                    </a>
-                                    <span class="export-file text-4">
-                                        <a href="#">Exportar</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div id = "test1" class="panel-collapse collapse">
+            <!--Accordion wrapper-->
+                <div class="accordion md-accordion accordion-blocks" id="accordionMailing" role="tablist"
+                    aria-multiselectable="true">
+
+                    <div class="card">
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="heading01">
+                            <!-- Heading -->
+                            <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse01" aria-expanded="true"
+                                aria-controls="collapse01">
+                                <h6 class="ml-3">
+                                    <span>01/01</span>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </h6>
+                            </a>
+                            <!--<span class="export-file">
+                                <a href="#">Exportar</a>
+                            </span>-->
+                        </div>
+                        <!-- Card body -->
+                        <div id="collapse01" class="collapse" role="tabpanel" aria-labelledby="heading01"
+                            data-parent="#accordionMailing">
+                            <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-hover mb-0">
                                         <thead>
@@ -95,144 +103,163 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dropdown-divider"></div>
-                        <div class = "panel panel-default">
-                            <div class = "panel-heading">
-                                <div class = "panel-title">
-                                    <a data-toggle = "collapse" href = "#test2">02/11
-                                        <i class="fas fa-angle-down rotate-icon"></i>
-                                    </a>
-                                    <span class="export-file text-4">
-                                        <a href="#">Exportar</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div id = "test2" class="panel-collapse collapse">
-                                <div class="table-responsive">
-                                    <table class="table table-hover mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nome</th>
-                                                <th>Contato data/hora</th>
-                                                <th>Retorno data/hora</th>
-                                                <th>Curso de interesse</th>
-                                                <th>Status</th>
-                                                <th>Ação</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</th>
-                                                <td><a href="#">joao manuel</td>
-                                                <td>01/01/2020 11:00</td>
-                                                <td>02/01/2020 12:00</td>
-                                                <td>História</td>
-                                                <td>Tem interesse</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
-                                                    <a href="#"><i class="fas fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</th>
-                                                <td><a href="#">joao manuel</td>
-                                                <td>01/01/2020 11:00</td>
-                                                <td>02/01/2020 12:00</td>
-                                                <td>História</td>
-                                                <td>Tem interesse</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
-                                                    <a href="#"><i class="fas fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</th>
-                                                <td><a href="#">joao manuel</td>
-                                                <td>01/01/2020 11:00</td>
-                                                <td>02/01/2020 12:00</td>
-                                                <td>História</td>
-                                                <td>Tem interesse</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
-                                                    <a href="#"><i class="fas fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <div class = "panel panel-default">
-                            <div class = "panel-heading">
-                                <div class = "panel-title">
-                                    <a data-toggle = "collapse" href = "#test3">03/11
-                                        <i class="fas fa-angle-down rotate-icon"></i>
-                                    </a>
-                                    <span class="export-file text-4">
-                                        <a href="#">Exportar</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div id = "test3" class="panel-collapse collapse">
-                                <div class="table-responsive">
-                                    <table class="table table-hover mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nome</th>
-                                                <th>Contato data/hora</th>
-                                                <th>Retorno data/hora</th>
-                                                <th>Curso de interesse</th>
-                                                <th>Status</th>
-                                                <th>Ação</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</th>
-                                                <td><a href="#">joao manuel</td>
-                                                <td>01/01/2020 11:00</td>
-                                                <td>02/01/2020 12:00</td>
-                                                <td>História</td>
-                                                <td>Tem interesse</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
-                                                    <a href="#"><i class="fas fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</th>
-                                                <td><a href="#">joao manuel</td>
-                                                <td>01/01/2020 11:00</td>
-                                                <td>02/01/2020 12:00</td>
-                                                <td>História</td>
-                                                <td>Tem interesse</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
-                                                    <a href="#"><i class="fas fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</th>
-                                                <td><a href="#">joao manuel</td>
-                                                <td>01/01/2020 11:00</td>
-                                                <td>02/01/2020 12:00</td>
-                                                <td>História</td>
-                                                <td>Tem interesse</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
-                                                    <a href="#"><i class="fas fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown-divider"></div>
                     </div>
+                    <div class="dropdown-divider"></div>
+                    
+                    <div class="card">
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="heading02">
+                            <!-- Heading -->
+                            <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse02" aria-expanded="true"
+                                aria-controls="collapse02">
+                                <h6 class="ml-3">
+                                    <span>02/01</span>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </h6>
+                            </a>
+                            <!--<span class="export-file">
+                                <a href="#">Exportar</a>
+                            </span>-->
+                        </div>
+                        <!-- Card body -->
+                        <div id="collapse02" class="collapse" role="tabpanel" aria-labelledby="heading02"
+                            data-parent="#accordionMailing">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                            <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Contato data/hora</th>
+                                                <th>Retorno data/hora</th>
+                                                <th>Curso de interesse</th>
+                                                <th>Status</th>
+                                                <th>Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+
+                    <div class="card">
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="heading03">
+                            <!-- Heading -->
+                            <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse03" aria-expanded="true"
+                                aria-controls="collapse03">
+                                <h6 class="ml-3">
+                                    <span>03/01</span>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </h6>
+                            </a>
+                            <!--<span class="export-file">
+                                <a href="#">Exportar</a>
+                            </span>-->
+                        </div>
+                        <!-- Card body -->
+                        <div id="collapse03" class="collapse" role="tabpanel" aria-labelledby="heading03"
+                            data-parent="#accordionMailing">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Contato data/hora</th>
+                                                <th>Retorno data/hora</th>
+                                                <th>Curso de interesse</th>
+                                                <th>Status</th>
+                                                <th>Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                <!--/.Accordion wrapper-->
                 </div>
             </div>
             <div class="content">

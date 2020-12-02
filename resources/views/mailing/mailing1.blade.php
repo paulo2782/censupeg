@@ -4,6 +4,7 @@
 @include('mailing/delete_modal_mailing')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <body id="body-container">
 @include('includes/header')
 <div id="container-main">
@@ -24,59 +25,77 @@
                 </div>
             </div>
             <div class="show-details-block">
-                <div id="accordion">
+            <!--Accordion wrapper-->
+                <div class="accordion md-accordion accordion-blocks" id="accordionMailing" role="tablist"
+                    aria-multiselectable="true">
+
                     <div class="card">
-                        <div class="card-header" id="headingDate">
-                            <div class="text-4 mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    24/11
-                                </button>
-                                <i class="fa fa-file-export"></i>
-                            </div>
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="heading01">
+                            <!-- Heading -->
+                            <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse01" aria-expanded="true"
+                                aria-controls="collapse01">
+                                <h6 class="ml-3">
+                                    <span>01/01</span>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </h6>
+                            </a>
+                            <!--<span class="export-file">
+                                <a href="#">Exportar</a>
+                            </span>-->
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingDate" data-parent="#accordion">
+                        <!-- Card body -->
+                        <div id="collapse01" class="collapse" role="tabpanel" aria-labelledby="heading01"
+                            data-parent="#accordionMailing">
                             <div class="card-body">
-                                <div id="content-table" class="table-responsive">
-                                    <table class="table">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Nome </td>
-                                                <th>Contato data/hora </th>
-                                                <th>Retorno data/hora </th>
+                                                <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Contato data/hora</th>
+                                                <th>Retorno data/hora</th>
                                                 <th>Curso de interesse</th>
                                                 <th>Status</th>
                                                 <th>Ação</th>
                                             </tr>
-                                        </thead>  
-                                        <tbody id="tabela">
+                                        </thead>
+                                        <tbody>
                                             <tr>
-                                                <td>joao manuel </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>Educação Física</td>
+                                                <td>1</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
                                                 <td>Tem interesse</td>
-                                                <td id='toview'>
-                                                    <div class='dropdown'>
-                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                        </div>
-                                                    </div>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>joao manuel </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>Educação Física</td>
+                                                <td>2</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
                                                 <td>Tem interesse</td>
-                                                <td id='toview'>
-                                                    <div class='dropdown'>
-                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                        </div>
-                                                    </div>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -85,43 +104,75 @@
                             </div>
                         </div>
                     </div>
-                    <div class="line-horizontal"></div>
+                    <div class="dropdown-divider"></div>
+                    
                     <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <div class="text-4 mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    25/11
-                                </button>
-                            </div>
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="heading02">
+                            <!-- Heading -->
+                            <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse02" aria-expanded="true"
+                                aria-controls="collapse02">
+                                <h6 class="ml-3">
+                                    <span>02/01</span>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </h6>
+                            </a>
+                            <!--<span class="export-file">
+                                <a href="#">Exportar</a>
+                            </span>-->
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <!-- Card body -->
+                        <div id="collapse02" class="collapse" role="tabpanel" aria-labelledby="heading02"
+                            data-parent="#accordionMailing">
                             <div class="card-body">
-                                <div id="content-table" class="table-responsive">
-                                    <table class="table">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Nome </td>
-                                                <th>Contato data/hora </th>
-                                                <th>Retorno data/hora </th>
+                                            <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Contato data/hora</th>
+                                                <th>Retorno data/hora</th>
                                                 <th>Curso de interesse</th>
                                                 <th>Status</th>
                                                 <th>Ação</th>
                                             </tr>
-                                        </thead>  
-                                        <tbody id="tabela">
+                                        </thead>
+                                        <tbody>
                                             <tr>
-                                                <td>joao manuel </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>Educação Física</td>
+                                                <td>1</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
                                                 <td>Tem interesse</td>
-                                                <td id='toview'>
-                                                    <div class='dropdown'>
-                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                        </div>
-                                                    </div>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -130,43 +181,75 @@
                             </div>
                         </div>
                     </div>
-                    <div class="line-horizontal"></div>
+                    <div class="dropdown-divider"></div>
+
                     <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <div class="text-4 mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    26/11
-                                </button>
-                            </div>
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="heading03">
+                            <!-- Heading -->
+                            <a data-toggle="collapse" data-parent="#accordionMailing" href="#collapse03" aria-expanded="true"
+                                aria-controls="collapse03">
+                                <h6 class="ml-3">
+                                    <span>03/01</span>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </h6>
+                            </a>
+                            <!--<span class="export-file">
+                                <a href="#">Exportar</a>
+                            </span>-->
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <!-- Card body -->
+                        <div id="collapse03" class="collapse" role="tabpanel" aria-labelledby="heading03"
+                            data-parent="#accordionMailing">
                             <div class="card-body">
-                                <div id="content-table" class="table-responsive">
-                                    <table class="table">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Nome </td>
-                                                <th>Contato data/hora </th>
-                                                <th>Retorno data/hora </th>
+                                                <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Contato data/hora</th>
+                                                <th>Retorno data/hora</th>
                                                 <th>Curso de interesse</th>
                                                 <th>Status</th>
                                                 <th>Ação</th>
                                             </tr>
-                                        </thead>  
-                                        <tbody id="tabela">
+                                        </thead>
+                                        <tbody>
                                             <tr>
-                                                <td>joao manuel </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>Educação Física</td>
+                                                <td>1</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
                                                 <td>Tem interesse</td>
-                                                <td id='toview'>
-                                                    <div class='dropdown'>
-                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                        </div>
-                                                    </div>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</th>
+                                                <td><a href="#">joao manuel</td>
+                                                <td>01/01/2020 11:00</td>
+                                                <td>02/01/2020 12:00</td>
+                                                <td>História</td>
+                                                <td>Tem interesse</td>
+                                                <td>
+                                                    <a href="#"><i class="fas fa-pen-square"></i></a>
+                                                    <a href="#"><i class="fas fa-times"></i></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -175,139 +258,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="line-horizontal"></div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <div class="text-4 mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    27/11
-                                </button>
-                            </div>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                            <div class="card-body">
-                                <div id="content-table" class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome </td>
-                                                <th>Contato data/hora </th>
-                                                <th>Retorno data/hora </th>
-                                                <th>Curso de interesse</th>
-                                                <th>Status</th>
-                                                <th>Ação</th>
-                                            </tr>
-                                        </thead>  
-                                        <tbody id="tabela">
-                                            <tr>
-                                                <td>joao manuel </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>Educação Física</td>
-                                                <td>Tem interesse</td>
-                                                <td id='toview'>
-                                                    <div class='dropdown'>
-                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line-horizontal"></div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <div class="text-4 mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    28/11
-                                </button>
-                            </div>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                            <div class="card-body">
-                                <div id="content-table" class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome </td>
-                                                <th>Contato data/hora </th>
-                                                <th>Retorno data/hora </th>
-                                                <th>Curso de interesse</th>
-                                                <th>Status</th>
-                                                <th>Ação</th>
-                                            </tr>
-                                        </thead>  
-                                        <tbody id="tabela">
-                                            <tr>
-                                                <td>joao manuel </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>Educação Física</td>
-                                                <td>Tem interesse</td>
-                                                <td id='toview'>
-                                                    <div class='dropdown'>
-                                                        <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                                        <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                                            <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line-horizontal"></div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <div class="text-4 mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    29/11
-                                </button>
-                            </div>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                            <div class="card-body">
-                                <div id="content-table" class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome </td>
-                                                <th>Contato data/hora </th>
-                                                <th>Retorno data/hora </th>
-                                                <th>Curso de interesse</th>
-                                                <th>Status</th>
-                                                <th>Ação</th>
-                                            </tr>
-                                        </thead>  
-                                        <tbody id="tabela">
-                                            <tr>
-                                                <td><a href="#">joao manuel</a></td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>29/11/2020 11:10 </td>
-                                                <td>Educação Física</td>
-                                                <td>Tem interesse</td>
-                                                <td id='toview'>
-                                                        <div class="pull-right">
-                                                            <a href="#" data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Delete" data-toggle="modal" data-target="#edit" ><span class="fa fa-pencil"></span></button></a>
-                                                            <a href="#" data-placement="top" data-toggle="tooltip" title="Excluir"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="fa fa-trash"></span></button></a>
-                                                        </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="dropdown-divider"></div>
+                <!--/.Accordion wrapper-->
                 </div>
             </div>
             <div class="content">

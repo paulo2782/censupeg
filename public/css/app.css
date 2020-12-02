@@ -167,7 +167,7 @@ span.text-5 { display: block; font-size: 12px; }
 
 #month .next { float: right; padding: 3px; }
 
-.export-file { float: right; padding: 5px; margin: 7px; }
+.export-file { float: right; padding: 5px; }
 
 .export-file a { color: #555; }
 

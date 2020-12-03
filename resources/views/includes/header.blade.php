@@ -16,6 +16,9 @@
                         <a class="nav-link" href="{{ route('callShow') }}">Ligações</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('partnerShow') }}">Empresas Parceiras</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('reportShow') }}">Relatório</a>
                     </li>
                     <li class="nav-item dropdown">

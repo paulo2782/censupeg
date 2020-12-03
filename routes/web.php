@@ -75,7 +75,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('correctRegister/{id}','InterestController@correctRegister')->name('correctRegister');
 	Route::post('interestStore','InterestController@interestStore')->name('interestStore');
 	Route::get('destroyInterestCourse/{id}','InterestController@destroyInterestCourse')->name('destroyInterestCourse');
-	Route::get('mailing/{month}','MailingController@mailingShow')->name('mailingShow');
+
 	Route::get('report', 	  'ReportController@reportShow')->name('reportShow');
 	Route::get('myaccount', 	  'MyAccountController@myaccountShow')->name('myaccountShow');
 
@@ -86,5 +86,9 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::delete('destroyUser', 'UserController@destroyUser')->name('destroyUser');
 	Route::put('updateUser', 'UserController@updateUser')->name('updateUser');	
 	Route::get('updatePassword', 'UserController@updatePassword')->name('updatePassword');	
+
+	// Route::get('mailing/{month}','MailingController@mailingShow')->name('mailingShow');
+	Route::get('mailing','MailingController@mailingShow')->name('mailingShow');
+	Route::get('mailingAjax','MailingController@mailingAjax')->name('mailingAjax');
 
 });

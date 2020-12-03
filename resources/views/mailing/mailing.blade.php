@@ -117,7 +117,8 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                     "<td>"+dataDayMonth[i].date_contact+"</td>"+
                     "<td>"+dataDayMonth[i].date_return+"<td>"+
                     "<td>"+dataDayMonth[i].status+"</td>"+
-                    "<td></td>"
+                    "<td><a href='#'><i class='fas fa-pen-square'></i></a>"+
+                    "    <a href='#'><i class='fas fa-times'></i></a></td>"
                 )
             }
             num++

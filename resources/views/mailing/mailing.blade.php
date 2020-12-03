@@ -55,6 +55,47 @@ $.get("{{ route('mailingAjax') }}", {month:2,btn:0}, function( data ) {
 
     details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
 })
+$('#btnPrev').click(function(event) {
+
+    $('#details').html('')
+
+    $.get("{{ route('mailingAjax') }}", {month:auxMonth,btn:0}, function( data ) {
+        object = JSON.parse(data.dataJson);
+        auxMonth = data.month
+
+        $('#nameMonth').html(data.nameMonth+' de ')
+
+        if(data.month >= 1){
+            $('#btnNext').show();
+        }
+        if(data.month == 1){
+            $('#btnPrev').hide();
+        }
+details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
+    });
+});
+
+$('#btnNext').click(function(event) {
+
+    $('#details').html('')
+
+    $.get("{{ route('mailingAjax') }}", {month:auxMonth,btn:1}, function( data ) {
+    console.log(auxMonth)
+        object = JSON.parse(data.dataJson);
+        auxMonth = data.month
+
+        $('#nameMonth').html(data.nameMonth+' de ')
+
+        if(data.month >= 12){
+            $('#btnNext').hide();
+        }
+        if(data.month > 1){
+           $('#btnPrev').show();
+        }
+details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
+    });
+});
+
 
 
 </script>

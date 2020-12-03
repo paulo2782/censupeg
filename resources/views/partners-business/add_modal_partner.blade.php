@@ -27,6 +27,16 @@
                         <input type="text" class="form-control" id="phone" name="#" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
+                        <label class="text-4" for="statusPartner">Status <span>*</span></label>
+                        <select class="form-control" id="statusPartner" name="status" required>
+                            <option value="" disabled selected hidden>Selecione o status da parceria</option>
+                            <option value="Fechado">Fechado</option>
+                            <option value="Analisara proposta">Analisará proposta</option>
+                            <option value="Não tem interesse">Não tem interesse</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="observation" name="additional_information"></textarea>
                     </div>

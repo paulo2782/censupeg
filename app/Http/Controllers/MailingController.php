@@ -39,6 +39,7 @@ class MailingController extends Controller
     	// Busca somente mês tabela CALL
  
     	$dataMonth   = DB::table('calls')->whereMonth('date_contact',$iMonth)->orderby('date_contact')->groupby('date_contact')->get();
+
     	$iCount		= count($dataMonth); 
     	$dataJson   = json_encode($dataMonth);
 

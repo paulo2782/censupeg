@@ -72,7 +72,7 @@ console.log(iCount)
                         <div class = "panel-group">
                             <div class = "panel panel-default">
                                 <div class = "panel-heading">
-                                    <div class = "panel-title date_contact" id="`+object[i].date_contact+`">
+                                    <div class = "panel-title date_contact" id="`+object[i].date_contact+`" data-id="`+i+`">
                                         <a data-toggle = "collapse" href = "#show`+i+`">
                                             <span>`+object[i].date_contact.substr(8,2)+` / `+iM+` </span>
                                             <i class="fas fa-angle-down rotate-icon"></i>
@@ -97,7 +97,7 @@ console.log(iCount)
                                                 <th>Ação</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="table-details">
+                                        <tbody class="table-details`+i+`" id="`+i+`">
                             </div>
                          
                         </div>
@@ -110,12 +110,15 @@ console.log(iCount)
     $('.date_contact').click(function(event) {
  
         date_contact = $(this).attr('id')  
+
+        table_id = $(this).attr('data-id')
+        $('.table-details'+table_id).html('')
+        num = 1
         
-        $('.table-details').html('')
         for(i = 0 ; i <= dataDayMonth.length ; i++){
-            num = 1
+
             if(dataDayMonth[i].date_contact == date_contact){
-                $('.table-details').append(
+                $('.table-details'+table_id).append(
                     "<tr>"+
                     "<td>"+num+"</td>"+
                     "<td></td>"+
@@ -125,8 +128,9 @@ console.log(iCount)
                     "<td><a href='#'><i class='fas fa-pen-square'></i></a>"+
                     "       <a href='#'><i class='fas fa-times'></i></a></td>"
                 )
+                 num++    
             }
-            num++
+           
         }  
     });
 }

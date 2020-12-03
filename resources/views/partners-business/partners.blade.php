@@ -3,6 +3,7 @@
 @include('partners-business/edit_modal_partner')
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <body id="body-container">
 @include('includes/header')
@@ -40,16 +41,9 @@
                             <td> 4834614466 </td>
                             <td> Contrato</td>
                             <td> Helluza </td>
-                            <td id='toview'>
-                                <div class='dropdown'>
-                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                    <a href="#" class='dropdown-item btnToView' id="#">Visualizar</a>
-                                    @if(auth()->user()->level == 1)
-                                    <a href="#" class='dropdown-item btnDelete'>Excluir</a>
-                                    @endif
-                                </div>
-                                </div>
+                            <td>
+                                <a href='#'><i class='fas fa-pen-square'></i></a>
+                                <a href='#'><i class='fas fa-times'></i></a></td> 
                             </td>
                         </tr>
                     </tbody>

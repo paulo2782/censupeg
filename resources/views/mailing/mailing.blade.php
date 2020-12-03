@@ -59,8 +59,13 @@ $.get("{{ route('mailingAjax') }}", {month:2,btn:0}, function( data ) {
 
 function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
     if(iMonth < 10){ iM = '0'+iMonth }else{ iM = iMonth }
+    
+console.log(iCount)
+
     for(i = 0 ; i <= iCount-1 ; i++){
+
         if(i < 10){ ii = '0'+i }else{ ii = i }
+
         $('#details').append(`
                 <div class="show-details-block">
                     <div class = "container">
@@ -118,7 +123,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                     "<td>"+dataDayMonth[i].date_return+"<td>"+
                     "<td>"+dataDayMonth[i].status+"</td>"+
                     "<td><a href='#'><i class='fas fa-pen-square'></i></a>"+
-                    "    <a href='#'><i class='fas fa-times'></i></a></td>"
+                    "       <a href='#'><i class='fas fa-times'></i></a></td>"
                 )
             }
             num++

@@ -37,11 +37,7 @@
                         <a class="nav-link username"><strong>{{ auth()->user()->name }}</strong></a>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link" style="color: #fff" href="{{ route('logout') }}">Sair</a>
-=======
                         <a class="nav-link" href="{{ route('logout') }}">Sair</a>
->>>>>>> ab82068f0242f2fb303e12f49ee8a1b6977bfa8e
                     </li>
                 </ul>
             </div>

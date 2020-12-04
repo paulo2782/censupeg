@@ -36,10 +36,12 @@ class ExportCalls implements  FromCollection, WithHeadings, ShouldAutoSize, With
                     $Call->contact->name,
                     $Call->contact->email,
                     $Call->contact->phone,
-                    $Call->status,
+                    $Call->contact->contact_origin,
                     $Call->course->course,
+                    $Call->status,
                     $Call->date_return,
-                    $Call->addition_information
+                    $Call->user->name,                    
+                    $Call->additional_information,
 
                 ]);
             return $rows;

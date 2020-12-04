@@ -58,7 +58,11 @@ class MailingController extends Controller
         } 
         
 
-    	$dataDayMonth   = DB::table('calls')->where('date_contact','like','%'.$iiMonth.'%')->get();
+    	$dataDayMonth   = DB::table('calls')
+        ->join('contacts', 'calls.contact_id', '=', 'contacts.id')
+        ->join('courses',  'calls.course_id', '=',  'courses.id')
+
+        ->where('date_contact','like','%'.$iiMonth.'%')->get();
     	$iCountDayMonth		= count($dataDayMonth); 
     	$dataJsonDayMonth   = json_encode($dataDayMonth);
 

@@ -47,6 +47,7 @@ var date_contact = []
 var year         = $('#year').val()
 
 $.get("{{ route('mailingAjax') }}", {month:2,year:year,btn:0}, function( data ) {
+console.log(data)
     object = JSON.parse(data.dataJson)
     dataDayMonth = data.dataDayMonth
 

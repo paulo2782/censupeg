@@ -60,9 +60,10 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                 $('.table-details'+table_id).append(
                     "<tr>"+
                     "<td><strong>"+num+"</strong></td>"+
-                    "<td></td>"+
+                    "<td>"+dataDayMonth[i].name+"</td>"+
                     "<td>"+dataDayMonth[i].date_contact+"</td>"+
-                    "<td>"+dataDayMonth[i].date_return+"<td>"+
+                    "<td>"+dataDayMonth[i].date_return+"</td>"+
+                    "<td>"+dataDayMonth[i].course+"</td>"+
                     "<td>"+dataDayMonth[i].status+"</td>"+
                     "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
                     "    <a href="+dataDayMonth[i].id+"><i class='fas fa-times deleteMailing'></i></a></td>"

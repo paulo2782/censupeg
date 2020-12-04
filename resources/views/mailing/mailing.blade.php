@@ -57,7 +57,10 @@ $.get("{{ route('mailingAjax') }}", {month:2,year:year,btn:0}, function( data ) 
     details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
 })
 
-$('#year').click(function(event) {
+ 
+
+
+$('#year').change(function(event) {
     var year = $('#year').val()
     $('#details').html('')
 

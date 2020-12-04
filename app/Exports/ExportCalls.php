@@ -23,33 +23,36 @@ class ExportCalls implements  FromCollection, WithHeadings, ShouldAutoSize, With
  	
 	public function collection()
     {
-        return Call::all();
+        return Call::orderby('date_contact','ASC')->get();
     }
  	
  	public function map($Call): array
     {
         $rows = [];
             foreach ($Call->contact as $listContact) {
-                array_push($rows,[
-
+				 array_push($rows,[
+                    $Call->id,
                     $Call->date_contact,
                     $Call->contact->name,
                     $Call->contact->email,
                     $Call->contact->phone,
                     $Call->status,
+                    $Call->course->course,
                     $Call->date_return,
                     $Call->addition_information
 
                 ]);
+            return $rows;
+            	 
             }
 
-            return $rows;
     }
 
 
     public function headings(): array
     {
         return [
+        	'#',
             'Data / hora contato',
             'Nome',
             'Email',

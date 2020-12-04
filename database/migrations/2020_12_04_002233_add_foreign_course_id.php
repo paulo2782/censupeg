@@ -14,7 +14,7 @@ class AddForeignCourseId extends Migration
     public function up()
     {
         Schema::table('calls', function (Blueprint $table) {
-            $table->unsignedBigInteger('course_id');
+           // $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses');
         });
     }

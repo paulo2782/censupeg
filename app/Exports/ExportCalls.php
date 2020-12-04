@@ -15,16 +15,26 @@ use Maatwebsite\Excel\Events\AfterSheet;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
+use Maatwebsite\Excel\Concerns\FromView;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
-
-class ExportCalls implements  FromCollection, WithHeadings, ShouldAutoSize, WithEvents, WithMapping
+class ExportCalls implements  WithHeadings, ShouldAutoSize, WithEvents, WithMapping, FromCollection
 {
 
- 	
-	public function collection()
-    {
-        return Call::orderby('date_contact','ASC')->get();
-    }
+ 	 
+
+	protected $params = [];
+
+   public function __construct($params)
+   {
+      $this->params = $params;
+   }
+
+   public function collection()
+   {
+      return $this->params;
+   }
  	
  	public function map($Call): array
     {

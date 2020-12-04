@@ -36,7 +36,7 @@
          
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/mailing.js?Date(d-m-Y,h:i:s)') }}"></script>
+<script src="{{ asset('/js/mailing.js?988998') }}"></script>
 
 </body>  
 </html>
@@ -117,4 +117,6 @@ $('#btnNext').click(function(event) {
         details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
     });
 });
+
+
 </script>

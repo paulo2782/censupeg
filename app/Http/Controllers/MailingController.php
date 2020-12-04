@@ -19,9 +19,18 @@ class MailingController extends Controller
     	return view('mailing/mailing');
     }
 
-    public function csvMailing(){
-        return Excel::download(new ExportCalls, 'mailing.xlsx');
- 
+    public function csvMailing(Request $request){
+
+        if($request->get('date') <> NULL){
+            $date = $request->get('date');
+            $dados = Call::where('date_contact',$date)->get();
+            return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+
+        }else{
+            $dados = Call::all();
+            return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+        }
+
     }
 
 

@@ -8,12 +8,10 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="updateForm">
- 
-             <meta name="csrf-token" content="{{ csrf_token() }}">
+            <form class="form-dialog registerForm" id="updateForm"> 
+                <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-
-                 <div class="form-row">
+                <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="edtName">Nome da Empresa <span>*</span></label>
                         <input type="text" class="form-control" id="edtName" name="#" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
@@ -43,7 +41,7 @@
                 </div>
                 <div class="line-horizontal"></div>
                 <input type="hidden" id="#" name="id">
-                    <button type="button" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>                            
+                <button type="button" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>                            
             </form>
         </div>
    </div>

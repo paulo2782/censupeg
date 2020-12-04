@@ -59,18 +59,19 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
             if(dataDayMonth[i].date_contact == date_contact){
                 $('.table-details'+table_id).append(
                     "<tr>"+
-                    "<td>"+num+"</td>"+
+                    "<td><strong>"+num+"</strong></td>"+
                     "<td></td>"+
                     "<td>"+dataDayMonth[i].date_contact+"</td>"+
                     "<td>"+dataDayMonth[i].date_return+"<td>"+
                     "<td>"+dataDayMonth[i].status+"</td>"+
-                    "<td><a href='#'><i class='fas fa-pen-square'></i></a>"+
-                    "       <a href='#'><i class='fas fa-times'></i></a></td>"
+                    "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
+                    "    <a href="+dataDayMonth[i].id+"><i class='fas fa-times deleteMailing'></i></a></td>"
                 )
                  num++    
             }
            
         }  
     });
+    
 }
 

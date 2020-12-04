@@ -21,13 +21,17 @@ class MailingController extends Controller
 
     	$btn    = $request->get('btn');
     	$iMonth = $request->get('month');
-    	
+    	$year   = $request->get('year');
+
     	if($btn == 0){
     		$iMonth = $iMonth-1;
     	}
 
     	if($btn == 1){
     		$iMonth = $iMonth+1;
+    	}
+    	if($btn == 2){
+    		$iMonth = $iMonth;
     	}
 
     	$month = new Monthclass();
@@ -38,7 +42,7 @@ class MailingController extends Controller
 
     	// Busca somente mês tabela CALL
  
-    	$dataMonth   = DB::table('calls')->whereMonth('date_contact',$iMonth)->orderby('date_contact')->groupby('date_contact')->get();
+    	$dataMonth   = DB::table('calls')->whereMonth('date_contact',$iMonth)->whereYear('date_contact',$year)->orderby('date_contact')->groupby('date_contact')->get();
 
     	$iCount		= count($dataMonth); 
     	$dataJson   = json_encode($dataMonth);
@@ -55,7 +59,7 @@ class MailingController extends Controller
 
 
 	 	return response()->json(['month'=>$iMonth,'btn'=>$btn,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
-	 		'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth]);
+	 		'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth,'year'=>$year]);
 	}
 
 }

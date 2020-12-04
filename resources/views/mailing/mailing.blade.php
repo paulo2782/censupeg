@@ -7,7 +7,7 @@
 
 <body id="body-container">
 @include('includes/header') 
-
+<form action="{{ route('csvMailing') }}">
 <div id="container-main">
     <div class="container">
         <div class="content-details">
@@ -28,6 +28,7 @@
                         </li>
                     </ul>
                 </div>
+                <input type="submit" class="form-control btn btn-success" value="Exportar todos os registros"> 
                 <div id="details"></div>
         </div>
     </div>

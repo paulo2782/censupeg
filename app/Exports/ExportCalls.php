@@ -42,14 +42,14 @@ class ExportCalls implements  WithHeadings, ShouldAutoSize, WithEvents, WithMapp
             foreach ($Call->contact as $listContact) {
 				 array_push($rows,[
                     $Call->id,
-                    $Call->date_contact,
+                    date('d-m-Y',strtotime($Call->date_contact)),
                     $Call->contact->name,
                     $Call->contact->email,
                     $Call->contact->phone,
                     $Call->contact->contact_origin,
                     $Call->course->course,
                     $Call->status,
-                    $Call->date_return,
+                    date('d-m-Y',strtotime($Call->date_return)),
                     $Call->user->name,                    
                     $Call->additional_information,
 

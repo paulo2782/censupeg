@@ -41,7 +41,7 @@
 </html>
 <script> 
 
-var month        = 1
+var month        = 0
 var auxMonth
 var date_contact = []
 var year         = $('#year').val()
@@ -100,7 +100,7 @@ $('#btnNext').click(function(event) {
     $('#details').html('')
 
     $.get("{{ route('mailingAjax') }}", {month:auxMonth,year:year,btn:1}, function( data ) {
-    
+        console.log(data.month)
         object = JSON.parse(data.dataJson);
         auxMonth = data.month
 

@@ -58,7 +58,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Cursos
-					<a href="#" class="fa fa-plus-circle" aria-hidden="true" id="btnAddCourse"> </a>
+					<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddCourse"> </i>
 				</h2>
 				<div id="content-table" class="table-responsive">
 					<table class="table">
@@ -85,7 +85,7 @@
  								<td> {{ $data->status }}</td>
  								@if(auth()->user()->level == 1)
 								<td>
-									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar registro" id="{{ $data->id }}"></a>
+									<i class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar registro" id="{{ $data->id }}"></i>
 
 									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar registro"></a>
 								</td>
@@ -99,7 +99,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Ligações
-					<a href="#" class="fa fa-plus-circle" aria-hidden="true" id="btnAddSchedule"></a>
+					<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddSchedule"></i>
 				</h2>
 				<div id="content-table" class="table-responsive">
 					<table class="table">
@@ -130,7 +130,7 @@
 								<td>{{ $data->status }}</td>
 								<td>{{ $data->user->name }}</td>
 								<td>
-									<a href="#" class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar registro" id="{{ $data->id }}"></a></a>
+									<i class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar registro" id="{{ $data->id }}"></i>
 								</td>
 							@php $i++; @endphp
 							@endforeach
@@ -143,14 +143,15 @@
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/contact.js') }}"></script>
+<script src="{{ asset('/js/contact.js?date(d-m-y h:i:s)') }}"></script>
 
 <script>
+
+
 $('.btnEditCourse').click(function(event) {
     $('#myModalEditCourse').modal('toggle')
     $('#interest_id_edit').val(this.id)
-
-    
+   
     $.ajax({
     	url: "{{ route('searchInterest')}}",
     	method: 'GET',

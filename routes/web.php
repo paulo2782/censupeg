@@ -71,9 +71,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 
 	Route::get('interestShow','InterestController@interestShow')->name('interestShow');
-	Route::get('routeForCorrect','InterestController@routeForCorrect')->name('routeForCorrect');
-	Route::get('correctRegister/{id}','InterestController@correctRegister')->name('correctRegister');
-	Route::post('interestStore','InterestController@interestStore')->name('interestStore');
+ 	Route::get('searchInterestModal','InterestController@searchInterestModal')->name('searchInterestModal');
+ 	Route::post('interestStore','InterestController@interestStore')->name('interestStore');
 	Route::get('destroyInterestCourse/{id}','InterestController@destroyInterestCourse')->name('destroyInterestCourse');
 
 	Route::get('report', 	  'ReportController@reportShow')->name('reportShow');

@@ -51,7 +51,12 @@ class MailingController extends Controller
     	if($iMonth < 10){
     		$iiMonth = '0'.$iMonth;
     		$iiMonth = $iiMonth+1;
-    	}
+    	} 
+        if($iMonth >= 10){
+            // $iiMonth = '0'.$iMonth;
+            $iiMonth = $iMonth+1;
+        } 
+        
 
     	$dataDayMonth   = DB::table('calls')->where('date_contact','like','%'.$iiMonth.'%')->get();
     	$iCountDayMonth		= count($dataDayMonth); 

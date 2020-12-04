@@ -189,14 +189,14 @@ $('.btnViewCall').click(function(event) {
 	    },
 	    success:function(data)
 	    {
-	    	console.log(data)
+ 	    	$('#course_view').val('')
+ 	    	$('#course_view').val(data.course_name.course)
 	    	$('#date_contact_view').val(data.date_contact)
 	    	$('#date_return_view').val(data.date_return)
 	    	$('#schedule_view').val(data.schedule)
       		$('#statusScheduleView option[value="'+data.status+'"]').prop('selected',true)
       		$('#additional_information_view').html(data.additional_information)
-	        // console.log(data)
-	    }
+ 	    }
 	});
 
 });

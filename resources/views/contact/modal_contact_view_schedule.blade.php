@@ -15,6 +15,11 @@
                 <input type="hidden" name="call_id_edit" id="call_id_edit">
                 <div class="form-row">
                     <div class="form-group col-12">
+                        <label class="text-4" for="course_view">CURSO <span>*</span></label>
+                        <input type="text" id="course_view" class="form-control" name="course" readonly />
+                    </div>
+
+                    <div class="form-group col-12">
                         <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
                         <input type="date" id="date_contact_view" class="form-control" name="date_contact" readonly />
                     </div>

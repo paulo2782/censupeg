@@ -6,6 +6,7 @@ $('#btnAddCourse').click(function(event) {
 
 $('#btnAddSchedule').click(function(event) {
   $('#myModalSchedule').modal('toggle')
+  
 });
 
 $('#btnAdd').click(function(event) {

@@ -90,4 +90,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('mailing','MailingController@mailingShow')->name('mailingShow');
 	Route::get('mailingAjax','MailingController@mailingAjax')->name('mailingAjax');
 
+	Route::get('csvMailing','MailingController@csvMailing')->name('csvMailing');
+
 });

@@ -17,7 +17,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                                             <i class="fas fa-angle-down rotate-icon"></i>
                                         </a>
                                         <span class="export-file text-4">
-                                            <a href="#">Exportar</a>
+                                            <a href="#" class="export" id="export`+i+`" data-reference="`+object[i].date_contact+`">Exportar</a>
                                         </span>
                                     </div>
                                 </div>
@@ -73,6 +73,13 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
            
         }  
     });
+    $('.export').click(function(event) {
+    /* Act on the event */
+        var date = $(this).attr('data-reference')
     
+
+        window.location.href='csvMailing?date='+date+''
+
+    });
 }
 

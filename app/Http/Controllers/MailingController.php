@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Classes\Monthclass;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\ExportCalls;
 
 use App\Call;
 
@@ -15,6 +18,21 @@ class MailingController extends Controller
     {
     	return view('mailing/mailing');
     }
+
+    public function csvMailing(Request $request){
+
+        if($request->get('date') <> NULL){
+            $date = $request->get('date');
+            $dados = Call::where('date_contact',$date)->get();
+            return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+
+        }else{
+            $dados = Call::all();
+            return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+        }
+
+    }
+
 
     public function mailingAjax(Request $request)
     {
@@ -65,7 +83,6 @@ class MailingController extends Controller
         ->where('date_contact','like','%'.$iiMonth.'%')->get();
     	$iCountDayMonth		= count($dataDayMonth); 
     	$dataJsonDayMonth   = json_encode($dataDayMonth);
-
 
 	 	return response()->json(['month'=>$iMonth,'btn'=>$btn,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
 	 		'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth,'year'=>$year]);

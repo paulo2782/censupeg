@@ -7,7 +7,7 @@ blablabla
 
 <body id="body-container">
 @include('includes/header') 
-
+<form action="{{ route('csvMailing') }}">
 <div id="container-main">
     <div class="container">
         <div class="content-details">
@@ -28,6 +28,7 @@ blablabla
                         </li>
                     </ul>
                 </div>
+                <input type="submit" class="form-control btn btn-success" value="Exportar todos os registros"> 
                 <div id="details"></div>
         </div>
     </div>
@@ -35,7 +36,7 @@ blablabla
          
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/mailing.js?Date(d-m-Y,h:i:s)') }}"></script>
+<script src="{{ asset('/js/mailing.js?988998') }}"></script>
 
 </body>  
 </html>
@@ -116,4 +117,6 @@ $('#btnNext').click(function(event) {
         details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
     });
 });
+
+
 </script>

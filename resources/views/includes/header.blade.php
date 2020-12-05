@@ -20,10 +20,9 @@
                             <a class="dropdown-item" href="{{ route('mailingShow') }}">Mailing</a>
                             <!-- <a class="dropdown-item" href="{{ route('mailingShow',date('m')) }}">Mailing</a> -->
                             <a class="dropdown-item" href="{{ route('callShow') }}">Ligações</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('partnerShow') }}">Empresas Parceiras</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('partnerShow') }}">Empresas Parceiras</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('reportShow') }}">Relatório</a>

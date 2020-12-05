@@ -66,7 +66,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                     "<td>"+dataDayMonth[i].course+"</td>"+
                     "<td>"+dataDayMonth[i].status+"</td>"+
                     "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
-                    "    <a href="+dataDayMonth[i].id+"><i class='fas fa-times deleteMailing'></i></a></td>"
+                    "    <i class='fas fa-times deleteMailing' data-id="+dataDayMonth[i].id+"></i></td>"
                 )
                  num++    
             }
@@ -74,12 +74,20 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
         }  
     });
     $('.export').click(function(event) {
-    /* Act on the event */
         var date = $(this).attr('data-reference')
-    
-
         window.location.href='csvMailing?date='+date+''
-
     });
+
+    $(document).on('click', '.deleteMailing', function(){
+        var id = $(this).attr('data-id')
+        swal({
+          title: "CENSUPEG",
+          text: "Confirma Excluir?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+    });
+
 }
 

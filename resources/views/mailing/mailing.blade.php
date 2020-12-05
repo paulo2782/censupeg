@@ -36,7 +36,9 @@
          
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/mailing.js?988998') }}"></script>
+<script src="{{ asset('/js/mailing.js?6') }}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </body>  
 </html>

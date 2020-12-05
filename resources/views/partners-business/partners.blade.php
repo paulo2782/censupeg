@@ -12,7 +12,7 @@
             <div class="content">
                 <div class="top-bar">
                     <h1>Empresas Parceiras</h1>
-                    <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
+                    <a data-toggle="modal" href="#myModalAdd"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                     <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
                 </div>
                 <div class="aux-bar">

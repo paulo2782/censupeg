@@ -16,7 +16,7 @@
                     <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
                 </div>
                 <div class="aux-bar">
-                    <h2>Empresas Parceiras </h2>
+                    <h2>Empresas parceiras </h2>
                     <form class="search-contact" action="{{ route('searchContact') }}">
                         <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar empresa" />
                     </form>

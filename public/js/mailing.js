@@ -82,8 +82,8 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
         var id = $(this).attr('data-id')
         swal({
           title: "CENSUPEG",
-          text: "Confirma Excluir?",
-          icon: "warning",
+          text:  "Confirma Excluir?",
+          icon:  "warning",
           buttons: true,
           dangerMode: true,
         })

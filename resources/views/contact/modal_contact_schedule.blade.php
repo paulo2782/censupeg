@@ -12,10 +12,16 @@
             <form class="form-dialog registerForm" id="contact-modal" action="{{ route('storeCall') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
+                <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}" id="contact_id">
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
                 <div class="form-row">
+                    <div class="form-group col-12">
+                        <label class="text-4" for="course">CURSO<span>*</span></label>
+                        <select id="id" class="form-control" name="course_id" required>
+                           
+                        </select>
+                    </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
                         <input type="date" class="form-control" name="date_contact" required/>
@@ -52,3 +58,15 @@
     </div>
 </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+var contact_id = $('#contact_id').val()
+$('#id').html('')
+
+$.get("{{ route('searchInterestModal') }}", {contact_id:contact_id}, function(data) { 
+    var iCount = data.dados.length
+    for(i = 0 ; i <= iCount-1 ; i++){
+        $('#id').append("<option value="+data.dados[i].id+">"+data.dados[i].course)
+    }
+})
+</script>

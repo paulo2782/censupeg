@@ -1,0 +1,36 @@
+#month {
+    width: 100%;
+    padding: 15px 30px;
+    text-align: center;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            color: $color-text-title;
+            font-size: 16px;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    .prev {
+        float: left;
+        padding: 3px;
+    }
+    .next {
+        float: right;
+        padding: 3px;
+    }
+}
+
+.export-file {
+    float: right;
+    padding: 5px;
+    a {
+        color: $color-text-standard;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

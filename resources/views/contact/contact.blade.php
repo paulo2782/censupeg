@@ -45,7 +45,7 @@ endif
                     <tbody id="tabela">
                     @foreach($dados as $dado)
                         <tr>
-                            <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->name }} </td> </a>
+                            <td><a href="{{ route('viewData',$dado->id) }}"> {{ $dado->name }} </a></td>
                             <td>{{ $dado->email }} </td>
                             <td> {{ $dado->phone }} </td>
                             <td> {{ $dado->user->name }}</td>

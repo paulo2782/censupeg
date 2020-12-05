@@ -33,7 +33,12 @@ class CallController extends Controller
     public function searchCallEdit(Request $request)
     {
         $data = Call::where('id',$request->id)->get();
+
+        $course_name = Call::find($request->id);
+        $course_name = $course_name->course;
+
         return response()->json([
+            'course_name'=>$course_name,
             'date_contact'=>$data[0]->date_contact,
             'date_return'=>$data[0]->date_return,
             'schedule'=>$data[0]->schedule,

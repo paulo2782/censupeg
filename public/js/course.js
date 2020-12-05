@@ -14,7 +14,8 @@ $('#btnAdd').click(function(event) {
           });
         });
     });
-
+     
+ 
 });
    
 //DELETAR CURSO

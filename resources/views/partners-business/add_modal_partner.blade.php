@@ -16,15 +16,15 @@
                 <div class="form-row">
                 <div class="form-group col-12">
                         <label class="text-4" for="name">Nome da Empresa <span>*</span></label>
-                        <input type="text" class="form-control" id="name" name="#" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control" id="name" name="email" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label class="text-4" for="email">Email <span>*</span></label>
-                        <input type="email" class="form-control" id="email" name="#" placeholder="fulano@email.com" autocomplete="course" autofocus/>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label class="text-4" for="phone">Telefone <span>*</span></label>
-                        <input type="text" class="form-control" id="phone" name="#" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
                         <label class="text-4" for="statusPartner">Status <span>*</span></label>

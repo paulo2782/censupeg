@@ -21,7 +21,7 @@
                             <!-- <a class="dropdown-item" href="{{ route('mailingShow',date('m')) }}">Mailing</a> -->
                             <a class="dropdown-item" href="{{ route('callShow') }}">Ligações</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('partnerShow') }}">Empresas Parceiras</a>
+                            <a class="dropdown-item" href="{{ route('partnerShow') }}">Empresas parceiras</a>
                         </div>
                     </li>
                     <li class="nav-item">

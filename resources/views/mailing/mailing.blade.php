@@ -7,7 +7,10 @@
 
 <body id="body-container">
 @include('includes/header') 
+@include('mailing/delete_modal_mailing') 
+
 <form action="{{ route('csvMailing') }}">
+
 <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}">
 <input type="hidden" name="level"   id="level"   value="{{ auth()->user()->level }}">
 
@@ -18,6 +21,8 @@
                 <h1>Mailing</h1>
                 <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                 <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
+                <span id="alert" style="color:red"> {{ Session::get('alert') }} </span>
+
                 <span class="export-file text-4">
                     <div class="dropdown">
                         <a href="" class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,7 +56,8 @@
          
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/mailing.js?100') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{{ asset('/js/mailing.js?101') }}"></script>
 <script src="{{ asset('/js/moment.min.js') }}"></script>
 
 </body>  
@@ -64,6 +70,7 @@ var month        = 0
 var auxMonth
 var date_contact = []
 var year         = $('#year').val()
+
 
 $('#value_year').val(year);
 $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:2,year:year,btn:0}, function( data ) {

@@ -154,6 +154,9 @@ class MailingController extends Controller
         $dataDayMonth   = DB::table('calls')
         ->join('contacts', 'calls.contact_id', '=', 'contacts.id')
         ->join('courses',  'calls.course_id', '=',  'courses.id')
+        ->select('calls.id as call_id', 'calls.contact_id as contact_id', 'calls.date_contact as date_contact', 'calls.date_return as date_return', 'calls.schedule as schedule', 'calls.status as status', 'calls.additional_information as additional_information','calls.user_id as user_id','calls.course_id as course_id','calls.created_at as created_at',
+            'courses.course as course',
+            'contacts.name as name')
 
         ->where('date_contact','like','%'.$iiMonth.'%')->get();
         $iCountDayMonth     = count($dataDayMonth); 

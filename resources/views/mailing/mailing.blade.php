@@ -31,7 +31,15 @@
                         </li>
                     </ul>
                 </div>
-                <input type="submit" class="form-control btn btn-success" value="Exportar todos os registros"> 
+                <div class="row">
+                <div class="col-lg-6">
+                    <input type="submit" class="form-control btn btn-success" value="Exportar todos os registros"> 
+                </div>
+                <div class="col-lg-6">
+                    <input type="submit" class="form-control btn btn-warning" value="Exportar todos os registros mensal"> 
+                </div>
+                </div>
+
                 <div id="details"></div>
         </div>
     </div>

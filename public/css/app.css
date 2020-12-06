@@ -167,7 +167,13 @@ span.text-5 { display: block; font-size: 12px; }
 
 #month .next { float: right; padding: 3px; }
 
-.export-file { float: right; padding: 5px; }
+.export-file { float: right; padding: 5px; line-height: 60px; margin-right: 20px; font-size: 14px; }
+
+.export-file .dropdown-toggle, .export-file .navbar .dropdown-menu a { cursor: pointer; }
+
+.export-file .dropdown-item, .export-file .dropdown-item:hover { color: #16181b !important; text-decoration: none; font-size: 14px !important; }
+
+.export-file .dropdown-item:hover, .export-file .dropdown-item:hover:hover { background-color: #f8f9fa !important; }
 
 .export-file a { color: #555; }
 

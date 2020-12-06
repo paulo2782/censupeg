@@ -18,6 +18,17 @@
                 <h1>Mailing</h1>
                 <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                 <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
+                <span class="export-file">
+                    <div class="dropdown">
+                        <a href="" class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Exportar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="submit">Registros total</button>
+                            <button class="dropdown-item" type="submit" name="month">Registros mensal</button>
+                        </div>
+                    </div>
+                </span>
             </div>
             <div class="show-details-block">
                 <div id="month">
@@ -31,7 +42,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="row">
+                <!--<div class="row">
                 <div class="col-lg-6">
                     <input type="submit" class="form-control btn btn-success" value="Exportar todos os registros"> 
                 </div>
@@ -40,7 +51,7 @@
                     name="month"
                     value="Exportar todos os registros mensal"> 
                 </div>
-                </div>
+                </div>-->
                 <input type="hidden" id="value_month" name="value_month">
                 <input type="hidden" id="value_year"  name="value_year">
 

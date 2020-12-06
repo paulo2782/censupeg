@@ -27,6 +27,21 @@
 .export-file {
     float: right;
     padding: 5px;
+    line-height: 60px;
+    margin-right: 20px;
+    font-size: 14px;
+    .dropdown-toggle, .navbar .dropdown-menu a {
+        cursor: pointer;
+    }
+    .dropdown-item, .dropdown-item:hover {
+        color: #16181b !important;
+        text-decoration: none;
+        font-size: 14px !important;
+        &:hover {
+            background-color: #f8f9fa !important;
+
+        } 
+    }
     a {
         color: $color-text-standard;
         &:hover {

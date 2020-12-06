@@ -40,6 +40,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('/js/mailing.js?100') }}"></script>
+<script src="{{ asset('/js/moment.min.js') }}"></script>
 
 </body>  
 </html>

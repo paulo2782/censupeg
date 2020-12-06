@@ -4,7 +4,6 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
     for(i = 0 ; i <= iCount-1 ; i++){
 
         if(i < 10){ ii = '0'+i }else{ ii = i }
-
         $('#details').append(`
                 <div class="show-details-block">
                     <div class = "container">
@@ -58,14 +57,15 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
         num = 1
         
         for(i = 0 ; i <= dataDayMonth.length ; i++){
-
+                
             if(dataDayMonth[i].date_contact == date_contact){
+                if(dataDayMonth[i].date_return == null){ date_return = ''}else{date_return = moment(dataDayMonth[i].date_return).format('DD-MM-YY')}
                 $('.table-details'+table_id).append(
                     "<tr>"+
                     "<td><strong>"+num+"</strong></td>"+
                     "<td>"+dataDayMonth[i].name+"</td>"+
-                    "<td>"+dataDayMonth[i].date_contact+"</td>"+
-                    "<td>"+dataDayMonth[i].date_return+"</td>"+
+                    "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+"</td>"+
+                    "<td>"+date_return+"</td>"+
                     "<td>"+dataDayMonth[i].course+"</td>"+
                     "<td>"+dataDayMonth[i].status+"</td>"+
                     "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+

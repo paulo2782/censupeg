@@ -23,12 +23,13 @@ class MailingController extends Controller
 
         $user_id= $request->get('user_id');
         $level  = $request->get('level');
+        $month = $request->get('month');
         $value_month = $request->get('value_month');
         $value_year = $request->get('value_year');
         // dd($request->all());
 
         // TODOS REGISTRO MENSAL TABELA CALL
-        if($value_month <> null){
+        if($month <> null){
             if($level == 1){        
                 $dados = Call::whereMonth('date_contact',$value_month)
                 ->whereYear('date_contact',$value_year)
@@ -61,7 +62,7 @@ class MailingController extends Controller
             }
 
             if($level == 0){        
-                $dados = Call::orderby('date_contact','ASC')
+                $dados = Call::orderby('date_contact','DESC')
                 ->where('date_contact',$date)
                 ->where('user_id',$user_id)
                 ->get();
@@ -82,7 +83,7 @@ class MailingController extends Controller
         if($level == 0){
 
             $dados = Call::where('user_id',$user_id)
-            ->orderby('date_contact','ASC')
+            ->orderby('date_contact','DESC')
             ->get();
             return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
         }

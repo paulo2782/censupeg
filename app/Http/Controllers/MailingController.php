@@ -20,14 +20,21 @@ class MailingController extends Controller
     }
 
     public function csvMailing(Request $request){
+        $user_id= $request->get('user_id');
 
         if($request->get('date') <> NULL){
             $date = $request->get('date');
-            $dados = Call::where('date_contact',$date)->get();
+            
+            $dados = Call::where('user_id',$user_id)
+            ->where('date_contact',$date)
+            ->where('user_id',$user_id)
+            ->orderby('date_contact','ASC')
+            ->get();
             return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
-
         }else{
-            $dados = Call::all();
+            $dados = Call::where('user_id',$user_id)
+            ->orderby('date_contact','ASC')
+            ->get();
             return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
         }
 
@@ -37,6 +44,7 @@ class MailingController extends Controller
     public function mailingAjax(Request $request)
     {
 
+        $user_id= $request->get('user_id');
     	$btn    = $request->get('btn');
     	$iMonth = $request->get('month');
     	$year   = $request->get('year');
@@ -60,7 +68,13 @@ class MailingController extends Controller
 
     	// Busca somente mês tabela CALL
  
-    	$dataMonth   = DB::table('calls')->whereMonth('date_contact',$iMonth)->whereYear('date_contact',$year)->orderby('date_contact')->groupby('date_contact')->get();
+    	$dataMonth   = DB::table('calls')
+        ->whereMonth('date_contact',$iMonth)
+        ->whereYear('date_contact',$year)
+        ->where('user_id',$user_id)
+        ->orderby('date_contact')
+        ->groupby('date_contact')
+        ->get();
 
     	$iCount		= count($dataMonth); 
     	$dataJson   = json_encode($dataMonth);

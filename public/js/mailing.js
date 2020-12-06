@@ -49,7 +49,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
     }
 
     $('.date_contact').click(function(event) {
- 
+        var level   = $('#level').val()    
         date_contact = $(this).attr('id')  
 
         table_id = $(this).attr('data-id')
@@ -74,19 +74,31 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                     }
                 }
 
+                if(level == 1){
+                    $('.table-details'+table_id).append(
+                        "<tr>"+
+                        "<td><strong>"+num+"</strong></td>"+
+                        "<td>"+dataDayMonth[i].name+"</td>"+
+                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
+                        "<td>"+date_return+"</td>"+
+                        "<td>"+dataDayMonth[i].course+"</td>"+
+                        "<td>"+dataDayMonth[i].status+"</td>"+
+                        "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
+                        "    <a href="+dataDayMonth[i].id+"><i class='fas fa-times deleteMailing'></i></a></td>"
+                    )
+                }else{
+                    $('.table-details'+table_id).append(
+                        "<tr>"+
+                        "<td><strong>"+num+"</strong></td>"+
+                        "<td>"+dataDayMonth[i].name+"</td>"+
+                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
+                        "<td>"+date_return+"</td>"+
+                        "<td>"+dataDayMonth[i].course+"</td>"+
+                        "<td>"+dataDayMonth[i].status+"</td>"
+                    )
+                }
+                num++    
 
-                $('.table-details'+table_id).append(
-                    "<tr>"+
-                    "<td><strong>"+num+"</strong></td>"+
-                    "<td>"+dataDayMonth[i].name+"</td>"+
-                    "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
-                    "<td>"+date_return+"</td>"+
-                    "<td>"+dataDayMonth[i].course+"</td>"+
-                    "<td>"+dataDayMonth[i].status+"</td>"+
-                    "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
-                    "    <a href="+dataDayMonth[i].id+"><i class='fas fa-times deleteMailing'></i></a></td>"
-                )
-                 num++    
             }
            
         }  

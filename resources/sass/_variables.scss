@@ -2,7 +2,7 @@
 $primary-color: #9E1D21;
 $secondary-color: #F8F8F8;
 $white: #fff;
-$color-text-standard: #555;
+$color-text-standard: #555555;
 $color-text-title: #333;
 // TYPOGRAPH
 $font-family-primary: 'Open Sans', sans-serif;
@@ -67,6 +67,7 @@ p {
 span.text-5{
     display: block;
     font-size: 12px;
+    color: #FF0000;
 }
 
 .table {

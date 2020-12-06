@@ -20,9 +20,34 @@ class MailingController extends Controller
     }
 
     public function csvMailing(Request $request){
+
         $user_id= $request->get('user_id');
         $level  = $request->get('level');
-        
+        $value_month = $request->get('value_month');
+        $value_year = $request->get('value_year');
+        // dd($request->all());
+
+        // TODOS REGISTRO MENSAL TABELA CALL
+        if($value_month <> null){
+            if($level == 1){        
+                $dados = Call::whereMonth('date_contact',$value_month)
+                ->whereYear('date_contact',$value_year)
+                ->orderby('date_contact','DESC')->get();
+                return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+            }
+
+            if($level == 0){        
+                $dados = Call::whereMonth('date_contact',$value_month)
+                ->whereYear('date_contact',$value_year)
+                ->where('user_id',$user_id)
+                ->orderby('date_contact','DESC')
+                ->get();
+                return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+            }
+            
+        }
+
+        // TODOS REGISTROS DA TABELA CALL
         // POR DATA
         if($request->get('date') <> NULL){
         

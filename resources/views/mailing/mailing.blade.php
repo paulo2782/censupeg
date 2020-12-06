@@ -36,9 +36,13 @@
                     <input type="submit" class="form-control btn btn-success" value="Exportar todos os registros"> 
                 </div>
                 <div class="col-lg-6">
-                    <input type="submit" class="form-control btn btn-warning" value="Exportar todos os registros mensal"> 
+                    <input type="submit" class="form-control btn btn-warning" 
+                    name="month"
+                    value="Exportar todos os registros mensal"> 
                 </div>
                 </div>
+                <input type="hidden" id="value_month" name="value_month">
+                <input type="hidden" id="value_year"  name="value_year">
 
                 <div id="details"></div>
         </div>
@@ -61,8 +65,11 @@ var auxMonth
 var date_contact = []
 var year         = $('#year').val()
 
+$('#value_year').val(year);
 $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:2,year:year,btn:0}, function( data ) {
-console.log(data)
+    console.log(data)
+    $('#value_month').val(data.month)
+
     object = JSON.parse(data.dataJson)
     dataDayMonth = data.dataDayMonth
 
@@ -74,13 +81,15 @@ console.log(data)
 })
 
  
-
-
 $('#year').change(function(event) {
     var year = $('#year').val()
+    $('#value_year').val(year);
+
     $('#details').html('')
 
     $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:2}, function( data ) {
+        $('#value_month').val(data.month)
+    
         object = JSON.parse(data.dataJson);
         auxMonth = data.month
 
@@ -93,9 +102,12 @@ $('#year').change(function(event) {
 
 $('#btnPrev').click(function(event) {
     var year = $('#year').val()
+    $('#value_year').val(year);
+
     $('#details').html('')
 
     $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:0}, function( data ) {
+        $('#value_month').val(data.month)
         object = JSON.parse(data.dataJson);
         auxMonth = data.month
 
@@ -113,10 +125,13 @@ $('#btnPrev').click(function(event) {
 
 $('#btnNext').click(function(event) {
     var year = $('#year').val()
+    $('#value_year').val(year);
+
     $('#details').html('')
 
     $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:1}, function( data ) {
-        console.log(data.month)
+        $('#value_month').val(data.month)
+
         object = JSON.parse(data.dataJson);
         auxMonth = data.month
 

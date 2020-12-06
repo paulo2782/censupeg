@@ -218,6 +218,10 @@ span.text-5{
         float: right;
         padding: 5px;
         margin: 20px 20px 0 0;
+        a {
+            text-decoration: none;
+            color: $color-text-standard;
+        }
         .dropdown-item {
             color: #16181b;
             text-decoration: none;

@@ -87,6 +87,8 @@ span.text-5 { display: block; font-size: 12px; }
 
 .top-bar-block .export-file { float: right; padding: 5px; margin: 20px 20px 0 0; }
 
+.top-bar-block .export-file a { text-decoration: none; color: #555; }
+
 .top-bar-block .export-file .dropdown-item { color: #16181b; text-decoration: none; }
 
 .top-bar-block .export-file .dropdown-item:hover { background-color: #f8f9fa; }

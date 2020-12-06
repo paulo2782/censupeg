@@ -66,14 +66,14 @@
 
 var user_id = $('#user_id').val()
 var level   = $('#level').val()
-var month        = 0
+var month        = moment().format('M')
 var auxMonth
 var date_contact = []
 var year         = $('#year').val()
 
 
 $('#value_year').val(year);
-$.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:2,year:year,btn:0}, function( data ) {
+$.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:parseInt(month)+1,year:year,btn:0}, function( data ) {
     console.log(data)
     $('#value_month').val(data.month)
 

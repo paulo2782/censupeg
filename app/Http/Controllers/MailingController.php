@@ -16,19 +16,20 @@ class MailingController extends Controller
 
     public function mailingShow(Request $request)
     {
-    	return view('mailing/mailing');
+        return view('mailing/mailing');
     }
 
     public function csvMailing(Request $request){
 
         $user_id= $request->get('user_id');
         $level  = $request->get('level');
+        $month = $request->get('month');
         $value_month = $request->get('value_month');
         $value_year = $request->get('value_year');
         // dd($request->all());
 
         // TODOS REGISTRO MENSAL TABELA CALL
-        if($value_month <> null){
+        if($month <> null){
             if($level == 1){        
                 $dados = Call::whereMonth('date_contact',$value_month)
                 ->whereYear('date_contact',$value_year)
@@ -61,7 +62,7 @@ class MailingController extends Controller
             }
 
             if($level == 0){        
-                $dados = Call::orderby('date_contact','ASC')
+                $dados = Call::orderby('date_contact','DESC')
                 ->where('date_contact',$date)
                 ->where('user_id',$user_id)
                 ->get();
@@ -82,7 +83,7 @@ class MailingController extends Controller
         if($level == 0){
 
             $dados = Call::where('user_id',$user_id)
-            ->orderby('date_contact','ASC')
+            ->orderby('date_contact','DESC')
             ->get();
             return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
         }
@@ -95,30 +96,30 @@ class MailingController extends Controller
 
         $level  = $request->get('level');
         $user_id= $request->get('user_id');
-    	$btn    = $request->get('btn');
-    	$iMonth = $request->get('month');
-    	$year   = $request->get('year');
+        $btn    = $request->get('btn');
+        $iMonth = $request->get('month');
+        $year   = $request->get('year');
 
-    	if($btn == 0){
-    		$iMonth = $iMonth-1;
-    	}
+        if($btn == 0){
+            $iMonth = $iMonth-1;
+        }
 
-    	if($btn == 1){
-    		$iMonth = $iMonth+1;
-    	}
-    	if($btn == 2){
-    		$iMonth = $iMonth;
-    	}
+        if($btn == 1){
+            $iMonth = $iMonth+1;
+        }
+        if($btn == 2){
+            $iMonth = $iMonth;
+        }
 
-    	$month = new Monthclass();
-    	$iDay   = cal_days_in_month(CAL_GREGORIAN, intval($iMonth), 2020);
+        $month = new Monthclass();
+        $iDay   = cal_days_in_month(CAL_GREGORIAN, intval($iMonth), 2020);
 
-    	$strMonth = $month->month($iMonth);
+        $strMonth = $month->month($iMonth);
 
 
-    	// Busca somente mês tabela CALL
+        // Busca somente mês tabela CALL
         if($level == 1){
-        	$dataMonth   = DB::table('calls')
+            $dataMonth   = DB::table('calls')
             ->whereMonth('date_contact',$iMonth)
             ->whereYear('date_contact',$year)
             // ->where('user_id',$user_id)
@@ -136,31 +137,31 @@ class MailingController extends Controller
 
         }
 
-    	$iCount		= count($dataMonth); 
-    	$dataJson   = json_encode($dataMonth);
+        $iCount     = count($dataMonth); 
+        $dataJson   = json_encode($dataMonth);
 
-    	// Busca somente dias do mes tabela CALL
-    	if($iMonth < 10){
-    		$iiMonth = '0'.$iMonth;
-    		$iiMonth = $iiMonth+1;
-    	} 
+        // Busca somente dias do mes tabela CALL
+        if($iMonth < 10){
+            $iiMonth = '0'.$iMonth;
+            $iiMonth = $iiMonth+1;
+        } 
         if($iMonth >= 10){
             // $iiMonth = '0'.$iMonth;
             $iiMonth = $iMonth+1;
         } 
         
 
-    	$dataDayMonth   = DB::table('calls')
+        $dataDayMonth   = DB::table('calls')
         ->join('contacts', 'calls.contact_id', '=', 'contacts.id')
         ->join('courses',  'calls.course_id', '=',  'courses.id')
 
         ->where('date_contact','like','%'.$iiMonth.'%')->get();
-    	$iCountDayMonth		= count($dataDayMonth); 
-    	$dataJsonDayMonth   = json_encode($dataDayMonth);
+        $iCountDayMonth     = count($dataDayMonth); 
+        $dataJsonDayMonth   = json_encode($dataDayMonth);
 
-	 	return response()->json(['month'=>$iMonth,'btn'=>$btn,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
-	 		'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth,'year'=>$year]);
-	}
+        return response()->json(['month'=>$iMonth,'btn'=>$btn,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
+            'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth,'year'=>$year]);
+    }
 
 }
 

@@ -47,7 +47,6 @@ form {
         font-size: 14px !important;
     }    
     span {
-        color: $primary-color;
         font-weight: bold;
     }
 }
@@ -178,17 +177,12 @@ span.text-5{
         }
     }
 
-
     .dropdown-menu.show {
         font-size: 14px;
         width: 100px;
     }
     .dropdown-item {
         cursor: pointer;
-        &:hover {
-            background: $primary-color;
-            color: $white;
-        }
     }
 }
 
@@ -219,6 +213,18 @@ span.text-5{
         width: 30px;
         margin-bottom: 5px;
         margin-left: -10px;
+    }
+    .export-file {
+        float: right;
+        padding: 5px;
+        margin: 20px 20px 0 0;
+        .dropdown-item {
+            color: #16181b ;
+            text-decoration: none;
+            &:hover {
+                background-color: #f8f9fa;
+            } 
+        }
     }
 }
 

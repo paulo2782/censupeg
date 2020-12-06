@@ -18,7 +18,7 @@
                 <h1>Mailing</h1>
                 <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                 <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
-                <span class="export-file">
+                <span class="export-file text-4">
                     <div class="dropdown">
                         <a href="" class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Exportar

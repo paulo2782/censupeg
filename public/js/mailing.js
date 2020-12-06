@@ -15,7 +15,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                                             <span>`+object[i].date_contact.substr(8,2)+` / `+iM+` </span>
                                             <i class="fas fa-angle-down rotate-icon"></i>
                                         </a>
-                                        <span class="export-file text-4">
+                                        <span class="export-file-day text-4">
                                             <a href="#" class="export" id="export`+i+`" 
                                             data-reference="`+object[i].date_contact+`" 
                                             data-user_id="`+object[i].user_id+`">

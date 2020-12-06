@@ -59,12 +59,27 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
         for(i = 0 ; i <= dataDayMonth.length ; i++){
                 
             if(dataDayMonth[i].date_contact == date_contact){
-                if(dataDayMonth[i].date_return == null){ date_return = ''}else{date_return = moment(dataDayMonth[i].date_return).format('DD-MM-YY')}
+                if(dataDayMonth[i].date_return == null)
+                    { date_return = '' }
+                else
+                    { 
+                    if(dataDayMonth[i].schedule != null)
+                    {
+                        date_return = moment(dataDayMonth[i].date_return).format('DD-MM-YY')+' / '+dataDayMonth[i].schedule 
+
+                    }
+                else
+                    {
+                        date_return = moment(dataDayMonth[i].date_return).format('DD-MM-YY')
+                    }
+                }
+
+
                 $('.table-details'+table_id).append(
                     "<tr>"+
                     "<td><strong>"+num+"</strong></td>"+
                     "<td>"+dataDayMonth[i].name+"</td>"+
-                    "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+"</td>"+
+                    "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
                     "<td>"+date_return+"</td>"+
                     "<td>"+dataDayMonth[i].course+"</td>"+
                     "<td>"+dataDayMonth[i].status+"</td>"+

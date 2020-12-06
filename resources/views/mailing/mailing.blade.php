@@ -42,19 +42,8 @@
                         </li>
                     </ul>
                 </div>
-                <!--<div class="row">
-                <div class="col-lg-6">
-                    <input type="submit" class="form-control btn btn-success" value="Exportar todos os registros"> 
-                </div>
-                <div class="col-lg-6">
-                    <input type="submit" class="form-control btn btn-warning" 
-                    name="month"
-                    value="Exportar todos os registros mensal"> 
-                </div>
-                </div>-->
                 <input type="hidden" id="value_month" name="value_month">
                 <input type="hidden" id="value_year"  name="value_year">
-
                 <div id="details"></div>
         </div>
     </div>

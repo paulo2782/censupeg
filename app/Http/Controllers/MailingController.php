@@ -20,14 +20,45 @@ class MailingController extends Controller
     }
 
     public function csvMailing(Request $request){
-
+        $user_id= $request->get('user_id');
+        $level  = $request->get('level');
+        
+        // POR DATA
         if($request->get('date') <> NULL){
+        
             $date = $request->get('date');
-            $dados = Call::where('date_contact',$date)->get();
-            return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
 
-        }else{
-            $dados = Call::all();
+        // TODOS OS REGISTROS P/ ADMINISTRADOR C/ DATA
+            
+            if($level == 1){        
+                $dados = Call::where('date_contact',$date)->orderby('date_contact','DESC')->get();
+                return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+            }
+
+            if($level == 0){        
+                $dados = Call::orderby('date_contact','ASC')
+                ->where('date_contact',$date)
+                ->where('user_id',$user_id)
+                ->get();
+                return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+            }
+
+        }
+
+        // TODOS OS REGISTROS P/ ADMINISTRADOR
+            
+        if($level == 1){        
+            $dados = Call::orderby('date_contact','DESC')->get();                
+            return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
+        }
+
+        //  TODOS REGISTROS P/ OPERADOR
+            
+        if($level == 0){
+
+            $dados = Call::where('user_id',$user_id)
+            ->orderby('date_contact','ASC')
+            ->get();
             return Excel::download(new ExportCalls($dados), 'mailing.xlsx');
         }
 
@@ -37,6 +68,8 @@ class MailingController extends Controller
     public function mailingAjax(Request $request)
     {
 
+        $level  = $request->get('level');
+        $user_id= $request->get('user_id');
     	$btn    = $request->get('btn');
     	$iMonth = $request->get('month');
     	$year   = $request->get('year');
@@ -59,8 +92,24 @@ class MailingController extends Controller
 
 
     	// Busca somente mês tabela CALL
- 
-    	$dataMonth   = DB::table('calls')->whereMonth('date_contact',$iMonth)->whereYear('date_contact',$year)->orderby('date_contact')->groupby('date_contact')->get();
+        if($level == 1){
+        	$dataMonth   = DB::table('calls')
+            ->whereMonth('date_contact',$iMonth)
+            ->whereYear('date_contact',$year)
+            // ->where('user_id',$user_id)
+            ->orderby('date_contact')
+            ->groupby('date_contact')
+            ->get();
+        }else{
+            $dataMonth   = DB::table('calls')
+            ->whereMonth('date_contact',$iMonth)
+            ->whereYear('date_contact',$year)
+            ->where('user_id',$user_id)
+            ->orderby('date_contact')
+            ->groupby('date_contact')
+            ->get();
+
+        }
 
     	$iCount		= count($dataMonth); 
     	$dataJson   = json_encode($dataMonth);

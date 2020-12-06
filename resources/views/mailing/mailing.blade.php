@@ -24,8 +24,8 @@
                             Exportar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="submit">Registros total</button>
-                            <button class="dropdown-item" type="submit" name="month" value="mensal">Registros mensal</button>
+                            <button class="dropdown-item text-4" type="submit">Registros total</button>
+                            <button class="dropdown-item text-4" type="submit" name="month" value="mensal">Registros mensal</button>
                         </div>
                     </div>
                 </span>

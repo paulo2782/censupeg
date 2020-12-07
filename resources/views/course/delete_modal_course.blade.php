@@ -1,4 +1,4 @@
-<form name="$" id="#" method="POST">    
+<form name="#" id="#" method="POST">    
   <div class="modal fade" id="modalDelete" role="dialog">
       <div class="modal-dialog">
           <div class="modal-content">

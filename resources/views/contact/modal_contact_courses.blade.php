@@ -51,7 +51,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
+                <div class="dropdown-divider"></div>
                 <button type="submit" id="add" class="btn btn-outline-success">Salvar</button>            
             </form>
         </div>

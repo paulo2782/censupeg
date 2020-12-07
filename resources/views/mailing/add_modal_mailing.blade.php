@@ -52,7 +52,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
+                <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Curso de interesse <span>*</span></label>
@@ -60,7 +60,7 @@
                         placeholder= "Informe o curso de interesse" value="#" required autofocus/>                         
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
+                <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="email">Data de contato</label>
@@ -76,7 +76,7 @@
                         placeholder= "Selecione status" value="#" required autofocus/>                         
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
+                <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text-4" for="observation">Informações adicionais</label>
@@ -84,7 +84,7 @@
                         </textarea>
                     </div>
                 </div>                    
-                <div class="line-horizontal"></div>
+                <div class="dropdown-divider"></div>
                 <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

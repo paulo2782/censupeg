@@ -51,7 +51,7 @@
                         <textarea id="additional_information" class="form-control" name="additional_information"></textarea>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
+                <div class="dropdown-divider"></div>
                 <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

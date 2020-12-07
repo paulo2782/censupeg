@@ -157,8 +157,6 @@ span.text-5 { display: block; font-size: 12px; color: #FF0000; }
 
 .modal-title { color: #333; font-weight: bold; }
 
-.line-horizontal { margin-bottom: 10px; border: 1px solid #9E1D21; }
-
 #month { width: 100%; padding: 15px 30px; text-align: center; }
 
 #month ul { list-style-type: none; margin: 0; padding: 0; }

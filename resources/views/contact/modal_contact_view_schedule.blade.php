@@ -15,24 +15,23 @@
                 <input type="hidden" name="call_id_edit" id="call_id_edit">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="course_view">CURSO <span>*</span></label>
+                        <label for="course_view">Curso <span>*</span></label>
                         <input type="text" id="course_view" class="form-control" name="course" readonly />
                     </div>
-
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
+                        <label for="date_contact_view">Data do contato <span>*</span></label>
                         <input type="date" id="date_contact_view" class="form-control" name="date_contact" readonly />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="date_return">Data de retorno</label>
+                        <label for="date_return_view">Data de retorno</label>
                         <input type="date" id="date_return_view" class="form-control" name="date_return" readonly />    
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="schedule">Horário</label>
+                        <label for="schedule_view">Horário</label>
                         <input type="time" class="form-control" name="schedule" id="schedule_view" readonly />    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
+                        <label for="statusScheduleView">Status <span>*</span></label>
                         <select class="form-control" id="statusScheduleView" name="status" disabled="">
                             <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
@@ -44,7 +43,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="additional_information_view">Informações adicionais</label>
                         <textarea id="additional_information_view" class="form-control" name="additional_information" readonly></textarea>
                     </div>
                 </div>

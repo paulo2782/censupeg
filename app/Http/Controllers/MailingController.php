@@ -105,13 +105,10 @@ class MailingController extends Controller
 
         $strMonth = $month->month($iMonth);
 
-
-        // Busca somente mês tabela CALL
         if($level == 1){
             $dataMonth   = DB::table('calls')
             ->whereMonth('date_contact',$iMonth)
             ->whereYear('date_contact',$year)
-            // ->where('user_id',$user_id)
             ->orderby('date_contact')
             ->groupby('date_contact')
             ->get();

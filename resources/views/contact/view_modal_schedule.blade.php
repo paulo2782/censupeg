@@ -15,7 +15,7 @@
                 <input type="hidden" name="call_id_edit" id="call_id_edit">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_contact_edit">Data do contato <span>*</span></label>
+                        <label class="text-4" for="date_contact_edit">Data de contato <span>*</span></label>
                         <input type="date" id="date_contact_edit" class="form-control" readonly="readonly" name="date_contact" required/>
                     </div>
                     <div class="form-group col-md-6 col-12">

@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Parcerias <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Parcerias <span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -35,7 +35,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label for="observation">Informações adicionais</label>
+                        <label for="edtAdditional_information">Informações adicionais</label>
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information"></textarea>
                     </div>
                 </div>

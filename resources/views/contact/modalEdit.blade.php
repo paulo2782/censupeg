@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar Contato<span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Editar Contato<span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -15,7 +15,7 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="name">Nome Completo <span>*</span></label>
+                        <label for="name">Nome Completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
                         placeholder= "Informe o nome" value="{{ $dados[0]->name }}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     
@@ -26,12 +26,12 @@
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label for="phone">Telefone <span>*</span></label>
+                        <label for="phone">Telefone <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="{{ $dados[0]->phone }}" required />    
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    
-                        <label for="schooling">Escolaridade <span>*</span></label>
+                        <label for="schooling">Escolaridade <span class="text-5">*</span></label>
                         <select class="form-control schooling" id="schooling" name="schooling" required>
                             <option value="" disabled selected hidden>Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="stateData" value="{{ $dados[0]->state }}"/>  
-                        <label for="state">Estado <span>*</span></label>
+                        <label for="state">Estado <span class="text-5">*</span></label>
                         <select class="form-control" id="state" name="state" required>
                             <option value="" disabled selected hidden>Selecione o Estado</option>
                             <option value="AC">AC</option>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="cityData" value="{{ $dados[0]->city }}"/> 
-                        <label for="city">Cidade <span>*</span></label>
+                        <label for="city">Cidade <span class="text-5">*</span></label>
                         <select class="form-control" id="city" name="city" required></select>
                     </div>
                     <div class="form-group col-12">

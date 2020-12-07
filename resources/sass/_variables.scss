@@ -182,17 +182,12 @@ label {
         }
     }
 
-
     .dropdown-menu.show {
         font-size: 14px;
         width: 100px;
     }
     .dropdown-item {
         cursor: pointer;
-        &:hover {
-            background: $primary-color;
-            color: $white;
-        }
     }
 }
 
@@ -223,6 +218,22 @@ label {
         width: 30px;
         margin-bottom: 5px;
         margin-left: -10px;
+    }
+    .export-file {
+        float: right;
+        padding: 5px;
+        margin: 20px 20px 0 0;
+        a {
+            text-decoration: none;
+            color: $color-text-standard;
+        }
+        .dropdown-item {
+            color: #16181b;
+            text-decoration: none;
+            &:hover {
+                background-color: #f8f9fa;
+            } 
+        }
     }
 }
 

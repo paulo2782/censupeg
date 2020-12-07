@@ -63,10 +63,7 @@
                     </div>
                 </div>
                 <input type="hidden" id="idCourse" name="id">
-                @if(auth()->user()->level == 1)
                     <button type="button" id="updateCourse" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>
-                @endif
-                            
             </form>
         </div>
    </div>

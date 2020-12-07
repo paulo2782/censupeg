@@ -60,6 +60,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::post('storeCall','CallController@storeCall')->name('storeCall');
 	Route::get('destroyCall/{id}','CallController@destroyCall')->name('destroyCall');
+	Route::delete('destroyCallAjax', 'CallController@destroyCallAjax')->name('destroyCallAjax');
+
 
 	Route::get('course', 	  'CourseController@courseShow')->name('courseShow');
 	Route::get('searchCourse','CourseController@searchCourse')->name('searchCourse');

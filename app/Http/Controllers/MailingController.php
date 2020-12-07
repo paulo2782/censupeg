@@ -96,21 +96,10 @@ class MailingController extends Controller
 
         $level  = $request->get('level');
         $user_id= $request->get('user_id');
-        $btn    = $request->get('btn');
         $iMonth = $request->get('month');
         $year   = $request->get('year');
 
-        if($btn == 0){
-            $iMonth = $iMonth-1;
-        }
-
-        if($btn == 1){
-            $iMonth = $iMonth+1;
-        }
-        if($btn == 2){
-            $iMonth = $iMonth;
-        }
-
+        
         $month = new Monthclass();
         $iDay   = cal_days_in_month(CAL_GREGORIAN, intval($iMonth), 2020);
 
@@ -140,16 +129,6 @@ class MailingController extends Controller
         $iCount     = count($dataMonth); 
         $dataJson   = json_encode($dataMonth);
 
-        // Busca somente dias do mes tabela CALL
-        if($iMonth < 10){
-            $iiMonth = '0'.$iMonth;
-            $iiMonth = $iiMonth+1;
-        } 
-        if($iMonth >= 10){
-            // $iiMonth = '0'.$iMonth;
-            $iiMonth = $iMonth+1;
-        } 
-        
 
         $dataDayMonth   = DB::table('calls')
         ->join('contacts', 'calls.contact_id', '=', 'contacts.id')
@@ -158,11 +137,11 @@ class MailingController extends Controller
             'courses.course as course',
             'contacts.name as name')
 
-        ->where('date_contact','like','%'.$iiMonth.'%')->get();
+        ->where('date_contact','like','%'.$request->get('iMonth').'%')->get();
         $iCountDayMonth     = count($dataDayMonth); 
         $dataJsonDayMonth   = json_encode($dataDayMonth);
 
-        return response()->json(['month'=>$iMonth,'btn'=>$btn,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
+        return response()->json(['month'=>$iMonth,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
             'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth,'year'=>$year]);
     }
 

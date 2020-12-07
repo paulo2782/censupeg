@@ -38,7 +38,7 @@
             <div class="show-details-block">
                 <div id="month">
                     <ul>
-                        <li class="prev"><a href="#" id="btnPrev" style="display:none">&#10094;</a></li>
+                        <li class="prev"><a href="#" id="btnPrev">&#10094;</a></li>
                         <li class="next"><a href="#" id="btnNext">&#10095;</a></li>
                         <li><span id="nameMonth"></span>
                             <input type="number" value="{{ date('Y') }}" id="year" style="border-style: none"> 
@@ -66,55 +66,48 @@
 
 var user_id = $('#user_id').val()
 var level   = $('#level').val()
-var month        = moment().format('M')
+var month   = moment().format('M')
 var auxMonth
 var date_contact = []
 var year         = $('#year').val()
 
 
 $('#value_year').val(year);
-$.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:parseInt(month)+1,year:year,btn:0}, function( data ) {
-    console.log(data)
-    $('#value_month').val(data.month)
 
+$.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:month,year:year,btn:0}, function( data ) {
+    console.log(data)
+
+    if(data.month == 12){
+        $('#btnNext').hide();
+    }
+
+    $('#value_month').val(data.month)
     object = JSON.parse(data.dataJson)
     dataDayMonth = data.dataDayMonth
 
     $('#nameMonth').html(data.nameMonth+' de ')
 
-    auxMonth = 1
+    auxMonth = data.month
+    console.log(data.month)
 
     details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
 })
 
  
-$('#year').change(function(event) {
-    var year = $('#year').val()
-    $('#value_year').val(year);
-
-    $('#details').html('')
-
-    $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:2}, function( data ) {
-        $('#value_month').val(data.month)
-    
-        object = JSON.parse(data.dataJson);
-        auxMonth = data.month
-
-        $('#nameMonth').html(data.nameMonth+' de ')
-
-        
-        details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
-    });
-});
-
 $('#btnPrev').click(function(event) {
     var year = $('#year').val()
     $('#value_year').val(year);
 
     $('#details').html('')
-
+    
+    auxMonth = $('#value_month').val()
+    auxMonth = parseInt(auxMonth)-1
+    
     $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:0}, function( data ) {
         $('#value_month').val(data.month)
+        
+        console.log(auxMonth)
+
         object = JSON.parse(data.dataJson);
         auxMonth = data.month
 
@@ -136,6 +129,9 @@ $('#btnNext').click(function(event) {
 
     $('#details').html('')
 
+    auxMonth = $('#value_month').val()
+    auxMonth = parseInt(auxMonth)+1
+
     $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:1}, function( data ) {
         $('#value_month').val(data.month)
 
@@ -153,6 +149,26 @@ $('#btnNext').click(function(event) {
         details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
     });
 });
+
+$('#year').change(function(event) {
+    var year = $('#year').val()
+    $('#value_year').val(year);
+
+    $('#details').html('')
+
+    $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:2}, function( data ) {
+        $('#value_month').val(data.month)
+    
+        object = JSON.parse(data.dataJson);
+        auxMonth = data.month
+
+        $('#nameMonth').html(data.nameMonth+' de ')
+
+        
+        details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
+    });
+});
+
 
 
 </script>

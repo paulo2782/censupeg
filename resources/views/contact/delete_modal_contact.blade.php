@@ -10,9 +10,8 @@
               </div>
               <div class="modal-body">
                 <input type="hidden" name="id" id="id">
-                <p>Você tem certeza que deseja excluir o contato "<span class="name"></span>" ? </p>
-                <div class="line-horizontal"></div>
-                <button type="button" id="btnDelete" class="btn btn-outline-danger" data-dismiss=" ">Excluir</button>
+                <p class="text-confirm">Você tem certeza que deseja excluir o contato "<span class="name"></span>" ? </p>
+                <button type="button" id="btnDelete" class="form-control btn btn-outline-danger" data-dismiss=" ">Excluir</button>
               </div>
           </div>
       </div>

@@ -22,6 +22,15 @@
             position: relative;
             z-index: 2;
         }
+    }
+    p.text-confirm {
+        font-size: 16px;
+        text-align: center;
+        line-height: 20px;
+        > span.name {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
     }     
     .btn {
         font-size: 14px !important;

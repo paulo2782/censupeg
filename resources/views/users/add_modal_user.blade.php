@@ -14,7 +14,7 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">       
                     <div class="form-group col-12">
-                        <label for="name">Tipo de usuário <span>*</span></label>
+                        <label for="level">Tipo de usuário <span>*</span></label>
                         <select class="c-select form-control" name="level" required>
                             <option value="" disabled selected hidden>Selecione tipo de usuário</option>
                             <option value="0">Operador</option>

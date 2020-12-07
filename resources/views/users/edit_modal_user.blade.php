@@ -15,7 +15,7 @@
 
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="name">Tipo de usuário <span>*</span></label>
+                        <label for="level_edit">Tipo de usuário <span>*</span></label>
                         <select class="c-select form-control" name="level" id="level_edit" required>
                             <option value="" disabled selected hidden>Selecione tipo de usuário</option>
                             <option value="0">Operador</option>
@@ -23,7 +23,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label for="name">{{ __('Name') }} <span>*</span></label>
+                        <label for="name_edit">{{ __('Name') }} <span>*</span></label>
                         <input id="name_edit" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Informe seu nome">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                             @enderror
                     </div>
                     <div class="form-group col-12">
-                        <label for="email">{{ __('E-Mail Address') }} <span>*</span></label>
+                        <label for="email_edit">{{ __('E-Mail Address') }} <span>*</span></label>
                         <input type="email"  id="email_edit" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" placeholder="Informe seu email">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">

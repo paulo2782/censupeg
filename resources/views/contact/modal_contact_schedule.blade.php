@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Contato - Ligações<span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Contato - Ligações<span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,25 +17,25 @@
 
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="course">CURSO<span>*</span></label>
+                        <label for="id">Curso <span class="text-5">*</span></label>
                         <select id="id" class="form-control" name="course_id" required>
                            
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
-                        <input type="date" class="form-control" name="date_contact" required/>
+                        <label for="date_contact">Data de contato <span class="text-5">*</span></label>
+                        <input type="date" class="form-control" id= "date_contact" name="date_contact" required/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_return">Data de retorno</label>
-                        <input type="date" class="form-control" name="date_return"/>    
+                        <label for="date_return">Data de retorno</label>
+                        <input type="date" class="form-control" id= "date_return" name="date_return"/>    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="schedule">Horário</label>
-                        <input type="time" class="form-control" name="schedule"/>    
+                        <label for="schedule">Horário</label>
+                        <input type="time" class="form-control" id="schedule" name="schedule"/>    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
+                        <label for="statusSchedule">Status <span class="text-5">*</span></label>
                         <select id="statusSchedule" class="form-control" name="status" required>
                             <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
@@ -47,11 +47,10 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="additional_information">Informações adicionais</label>
                         <textarea id="additional_information" class="form-control" name="additional_information"></textarea>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
                 <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

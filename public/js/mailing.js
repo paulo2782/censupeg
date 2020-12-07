@@ -15,7 +15,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                                             <span>`+object[i].date_contact.substr(8,2)+` / `+iM+` </span>
                                             <i class="fas fa-angle-down rotate-icon"></i>
                                         </a>
-                                        <span class="export-file text-4">
+                                        <span class="export-file-day text-4">
                                             <a href="#" class="export" id="export`+i+`" 
                                             data-reference="`+object[i].date_contact+`" 
                                             data-user_id="`+object[i].user_id+`">
@@ -84,7 +84,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                         "<td>"+dataDayMonth[i].course+"</td>"+
                         "<td>"+dataDayMonth[i].status+"</td>"+
                         "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
-                        "    <a href="+dataDayMonth[i].id+"><i class='fas fa-times deleteMailing'></i></a></td>"
+                        "    <i class='fas fa-times deleteMailing' data-id="+dataDayMonth[i].call_id+"></i></td>"
                     )
                 }else{
                     $('.table-details'+table_id).append(
@@ -112,5 +112,9 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
         window.location.href='csvMailing?date='+date+'&user_id='+user_id+'+&level='+level+''
 
     });
+
 }
 
+if($('#alert').is(':visible')){
+    $('#alert').fadeOut(4000);
+}

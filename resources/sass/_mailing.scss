@@ -24,11 +24,12 @@
     }
 }
 
-.export-file {
+.export-file-day{
     float: right;
     padding: 5px;
     a {
         color: $color-text-standard;
+        text-decoration: none;
         &:hover {
             text-decoration: none;
         }

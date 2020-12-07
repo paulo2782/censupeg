@@ -16,7 +16,7 @@ class MailingController extends Controller
 
     public function mailingShow(Request $request)
     {
-    	return view('mailing/mailing');
+        return view('mailing/mailing');
     }
 
     public function csvMailing(Request $request){
@@ -96,33 +96,19 @@ class MailingController extends Controller
 
         $level  = $request->get('level');
         $user_id= $request->get('user_id');
-    	$btn    = $request->get('btn');
-    	$iMonth = $request->get('month');
-    	$year   = $request->get('year');
+        $iMonth = $request->get('month');
+        $year   = $request->get('year');
 
-    	if($btn == 0){
-    		$iMonth = $iMonth-1;
-    	}
+        
+        $month = new Monthclass();
+        $iDay   = cal_days_in_month(CAL_GREGORIAN, intval($iMonth), 2020);
 
-    	if($btn == 1){
-    		$iMonth = $iMonth+1;
-    	}
-    	if($btn == 2){
-    		$iMonth = $iMonth;
-    	}
+        $strMonth = $month->month($iMonth);
 
-    	$month = new Monthclass();
-    	$iDay   = cal_days_in_month(CAL_GREGORIAN, intval($iMonth), 2020);
-
-    	$strMonth = $month->month($iMonth);
-
-
-    	// Busca somente mês tabela CALL
         if($level == 1){
-        	$dataMonth   = DB::table('calls')
+            $dataMonth   = DB::table('calls')
             ->whereMonth('date_contact',$iMonth)
             ->whereYear('date_contact',$year)
-            // ->where('user_id',$user_id)
             ->orderby('date_contact')
             ->groupby('date_contact')
             ->get();
@@ -137,31 +123,24 @@ class MailingController extends Controller
 
         }
 
-    	$iCount		= count($dataMonth); 
-    	$dataJson   = json_encode($dataMonth);
+        $iCount     = count($dataMonth); 
+        $dataJson   = json_encode($dataMonth);
 
-    	// Busca somente dias do mes tabela CALL
-    	if($iMonth < 10){
-    		$iiMonth = '0'.$iMonth;
-    		$iiMonth = $iiMonth+1;
-    	} 
-        if($iMonth >= 10){
-            // $iiMonth = '0'.$iMonth;
-            $iiMonth = $iMonth+1;
-        } 
-        
 
-    	$dataDayMonth   = DB::table('calls')
+        $dataDayMonth   = DB::table('calls')
         ->join('contacts', 'calls.contact_id', '=', 'contacts.id')
         ->join('courses',  'calls.course_id', '=',  'courses.id')
+        ->select('calls.id as call_id', 'calls.contact_id as contact_id', 'calls.date_contact as date_contact', 'calls.date_return as date_return', 'calls.schedule as schedule', 'calls.status as status', 'calls.additional_information as additional_information','calls.user_id as user_id','calls.course_id as course_id','calls.created_at as created_at',
+            'courses.course as course',
+            'contacts.name as name')
 
-        ->where('date_contact','like','%'.$iiMonth.'%')->get();
-    	$iCountDayMonth		= count($dataDayMonth); 
-    	$dataJsonDayMonth   = json_encode($dataDayMonth);
+        ->where('date_contact','like','%'.$request->get('iMonth').'%')->get();
+        $iCountDayMonth     = count($dataDayMonth); 
+        $dataJsonDayMonth   = json_encode($dataDayMonth);
 
-	 	return response()->json(['month'=>$iMonth,'btn'=>$btn,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
-	 		'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth,'year'=>$year]);
-	}
+        return response()->json(['month'=>$iMonth,'nameMonth'=>$strMonth,'iDay'=>$iDay,'dataJson'=>$dataJson,'iCount'=>$iCount,
+            'iCountDayMonth'=>$iCountDayMonth,'dataDayMonth'=>$dataDayMonth,'year'=>$year]);
+    }
 
 }
 

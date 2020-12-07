@@ -30,8 +30,8 @@
                         <label for="statusPartner">Status <span class="text-5">*</span></label>
                         <select class="form-control" id="statusPartner" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status da parceria</option>
-                            <option value="Fechado">Fechado</option>
-                            <option value="Analisara proposta">Analisará proposta</option>
+                            <option value="Contrato">Contrato</option>
+                            <option value="Analisará proposta">Analisará proposta</option>
                             <option value="Não tem interesse">Não tem interesse</option>
                             <option value="Outros">Outros</option>
                         </select>

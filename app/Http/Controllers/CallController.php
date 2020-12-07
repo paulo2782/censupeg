@@ -91,4 +91,9 @@ class CallController extends Controller
 
     }
 
+    public function destroyCallAjax(Request $request){
+        $call = Call::find($request->call_id);
+        $call->delete();
+        return redirect()->back()->with('alert','Registro Apagado!');
+    }
 }

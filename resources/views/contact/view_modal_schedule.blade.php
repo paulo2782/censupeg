@@ -15,11 +15,11 @@
                 <input type="hidden" name="call_id_edit" id="call_id_edit">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
+                        <label class="text-4" for="date_contact_edit">Data do contato <span>*</span></label>
                         <input type="date" id="date_contact_edit" class="form-control" readonly="readonly" name="date_contact" required/>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="date_return">Data de retorno</label>
+                        <label class="text-4" for="date_return_edit">Data de retorno</label>
                         <input type="date" id="date_return_edit" class="form-control" readonly="readonly" name="date_return"/>    
                     </div>
                     <div class="form-group col-md-6 col-12">
@@ -39,7 +39,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label class="text-4" for="additional_information">Informações adicionais</label>
                         <textarea id="additional_information" class="form-control" name="additional_information"></textarea>
                     </div>
                 </div>

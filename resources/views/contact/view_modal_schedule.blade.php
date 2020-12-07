@@ -43,7 +43,6 @@
                         <textarea id="additional_information" class="form-control" name="additional_information"></textarea>
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <input type="button" class="btnUpdateEditCall btn btn-primary" data-dismiss=" " value="Salvar">            
             </form>
         </div>

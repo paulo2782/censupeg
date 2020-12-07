@@ -39,7 +39,6 @@
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information"></textarea>
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <input type="hidden" id="#" name="id">
                 <button type="button" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>                            
             </form>

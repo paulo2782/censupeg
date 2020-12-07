@@ -62,7 +62,6 @@
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <input type="hidden" id="idCourse" name="id">
                 @if(auth()->user()->level == 1)
                     <button type="button" id="updateCourse" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>

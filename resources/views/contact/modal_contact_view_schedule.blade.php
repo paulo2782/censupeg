@@ -48,7 +48,6 @@
                         <textarea id="additional_information_view" class="form-control" name="additional_information" readonly></textarea>
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <input type="button" class="btnViewCall btn btn-outline-primary" data-dismiss=" " value="Fechar">            
             </form>
         </div>

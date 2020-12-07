@@ -41,7 +41,6 @@
                             @enderror
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <button type="button" id="btnUpdate" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

@@ -57,7 +57,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <input type="button"  class="btnUpdateContactCourse btn btn-outline-success" value="Salvar">            
             </form>
         </div>

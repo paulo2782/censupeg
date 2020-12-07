@@ -62,7 +62,6 @@
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

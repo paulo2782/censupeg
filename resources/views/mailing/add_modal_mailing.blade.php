@@ -84,7 +84,6 @@
                         </textarea>
                     </div>
                 </div>                    
-                <div class="dropdown-divider"></div>
                 <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

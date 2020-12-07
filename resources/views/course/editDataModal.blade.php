@@ -62,7 +62,6 @@
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
                 </div>
-                <div class="dropdown-divider"></div>
                 <input type="hidden" id="idCourse" name="id">
                 <button type="button" id="updateCourse" class="btn btn-primary" data-dismiss=" ">Atualizar</button>            
             </form>

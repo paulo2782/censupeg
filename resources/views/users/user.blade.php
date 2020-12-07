@@ -46,10 +46,10 @@
 								<td> {{ $level }} </td>
 								<td>
 									<a data-toggle="modal" href="#modalEdit" class="fa fa-pencil editUser" aria-hidden="true" title="Editar usuário"
-									data-id    ="{{ $dado->id }}"
-									data-level ="{{ $dado->level }}"
-									data-name  ="{{ $dado->name }}"
-									data-email ="{{ $dado->email }}">
+										data-id    ="{{ $dado->id }}"
+										data-level ="{{ $dado->level }}"
+										data-name  ="{{ $dado->name }}"
+										data-email ="{{ $dado->email }}">
 									</a>
 
 									<a href="#" class="fa fa-trash deleteUser" aria-hidden="true" 

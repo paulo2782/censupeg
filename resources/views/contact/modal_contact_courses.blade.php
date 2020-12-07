@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Curso <span>*</span></label>
+                        <label for="selectCourse">Curso <span>*</span></label>
                         <select class="c-select form-control" id="selectCourse" required>
                         
                        
@@ -35,13 +35,13 @@
                         <input type="hidden" name="course_id" id="course_id">
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Modalidade <span>*</span></label>
+                        <label for="modality">Modalidade <span>*</span></label>
                         <input type="text" id="modality" class="form-control" readonly="" required>
  
                     </div>
                     
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
+                        <label for="statusSchedule">Status <span>*</span></label>
                         <select class="c-select form-control" id="statusSchedule" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>

@@ -55,7 +55,7 @@
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Curso de interesse <span>*</span></label>
+                        <label for="name">Curso de interesse <span>*</span></label>
                         <input type="text" class="form-control" id="#" name="#" 
                         placeholder= "Informe o curso de interesse" value="#" required autofocus/>                         
                     </div>
@@ -63,15 +63,15 @@
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="email">Data de contato</label>
+                        <label for="email">Data de contato</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="dd/mm/aaaa" value="#" />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="phone">Data retorno <span>*</span></label>
+                        <label for="phone">Data retorno <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="dd/mm/aaaa" value="#" required />    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Status <span>*</span></label>
+                        <label for="name">Status <span>*</span></label>
                         <input type="text" class="form-control" id="#" name="#" 
                         placeholder= "Selecione status" value="#" required autofocus/>                         
                     </div>
@@ -79,7 +79,7 @@
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">#
                         </textarea>
                     </div>

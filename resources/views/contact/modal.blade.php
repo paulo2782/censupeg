@@ -18,24 +18,24 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome Completo <span>*</span></label>
+                        <label for="name">Nome Completo <span>*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
                                placeholder= "Informe o nome" value="{{Session::get('name')}}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="text-4" for="email">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" 
                                placeholder="fulano@email.com"/>
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="phone">Telefone <span>*</span></label>
+                        <label for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" 
                                placeholder= "(00)0000-0000" value="{{Session::get('phone')}}" required/>   
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
+                        <label for="schooling">Escolaridade <span>*</span></label>
                         <select class="form-control" id="schooling" name="schooling" required>
                             <option value="" disabled selected hidden>Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
@@ -46,7 +46,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="contact-origin">Estado <span>*</span></label>
+                        <label for="state">Estado <span>*</span></label>
                         <select class="form-control" id="state" name="state" required>
                             <option value="" disabled selected hidden>Selecione o Estado</option>
                             <option value="AC">AC</option>
@@ -79,11 +79,11 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="contact-origin">Cidade <span>*</span></label>
+                        <label for="city">Cidade <span>*</span></label>
                         <select class="form-control" id="city" name="city" required></select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="contact-origin">Origem do contato <span>*</span></label>
+                        <label for="contact-origin">Origem do contato <span>*</span></label>
                         <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="{{Session::get('hiddenContact_origin')}}">
                         <select class="form-control" id="contact_origin" name="contact_origin" required>
                             <option value="" disabled selected hidden>Selecione a origem do contato</option>
@@ -105,7 +105,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="additional_information">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
                 </div>                

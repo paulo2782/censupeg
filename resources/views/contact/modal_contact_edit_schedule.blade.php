@@ -15,19 +15,19 @@
                 <input type="hidden" name="call_id_edit" id="call_id_edit">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
+                        <label for="date_contact">Data do contato <span>*</span></label>
                         <input type="date" id="date_contact_edit" class="form-control" name="date_contact" required/>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="date_return">Data de retorno</label>
+                        <label for="date_return_edit">Data de retorno</label>
                         <input type="date" id="date_return_edit" class="form-control" name="date_return"/>    
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="schedule">Horário</label>
+                        <label for="schedule_edit">Horário</label>
                         <input type="time" class="form-control" name="schedule" id="schedule_edit"/>    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
+                        <label for="statusSchedule">Status <span>*</span></label>
                         <select class="form-control" id="statusSchedule" name="status" required>
                             <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
@@ -39,7 +39,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="observation">Informações adicionais</label>
                         <textarea id="additional_information_edit" class="form-control" name="additional_information"></textarea>
                     </div>
                 </div>

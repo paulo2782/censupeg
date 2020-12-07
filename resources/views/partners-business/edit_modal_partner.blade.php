@@ -13,19 +13,19 @@
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="edtName">Nome da Empresa <span>*</span></label>
+                        <label for="edtName">Nome da Empresa <span>*</span></label>
                         <input type="text" class="form-control" id="edtName" name="nome" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="text-4" for="edtEmail">Email <span>*</span></label>
+                        <label for="edtEmail">Email <span>*</span></label>
                         <input type="email" class="form-control" id="edtEmail" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="edtPhone">Telefone <span>*</span></label>
+                        <label for="edtPhone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="edtPhone" name="phone" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusPartner">Status <span>*</span></label>
+                        <label for="statusPartner">Status <span>*</span></label>
                         <select class="form-control" id="statusPartner" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status da parceria</option>
                             <option value="Fechado">Fechado</option>
@@ -35,7 +35,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information"></textarea>
                     </div>
                 </div>

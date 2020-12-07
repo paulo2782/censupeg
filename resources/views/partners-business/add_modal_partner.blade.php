@@ -15,19 +15,19 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                 <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome da Empresa <span>*</span></label>
+                        <label for="name">Nome da Empresa <span>*</span></label>
                         <input type="text" class="form-control" id="name" name="email" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="text-4" for="email">Email <span>*</span></label>
+                        <label for="email">Email <span>*</span></label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="phone">Telefone <span>*</span></label>
+                        <label for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusPartner">Status <span>*</span></label>
+                        <label for="statusPartner">Status <span>*</span></label>
                         <select class="form-control" id="statusPartner" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status da parceria</option>
                             <option value="Fechado">Fechado</option>
@@ -37,7 +37,7 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="observation" name="additional_information"></textarea>
                     </div>
                 </div>

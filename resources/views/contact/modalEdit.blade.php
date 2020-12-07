@@ -15,23 +15,23 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome Completo <span>*</span></label>
+                        <label for="name">Nome Completo <span>*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
                         placeholder= "Informe o nome" value="{{ $dados[0]->name }}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="text-4" for="email">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="{{ $dados[0]->email }}" />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="phone">Telefone <span>*</span></label>
+                        <label for="phone">Telefone <span>*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="{{ $dados[0]->phone }}" required />    
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    
-                        <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
+                        <label for="schooling">Escolaridade <span>*</span></label>
                         <select class="form-control schooling" id="schooling" name="schooling" required>
                             <option value="" disabled selected hidden>Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="stateData" value="{{ $dados[0]->state }}"/>  
-                        <label class="text-4" for="contact-origin">Estado <span>*</span></label>
+                        <label for="state">Estado <span>*</span></label>
                         <select class="form-control" id="state" name="state" required>
                             <option value="" disabled selected hidden>Selecione o Estado</option>
                             <option value="AC">AC</option>
@@ -77,11 +77,11 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <input type="hidden" id="cityData" value="{{ $dados[0]->city }}"/> 
-                        <label class="text-4" for="contact-origin">Cidade <span>*</span></label>
+                        <label for="city">Cidade <span>*</span></label>
                         <select class="form-control" id="city" name="city" required></select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" >Origem do contato <span>*</span></label>
+                        <label for="contactOrigin">Origem do contato <span>*</span></label>
                         <input type="hidden" id="contactOriginData" value="{{ $dados[0]->contact_origin }}">
                         <select class="form-control" id="contactOrigin" name="contact_origin" required>
                             <option value="" disabled selected hidden>Selecione a origem do contato</option>
@@ -102,9 +102,8 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
-                    <div class="form-group col-12">
-                        
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                    <div class="form-group col-12">          
+                        <label for="additional_information">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{ $dados[0]->additional_information }}
                         </textarea>
                     </div>

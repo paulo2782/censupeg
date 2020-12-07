@@ -8,7 +8,7 @@
         <h1 class="my-2 text-center">Acesse sua conta </h1>
         <form name="frmLogin" id="frmLogin">
             <div class="form-group">
-                <label for="username">Usuário</label>
+                <label for="email">Usuário</label>
                 @if(isset($_COOKIE['user']))                  
                 <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control" value="{{ Cookie::get('user') }}">
                 @else

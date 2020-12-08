@@ -8,13 +8,14 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="updateForm"> 
-                <meta name="csrf-token" content="{{ csrf_token() }}">
-                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+            <form class="form-dialog registerForm" id="updatePartner" method="POST" action="{{ route('updatePartner') }}">
+                {{ method_field('PUT') }}
+                {!! csrf_field() !!}
+ 
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="edtName">Nome da Empresa <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="edtName" name="nome" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control" id="edtName" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label for="edtEmail">Email <span class="text=5">*</span></label>
@@ -26,7 +27,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="statusPartner">Status <span class="text=5">*</span></label>
-                        <select class="form-control" id="statusPartner" name="status" required>
+                        <select class="form-control" id="edtStatus" name="edtStatus" required>
                             <option value="" disabled selected hidden>Selecione o status da parceria</option>
                             <option value="Contrato">Contrato</option>
                             <option value="Analisará proposta">Analisará proposta</option>
@@ -39,8 +40,8 @@
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information"></textarea>
                     </div>
                 </div>
-                <input type="hidden" id="#" name="id">
-                <button type="button" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>                            
+                <input type="hidden" id="id_partner" name="id"> 
+                <button type="submit" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>                            
             </form>
         </div>
    </div>

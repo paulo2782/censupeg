@@ -70,7 +70,6 @@ var auxMonth
 var date_contact = []
 var year         = $('#year').val()
 
-
 $('#value_year').val(year);
 
 $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:month,year:year,btn:0}, function( data ) {

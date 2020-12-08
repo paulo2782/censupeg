@@ -1,4 +1,8 @@
-@section('content')
+<form name="add_partner" id="add_partner" action="{{ route('storePartner') }}" method="POST">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+<input type="hidden" name="id" value="{{ auth()->user()->id }}">
+
 <div class="modal fade" id="myModalAdd">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -12,11 +16,11 @@
             <form class="form-dialog registerForm" id="#" action="#" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-                <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                 <div class="form-group col-12">
                         <label for="name">Nome da Empresa <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="name" name="email" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label for="email">Email <span class="text-5">*</span></label>
@@ -46,6 +50,7 @@
         </div>
    </div>
 </div>
-@endsection
+</form>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/partners.js') }}"></script>

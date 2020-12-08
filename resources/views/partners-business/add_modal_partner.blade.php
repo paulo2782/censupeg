@@ -18,7 +18,7 @@
                         <input type="text" class="form-control" id="name" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label for="email">Email <span class="text-5">*</span></label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-5 col-12">

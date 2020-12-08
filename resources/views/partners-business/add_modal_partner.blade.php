@@ -1,7 +1,3 @@
-<form name="add_partner" id="add_partner" action="{{ route('storePartner') }}" method="POST">
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-<input type="hidden" name="id" value="{{ auth()->user()->id }}">
 <div class="modal fade" id="myModalAdd">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -12,7 +8,7 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="#" action="#" method="post">
+            <form name="add_partner" class="form-dialog registerForm" action="{{ route('storePartner') }}" method="POST">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
@@ -44,12 +40,11 @@
                         <textarea class="form-control" id="observation" name="additional_information"></textarea>
                     </div>
                 </div>
+                <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
-            <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>
         </div>
    </div>
 </div>
-</form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/partners.js') }}"></script>

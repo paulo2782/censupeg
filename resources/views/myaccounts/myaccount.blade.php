@@ -19,7 +19,7 @@
 						<input type="hidden" value="{{ $dados[0]->id }}" id="id">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameContact">Nome Completo</label>
-							<a data-toggle="modal" href="#modalEditProfile" class="fa fa-pencil" aria-hidden="true"></a>
+							<a data-toggle="modal" href="#modalEditProfile" class="fa fa-pencil" title="Editar nome e email" aria-hidden="true"></a>
 							<input type="text" class="form-control" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
 						</div>
 						<div class="form-group col-12">
@@ -32,7 +32,7 @@
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="passwd">Senha</label>
-							<a data-toggle="modal" href="#myModalEdit" class="fa fa-pencil" aria-hidden="true" id="#"></a>
+							<a data-toggle="modal" href="#myModalEdit" class="fa fa-pencil" title="Editar senha" aria-hidden="true" id="#"></a>
 							<input type="text" class="form-control" readonly="readonly" id="passwd" name="passwd" value="********"/>    
 						</div>
 					</div>

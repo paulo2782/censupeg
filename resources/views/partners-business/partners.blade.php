@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @include('partners-business/add_modal_partner')
 @include('partners-business/edit_modal_partner')
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <body id="body-container">
@@ -11,10 +10,8 @@
             <div class="content">
                 <div class="top-bar">
                     <h1>Empresas parceiras</h1>
-
                     <a data-toggle="modal" href="#myModalAdd"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                     <span id="alert"> {{ Session::get('alert') }} </span>
-
                     <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
                 </div>
                 <div class="aux-bar">
@@ -45,13 +42,13 @@
                                 <td>{{ $dado->user->name }} </td>
                                 <td>
                                     <a data-toggle="modal" href="#myModalEdit" 
-                                    data-id="{{ $dado->id }}" 
-                                    data-name="{{ $dado->name }}"
-                                    data-email="{{ $dado->email }}"
-                                    data-phone="{{ $dado->phone }}"
-                                    data-status="{{ $dado->status }}"
-                                    data-additional_information="{{ $dado->additional_information }}"
-                                    class="editPartner"><i class='fas fa-pen-square' ></i></a>
+                                        data-id="{{ $dado->id }}" 
+                                        data-name="{{ $dado->name }}"
+                                        data-email="{{ $dado->email }}"
+                                        data-phone="{{ $dado->phone }}"
+                                        data-status="{{ $dado->status }}"
+                                        data-additional_information="{{ $dado->additional_information }}"
+                                        class="editPartner"><i class='fas fa-pen-square' ></i></a>
                                     <a href="{{ route('destroyPartner',$dado->id) }}"><i class='fas fa-times deletePartner'></i></a></td> 
                                 </td>
                             </tr>

@@ -2,7 +2,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
-
 <div class="modal fade" id="myModalAdd">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -18,7 +17,7 @@
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
-                <div class="form-group col-12">
+                    <div class="form-group col-12">
                         <label for="name">Nome da Empresa <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
@@ -41,12 +40,12 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label for="additional_information">Informações adicionais</label>
+                        <label for="observation">Informações adicionais</label>
                         <textarea class="form-control" id="observation" name="additional_information"></textarea>
                     </div>
                 </div>
-                <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
+            <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>
         </div>
    </div>
 </div>

@@ -3,7 +3,6 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body id="body-container">
 @include('includes/header')
 
@@ -50,6 +49,11 @@ endif
                             <td> {{ $dado->phone }} </td>
                             <td> {{ $dado->user->name }}</td>
                             <td id='toview'>
+                                <a href="#" id="" class="fa fa-pencil" aria-hidden="true" title="Editar contato"></a>
+                                <a href="#" class="fa fa-trash" aria-hidden="true" title="Excluir contato"></a>
+                            </td>
+                            <!--
+                            <td id='toview'>
                                 <div class='dropdown'>
                                 <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
                                 <div class='dropdown-menu' aria-labelledby='dropdownImage'>
@@ -60,6 +64,9 @@ endif
                                 </div>
                                 </div>
                             </td>
+
+
+                                -->
                         </tr>
                         @endforeach
                     </tbody>

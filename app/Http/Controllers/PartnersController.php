@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Partners;
 
 class PartnersController extends Controller
 {
     public function partnerShow(Request $request)
     {
-    	$dados = Partners::all();
+        $search = $request->search;
+        $dados = Partners::where('name','like',$search.'%')
+        ->orwhere('phone','like',$search.'%')
+        ->orwhere('email','like',$search.'%')
+        ->orwhere('phone','like',$search.'%')
 
-    	return view('partners-business/partners',compact('dados'));
+        ->paginate(50);
+
+    	return view('partners-business/partners',compact('dados','search'));
     }
 
     public function storePartner(Request $request)

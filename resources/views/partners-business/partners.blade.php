@@ -16,7 +16,7 @@
                 </div>
                 <div class="aux-bar">
                     <h2>Empresas parceiras </h2>
-                    <form class="search-contact" action="{{ route('searchContact') }}">
+                    <form class="search-contact" action="{{ route('partnerShow') }}">
                         <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar empresa" />
                     </form>
                 </div>
@@ -57,10 +57,11 @@
                     </table>
                 </div>
             </div>
+
             <div class="content">
                 <ul class="pagination">
                     <li>
-                        <span class="text-4"></span>
+                    <span class="text-4">{{ $dados->appends(['search'=>$search])->links() }}</span>
                     </li>
                 </ul>
             </div>

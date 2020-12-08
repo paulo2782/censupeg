@@ -87,7 +87,7 @@
 								<td>
 									<i class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar registro" id="{{ $data->id }}"></i>
 
-									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar registro"></a>
+									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir registro"></a>
 								</td>
 								@endif
 							</tr>

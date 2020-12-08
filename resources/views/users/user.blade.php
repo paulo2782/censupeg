@@ -53,7 +53,7 @@
 									</a>
 
 									<a href="#" class="fa fa-trash deleteUser" aria-hidden="true" 
-									   title="Apagar usuário" 
+									   title="Excluir usuário" 
 									   data-id="{{ $dado->id }}"
 									   data-name="{{ $dado->name }}">
 									</a>

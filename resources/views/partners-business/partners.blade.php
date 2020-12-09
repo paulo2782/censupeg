@@ -50,7 +50,7 @@
                                         class="fa fa-pencil editPartner">
                                     </a>
                                     @if(auth()->user()->level == 1)
-                                        <a href="{{ route('destroyPartner',$dado->id) }}"><i class='fa fa-trash deletePartner'></i></a></td> 
+                                        <a href="{{ route('destroyPartner',$dado->id) }}" class='fa fa-trash deletePartner'></a> 
                                     @endif
                                 </td>
                             </tr>

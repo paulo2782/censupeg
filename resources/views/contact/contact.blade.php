@@ -49,8 +49,8 @@ endif
                             <td> {{ $dado->phone }} </td>
                             <td> {{ $dado->user->name }}</td>
                             <td id='toview'>
-                                <a href="#" id="" class="fa fa-pencil" aria-hidden="true" title="Editar contato"></a>
-                                <a href="#" class="fa fa-trash" aria-hidden="true" title="Excluir contato"></a>
+                                <a href="{{ route('viewData',$dado->id) }}" id="{{ $dado->id }}" class="fa fa-eye btnToView" aria-hidden="true" title="Visualizar contato"></a>
+                                <a href="{{ route('destroy',$dado->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir contato"></a>
                             </td>
                             <!--
                             <td id='toview'>

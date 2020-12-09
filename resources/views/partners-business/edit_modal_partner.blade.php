@@ -22,11 +22,11 @@
                         <input type="email" class="form-control" id="edtEmail" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label for="edtPhone">Telefone <span class="text=5">*</span></label>
+                        <label for="edtPhone">Telefone <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="edtPhone" name="phone" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-12">
-                        <label for="statusPartner">Status <span class="text=5">*</span></label>
+                        <label for="statusPartner">Status <span class="text-5">*</span></label>
                         <select class="form-control" id="edtStatus" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status da parceria</option>
                             <option value="Contrato">Contrato</option>

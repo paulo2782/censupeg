@@ -17,7 +17,7 @@
 			</div>
 			<div class="show-details-block">
 				<h2>Dados básicos
-					<a href="#" class="fa fa-pencil" aria-hidden="true" id="btnAdd"></a>
+					<a href="#" class="fa fa-pencil" title="Editar contato" aria-hidden="true" id="btnAdd"></a>
 				</h2>
 				<form id="contact-info" method="post">
 					<div class="form-row">
@@ -50,7 +50,7 @@
 							<input type="text" class="form-control" readonly="readonly" id="originContact" name="origin" value="{{ $dados[0]->contact_origin }}"/>    
 						</div>
 						<div class="form-group col-12">
-							<label class="text-4" for="observation">Informações adicionais</label>
+							<label class="text-4" for="additional_information">Informações adicionais</label>
 							<textarea class="form-control" readonly="readonly" id="additional_information" name="additional_information"> {{ $dados[0]->additional_information }}</textarea>
 						</div>
 					</div>
@@ -85,9 +85,9 @@
  								<td> {{ $data->status }}</td>
  								@if(auth()->user()->level == 1)
 								<td>
-									<i class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar registro" id="{{ $data->id }}"></i>
+									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar curso" id="{{ $data->id }}"></a>
 
-									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Apagar registro"></a>
+									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir curso"></a>
 								</td>
 								@endif
 							</tr>
@@ -130,7 +130,7 @@
 								<td>{{ $data->status }}</td>
 								<td>{{ $data->user->name }}</td>
 								<td>
-									<i class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar registro" id="{{ $data->id }}"></i>
+									<a href="#" class="btnViewCall fa fa-eye" aria-hidden="true" title="Visualizar ligação" id="{{ $data->id }}"></a>
 								</td>
 							@php $i++; @endphp
 							@endforeach

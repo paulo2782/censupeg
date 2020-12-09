@@ -14,7 +14,7 @@
                 <input type="hidden" name="id" id="id_edt_profile">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="name">{{ __('Name') }}</label>
+                        <label for="name_edit">{{ __('Name') }}</label>
                         <input id="name_edit" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{ $dados[0]->name }}" autocomplete="name" autofocus placeholder="Informe seu nome">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
                             @enderror
                     </div>
                     <div class="form-group col-12">
-                        <label for="email">{{ __('E-Mail Address') }}</label>
+                        <label for="email_edit">{{ __('E-Mail Address') }}</label>
                         <input type="email"  id="email_edit" class="form-control @error('email') is-invalid @enderror" name="email" autocomplete="email" value="{{ $dados[0]->email }}" placeholder="Informe seu email">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -32,7 +32,6 @@
                             @enderror
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
                 <button type="submit" id="#" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

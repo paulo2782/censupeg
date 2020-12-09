@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Contato - Editar Cursos<span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Contato - Editar Cursos<span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -36,18 +36,18 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Curso <span>*</span></label>
+                        <label for="selectCourses">Curso <span class="text-5">*</span></label>
                         <select class="c-select form-control" id="selectCourses" name="id_selectCourse" required>
                          </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Modalidade <span>*</span></label>
+                        <label for="modalityEdit">Modalidade <span class="text-5">*</span></label>
                         <input type="text" id="modalityEdit" class="form-control" readonly="">
  
                     </div>
                     
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
+                        <label for="statusSchedule">Status <span class="text-5">*</span></label>
                         <select class="c-select form-control" id="statusSchedule" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>
@@ -57,8 +57,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
-                <input type="button"  class="btnUpdateContactCourse btn btn-outline-success" value="Salvar">            
+                <input type="button" class="btnUpdateContactCourse btn btn-outline-success" value="Salvar">            
             </form>
         </div>
     </div>

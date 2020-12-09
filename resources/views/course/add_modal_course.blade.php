@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Novo Curso <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Novo Curso <span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -28,14 +28,14 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome do Curso <span>*</span></label>
+                        <label for="course">Nome do Curso <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" 
                                placeholder="Informe o curso" required autocomplete="course" autofocus/>
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" name="course_type" id="course_type">    
-                        <label class="text-4" for="course_type">Modalidade <span>*</span></label>
+                        <label for="course_type">Modalidade <span class="text-5">*</span></label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="course_type[]" id="1" value="EAD" >
                             <label class="form-check-label d-block" for="ead">EAD</label>
@@ -46,23 +46,22 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="valueCourse">Valor</label>
+                        <label for="price">Valor</label>
                         <input type="text" class="form-control" id="price" name="price" placeholder="R$ 0,00" value="{{Session::get('price')}}" />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="time_duration">Tempo de duração</label>
+                        <label for="time_duration">Tempo de duração</label>
                         <input type="text" class="form-control" id="time_duration" name="time_duration" value="{{Session::get('time_duration')}}" />    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="linkCourse">Link curso</label>
+                        <label for="link">Link curso</label>
                         <input type="url" class="form-control" id="link" name="link" placeholder="http://www.exemplo.com.br" value="{{Session::get('link')}}"/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="additional_information">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
                 <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>

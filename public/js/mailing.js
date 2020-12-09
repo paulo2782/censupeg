@@ -13,7 +13,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                                     <div class = "panel-title date_contact" id="`+object[i].date_contact+`" data-id="`+i+`">
                                         <a data-toggle = "collapse" href = "#show`+i+`">
                                             <span>`+object[i].date_contact.substr(8,2)+` / `+iM+` </span>
-                                            <i class="fas fa-angle-down rotate-icon"></i>
+                                            <i class="fa fa-angle-down rotate-icon"></i>
                                         </a>
                                         <span class="export-file-day text-4">
                                             <a href="#" class="export" id="export`+i+`" 

@@ -47,10 +47,11 @@
                                         data-phone="{{ $dado->phone }}"
                                         data-status="{{ $dado->status }}"
                                         data-additional_information="{{ $dado->additional_information }}"
-                                        class="editPartner"><i class='fas fa-pen-square' ></i></a>
-                                @if(auth()->user()->level == 1)
-                                    <a href="{{ route('destroyPartner',$dado->id) }}"><i class='fas fa-times deletePartner'></i></a></td> 
-                                @endif
+                                        class="fa fa-pencil editPartner">
+                                    </a>
+                                    @if(auth()->user()->level == 1)
+                                        <a href="{{ route('destroyPartner',$dado->id) }}"><i class='fa fa-trash deletePartner'></i></a></td> 
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach

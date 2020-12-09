@@ -3,7 +3,7 @@
 	<thead>
 		<tr>
 			<th>NOME</th>
-			<th>E-MAIL</th>
+			<th>EMAIL</th>
 			<th>FONE</th>
 			<th>CURSO</th>
 			<th>INFO ADD</th>

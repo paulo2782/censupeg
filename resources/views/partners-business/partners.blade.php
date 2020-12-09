@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @include('partners-business/add_modal_partner')
 @include('partners-business/edit_modal_partner')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <body id="body-container">
 @include('includes/header') 
@@ -48,8 +47,11 @@
                                         data-phone="{{ $dado->phone }}"
                                         data-status="{{ $dado->status }}"
                                         data-additional_information="{{ $dado->additional_information }}"
-                                        class="editPartner"><i class='fas fa-pen-square' ></i></a>
-                                    <a href="{{ route('destroyPartner',$dado->id) }}"><i class='fas fa-times deletePartner'></i></a></td> 
+                                        class="fa fa-pencil editPartner">
+                                    </a>
+                                    @if(auth()->user()->level == 1)
+                                        <a href="{{ route('destroyPartner',$dado->id) }}" class='fa fa-trash deletePartner'></a> 
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach

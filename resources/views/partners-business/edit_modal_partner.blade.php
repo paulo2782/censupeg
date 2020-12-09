@@ -18,7 +18,7 @@
                         <input type="text" class="form-control" id="edtName" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label for="edtEmail">Email <span class="text=5">*</span></label>
+                        <label for="edtEmail">Email </label>
                         <input type="email" class="form-control" id="edtEmail" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
                     </div>
                     <div class="form-group col-md-5 col-12">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="statusPartner">Status <span class="text=5">*</span></label>
-                        <select class="form-control" id="edtStatus" name="edtStatus" required>
+                        <select class="form-control" id="edtStatus" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status da parceria</option>
                             <option value="Contrato">Contrato</option>
                             <option value="Analisará proposta">Analisará proposta</option>

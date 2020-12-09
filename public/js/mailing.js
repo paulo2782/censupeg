@@ -13,7 +13,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                                     <div class = "panel-title date_contact" id="`+object[i].date_contact+`" data-id="`+i+`">
                                         <a data-toggle = "collapse" href = "#show`+i+`">
                                             <span>`+object[i].date_contact.substr(8,2)+` / `+iM+` </span>
-                                            <i class="fas fa-angle-down rotate-icon"></i>
+                                            <i class="fa fa-angle-down rotate-icon"></i>
                                         </a>
                                         <span class="export-file-day text-4">
                                             <a href="#" class="export" id="export`+i+`" 
@@ -83,8 +83,8 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                         "<td>"+date_return+"</td>"+
                         "<td>"+dataDayMonth[i].course+"</td>"+
                         "<td>"+dataDayMonth[i].status+"</td>"+
-                        "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
-                        "    <i class='fas fa-times deleteMailing' data-id="+dataDayMonth[i].call_id+"></i></td>"
+                        "<td><a href="+dataDayMonth[i].id+"><i class='fa fa-pencil editMailing' title='Editar registro' data-id="+dataDayMonth[i].id+"></i></a>"+
+                        "    <i class='fa fa-trash deleteMailing' title='Excluir registro' data-id="+dataDayMonth[i].call_id+"></i></td>"
                     )
                 }else{
                     $('.table-details'+table_id).append(

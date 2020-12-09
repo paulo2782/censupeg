@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="statusPartner">Status <span class="text=5">*</span></label>
-                        <select class="form-control" id="edtStatus" name="edtStatus" required>
+                        <select class="form-control" id="edtStatus" name="status" required>
                             <option value="" disabled selected hidden>Selecione o status da parceria</option>
                             <option value="Contrato">Contrato</option>
                             <option value="Analisará proposta">Analisará proposta</option>

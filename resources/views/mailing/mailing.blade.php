@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('contact/modal')
  
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
@@ -17,7 +18,7 @@
         <div class="content-details">
             <div class="top-bar-block">
                 <h1>Mailing</h1>
-                <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
+                <a href="#myModal"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                 <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
                 <span id="alert" style="color:red"> {{ Session::get('alert') }} </span>
 

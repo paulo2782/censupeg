@@ -50,7 +50,9 @@ endif
                             <td> {{ $dado->user->name }}</td>
                             <td id='toview'>
                                 <a href="{{ route('viewData',$dado->id) }}" id="{{ $dado->id }}" class="fa fa-eye btnToView" aria-hidden="true" title="Visualizar contato"></a>
-                                <a href="{{ route('destroy',$dado->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir contato"></a>
+                                @if(auth()->user()->level == 1)
+                                    <a href="{{ route('destroy',$dado->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir contato"></a>
+                                @endif
                             </td>
                             <!--
                             <td id='toview'>

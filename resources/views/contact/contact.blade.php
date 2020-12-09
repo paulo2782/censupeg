@@ -54,21 +54,6 @@ endif
                                     <a href="{{ route('destroy',$dado->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir contato"></a>
                                 @endif
                             </td>
-                            <!--
-                            <td id='toview'>
-                                <div class='dropdown'>
-                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                    <a href="{{ route('viewData',$dado->id) }}" class='dropdown-item btnToView' id="{{ $dado->id }}">Visualizar</a>
-                                    @if(auth()->user()->level == 1)
-                                    <a href="{{ route('destroy',$dado->id) }}" class='dropdown-item btnDelete'>Excluir</a>
-                                    @endif
-                                </div>
-                                </div>
-                            </td>
-
-
-                                -->
                         </tr>
                         @endforeach
                     </tbody>

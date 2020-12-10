@@ -22,7 +22,7 @@
 				<form id="contact-info" method="post">
 					<div class="form-row">
 						<div class="form-group col-12">
-							<label class="text-4" for="nameContact">Nome Completo</label>
+							<label class="text-4" for="nameContact">Nome completo</label>
 							<input type="text" class="form-control" readonly="readonly" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
 						</div>
 						<div class="form-group col-md-6 col-12">

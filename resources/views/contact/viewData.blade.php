@@ -158,8 +158,6 @@
 <script src="{{ asset('/js/contact.js?date(d-m-y h:i:s)') }}"></script>
 
 <script>
-
-
 $('.btnEditCourse').click(function(event) {
     $('#myModalEditCourse').modal('toggle')
     $('#interest_id_edit').val(this.id)

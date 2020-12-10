@@ -99,6 +99,8 @@ label { color: #333; font-size: 14px !important; }
 
 .show-details-block h2 { color: #9E1D21; line-height: 25px; margin: 0px 20px; padding: 10px 0px; }
 
+.show-details-block .nav-item > a { font-size: 14px !important; }
+
 .show-details-block #contact-info { margin: 10px auto; }
 
 .show-details-block #contact-info > .form-row { margin-left: 15px; margin-right: 15px; }

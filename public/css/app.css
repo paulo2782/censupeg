@@ -99,6 +99,8 @@ label { color: #333; font-size: 14px !important; }
 
 .show-details-block h2 { color: #9E1D21; line-height: 25px; margin: 0px 20px; padding: 10px 0px; }
 
+.show-details-block .nav-item > a { font-size: 14px !important; }
+
 .show-details-block #contact-info { margin: 10px auto; }
 
 .show-details-block #contact-info > .form-row { margin-left: 15px; margin-right: 15px; }
@@ -162,6 +164,22 @@ label { color: #333; font-size: 14px !important; }
 .modal-content .btn { font-size: 14px !important; }
 
 .modal-title { color: #333; font-weight: bold; }
+
+.top-bar-report { width: 100%; height: 70px; background: #fff; margin-bottom: 20px; }
+
+.top-bar-report h1 { display: inline-block; margin: 13px 20px; padding: 10px 0px; }
+
+.top-bar-report .period-bar { display: flex; flex-direction: row; justify-content: center; align-items: baseline; margin-top: -45px; }
+
+.list-reports { background: #fff; margin-bottom: 15px; }
+
+.list-reports ul { height: 50px; line-height: 50px; margin-left: 20px; }
+
+.contact-reports { margin-bottom: 10px; }
+
+.contact-reports .contact-reports-charts { background-color: #fff; margin: 0 5px; }
+
+.contact-reports .contact-reports-charts h2 { color: #9E1D21; line-height: 25px; margin: 0px 20px; padding: 10px 0px; }
 
 #month { width: 100%; padding: 15px 30px; text-align: center; }
 

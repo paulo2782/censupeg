@@ -51,4 +51,3 @@
 </body>  
 </html>
 <script src="{{ asset('js/charts.js') }}"></script> 
-<script src="{{ asset('js/function.js') }}"></script> 

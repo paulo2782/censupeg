@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Novo curso <span class="text-5-title">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Novo curso <span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

@@ -22,7 +22,7 @@
 				<form id="contact-info" method="post">
 					<div class="form-row">
 						<div class="form-group col-12">
-							<label class="text-4" for="nameContact">Nome Completo</label>
+							<label class="text-4" for="nameContact">Nome completo</label>
 							<input type="text" class="form-control" readonly="readonly" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
 						</div>
 						<div class="form-group col-md-6 col-12">
@@ -69,9 +69,7 @@
 								<th>Modalidade</th>
 								<th>Nível</th>
 								<th>Status</th>
-                                @if(auth()->user()->level == 1)
 								<th>Ação</th>
-								@endif
 							</tr>
 						</thead>
 						<tbody>
@@ -83,13 +81,12 @@
 								<td> {{ $data->course_type }}</td>
 								<td> {{ $data->level_course }}</td>
  								<td> {{ $data->status }}</td>
- 								@if(auth()->user()->level == 1)
 								<td>
 									<a href="#" class="fa fa-pencil btnEditCourse" aria-hidden="true" title="Editar curso" id="{{ $data->id }}"></a>
-
+									@if(auth()->user()->level == 1)
 									<a href="{{ route('destroyInterestCourse',$data->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir curso"></a>
+									@endif
 								</td>
-								@endif
 							</tr>
 							@php $i++; @endphp
 							@endforeach

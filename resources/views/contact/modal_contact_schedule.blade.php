@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Contato - Ligações<span class="text-5-title">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Nova ligação<span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -26,11 +26,11 @@
                         <label for="date_contact">Data de contato <span class="text-5">*</span></label>
                         <input type="date" class="form-control" id= "date_contact" name="date_contact" required/>
                     </div>
-                    <div class="form-group col-12">
+                    <div class="form-group col-md-6 col-12">
                         <label for="date_return">Data de retorno</label>
                         <input type="date" class="form-control" id= "date_return" name="date_return"/>    
                     </div>
-                    <div class="form-group col-12">
+                    <div class="form-group col-md-6 col-12">
                         <label for="schedule">Horário</label>
                         <input type="time" class="form-control" id="schedule" name="schedule"/>    
                     </div>

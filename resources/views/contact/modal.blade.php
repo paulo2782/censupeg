@@ -6,7 +6,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Novo Contato<span class="text-5-title">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Novo contato<span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -18,7 +18,7 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="name">Nome Completo <span class="text-5">*</span></label>
+                        <label for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
                                placeholder= "Informe o nome" value="{{Session::get('name')}}" required autocomplete="name" autofocus/>
                         @error('name') {{$message}} @enderror                                     

@@ -18,13 +18,13 @@
 					<div class="form-row">
 						<input type="hidden" value="{{ $dados[0]->id }}" id="id">
 						<div class="form-group col-12">
-							<label class="text-4" for="nameContact">Nome Completo</label>
+							<label class="text-4" for="nameContact">Nome completo</label>
 							<a data-toggle="modal" href="#modalEditProfile" class="fa fa-pencil" title="Editar nome e email" aria-hidden="true"></a>
-							<input type="text" class="form-control" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
+							<input type="text" class="form-control" readonly="readonly" id="nameContact" name="name" value="{{ $dados[0]->name }}" />
 						</div>
 						<div class="form-group col-12">
 							<label class="text-4" for="emailContact">Email</label>
-							<input type="email" class="form-control" id="emailContact" name="email" value="{{ $dados[0]->email }}" />
+							<input type="email" class="form-control" readonly="readonly" id="emailContact" name="email" value="{{ $dados[0]->email }}" />
 						</div>						
 						<div class="form-group col-12">
 							<label class="text-4" for="stateContact">Tipo de usuário</label>

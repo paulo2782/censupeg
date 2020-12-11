@@ -1,7 +1,6 @@
 @extends('layouts.app')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body id="body-container">
   @include('includes/header')
   <div id="container-main">
@@ -47,7 +46,6 @@
 </div>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/course.js') }}"></script>
 </body>  
 </html>
 <script src="{{ asset('js/charts.js') }}"></script> 

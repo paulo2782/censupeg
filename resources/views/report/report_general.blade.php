@@ -8,45 +8,24 @@
         <div class="content-details">
             <div class="top-bar-report">
                 <h1>Relatórios</h1>
-                <div class="period-bar">
+                
+                <div id="navigate-months">
+                    <a href="#" class="prev-month fa fa-chevron-left fa-2x mr-3"></a> 
+                    <div class="month-year text-center"></div>
+                    <a href="#" class="next-month fa fa-chevron-right fa-2x ml-3"></a>
+                </div>
+                <!--<div class="period-bar">
                     <a href="#" class="fa fa-angle-double-left"></a>
                         Novembro de 2020
                     <a href="#" class="fa fa-angle-double-right"></a>
-                </div>
-            </div>
-            <div class="list-reports">
-                <ul class="nav">
-                    <li class="nav-item mr-4">
-                        <a href="#">Contato</a>
-                    </li>
-                    <li class="nav-item mr-4">
-                        <a href="#">Ligações</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Curso</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="contact-reports">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-12 contact-reports-charts">
-                            <h3>Escolaridade</h3>
-                            <div id="escolaridade"></div>
-                        </div>
-                        <div class="col-md-6 col-12 contact-reports-charts">
-                            <h3>Origem dos contatos</h3>
-                            <div id="origem-contato"></div>
-                        </div>
-                    </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
 </div>
-<script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>  
 </html>
-<script src="{{ asset('js/charts.js') }}"></script> 
+<script src="{{ asset('js/navigate-months.js') }}"></script> 
+<script src="{{ asset('js/reports/charts.js') }}"></script> 
 <script src="{{ asset('js/function.js') }}"></script> 

@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="edtCourse">Nome do curso <span class="text-5">*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="edtCourse" name="course" placeholder="Informe o curso" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="edtCourse" name="course" placeholder="Informe o curso" required />
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">

@@ -17,7 +17,7 @@
                     <div class="form-group col-12">
                         <label for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
-                        placeholder= "Informe o nome" value="{{ $dados[0]->name }}" required autocomplete="name"/>
+                        placeholder= "Informe o nome" value="{{ $dados[0]->name }}" required />
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">

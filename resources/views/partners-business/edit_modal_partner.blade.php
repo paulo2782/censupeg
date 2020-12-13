@@ -15,15 +15,15 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="edtName">Nome da empresa <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="edtName" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" />
+                        <input type="text" class="form-control" id="edtName" name="name" placeholder="Informe o nome da empresa" required />
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label for="edtEmail">Email </label>
-                        <input type="email" class="form-control" id="edtEmail" name="email" placeholder="fulano@email.com" autocomplete="course" />
+                        <input type="email" class="form-control" id="edtEmail" name="email" placeholder="fulano@email.com" autocomplete="off" />
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="edtPhone">Telefone <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="edtPhone" name="phone" placeholder="(00) 00000-0000" required autocomplete="course" />
+                        <input type="text" class="form-control" id="edtPhone" name="phone" placeholder="(00) 00000-0000" required />
                     </div>
                     <div class="form-group col-12">
                         <label for="statusPartner">Status <span class="text-5">*</span></label>

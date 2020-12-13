@@ -30,7 +30,7 @@
                     <div class="form-group col-12">
                         <label for="course">Nome do curso <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="course" name="course" value="{{Session::get('course')}}" 
-                               placeholder="Informe o curso" required autocomplete="course"/>
+                               placeholder="Informe o curso" required />
                         @error('course') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-12">

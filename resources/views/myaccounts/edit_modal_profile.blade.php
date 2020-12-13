@@ -15,7 +15,7 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="name_edit">{{ __('Name') }}</label>
-                        <input id="name_edit" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{ $dados[0]->name }}" autocomplete="name" autofocus placeholder="Informe seu nome">
+                        <input id="name_edit" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{ $dados[0]->name }}" autocomplete="name" placeholder="Informe seu nome">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

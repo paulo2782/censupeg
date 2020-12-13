@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="name">{{ __('Name') }} <span class="text-5">*</span></label>
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Informe seu nome">
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required placeholder="Informe seu nome">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="email">{{ __('E-Mail Address') }} <span class="text-5">*</span></label>
-                        <input type="email"  id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Informe seu email">
+                        <input type="email"  id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off" placeholder="Informe seu email">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="password">{{ __('Password') }} <span class="text-5">*</span></label>
-                        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Informe sua senha">
+                        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="off" placeholder="Informe sua senha">
                         <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="password-confirm">{{ __('Confirm Password') }} <span class="text-5">*</span></label>
-                        <input type="password" id="password-confirm" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirme sua senha">
+                        <input type="password" id="password-confirm" class="form-control" name="password_confirmation" required autocomplete="off" placeholder="Confirme sua senha">
                         <span toggle="#password-confirm" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
                 </div>

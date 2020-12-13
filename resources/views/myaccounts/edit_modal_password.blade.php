@@ -18,17 +18,17 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="old-password">Senha atual</label>
-                        <input type="password" class="form-control" id="old-password" name="old_password" placeholder="Informe a senha atual" required autofocus/>
+                        <input type="password" class="form-control" id="old-password" name="old_password" placeholder="Informe a senha atual" required />
                         <span toggle="#old-password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
                     <div class="form-group col-12">
                         <label for="new-password">Nova senha</label>
-                        <input type="password" class="form-control" id="new-password" name="password" placeholder="Informe a nova senha" required autofocus/>
+                        <input type="password" class="form-control" id="new-password" name="password" placeholder="Informe a nova senha" required/>
                         <span toggle="#new-password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
                     <div class="form-group col-12">
                         <label for="confirm-password">Repetir nova senha</label>
-                        <input type="password" class="form-control" id="confirm-password" name="password_confirmation" placeholder="Repetir nova senha" required autofocus/>
+                        <input type="password" class="form-control" id="confirm-password" name="password_confirmation" placeholder="Repetir nova senha" required />
                         <span toggle="#confirm-password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                     </div>
                 </div>

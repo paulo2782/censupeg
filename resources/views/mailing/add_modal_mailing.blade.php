@@ -17,7 +17,7 @@
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
-                        placeholder= "Informe o nome" value="#" required autocomplete="name" autofocus/>
+                        placeholder= "Informe o nome" value="#" required/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
@@ -57,7 +57,7 @@
                     <div class="form-group col-12">
                         <label for="name">Curso de interesse <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Informe o curso de interesse" value="#" required autofocus/>                         
+                        placeholder= "Informe o curso de interesse" value="#" required />                         
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
@@ -73,7 +73,7 @@
                     <div class="form-group col-12">
                         <label for="name">Status <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Selecione status" value="#" required autofocus/>                         
+                        placeholder= "Selecione status" value="#" required/>                         
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>

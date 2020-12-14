@@ -7,7 +7,8 @@
     <div class="container">
         <div class="content-details">
             <div class="top-bar-report">
-                <h1>Dashboard</h1>
+                <h1>Seja bem-vindo, {{ auth()->user()->name }}!</h1>
+
                 
             </div>
             <div class="list-reports">
@@ -15,7 +16,5 @@
             </div>
         </div>
     </div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>  
 </html>

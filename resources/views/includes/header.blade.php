@@ -18,10 +18,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('mailingShow') }}">Mailing</a>
-                            <!-- <a class="dropdown-item" href="{{ route('mailingShow',date('m')) }}">Mailing</a> -->
                             <a class="dropdown-item" href="{{ route('callShow') }}">Ligações</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('partnerShow') }}">Empresas parceiras</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -33,7 +30,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('courseShow') }}">Cursos</a>
-                            <a class="dropdown-item" href="{{ route('myaccountShow') }}">Minha conta</a>
+                            <a class="dropdown-item" href="{{ route('partnerShow') }}">Empresas parceiras</a>
                             @if(auth()->user()->level == 1)
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('userShow') }}">Usuários</a>
@@ -42,11 +39,15 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link username"><strong>{{ auth()->user()->name }}</strong></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}">Sair</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ auth()->user()->name }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('myaccountShow') }}">Minha conta</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('logout') }}">Sair</a>
+                        </div>
                     </li>
                 </ul>
             </div>

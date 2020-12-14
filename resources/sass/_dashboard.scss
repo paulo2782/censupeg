@@ -9,3 +9,16 @@
         padding: 10px 0px;
     }
 }
+
+.show-dashboard-general{
+    .info-dashboard {
+        background: white; 
+        border: 1px solid black;
+        > a.fa {
+            text-decoration: none !important;
+            &:hover {
+                text-decoration: none !important;
+            }
+        }
+    }
+}

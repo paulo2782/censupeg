@@ -32,9 +32,9 @@
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-dashboard card mb-4 box-shadow">
                             <div class="card-body my-3 mx-4">
-                                <h3 class="font-weight-normal">Parcerias</h3>
+                                <h3 class="font-weight-normal">Empresas parceiras</h3>
                                 <h1 class="card-title pricing-card-title">5 <small class="text-muted">/ total</small></h1>
-                                <a href="{{ route('partnerShow') }}" class="fa fa-arrow-right"> Parcerias</a>
+                                <a href="{{ route('partnerShow') }}" class="fa fa-arrow-right"> Empresas parceiras</a>
                             </div>
                         </div>
                     </div>

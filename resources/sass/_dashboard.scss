@@ -1,35 +1,11 @@
-.top-bar-report {
+.top-bar-dashboard {
     width: 100%;
     height: 70px;
-    background: $white;
+    background: aqua;
     margin-bottom: 20px;
     h1 {
         display: inline-block;
         margin: 13px 20px;
         padding: 10px 0px;
-    }
-}
-.list-reports {
-    background: $white;
-    margin-bottom: 15px;
-    ul {
-        height: 50px;
-        line-height: 50px;
-        margin-left: 20px;
-    }
-}
-
-.contact-reports {
-    //background-color: $white;
-    margin-bottom: 10px;
-    .contact-reports-charts {
-        background-color: $white;
-        margin: 0 5px;
-        h2 {
-            color: $primary-color;
-            line-height: 25px;
-            margin: 0px 20px;
-            padding: 10px 0px;
-        }    
     }
 }

@@ -5,6 +5,8 @@
 
 <body id="body-container">
 <?php echo $__env->make('includes/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
+<?php echo $__env->make('mailing/add_modal_mailing', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
+<?php echo $__env->make('mailing/edit_modal_mailing', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
 <?php echo $__env->make('mailing/delete_modal_mailing', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
 
 <form action="<?php echo e(route('csvMailing')); ?>">
@@ -17,7 +19,7 @@
         <div class="content-details">
             <div class="top-bar-block">
                 <h1>Mailing</h1>
-                <a href="#"><img src="<?php echo e(asset('img/button-add.png')); ?>" alt="Botão adicionar" id="btnAdd"></a>
+                <a data-toggle="modal" href="#myModalAdd"><img src="<?php echo e(asset('img/button-add.png')); ?>" alt="Botão adicionar" id="btnAdd"></a>
                 <span id="message"><?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <p><b><?php echo e($error); ?></b></p> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></span>
                 <span id="alert" style="color:red"> <?php echo e(Session::get('alert')); ?> </span>
 

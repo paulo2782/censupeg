@@ -5,6 +5,8 @@
 
 <body id="body-container">
 @include('includes/header') 
+@include('mailing/add_modal_mailing') 
+@include('mailing/edit_modal_mailing') 
 @include('mailing/delete_modal_mailing') 
 
 <form action="{{ route('csvMailing') }}">
@@ -17,7 +19,7 @@
         <div class="content-details">
             <div class="top-bar-block">
                 <h1>Mailing</h1>
-                <a href="#"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
+                <a data-toggle="modal" href="#myModalAdd"><img src="{{ asset('img/button-add.png') }}" alt="Botão adicionar" id="btnAdd"></a>
                 <span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
                 <span id="alert" style="color:red"> {{ Session::get('alert') }} </span>
 

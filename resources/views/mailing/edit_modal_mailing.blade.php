@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModalEdit">
+<div class="modal fade" id="myModalAdd">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -67,12 +67,20 @@
                         <input type="date" class="form-control" id="date-contact" name="date-contact" placeholder="dd/mm/aaaa" value="" required />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label for="date-return">Data de retorno</label>
-                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value="" />    
+                        <label for="hour-contact">Horário de contato <span class="text-5">*</span></label>
+                        <input type="time" class="form-control" id="hour-contact" name="hour-contact" value="" required/>    
+                    </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label for="date-return">Data de retorno <span class="text-5">*</span></label>
+                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value="" required />
+                    </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label for="hour-return">Horário de retorno</label>
+                        <input type="time" class="form-control" id="hour-return" name="hour-return" value="" />    
                     </div>
                     <div class="form-group col-12">
-                        <label for="status-contact">Status <span class="text-5">*</span></label>
-                        <select id="status-contact" class="form-control" name="status" required>
+                        <label for="status-schedule">Status da ligação <span class="text-5">*</span></label>
+                        <select id="status-schedule" class="form-control" name="status-schedule" required>
                             <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
                             <option value="Conversará com a família">Conversará com a família</option>

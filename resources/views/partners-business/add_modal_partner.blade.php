@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Nova Parceria <span class="text-5-title">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Nova empresa parceira <span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,16 +14,16 @@
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="name">Nome da Empresa <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
+                        <label for="name">Nome da empresa <span class="text-5">*</span></label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Informe o nome da empresa" required />
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" autocomplete="off" />
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00) 00000-0000" required />
                     </div>
                     <div class="form-group col-12">
                         <label for="statusPartner">Status <span class="text-5">*</span></label>

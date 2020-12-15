@@ -75,6 +75,7 @@ Route::group(['middleware' => 'auth'], function() {
  	Route::post('interestStore',			'InterestController@interestStore')->name('interestStore');
 	Route::get('destroyInterestCourse/{id}','InterestController@destroyInterestCourse')->name('destroyInterestCourse');
 
+	Route::get('dashboard', 	  'DashboardController@dashboardShow')->name('dashboardShow');
 	Route::get('report', 	  'ReportController@reportShow')->name('reportShow');
 	Route::get('myaccount',   'MyAccountController@myaccountShow')->name('myaccountShow');
 

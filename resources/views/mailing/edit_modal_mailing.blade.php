@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar Mailing<span class="text-5-title">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Editar Mailing<span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -15,9 +15,9 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome Completo <span class="text-5">*</span></label>
+                        <label class="text-4" for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
-                        placeholder= "Informe o nome" value="#" required autocomplete="name" autofocus/>
+                        placeholder= "Informe o nome" value="#" required/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
@@ -57,7 +57,7 @@
                     <div class="form-group col-12">
                         <label class="text-4" for="name">Curso de interesse <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Informe o curso de interesse" value="#" required autofocus/>                         
+                        placeholder= "Informe o curso de interesse" value="#" required/>                         
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
@@ -73,7 +73,7 @@
                     <div class="form-group col-12">
                         <label for="name">Status <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Selecione status" value="#" required autofocus/>                         
+                        placeholder= "Selecione status" value="#" required/>                         
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>

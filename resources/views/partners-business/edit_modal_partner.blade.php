@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Parcerias <span class="text-5-title">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Editar empresa parceira <span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,16 +14,16 @@
  
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="edtName">Nome da Empresa <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="edtName" name="name" placeholder="Informe o nome da empresa" required autocomplete="course" autofocus/>
+                        <label for="edtName">Nome da empresa <span class="text-5">*</span></label>
+                        <input type="text" class="form-control" id="edtName" name="name" placeholder="Informe o nome da empresa" required />
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label for="edtEmail">Email </label>
-                        <input type="email" class="form-control" id="edtEmail" name="email" placeholder="fulano@email.com" autocomplete="course" autofocus/>
+                        <input type="email" class="form-control" id="edtEmail" name="email" placeholder="fulano@email.com" autocomplete="off" />
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="edtPhone">Telefone <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="edtPhone" name="phone" placeholder="(00) 00000-0000" required autocomplete="course" autofocus/>
+                        <input type="text" class="form-control" id="edtPhone" name="phone" placeholder="(00) 00000-0000" required />
                     </div>
                     <div class="form-group col-12">
                         <label for="statusPartner">Status <span class="text-5">*</span></label>

@@ -1,95 +1,94 @@
 @extends('layouts.app')
 <form name="dashboard" id="dashboard" method="GET" action="#">
 <body id="body-container">
-  @include('includes/header')
-  <div id="container-main">
-    <div class="container">
-        <div class="content-details">
-            <div class="top-bar-block">
-                <h1>Seja bem-vindo, {{ auth()->user()->name }}!</h1>
-            </div>
+    @include('includes/header')
+    <div id="container-main">
+        <div class="container">
+            <div class="content-details">
+                <div class="top-bar-block">
+                    <h1>Seja bem-vindo, {{ auth()->user()->name }}!</h1>
+                </div>
+                <div class="show-dashboard-general">
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">                        </div>          
+                        <div class="col-2">
+                            <button type="submit" class="form-control btn btn-outline-primary" value="OK">OK</button>
+                        </div>          
 
-  
-            <div class="show-dashboard-general">
-                <div class="row">
-                    <div class="col-lg-4">
-                      <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
-                    </div>          
-                    <div class="col-lg-2">
-                      <input type="submit" class="form-control btn btn-danger" value="OK">
-                    </div>          
-
-                    <div class="col-lg-12">&nbsp</div>
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-dashboard card mb-4 box-shadow">
-                            <div class="card-body my-3 mx-4">
-                                <h3 class="font-weight-normal">Contatos</h3>
-                                <h1 class="card-title pricing-card-title">{{ $iContacts }} <small class="text-muted">/ total</small></h1>
-                                <a href="{{ route('contactShow') }}" class="fa fa-arrow-right"> Contatos</a>
+                        <div class="col-12">&nbsp</div>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-dashboard card mb-4 box-shadow">
+                                <div class="card-body my-3 mx-4">
+                                    <h3 class="font-weight-normal">Contatos</h3>
+                                    <h1 class="card-title pricing-card-title">{{ $iContacts }} <small class="text-muted">/ total</small></h1>
+                                    <a href="{{ route('contactShow') }}" class="fa fa-arrow-right"> Contatos</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-dashboard card mb-4 box-shadow">
-                            <div class="card-body my-3 mx-4">
-                                <h3 class="font-weight-normal">Cursos</h3>
-                                <h1 class="card-title pricing-card-title">{{ $iCourses }} <small class="text-muted">/ total</small></h1>
-                                <a href="{{ route('courseShow') }}" class="fa fa-arrow-right"> Cursos</a>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-dashboard card mb-4 box-shadow">
+                                <div class="card-body my-3 mx-4">
+                                    <h3 class="font-weight-normal">Cursos</h3>
+                                    <h1 class="card-title pricing-card-title">{{ $iCourses }} <small class="text-muted">/ total</small></h1>
+                                    <a href="{{ route('courseShow') }}" class="fa fa-arrow-right"> Cursos</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-dashboard card mb-4 box-shadow">
-                            <div class="card-body my-3 mx-4">
-                                <h3 class="font-weight-normal">Empresas parceiras</h3>
-                                <h1 class="card-title pricing-card-title">{{ $iPartners }} <small class="text-muted">/ total</small></h1>
-                                <a href="{{ route('partnerShow') }}" class="fa fa-arrow-right"> Empresas parceiras</a>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-dashboard card mb-4 box-shadow">
+                                <div class="card-body my-3 mx-4">
+                                    <h3 class="font-weight-normal">Empresas parceiras</h3>
+                                    <h1 class="card-title pricing-card-title">{{ $iPartners }} <small class="text-muted">/ total</small></h1>
+                                    <a href="{{ route('partnerShow') }}" class="fa fa-arrow-right"> Empresas parceiras</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-dashboard card mb-4">
-                            <div class="card-body my-3 mx-4">
-                                <h3 class="font-weight-normal">Mailing</h3>
-                                <h1 class="card-title pricing-card-title">{{ $iCalls }} <small class="text-muted">/ mês</small></h1>
-                                <a href="{{ route('mailingShow') }}" class="fa fa-arrow-right"> Mailing</a>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-dashboard card mb-4">
+                                <div class="card-body my-3 mx-4">
+                                    <h3 class="font-weight-normal">Mailing</h3>
+                                    <h1 class="card-title pricing-card-title">{{ $iCalls }} <small class="text-muted">/ mês</small></h1>
+                                    <a href="{{ route('mailingShow') }}" class="fa fa-arrow-right"> Mailing</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+            <div class="show-details-block">
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
+
+                <input type="hidden" id="day" value="{{ $day }}">
+                <input type="hidden" id="d1" value="{{ $hourArray[0] }}">
+                <input type="hidden" id="d2" value="{{ $hourArray[1] }}">
+                <input type="hidden" id="d3" value="{{ $hourArray[2] }}">
+                <input type="hidden" id="d4" value="{{ $hourArray[3] }}">
+                <input type="hidden" id="d5" value="{{ $hourArray[4] }}">
+                <input type="hidden" id="d6" value="{{ $hourArray[5] }}">
+                <input type="hidden" id="d7" value="{{ $hourArray[6] }}">
+                <input type="hidden" id="d8" value="{{ $hourArray[7] }}">
+                <input type="hidden" id="d9" value="{{ $hourArray[8] }}">
+                <input type="hidden" id="d10" value="{{ $hourArray[9] }}">
+                <input type="hidden" id="d11" value="{{ $hourArray[10] }}">
+                <input type="hidden" id="d12" value="{{ $hourArray[11] }}">
+                <input type="hidden" id="d13" value="{{ $hourArray[12] }}">
+                <input type="hidden" id="d14" value="{{ $hourArray[13] }}">
+                <input type="hidden" id="d15" value="{{ $hourArray[14] }}">
+                <input type="hidden" id="d16" value="{{ $hourArray[15] }}">
+                <input type="hidden" id="d17" value="{{ $hourArray[16] }}">
+                <input type="hidden" id="d18" value="{{ $hourArray[17] }}">
+                <input type="hidden" id="d19" value="{{ $hourArray[18] }}">
+                <input type="hidden" id="d20" value="{{ $hourArray[19] }}">
+                <input type="hidden" id="d21" value="{{ $hourArray[20] }}">
+                <input type="hidden" id="d22" value="{{ $hourArray[21] }}">
+                <input type="hidden" id="d23" value="{{ $hourArray[22] }}">
+                <input type="hidden" id="d24" value="{{ $hourArray[23] }}">
+                <div id="chart_div"></div>
             </div>
-
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
-
-            <input type="hidden" id="day" value="{{ $day }}">
-            <input type="hidden" id="d1" value="{{ $hourArray[0] }}">
-            <input type="hidden" id="d2" value="{{ $hourArray[1] }}">
-            <input type="hidden" id="d3" value="{{ $hourArray[2] }}">
-            <input type="hidden" id="d4" value="{{ $hourArray[3] }}">
-            <input type="hidden" id="d5" value="{{ $hourArray[4] }}">
-            <input type="hidden" id="d6" value="{{ $hourArray[5] }}">
-            <input type="hidden" id="d7" value="{{ $hourArray[6] }}">
-            <input type="hidden" id="d8" value="{{ $hourArray[7] }}">
-            <input type="hidden" id="d9" value="{{ $hourArray[8] }}">
-            <input type="hidden" id="d10" value="{{ $hourArray[9] }}">
-            <input type="hidden" id="d11" value="{{ $hourArray[10] }}">
-            <input type="hidden" id="d12" value="{{ $hourArray[11] }}">
-            <input type="hidden" id="d13" value="{{ $hourArray[12] }}">
-            <input type="hidden" id="d14" value="{{ $hourArray[13] }}">
-            <input type="hidden" id="d15" value="{{ $hourArray[14] }}">
-            <input type="hidden" id="d16" value="{{ $hourArray[15] }}">
-            <input type="hidden" id="d17" value="{{ $hourArray[16] }}">
-            <input type="hidden" id="d18" value="{{ $hourArray[17] }}">
-            <input type="hidden" id="d19" value="{{ $hourArray[18] }}">
-            <input type="hidden" id="d20" value="{{ $hourArray[19] }}">
-            <input type="hidden" id="d21" value="{{ $hourArray[20] }}">
-            <input type="hidden" id="d22" value="{{ $hourArray[21] }}">
-            <input type="hidden" id="d23" value="{{ $hourArray[22] }}">
-            <input type="hidden" id="d24" value="{{ $hourArray[23] }}">
         </div>
-    </div>
-    <div id="chart_div"></div>
+    </div>        
 </body>  
 </html>
 <script>
@@ -102,7 +101,7 @@ google.charts.setOnLoadCallback(drawBasic);
 function drawBasic() {
       var data = new google.visualization.DataTable();
       data.addColumn('timeofday', 'Hora do dia');
-      data.addColumn('number', 'Ligações no dia');
+      data.addColumn('number', 'Ligações');
       data.addColumn({type: 'string', role: 'annotation'});
 
       data.addRows([

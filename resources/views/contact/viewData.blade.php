@@ -18,17 +18,17 @@
 			<div class="show-details-block">
 				<ul class="nav nav-tabs" id="myTab" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Perfil</a>
+						<a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Perfil</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Cursos</a>
+						<a class="nav-link" id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses" aria-selected="false">Cursos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contato" role="tab" aria-controls="contact" aria-selected="false">Ligações</a>
+						<a class="nav-link" id="schedules-tab" data-toggle="tab" href="#schedules" role="tab" aria-controls="schedules" aria-selected="false">Ligações</a>
 					</li>
 				</ul>
 				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 						<h2>Dados básicos
 							<a href="#" class="fa fa-pencil" title="Editar contato" aria-hidden="true" id="btnAdd"></a>
 						</h2>
@@ -69,7 +69,7 @@
 							</div>
 						</form>
 					</div>
-					<div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
 						<h2>Cursos
 							<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddCourse"> </i>
 						</h2>
@@ -107,7 +107,7 @@
 							</table>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="tab-pane fade" id="schedules" role="tabpanel" aria-labelledby="schedules-tab">
 						<h2>Ligações
 							<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddSchedule"></i>
 						</h2>

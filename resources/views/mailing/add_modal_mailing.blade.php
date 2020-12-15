@@ -15,22 +15,22 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome completo <span class="text-5">*</span></label>
+                        <label for="namxe">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
                         placeholder= "Informe o nome" value="#" required/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="text-4" for="email">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="#" />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="phone">Telefone <span class="text-5">*</span></label>
+                        <label for="phone">Telefone <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="#" required />    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" >Origem do contato <span class="text-5">*</span></label>
+                        <label for="contactOriginData" >Origem do contato <span class="text-5">*</span></label>
                         <input type="hidden" id="contactOriginData" value="#">
                         <select class="form-control" id="contactOrigin" name="contact_origin" required>
                             <option value="" disabled selected hidden>Selecione a origem do contato</option>

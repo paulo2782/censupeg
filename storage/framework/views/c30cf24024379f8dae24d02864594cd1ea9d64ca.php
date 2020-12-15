@@ -1,1 +1,0 @@
-<p> AQUI VAI TODO HTML </p><?php /**PATH C:\censupeg\resources\views/email/SendMail.blade.php ENDPATH**/ ?>

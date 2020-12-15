@@ -12,9 +12,16 @@
   
             <div class="show-dashboard-general">
                 <div class="row">
+                    @if(isset($_GET['dateCurrent'])) 
                     <div class="col-lg-4">
                       <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
                     </div>          
+                    @else
+                    <div class="col-lg-4">
+                      <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ date('Y-m-d') }}">
+                    </div>          
+                    @endisset                    
+
                     <div class="col-lg-2">
                       <input type="submit" class="form-control btn btn-danger" value="OK">
                     </div>          

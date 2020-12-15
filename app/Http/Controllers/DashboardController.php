@@ -12,6 +12,7 @@ class DashboardController extends Controller
 {
     public function dashboardShow(Request $request)
     {
+
     	$contact   = Contact::get();
     	$iContacts = count($contact); 
 
@@ -45,9 +46,11 @@ class DashboardController extends Controller
     		->get();
 
     		array_push($hourArray, count($data));
+
     	}
 
     	$day = substr($request->dateCurrent,8,2);
+        
     	$dateCurrent = $request->dateCurrent;
     	return view('dashboards/dashboard',compact('iContacts','iCourses','iPartners','iCalls','hourArray','day','dateCurrent'));
     }

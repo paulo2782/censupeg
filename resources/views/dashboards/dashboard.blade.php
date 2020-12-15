@@ -53,7 +53,7 @@
                                 <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
                             </div>          
                             <div class="col-2">
-                                <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+                                <button type="submit" class="btn btn-outline-primary" id="search">Pesquisar</button>
                             </div>
                             <div class="col-12">&nbsp</div>
                         </div>
@@ -103,6 +103,8 @@ google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawBasic);
 
 function drawBasic() {
+$('#search').trigger('click')
+
       var url = window.location.href
       var dateCurrent = url.split("=")[1]
       var i = dateCurrent.length

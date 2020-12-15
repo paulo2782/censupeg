@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboardShow') }}">Dashboard</a>
+                        <a class="nav-link" href="/dashboard?dateCurrent={{ date('Y-m-d') }}">Dashboard</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

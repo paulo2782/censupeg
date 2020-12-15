@@ -40,16 +40,29 @@ class ExportCalls implements  WithHeadings, ShouldAutoSize, WithEvents, WithMapp
     {
         $rows = [];
             foreach ($Call->contact as $listContact) {
+                    
+                if($Call->date_return <> null){
+                    $date_return = date('d-m-Y',strtotime($Call->date_return));
+                }else{
+                    $date_return = '';
+                }
+                if($Call->schedule <> null){
+                    $schedule = $Call->schedule;
+                }else{
+                    $schedule = '';
+                }
+
+
 				 array_push($rows,[
                     $Call->id,
-                    date('d-m-Y',strtotime($Call->date_contact)),
+                    date('d-m-Y',strtotime($Call->date_contact)).' / '.substr($Call->created_at,11,8),
                     $Call->contact->name,
                     $Call->contact->email,
                     $Call->contact->phone,
                     $Call->contact->contact_origin,
                     $Call->course->course,
                     $Call->status,
-                    date('d-m-Y',strtotime($Call->date_return)),
+                    $date_return.' / '.$schedule,
                     $Call->user->name,                    
                     $Call->additional_information,
 

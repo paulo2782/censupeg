@@ -2,7 +2,7 @@
 $primary-color: #9E1D21;
 $secondary-color: #F8F8F8;
 $white: #fff;
-$color-text-standard: #555;
+$color-text-standard: #555555;
 $color-text-title: #333;
 // TYPOGRAPH
 $font-family-primary: 'Open Sans', sans-serif;
@@ -47,28 +47,32 @@ form {
         font-size: 14px !important;
     }    
     span {
-        color: $primary-color;
         font-weight: bold;
     }
 }
 
-label, 
-p {
+label {
     color: $color-text-title;
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
-.text-4{
+.text-4 {
+    //textos que necessitam colocar um negrito, labels de view, th em table
     font-size: 14px;
     font-weight: 500;
     line-height: 1.2;
 }
 
-span.text-5{
-    display: block;
+.text-5{
+    //campos obrigatórios
     font-size: 12px;
+    color: #FF0000;
 }
-
+.text-5-title {
+    font-size: 12px;
+    color: #FF0000;
+    display: block;
+}
 .table {
     font-size: 14px;
 }
@@ -178,17 +182,12 @@ span.text-5{
         }
     }
 
-
     .dropdown-menu.show {
         font-size: 14px;
         width: 100px;
     }
     .dropdown-item {
         cursor: pointer;
-        &:hover {
-            background: $primary-color;
-            color: $white;
-        }
     }
 }
 
@@ -220,6 +219,22 @@ span.text-5{
         margin-bottom: 5px;
         margin-left: -10px;
     }
+    .export-file {
+        float: right;
+        padding: 5px;
+        margin: 20px 20px 0 0;
+        a {
+            text-decoration: none;
+            color: $color-text-standard;
+        }
+        .dropdown-item {
+            color: #16181b;
+            text-decoration: none;
+            &:hover {
+                background-color: #f8f9fa;
+            } 
+        }
+    }
 }
 
 .show-details-block {
@@ -230,6 +245,11 @@ span.text-5{
         line-height: 25px;
         margin: 0px 20px;
         padding: 10px 0px;
+    }
+    .nav-item {
+        > a {
+            font-size: 14px !important;
+        }
     }
     #contact-info {
         margin: 10px auto;
@@ -256,4 +276,33 @@ span.text-5{
     color: $white;
     background-color: $primary-color !important;
     font-weight: bold;
+}
+
+//NAVIGATE MONTHS
+#navigate-months{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -42px;
+    a {
+        text-decoration: none;
+        color: gray;
+        font-size: 18px;
+    }
+}
+
+.show-dashboard-general{
+    .info-dashboard {
+        background: white; 
+        border: 1px solid black;
+        > a.fa {
+            text-decoration: none !important;
+            &:hover {
+                text-decoration: none !important;
+            }
+        }
+    }
+    .btn {
+        font-size: 14px !important;
+    }
 }

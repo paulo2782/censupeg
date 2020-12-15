@@ -5,7 +5,7 @@ body { font-family: "Open Sans", sans-serif; }
 
 .list-group-item:first-child { border-top: 0px !important; }
 
-.list-group-item a:nth-child(1) { text-decoration: none; color: #555; }
+.list-group-item a:nth-child(1) { text-decoration: none; color: #555555; }
 
 .list-group-item a:nth-child(1):hover { text-decoration: none; font-weight: 500; }
 
@@ -17,13 +17,15 @@ h3, .h3 { font-size: 16px !important; }
 
 form .form-control { font-size: 14px !important; }
 
-form span { color: #9E1D21; font-weight: bold; }
+form span { font-weight: bold; }
 
-label, p { color: #333; font-size: 14px; }
+label { color: #333; font-size: 14px !important; }
 
 .text-4 { font-size: 14px; font-weight: 500; line-height: 1.2; }
 
-span.text-5 { display: block; font-size: 12px; }
+.text-5 { font-size: 12px; color: #FF0000; }
+
+.text-5-title { font-size: 12px; color: #FF0000; display: block; }
 
 .table { font-size: 14px; }
 
@@ -61,19 +63,17 @@ span.text-5 { display: block; font-size: 12px; }
 
 #content-table th { padding: 10px 20px; border-bottom: 1px solid #eee; color: #333; }
 
-#content-table td { padding: 5px 20px; border-bottom: 1px solid #eee; color: #555; }
+#content-table td { padding: 5px 20px; border-bottom: 1px solid #eee; color: #555555; }
 
 #content-table td img { padding: 0px 5px; margin-left: 10px; }
 
-#content-table a { text-decoration: none; color: #555; }
+#content-table a { text-decoration: none; color: #555555; }
 
 #content-table a:hover { font-weight: 500; }
 
 #content-table .dropdown-menu.show { font-size: 14px; width: 100px; }
 
 #content-table .dropdown-item { cursor: pointer; }
-
-#content-table .dropdown-item:hover { background: #9E1D21; color: #fff; }
 
 .pagination { margin: 0px 10px 10px 10px; }
 
@@ -87,19 +87,41 @@ span.text-5 { display: block; font-size: 12px; }
 
 .top-bar-block img { width: 30px; margin-bottom: 5px; margin-left: -10px; }
 
+.top-bar-block .export-file { float: right; padding: 5px; margin: 20px 20px 0 0; }
+
+.top-bar-block .export-file a { text-decoration: none; color: #555555; }
+
+.top-bar-block .export-file .dropdown-item { color: #16181b; text-decoration: none; }
+
+.top-bar-block .export-file .dropdown-item:hover { background-color: #f8f9fa; }
+
 .show-details-block { background-color: #fff; margin-bottom: 15px; }
 
 .show-details-block h2 { color: #9E1D21; line-height: 25px; margin: 0px 20px; padding: 10px 0px; }
+
+.show-details-block .nav-item > a { font-size: 14px !important; }
 
 .show-details-block #contact-info { margin: 10px auto; }
 
 .show-details-block #contact-info > .form-row { margin-left: 15px; margin-right: 15px; }
 
-.swal-text { font-size: 14px !important; color: #555; }
+.swal-text { font-size: 14px !important; color: #555555; }
 
 .swal-button { color: #333; background: #fff; font-size: 14px !important; border: 1px solid #9E1D21 !important; }
 
 .swal-button:hover { color: #fff; background-color: #9E1D21 !important; font-weight: bold; }
+
+#navigate-months { display: flex; flex-direction: row; justify-content: center; margin-top: -42px; }
+
+#navigate-months a { text-decoration: none; color: gray; font-size: 18px; }
+
+.show-dashboard-general .info-dashboard { background: white; border: 1px solid black; }
+
+.show-dashboard-general .info-dashboard > a.fa { text-decoration: none !important; }
+
+.show-dashboard-general .info-dashboard > a.fa:hover { text-decoration: none !important; }
+
+.show-dashboard-general .btn { font-size: 14px !important; }
 
 #login { width: 100%; }
 
@@ -113,7 +135,7 @@ span.text-5 { display: block; font-size: 12px; }
 
 #login .container .form-group .field_icon { float: right; margin-top: -25px; margin-right: 5px; position: relative; z-index: 2; }
 
-#login .container .login-a { text-decoration: none; text-align: center; color: #555; cursor: pointer; }
+#login .container .login-a { text-decoration: none; text-align: center; color: #555555; cursor: pointer; }
 
 #login .container .login-a:hover { text-decoration: none; color: #9E1D21; font-weight: bold; }
 
@@ -143,17 +165,31 @@ span.text-5 { display: block; font-size: 12px; }
 
 .modal-content { overflow-y: auto; }
 
-.modal-content .form-dialog { max-width: 460px; margin: 10px auto; font-size: 14px !important; }
-
-.modal-content .form-group .form-control { font-size: 14px !important; }
+.modal-content .form-dialog { max-width: 460px; margin: 10px auto; }
 
 .modal-content .form-group .field_icon { float: right; margin-top: -25px; margin-right: 5px; position: relative; z-index: 2; }
 
+.modal-content p.text-confirm { font-size: 16px; text-align: center; line-height: 20px; }
+
+.modal-content p.text-confirm > span.name { text-transform: uppercase; font-weight: bold; }
+
 .modal-content .btn { font-size: 14px !important; }
 
-.modal-title { color: #9E1D21; font-weight: bold; }
+.modal-title { color: #333; font-weight: bold; }
 
-.line-horizontal { margin-bottom: 10px; border: 1px solid #9E1D21; }
+.top-bar-report { width: 100%; height: 70px; background: #fff; margin-bottom: 20px; }
+
+.top-bar-report h1 { display: inline-block; margin: 13px 20px; padding: 10px 0px; }
+
+.list-reports { background: #fff; margin-bottom: 15px; }
+
+.list-reports ul { height: 50px; line-height: 50px; margin-left: 20px; }
+
+.contact-reports { margin-bottom: 10px; }
+
+.contact-reports .contact-reports-charts { background-color: #fff; margin: 0 5px; }
+
+.contact-reports .contact-reports-charts h2 { color: #9E1D21; line-height: 25px; margin: 0px 20px; padding: 10px 0px; }
 
 #month { width: 100%; padding: 15px 30px; text-align: center; }
 
@@ -167,16 +203,16 @@ span.text-5 { display: block; font-size: 12px; }
 
 #month .next { float: right; padding: 3px; }
 
-.export-file { float: right; padding: 5px; }
+.export-file-day { float: right; padding: 5px; }
 
-.export-file a { color: #555; }
+.export-file-day a { color: #555555; text-decoration: none; }
 
-.export-file a:hover { text-decoration: none; }
+.export-file-day a:hover { text-decoration: none; }
 
 #error-404 { margin: 0 auto; text-align: center; padding: 20px 0px; }
 
 #error-404 .error-code { bottom: 60%; color: #9E1D21; font-size: 96px; line-height: 100px; font-weight: bold; }
 
-#error-404 .error-desc { font-size: 1em; padding: 20px 0; color: #555; }
+#error-404 .error-desc { font-size: 1em; padding: 20px 0; color: #555555; }
 
 #error-404 .btn-error { margin-top: 20px; }

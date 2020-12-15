@@ -4,7 +4,6 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
     for(i = 0 ; i <= iCount-1 ; i++){
 
         if(i < 10){ ii = '0'+i }else{ ii = i }
-
         $('#details').append(`
                 <div class="show-details-block">
                     <div class = "container">
@@ -14,10 +13,13 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                                     <div class = "panel-title date_contact" id="`+object[i].date_contact+`" data-id="`+i+`">
                                         <a data-toggle = "collapse" href = "#show`+i+`">
                                             <span>`+object[i].date_contact.substr(8,2)+` / `+iM+` </span>
-                                            <i class="fas fa-angle-down rotate-icon"></i>
+                                            <i class="fa fa-angle-down rotate-icon"></i>
                                         </a>
-                                        <span class="export-file text-4">
-                                            <a href="#" class="export" id="export`+i+`" data-reference="`+object[i].date_contact+`">Exportar</a>
+                                        <span class="export-file-day text-4">
+                                            <a href="#" class="export" id="export`+i+`" 
+                                            data-reference="`+object[i].date_contact+`" 
+                                            data-user_id="`+object[i].user_id+`">
+                                            Exportar</a>
                                         </span>
                                     </div>
                                 </div>
@@ -47,7 +49,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
     }
 
     $('.date_contact').click(function(event) {
- 
+        var level   = $('#level').val()    
         date_contact = $(this).attr('id')  
 
         table_id = $(this).attr('data-id')
@@ -55,28 +57,59 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
         num = 1
         
         for(i = 0 ; i <= dataDayMonth.length ; i++){
-
+                
             if(dataDayMonth[i].date_contact == date_contact){
-                $('.table-details'+table_id).append(
-                    "<tr>"+
-                    "<td><strong>"+num+"</strong></td>"+
-                    "<td>"+dataDayMonth[i].name+"</td>"+
-                    "<td>"+dataDayMonth[i].date_contact+"</td>"+
-                    "<td>"+dataDayMonth[i].date_return+"</td>"+
-                    "<td>"+dataDayMonth[i].course+"</td>"+
-                    "<td>"+dataDayMonth[i].status+"</td>"+
-                    "<td><a href="+dataDayMonth[i].id+"><i class='fas fa-pen-square editMailing' data-id="+dataDayMonth[i].id+"></i></a>"+
-                    "    <i class='fas fa-times deleteMailing' data-id="+dataDayMonth[i].id+"></i></td>"
-                )
-                 num++    
+                if(dataDayMonth[i].date_return == null)
+                    { date_return = '' }
+                else
+                    { 
+                    if(dataDayMonth[i].schedule != null)
+                    {
+                        date_return = moment(dataDayMonth[i].date_return).format('DD-MM-YY')+' / '+dataDayMonth[i].schedule 
+
+                    }
+                else
+                    {
+                        date_return = moment(dataDayMonth[i].date_return).format('DD-MM-YY')
+                    }
+                }
+
+                if(level == 1){
+                    $('.table-details'+table_id).append(
+                        "<tr>"+
+                        "<td><strong>"+num+"</strong></td>"+
+                        "<td>"+dataDayMonth[i].name+"</td>"+
+                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
+                        "<td>"+date_return+"</td>"+
+                        "<td>"+dataDayMonth[i].course+"</td>"+
+                        "<td>"+dataDayMonth[i].status+"</td>"+
+                        "<td><a href="+dataDayMonth[i].id+"><i class='fa fa-pencil editMailing' title='Editar registro' data-id="+dataDayMonth[i].id+"></i></a>"+
+                        "    <i class='fa fa-trash deleteMailing' title='Excluir registro' data-id="+dataDayMonth[i].call_id+"></i></td>"
+                    )
+                }else{
+                    $('.table-details'+table_id).append(
+                        "<tr>"+
+                        "<td><strong>"+num+"</strong></td>"+
+                        "<td>"+dataDayMonth[i].name+"</td>"+
+                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
+                        "<td>"+date_return+"</td>"+
+                        "<td>"+dataDayMonth[i].course+"</td>"+
+                        "<td>"+dataDayMonth[i].status+"</td>"
+                    )
+                }
+                num++    
+
             }
            
         }  
     });
     $('.export').click(function(event) {
-        var date = $(this).attr('data-reference')
-        window.location.href='csvMailing?date='+date+''
-    });
+    /* Act on the event */
+        var date    = $(this).attr('data-reference')
+        var user_id = $(this).attr('data-user_id')   
+        var level   = $('#level').val()   
+
+        window.location.href='csvMailing?date='+date+'&user_id='+user_id+'+&level='+level+''
 
     $(document).on('click', '.deleteMailing', function(){
         var id = $(this).attr('data-id')
@@ -91,3 +124,6 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
 
 }
 
+if($('#alert').is(':visible')){
+    $('#alert').fadeOut(4000);
+}

@@ -41,7 +41,7 @@
 							<input type="url" class="form-control" readonly="readonly" id="link" name="link" value="{{ $dados[0]->link }}"/>    
 						</div>
 						<div class="form-group col-12">
-							<label class="text-4" for="observation">Informações adicionais</label>
+							<label class="text-4" for="additional_information">Informações adicionais</label>
 							<textarea class="form-control" readonly="readonly" id="additional_information" name="additional_information"> {{ $dados[0]->additional_information }}</textarea>
 						</div>
 					</div>

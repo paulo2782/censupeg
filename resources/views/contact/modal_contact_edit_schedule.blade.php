@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Contato - Ligações<span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Editar ligação<span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -15,19 +15,19 @@
                 <input type="hidden" name="call_id_edit" id="call_id_edit">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="date_contact">Data do contato <span>*</span></label>
+                        <label for="date_contact_edit">Data de contato <span class="text-5">*</span></label>
                         <input type="date" id="date_contact_edit" class="form-control" name="date_contact" required/>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="date_return">Data de retorno</label>
+                        <label for="date_return_edit">Data de retorno</label>
                         <input type="date" id="date_return_edit" class="form-control" name="date_return"/>    
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="schedule">Horário</label>
+                        <label for="schedule_edit">Horário</label>
                         <input type="time" class="form-control" name="schedule" id="schedule_edit"/>    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
+                        <label for="statusSchedule">Status <span class="text-5">*</span></label>
                         <select class="form-control" id="statusSchedule" name="status" required>
                             <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
@@ -39,11 +39,10 @@
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="additional_information_edit">Informações adicionais</label>
                         <textarea id="additional_information_edit" class="form-control" name="additional_information"></textarea>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
                 <input type="button" class="btnUpdateEditCall btn btn-outline-success" data-dismiss=" " value="Salvar">            
             </form>
         </div>

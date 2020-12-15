@@ -87,10 +87,9 @@
             <input type="hidden" id="d22" value="{{ $hourArray[21] }}">
             <input type="hidden" id="d23" value="{{ $hourArray[22] }}">
             <input type="hidden" id="d24" value="{{ $hourArray[23] }}">
-
-            <div id="chart_div"></div>
         </div>
     </div>
+    <div id="chart_div"></div>
 </body>  
 </html>
 <script>

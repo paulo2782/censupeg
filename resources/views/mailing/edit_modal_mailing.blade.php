@@ -30,9 +30,9 @@
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="" required />    
                     </div>
                     <div class="form-group col-12">
-                        <label for="contactOrigin" >Origem do contato <span class="text-5">*</span></label>
-                        <input type="hidden" id="contactOriginData" value="">
-                        <select class="form-control" id="contactOrigin" name="contact_origin" required>
+                        <label for="contact-origin" >Origem do contato <span class="text-5">*</span></label>
+                        <input type="hidden" id="contact-origin" value="">
+                        <select class="form-control" id="contact-origin" name="contact-origin" required>
                             <option value="" disabled selected hidden>Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
                             <option value="Empresas Parceiras">Empresas parceiras</option>
@@ -86,8 +86,8 @@
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="additional_information">Informações adicionais</label>
-                        <textarea class="form-control" id="additional_information" name="additional_information">
+                        <label for="additional-information">Informações adicionais</label>
+                        <textarea class="form-control" id="additional-information" name="additional-information">
                         </textarea>
                     </div>
                 </div>                    

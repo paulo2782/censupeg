@@ -67,7 +67,7 @@ class LoginController extends Controller
             Cookie::queue(Cookie::forget('user'));
             Cookie::queue(Cookie::forget('password'));
 
-            return redirect('/dashboard');
+            return redirect("/dashboard");
         }else{
             return back()->withErrors(['messages'=>'Usuário ou senha inválido.']);
         }  

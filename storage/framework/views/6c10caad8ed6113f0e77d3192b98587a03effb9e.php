@@ -12,7 +12,7 @@
                         Experimente atualizar a página ou clique no botão abaixo para voltar à página inicial. </p>
                     <div>
                     <div class="btn-error">
-                        <a href="<?php echo e(route('contactShow')); ?>" class="btn btn-primary">Página Inicial</a>
+                        <a href="<?php echo e(route('dashboardShow')); ?>" class="btn btn-outline-primary">Página Inicial</a>
                     </div>
                 </div>
             </div>

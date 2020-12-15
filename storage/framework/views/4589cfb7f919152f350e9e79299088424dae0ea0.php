@@ -18,10 +18,12 @@
                 <h2>Graduação</h2>
                 <ul class="list-group list-group-flush">
                     <?php $__currentLoopData = $data_level_graduacao; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data_level1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li class="list-group-item"><a href="<?php echo e(route('view_details_course',$data_level1->id)); ?>"><?php echo e($data_level1->course); ?></a>
+                    <li class="list-group-item"><a href="#" onclick="callEditModal(id=`<?php echo e($data_level1->id); ?>`)"><?php echo e($data_level1->course); ?></a>
                         <div class="pull-right">
                             <a href="#" onclick="callEditModal(id=`<?php echo e($data_level1->id); ?>`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="<?php echo e($data_level1->course); ?>"></a>
+                        <?php if(auth()->user()->level == 1): ?>
                             <a href="<?php echo e(route('destroyCourse',$data_level1->id)); ?>" class="fa fa-trash btnDelete" aria-hidden="true" title="<?php echo e($data_level1->course); ?>"></a>
+                        <?php endif; ?>
                         </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </li>
@@ -31,10 +33,12 @@
                 <h2>Pós-graduação</h2>
                 <ul class="list-group list-group-flush">
                     <?php $__currentLoopData = $data_level_pos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data_level2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li class="list-group-item"><a href="<?php echo e(route('view_details_course',$data_level2->id)); ?>"><?php echo e($data_level2->course); ?></a>
+                    <li class="list-group-item"><a href="#" onclick="callEditModal(id=`<?php echo e($data_level2->id); ?>`)"><?php echo e($data_level2->course); ?></a>
                         <div class="pull-right">
                             <a href="#" onclick="callEditModal(id=`<?php echo e($data_level2->id); ?>`)" class="fa fa-pencil " aria-hidden="true" title="<?php echo e($data_level1->course); ?>"></a>
+                        <?php if(auth()->user()->level == 1): ?>
                             <a href="<?php echo e(route('destroyCourse',$data_level2->id)); ?>" class="fa fa-trash btnDelete" aria-hidden="true" title="<?php echo e($data_level2->course); ?>"></a>
+                        <?php endif; ?>
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>

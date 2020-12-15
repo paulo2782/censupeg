@@ -8,7 +8,7 @@
         <h1 class="my-2 text-center">Acesse sua conta </h1>
         <form name="frmLogin" id="frmLogin">
             <div class="form-group">
-                <label for="username">Usuário</label>
+                <label for="email">Usuário</label>
                 <?php if(isset($_COOKIE['user'])): ?>                  
                 <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control" value="<?php echo e(Cookie::get('user')); ?>">
                 <?php else: ?>
@@ -41,9 +41,6 @@
                 </div>
             </div>
             <div class="mt-2">
-                <div class="d-flex justify-content-center text-4">
-                    Para se registrar? <a onclick="window.location.href='register'" class="ml-2 login-a">Clique aqui</a>
-                </div>
                 <div class="d-flex justify-content-center text-4">
                     <a href="recovery-password" class="mt-2 login-a">Esqueceu sua senha?</a>
                 </div>

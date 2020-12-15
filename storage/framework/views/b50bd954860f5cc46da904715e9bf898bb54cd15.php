@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar perfil</h3>
+                <h3 class="modal-title">Editar Perfil</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -24,7 +24,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="name"  value="<?php echo e($dados[0]->name); ?>" placeholder="Informe seu nome">
+unset($__errorArgs, $__bag); ?>" name="name"  value="<?php echo e($dados[0]->name); ?>" autocomplete="name" autofocus placeholder="Informe seu nome">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -47,7 +47,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="email" autocomplete="off" value="<?php echo e($dados[0]->email); ?>" placeholder="Informe seu email">
+unset($__errorArgs, $__bag); ?>" name="email" autocomplete="email" value="<?php echo e($dados[0]->email); ?>" placeholder="Informe seu email">
                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

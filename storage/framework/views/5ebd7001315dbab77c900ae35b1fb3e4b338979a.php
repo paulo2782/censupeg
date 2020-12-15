@@ -3,7 +3,6 @@
 
 <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <input type="hidden" name="_token" id="token" value="<?php echo e(csrf_token()); ?>">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body id="body-container">
 <?php echo $__env->make('includes/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
@@ -45,18 +44,15 @@ endif
                     <tbody id="tabela">
                     <?php $__currentLoopData = $dados; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td><a href="<?php echo e(route('viewData',$dado->id)); ?>"> <?php echo e($dado->name); ?> </td> </a>
+                            <td><a href="<?php echo e(route('viewData',$dado->id)); ?>"> <?php echo e($dado->name); ?> </a></td>
                             <td><?php echo e($dado->email); ?> </td>
                             <td> <?php echo e($dado->phone); ?> </td>
                             <td> <?php echo e($dado->user->name); ?></td>
                             <td id='toview'>
-                                <div class='dropdown'>
-                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                    <a href="<?php echo e(route('viewData',$dado->id)); ?>" class='dropdown-item btnToView' id="<?php echo e($dado->id); ?>">Visualizar</a>
-                                    <a href="<?php echo e(route('destroy',$dado->id)); ?>" class='dropdown-item btnDelete'>Excluir</a>
-                                </div>
-                                </div>
+                                <a href="<?php echo e(route('viewData',$dado->id)); ?>" id="<?php echo e($dado->id); ?>" class="fa fa-eye btnToView" aria-hidden="true" title="Visualizar contato"></a>
+                                <?php if(auth()->user()->level == 1): ?>
+                                    <a href="<?php echo e(route('destroy',$dado->id)); ?>" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir contato"></a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

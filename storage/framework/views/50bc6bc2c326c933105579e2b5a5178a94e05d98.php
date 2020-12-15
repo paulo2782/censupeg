@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Curso <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Curso <span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome do Curso <span>*</span></label>
+                        <label for="edtCourse">Nome do Curso <span class="text-5">*</span></label>
                         <input type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -49,7 +49,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" name="course_type" id="course_type">    
-                        <label class="text-4" for="course_type">Modalidade <span>*</span></label>
+                        <label for="course_type">Modalidade <span class="text-5">*</span></label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="course_type[]" id="EAD" value="EAD" >
                             <label class="form-check-label d-block" for="ead">EAD</label>
@@ -60,25 +60,24 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="price">Valor</label>
+                        <label for="edtPrice">Valor</label>
                         <input type="text" class="form-control" id="edtPrice" name="price" placeholder="R$ 0,00" value=""/>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="time_duration">Tempo de duração</label>
+                        <label for="edtTime_duration">Tempo de duração</label>
                         <input type="text" class="form-control" id="edtTime_duration" name="time_duration" value="" />    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="linkCourse">Link curso</label>
+                        <label for="edtLink">Link curso</label>
                         <input type="url" class="form-control" id="edtLink" name="link" placeholder="http://www.exemplo.com.br" value=""/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="edtAdditional_information">Informações adicionais</label>
                         <textarea class="form-control" id="edtAdditional_information" name="additional_information"><?php echo e(Session::get('additional_information')); ?></textarea>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
                 <input type="hidden" id="idCourse" name="id">
-                <button type="button" id="updateCourse" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
+                    <button type="button" id="updateCourse" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>
             </form>
         </div>
    </div>

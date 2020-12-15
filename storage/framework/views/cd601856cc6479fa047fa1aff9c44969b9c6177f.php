@@ -1,7 +1,7 @@
 
 <?php echo $__env->make('contact/modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <body id="body-container">
-  <?php echo $__env->make('includes/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('includes/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <div id="container-main">
     <div class="container">
         <div class="content">
@@ -31,16 +31,23 @@
                     <tr>
                         <td><a href="<?php echo e(route('viewData',$data->contact_id)); ?>"><?php echo e($data->Contact->name); ?></a></td>
                         <td><?php echo e($data->Contact->phone); ?></td>
-                        <td><?php echo e(date('d/m/Y',strtotime($data->date_contact))); ?></td>
-                        <td><?php echo e(date('d/m/Y',strtotime($data->date_return))); ?></td>
-                        <td><?php echo e(date('H:m', strtotime($data->schedule))); ?></td>
+                        <td><?php if($data->date_contact != null): ?> 
+                            <?php echo e(date('d/m/Y',strtotime($data->date_contact))); ?>
+
+                            <?php endif; ?>
+                        </td>
+                        <td><?php if($data->date_return != null): ?> 
+                            <?php echo e(date('d/m/Y',strtotime($data->date_return))); ?>
+
+                            <?php endif; ?>
+                        </td>
+                        <td><?php if($data->schedule != null): ?> 
+                            <?php echo e(date('H:m', strtotime($data->schedule))); ?>
+
+                            <?php endif; ?>
+                        </td>
                         <td id='toview'>
-                            <div class='dropdown'>
-                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                    <a href="<?php echo e(route('viewData',$data->contact_id)); ?>" class='dropdown-item btnToView'>Visualizar</a>
-                                </div>
-                            </div>
+                            <a href="<?php echo e(route('viewData',$data->contact_id)); ?>" class="fa fa-eye btnToView" aria-hidden="true" title="Visualizar contato"></a>
                         </td>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tr>                    

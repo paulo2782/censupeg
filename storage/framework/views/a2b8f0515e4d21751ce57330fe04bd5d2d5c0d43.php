@@ -1,11 +1,10 @@
 <?php $__env->startSection('content'); ?>
-<script src="<?php echo e(asset('js/jquery.mask.js')); ?>"></script> 
-
+<script src="<?php echo e(asset('js/jquery.maskMoney.js')); ?>"></script> 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Novo Curso <span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Novo Curso <span class="text-5-title">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -29,7 +28,7 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome do Curso <span>*</span></label>
+                        <label class="text-4" for="course">Nome do Curso <span class="text-5">*</span></label>
                         <input type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -37,7 +36,8 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="course" name="course" placeholder="Informe o curso" value="<?php echo e(Session::get('course')); ?>" required autocomplete="course" autofocus/>
+unset($__errorArgs, $__bag); ?>" id="course" name="course" value="<?php echo e(Session::get('course')); ?>" 
+                               placeholder="Informe o curso" required autocomplete="course" autofocus/>
                         <?php $__errorArgs = ['course'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -49,7 +49,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" name="course_type" id="course_type">    
-                        <label class="text-4" for="course_type">Modalidade <span>*</span></label>
+                        <label for="course_type">Modalidade <span class="text-5">*</span></label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="course_type[]" id="1" value="EAD" >
                             <label class="form-check-label d-block" for="ead">EAD</label>
@@ -60,34 +60,27 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="valueCourse">Valor</label>
+                        <label for="price">Valor</label>
                         <input type="text" class="form-control" id="price" name="price" placeholder="R$ 0,00" value="<?php echo e(Session::get('price')); ?>" />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="time_duration">Tempo de duração</label>
+                        <label for="time_duration">Tempo de duração</label>
                         <input type="text" class="form-control" id="time_duration" name="time_duration" value="<?php echo e(Session::get('time_duration')); ?>" />    
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="linkCourse">Link curso</label>
+                        <label for="link">Link curso</label>
                         <input type="url" class="form-control" id="link" name="link" placeholder="http://www.exemplo.com.br" value="<?php echo e(Session::get('link')); ?>"/>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="additional_information">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information"><?php echo e(Session::get('additional_information')); ?></textarea>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
+                <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
    </div>
 </div>
 <?php $__env->stopSection(); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-$(function() {
-    $("#price").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'', decimal:'.', affixesStay: false});
-});
-
-</script><?php /**PATH C:\censupeg\resources\views/course/add_modal_course.blade.php ENDPATH**/ ?>
+<script src="<?php echo e(asset('js/course.js')); ?>"></script><?php /**PATH C:\censupeg\resources\views/course/add_modal_course.blade.php ENDPATH**/ ?>

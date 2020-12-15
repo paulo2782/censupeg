@@ -111,15 +111,6 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
 
         window.location.href='csvMailing?date='+date+'&user_id='+user_id+'+&level='+level+''
 
-    $(document).on('click', '.deleteMailing', function(){
-        var id = $(this).attr('data-id')
-        swal({
-          title: "CENSUPEG",
-          text:  "Confirma Excluir?",
-          icon:  "warning",
-          buttons: true,
-          dangerMode: true,
-        })
     });
 
 }

@@ -6,7 +6,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Novo Contato<span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Novo contato<span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -18,7 +18,7 @@
                 <input type="hidden" name="id" value="<?php echo e(auth()->user()->id); ?>">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome Completo <span>*</span></label>
+                        <label for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -27,7 +27,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="name" name="name" 
-                               placeholder= "Informe o nome" value="<?php echo e(Session::get('name')); ?>" required autocomplete="name" autofocus/>
+                               placeholder= "Informe o nome" value="<?php echo e(Session::get('name')); ?>" required/>
                         <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -38,7 +38,7 @@ endif;
 unset($__errorArgs, $__bag); ?>                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="text-4" for="email">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="<?php echo e(Session::get('email')); ?>" 
                                placeholder="fulano@email.com"/>
                         <?php $__errorArgs = ['email'];
@@ -51,14 +51,14 @@ endif;
 unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="phone">Telefone <span>*</span></label>
+                        <label for="phone">Telefone <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" 
                                placeholder= "(00)0000-0000" value="<?php echo e(Session::get('phone')); ?>" required/>   
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="contact-origin">Escolaridade <span>*</span></label>
+                        <label for="schooling">Escolaridade <span class="text-5">*</span></label>
                         <select class="form-control" id="schooling" name="schooling" required>
-                            <option value="">Selecione a escolaridade</option>
+                            <option value="" disabled selected hidden>Selecione a escolaridade</option>
                             <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                             <option value="Ensino médio completo">Ensino médio completo</option>
                             <option value="Ensino superior incompleto">Ensino superior incompleto</option>
@@ -67,9 +67,9 @@ unset($__errorArgs, $__bag); ?>
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="contact-origin">Estado <span>*</span></label>
+                        <label for="state">Estado <span class="text-5">*</span></label>
                         <select class="form-control" id="state" name="state" required>
-                            <option value="" selected>Selecione o Estado</option>
+                            <option value="" disabled selected hidden>Selecione o Estado</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
@@ -100,14 +100,14 @@ unset($__errorArgs, $__bag); ?>
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label class="text-4" for="contact-origin">Cidade <span>*</span></label>
+                        <label for="city">Cidade <span class="text-5">*</span></label>
                         <select class="form-control" id="city" name="city" required></select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="contact-origin">Origem do contato <span>*</span></label>
+                        <label for="contact_origin">Origem do contato <span class="text-5">*</span></label>
                         <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="<?php echo e(Session::get('hiddenContact_origin')); ?>">
                         <select class="form-control" id="contact_origin" name="contact_origin" required>
-                            <option value="" selected>Selecione a origem do contato</option>
+                            <option value="" disabled selected hidden>Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
                             <option value="Empresas Parceiras">Empresas parceiras</option>
                             <option value="ex-aluno">Ex-aluno</option>
@@ -126,12 +126,11 @@ unset($__errorArgs, $__bag); ?>
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" for="observation">Informações adicionais</label>
+                        <label for="additional_information">Informações adicionais</label>
                         <textarea class="form-control" id="additional_information" name="additional_information"><?php echo e(Session::get('additional_information')); ?></textarea>
                     </div>
                 </div>                
-                <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary" data-dismiss=" ">Salvar</button>            
+                <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>

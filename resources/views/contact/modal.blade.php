@@ -1,4 +1,5 @@
 @section('content')
+
 <script src="{{ asset('js/jquery.mask.js') }}"></script> 
 <script src="{{ asset('js/contact.js?(new Date()).getTime() ') }}"></script> 
 <div class="modal fade" id="myModal">

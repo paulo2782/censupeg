@@ -1,4 +1,3 @@
-<form class="form-dialog registerForm" id="contact-modal" action="{{ route('store') }}" method="post">
  <div class="modal fade" id="myModalCourse">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -57,7 +56,6 @@
         </div>
     </div>
 </div>
-</form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('/js/course.js') }}"></script>
 

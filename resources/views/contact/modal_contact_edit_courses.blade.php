@@ -56,7 +56,7 @@
                             <option value="Concluído">Concluído</option>
                         </select>
                     </div>
-                </div>
+                </div>         
                 <input type="button" class="btnUpdateContactCourse btn btn-outline-success" value="Salvar">            
             </form>
         </div>

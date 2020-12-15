@@ -8,30 +8,30 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="contact-modal" action="#" method="post">
+            <form class="form-dialog registerForm" id="mailing-modal" action="#" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
                 @csrf
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="namxe">Nome completo <span class="text-5">*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
-                        placeholder= "Informe o nome" value="#" required/>
+                        <label for="name">Nome completo <span class="text-5">*</span></label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
+                        placeholder= "Informe o nome" value="" required/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="#" />
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="" />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="#" required />    
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="" required />    
                     </div>
                     <div class="form-group col-12">
-                        <label for="contactOriginData">Origem do contato <span class="text-5">*</span></label>
-                        <input type="hidden" id="contactOriginData" value="#">
+                        <label for="contactOrigin" >Origem do contato <span class="text-5">*</span></label>
+                        <input type="hidden" id="contactOriginData" value="">
                         <select class="form-control" id="contactOrigin" name="contact_origin" required>
                             <option value="" disabled selected hidden>Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
@@ -55,32 +55,39 @@
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="name">Curso de interesse <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Informe o curso de interesse" value="#" required/>                         
+                        <label for="course-interesting">Curso de interesse <span class="text-5">*</span></label>
+                        <input type="text" class="form-control" id="course-interesting" name="" 
+                        placeholder= "Informe o curso de interesse" value="" required />                         
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
-                        <label for="email">Data de contato <span class="text-5">*</span></label>
-                        <input type="date" class="form-control" id="email" name="email" placeholder="dd/mm/aaaa" value="#" />
+                        <label for="date-contact">Data de contato <span class="text-5">*</span></label>
+                        <input type="date" class="form-control" id="date-contact" name="date-contact" placeholder="dd/mm/aaaa" value="" required />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label for="phone">Data de retorno</label>
-                        <input type="date" class="form-control" id="phone" name="phone" placeholder="dd/mm/aaaa" value="#" required />    
+                        <label for="date-return">Data de retorno</label>
+                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value="" />    
                     </div>
                     <div class="form-group col-12">
-                        <label for="name">Status <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Selecione status" value="#" required/>                         
+                        <label for="status-contact">Status <span class="text-5">*</span></label>
+                        <select id="status-contact" class="form-control" name="status" required>
+                            <option value="" disabled selected hidden>Selecione status da ligação</option>
+                            <option value="Analisará a proposta">Analisará a proposta</option>
+                            <option value="Conversará com a família">Conversará com a família</option>
+                            <option value="Não tem o curso que deseja">Não tem o curso que deseja</option>
+                            <option value="Não tem interesse">Não tem interesse</option>
+                            <option value="Não entrei em contato">Não entrei em contato</option>
+                            <option value="Outros">Outros</option>
+                        </select>
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="additional_information">Informações adicionais</label>
-                        <textarea class="form-control" id="additional_information" name="additional_information">#
+                        <textarea class="form-control" id="additional_information" name="additional_information">
                         </textarea>
                     </div>
                 </div>                    
@@ -91,4 +98,3 @@
 </div>
  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 

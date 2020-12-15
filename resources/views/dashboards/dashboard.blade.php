@@ -1,6 +1,5 @@
 @extends('layouts.app')
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+<form name="dashboard" id="dashboard" method="GET" action="#">
 <body id="body-container">
   @include('includes/header')
   <div id="container-main">
@@ -9,8 +8,18 @@
             <div class="top-bar-block">
                 <h1>Seja bem-vindo, {{ auth()->user()->name }}!</h1>
             </div>
+
+  
             <div class="show-dashboard-general">
                 <div class="row">
+                    <div class="col-lg-4">
+                      <input type="date" class="form-control" name="dateCurrent" value="{{ $dateCurrent }}">
+                    </div>          
+                    <div class="col-lg-2">
+                      <input type="submit" class="form-control btn btn-danger" value="OK">
+                    </div>          
+
+                    <div class="col-lg-12">&nbsp</div>
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-dashboard card mb-4 box-shadow">
                             <div class="card-body my-3 mx-4">
@@ -49,111 +58,101 @@
                     </div>
                 </div>
             </div>
-            <!-- INFO GRAPHICS -->
-            <!-- INFO MAILING -->
-            <input type="hidden" value="{{ $arrayMonth[0] }}" id="month1">
-            <input type="hidden" value="{{ $arrayMonth[1] }}" id="month2">
-            <input type="hidden" value="{{ $arrayMonth[2] }}" id="month3">
-            <input type="hidden" value="{{ $arrayMonth[3] }}" id="month4">
-            <input type="hidden" value="{{ $arrayMonth[4] }}" id="month5">
-            <input type="hidden" value="{{ $arrayMonth[5] }}" id="month6">
-            <input type="hidden" value="{{ $arrayMonth[6] }}" id="month7">
-            <input type="hidden" value="{{ $arrayMonth[7] }}" id="month8">
-            <input type="hidden" value="{{ $arrayMonth[8] }}" id="month9">
-            <input type="hidden" value="{{ $arrayMonth[9] }}" id="month10">
-            <input type="hidden" value="{{ $arrayMonth[10] }}" id="month11">
-            <input type="hidden" value="{{ $arrayMonth[11] }}" id="month12">
 
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
 
-            <div class="show-details-block">
-                <h2>Mailing</h2>
-                <div id="chartdiv" width="20%"></div>
-            </div>
+            <input type="hidden" id="day" value="{{ $day }}">
+            <input type="hidden" id="d1" value="{{ $hourArray[0] }}">
+            <input type="hidden" id="d2" value="{{ $hourArray[1] }}">
+            <input type="hidden" id="d3" value="{{ $hourArray[2] }}">
+            <input type="hidden" id="d4" value="{{ $hourArray[3] }}">
+            <input type="hidden" id="d5" value="{{ $hourArray[4] }}">
+            <input type="hidden" id="d6" value="{{ $hourArray[5] }}">
+            <input type="hidden" id="d7" value="{{ $hourArray[6] }}">
+            <input type="hidden" id="d8" value="{{ $hourArray[7] }}">
+            <input type="hidden" id="d9" value="{{ $hourArray[8] }}">
+            <input type="hidden" id="d10" value="{{ $hourArray[9] }}">
+            <input type="hidden" id="d11" value="{{ $hourArray[10] }}">
+            <input type="hidden" id="d12" value="{{ $hourArray[11] }}">
+            <input type="hidden" id="d13" value="{{ $hourArray[12] }}">
+            <input type="hidden" id="d14" value="{{ $hourArray[13] }}">
+            <input type="hidden" id="d15" value="{{ $hourArray[14] }}">
+            <input type="hidden" id="d16" value="{{ $hourArray[15] }}">
+            <input type="hidden" id="d17" value="{{ $hourArray[16] }}">
+            <input type="hidden" id="d18" value="{{ $hourArray[17] }}">
+            <input type="hidden" id="d19" value="{{ $hourArray[18] }}">
+            <input type="hidden" id="d20" value="{{ $hourArray[19] }}">
+            <input type="hidden" id="d21" value="{{ $hourArray[20] }}">
+            <input type="hidden" id="d22" value="{{ $hourArray[21] }}">
+            <input type="hidden" id="d23" value="{{ $hourArray[22] }}">
+            <input type="hidden" id="d24" value="{{ $hourArray[23] }}">
+
+            <div id="chart_div"></div>
         </div>
     </div>
 </body>  
 </html>
-<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-
-<!-- Chart code -->
 <script>
-am4core.ready(function() {
 
-// Themes begin
-am4core.useTheme(am4themes_animated);
-// Themes end
+MonthCurrent = moment().format('M')
 
-// Create chart instance
-var chart = am4core.create("chartdiv", am4charts.XYChart);
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
 
-// Add data
-chart.data = [{
-  "month": "Jan",
-  "visits": $('#month1').val()
-}, {
-  "month": "Fev",
-  "visits": $('#month2').val()
-}, {
-  "month": "Mar",
-  "visits": $('#month3').val()
-}, {
-  "month": "Abr",
-  "visits": $('#month4').val()
-}, {
-  "month": "Mai",
-  "visits": $('#month5').val()
-}, {
-  "month": "Jun",
-  "visits": $('#month6').val()
-}, {
-  "month": "Jul",
-  "visits": $('#month7').val()
-}, {
-  "month": "Ago",
-  "visits": $('#month8').val()
-}, {
-  "month": "Set",
-  "visits": $('#month9').val()
-}, {
-  "month": "Out",
-  "visits": $('#month10').val()
-}, {
-  "month": "Nov",
-  "visits": $('#month11').val()
-}, {
-  "month": "Dez",
-  "visits": $('#month12').val()
-}];
+function drawBasic() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Hora do dia');
+      data.addColumn('number', 'Ligações no dia');
+      data.addColumn({type: 'string', role: 'annotation'});
 
-// Create axes
+      data.addRows([
+        [{v: [1, 0, 0], f: '01 am'}, parseInt($('#d1').val()),$('#d1').val()],
+        [{v: [2, 0, 0], f: '02 am'}, parseInt($('#d2').val()),$('#d2').val()],
+        [{v: [3, 0, 0], f: '03 am'}, parseInt($('#d3').val()),$('#d3').val()],
+        [{v: [4, 0, 0], f: '04 am'}, parseInt($('#d4').val()),$('#d4').val()],
+        [{v: [5, 0, 0], f: '05 am'}, parseInt($('#d5').val()),$('#d5').val()],
+        [{v: [6, 0, 0], f: '06 pm'}, parseInt($('#d6').val()),$('#d6').val()],
+        [{v: [7, 0, 0], f: '07 pm'}, parseInt($('#d7').val()),$('#d7').val()],
+        [{v: [8, 0, 0], f: '08 pm'}, parseInt($('#d8').val()),$('#d8').val()],
+        [{v: [9, 0, 0], f: '09 pm'}, parseInt($('#d9').val()),$('#d9').val()],
+        [{v: [10, 0, 0], f: '10 pm'},parseInt($('#d10').val()),$('#d10').val()],
+        [{v: [11, 0, 0], f: '11 pm'},parseInt($('#d11').val()),$('#d11').val()],
 
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-categoryAxis.dataFields.category = "month";
-categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.renderer.minGridDistance = 30;
+        [{v: [12, 0, 0], f: '12 am'},parseInt($('#d12').val()),$('#d12').val()],
+        [{v: [13, 0, 0], f: '13 am'},parseInt($('#d13').val()),$('#d13').val()],
+        [{v: [14, 0, 0], f: '14 am'},parseInt($('#d14').val()),$('#d14').val()],
+        [{v: [15, 0, 0], f: '15 am'},parseInt($('#d15').val()),$('#d15').val()],
+        [{v: [16, 0, 0], f: '16 am'},parseInt($('#d16').val()),$('#d16').val()],
+        [{v: [17, 0, 0], f: '17 pm'},parseInt($('#d17').val()),$('#d17').val()],
+        [{v: [18, 0, 0], f: '18 pm'},parseInt($('#d18').val()),$('#d18').val()],
+        [{v: [19, 0, 0], f: '19 pm'},parseInt($('#d19').val()),$('#d19').val()],
+        [{v: [20, 0, 0], f: '20 pm'},parseInt($('#d20').val()),$('#d20').val()],
+        [{v: [21, 0, 0], f: '21 pm'},parseInt($('#d21').val()),$('#d21').val()],
+        [{v: [22, 0, 0], f: '22 pm'},parseInt($('#d22').val()),$('#d22').val()],
+        [{v: [23, 0, 0], f: '23 pm'},parseInt($('#d23').val()),$('#d23').val()],
+        [{v: [24, 0, 0], f: '24 pm'},parseInt($('#d24').val()),$('#d24').val()],
 
-categoryAxis.renderer.labels.template.adapter.add("dy", function(dy, target) {
-  if (target.dataItem && target.dataItem.index & 2 == 2) {
-    return dy + 25;
-  }
-  return dy;
-});
+      ]);
 
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+      var options = {
+        title: 'Ligações no dia',
+        hAxis: {
+          title: 'Hora do Dia',
+          format: 'H:mm',
+          viewWindow: {
+            min: [0, 30, 0],
+            max: [24, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Escala'
+        }
+      };
 
-// Create series
-var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.valueY = "visits";
-series.dataFields.categoryX = "month";
-series.name = "Visits";
-series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
-series.columns.template.fillOpacity = .8;
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
 
-var columnTemplate = series.columns.template;
-columnTemplate.strokeWidth = 2;
-columnTemplate.strokeOpacity = 1;
-
-}); // end am4core.ready()
+      chart.draw(data, options);
+    }
 </script>

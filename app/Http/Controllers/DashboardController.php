@@ -24,15 +24,31 @@ class DashboardController extends Controller
     	$month     = date('m');
     	$year      = date('Y');
 
-    	$call      = Call::whereYear('date_contact','=',$year)->whereMonth('date_contact','=',$month)->get();
+    	$call      = Call::whereYear('created_at','=',$year)->whereMonth('created_at','=',$month)->get();
     	$iCalls    = count($call); 
 
-    	$arrayMonth = [];
-    	for($i = 1 ; $i <= 12 ; $i++){
-    		$m  = Call::whereYear('date_contact','=',$year)->whereMonth('date_contact','=',$i)->get();
-    		array_push($arrayMonth, count($m));
+
+    	// GRAFICO HORAS
+    	$hourArray = [];
+    	for($i = 1 ; $i <= 24 ; $i++)
+    	{
+    		if($i < 10)
+    		{ 
+    			$hour = '0'.$i; 
+    		}else{
+    			$hour = $i;
+    		}
+
+    		$data = Call::
+    		  whereDate('created_at',$request->dateCurrent)
+    		->whereTime('created_at',' like',$hour.'%')
+    		->get();
+
+    		array_push($hourArray, count($data));
     	}
-    	
-    	return view('dashboards/dashboard',compact('iContacts','iCourses','iPartners','iCalls','arrayMonth'));
+
+    	$day = substr($request->dateCurrent,8,2);
+    	$dateCurrent = $request->dateCurrent;
+    	return view('dashboards/dashboard',compact('iContacts','iCourses','iPartners','iCalls','hourArray','day','dateCurrent'));
     }
 }

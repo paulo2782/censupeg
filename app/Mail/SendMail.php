@@ -47,7 +47,7 @@ class SendMail extends Mailable
             $user->token = $token;
             $user->save();
 
-            $this->subject('E-MAIL AUTOMÁTICO - NÃO RESPONDA');
+            $this->subject('Email automático - não responda');
             $this->to($data[0]->email, $data[0]->name);
 
             return $this->view('auth/send', compact('data','token'));

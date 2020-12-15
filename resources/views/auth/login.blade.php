@@ -8,7 +8,7 @@
         <h1 class="my-2 text-center">Acesse sua conta </h1>
         <form name="frmLogin" id="frmLogin">
             <div class="form-group">
-                <label for="username">Usuário</label>
+                <label for="email">Usuário</label>
                 @if(isset($_COOKIE['user']))                  
                 <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control" value="{{ Cookie::get('user') }}">
                 @else
@@ -18,9 +18,11 @@
             <div class="form-group">
                 <label for="password" >Senha</label>
                 @if(isset($_COOKIE['user']))
-                <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control" value="{{ Cookie::get('password') }}">
+                <input type="password" id="password" class="form-control" name="password" value="{{ Cookie::get('password') }}" placeholder="Informe sua senha" />
+                <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                 @else
-                <input type="password" name="password" id="password" placeholder="Informe sua senha" class="form-control">
+                <input type="password" id="password" class="form-control" name="password" placeholder="Informe sua senha" >
+                <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
                 @endif
             </div>
             <button type="submit" class="btn btn-primary form-control"> 
@@ -39,9 +41,6 @@
             </div>
             <div class="mt-2">
                 <div class="d-flex justify-content-center text-4">
-                    Para se registrar? <a onclick="window.location.href='register'" class="ml-2 login-a">Clique aqui</a>
-                </div>
-                <div class="d-flex justify-content-center text-4">
                     <a href="recovery-password" class="mt-2 login-a">Esqueceu sua senha?</a>
                 </div>
             </div>                        
@@ -53,5 +52,4 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/function.js') }}"></script>
-
-
+<script src="{{ asset('js/login.js') }}"></script>

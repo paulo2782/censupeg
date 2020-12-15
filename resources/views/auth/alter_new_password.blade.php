@@ -11,11 +11,12 @@
             <input type="hidden" name="token" value="{{ $token }}">
             <div class="form-group">
                 <label for="password">Nova senha</label>
-                <input id="password" type="password" class="form-control" name="password" value="" required autocomplete="new-password" placeholder="Informe sua senha"/>
+                <input type="password"  id="password" class="form-control" name="password" value="" required placeholder="Informe sua senha"/>
             </div>
             <div class="form-group">
                 <label for="confirmPassword">Confirme nova senha</label>
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirme sua senha">
+                <input type="password" id="password_confirm" class="form-control" name="password_confirmation" required placeholder="Confirme sua senha">
+                <span toggle="#password-confirm" class="fa fa-fw fa-eye field_icon toggle-password"></span>    
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary form-control">
@@ -31,4 +32,6 @@
         </form>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('js/login.js') }}"></script>
 @endsection

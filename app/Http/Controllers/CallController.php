@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -33,11 +33,17 @@ class CallController extends Controller
     public function searchCallEdit(Request $request)
     {
         $data = Call::where('id',$request->id)->get();
+
+        $course_name = Call::find($request->id);
+        $course_name = $course_name->course;
+
         return response()->json([
+            'course_name'=>$course_name,
             'date_contact'=>$data[0]->date_contact,
             'date_return'=>$data[0]->date_return,
             'schedule'=>$data[0]->schedule,
-            'status'=>$data[0]->status
+            'status'=>$data[0]->status,
+            'additional_information'=>$data[0]->additional_information
         ]);
 
     }
@@ -66,9 +72,10 @@ class CallController extends Controller
             $date_return   = $request->date_return;
             $schedule      = $request->schedule;
             $status        = $request->status;
+            $additional_information = $request->additional_information;
 
             return redirect()->back()->with([
-                'date_contact'=>$date_contact,'date_return'=>$date_return,'schedule'=>$schedule,'status'=>$status])
+                'date_contact'=>$date_contact,'date_return'=>$date_return,'schedule'=>$schedule,'status'=>$status,'additional_information'=>$additional_information])
             ->withErrors($validator);
         }
 
@@ -84,4 +91,9 @@ class CallController extends Controller
 
     }
 
+    public function destroyCallAjax(Request $request){
+        $call = Call::find($request->call_id);
+        $call->delete();
+        return redirect()->back()->with('alert','Registro Apagado!');
+    }
 }

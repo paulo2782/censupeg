@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Contato - Cursos<span class="text-5">* Campo Obrigatório</span></h3>
+                <h3 class="modal-title">Novo curso do contato<span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,17 +17,17 @@
                     <div class="form-group col-12">
                         <div class="radio-course" id="level">
                             <label>
-                                <input type="radio" name="level_course" id="level_course" value="Graduação">
+                                <input type="radio" name="level_course" id="level_course" value="Graduação" required>
                                 Graduação
                             </label>
                             <label>
-                                <input type="radio" name="level_course" id="level_course" value="Pós-graduação">
+                                <input type="radio" name="level_course" id="level_course" value="Pós-graduação" required>
                                 Pós-graduação
                             </label>
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Curso <span>*</span></label>
+                        <label for="selectCourse">Curso <span class="text-5">*</span></label>
                         <select class="c-select form-control" id="selectCourse" required>
                         
                        
@@ -35,15 +35,15 @@
                         <input type="hidden" name="course_id" id="course_id">
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4">Modalidade</label>
-                        <input type="text" id="modality" class="form-control" readonly="">
+                        <label for="modality">Modalidade <span class="text-5">*</span></label>
+                        <input type="text" id="modality" class="form-control" readonly="" required>
  
                     </div>
                     
                     <div class="form-group col-12">
-                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
+                        <label for="statusSchedule">Status <span class="text-5">*</span></label>
                         <select class="c-select form-control" id="statusSchedule" name="status" required>
-                            <option value="" selected>Selecione o status do curso</option>
+                            <option value="" disabled selected hidden>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>
@@ -51,8 +51,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="line-horizontal"></div>
-                <button type="submit" id="add" class="btn btn-primary">Salvar</button>            
+                <button type="submit" id="add" class="btn btn-outline-success">Salvar</button>            
             </form>
         </div>
     </div>

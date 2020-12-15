@@ -1,0 +1,39 @@
+.modal-dialog {
+    max-width: 500px;
+    overflow-y: initial !important;
+    border-radius: 5px;
+}
+
+.modal-content {
+    overflow-y: auto;
+    .form-dialog {
+        max-width: 460px;
+        margin: 10px auto;
+    }    
+    .form-group {
+        .field_icon{
+            float: right;
+            margin-top: -25px;
+            margin-right: 5px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+    p.text-confirm {
+        font-size: 16px;
+        text-align: center;
+        line-height: 20px;
+        > span.name {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }     
+    .btn {
+        font-size: 14px !important;
+    }    
+}
+
+.modal-title {
+    color: $color-text-title;
+    font-weight: bold;
+}

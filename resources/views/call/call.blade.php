@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('contact/modal')
 <body id="body-container">
-  @include('includes/header')
+@include('includes/header')
 <div id="container-main">
     <div class="container">
         <div class="content">
@@ -31,16 +31,20 @@
                     <tr>
                         <td><a href="{{ route('viewData',$data->contact_id) }}">{{ $data->Contact->name }}</a></td>
                         <td>{{ $data->Contact->phone }}</td>
-                        <td>{{ date('d/m/Y',strtotime($data->date_contact)) }}</td>
-                        <td>{{ date('d/m/Y',strtotime($data->date_return)) }}</td>
-                        <td>{{ date('H:m', strtotime($data->schedule)) }}</td>
+                        <td>@if($data->date_contact != null) 
+                            {{ date('d/m/Y',strtotime($data->date_contact)) }}
+                            @endif
+                        </td>
+                        <td>@if($data->date_return != null) 
+                            {{ date('d/m/Y',strtotime($data->date_return)) }}
+                            @endif
+                        </td>
+                        <td>@if($data->schedule != null) 
+                            {{ date('H:m', strtotime($data->schedule)) }}
+                            @endif
+                        </td>
                         <td id='toview'>
-                            <div class='dropdown'>
-                                <img src='img/tres-pontinhos.png' alt='três pontinhos' type='button' id='dropdownImage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'/>
-                                <div class='dropdown-menu' aria-labelledby='dropdownImage'>
-                                    <a href="{{ route('viewData',$data->contact_id) }}" class='dropdown-item btnToView'>Visualizar</a>
-                                </div>
-                            </div>
+                            <a href="{{ route('viewData',$data->contact_id) }}" class="fa fa-eye btnToView" aria-hidden="true" title="Visualizar contato"></a>
                         </td>
                         @endforeach
                     </tr>                    

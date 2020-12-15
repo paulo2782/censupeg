@@ -1,9 +1,8 @@
 @extends('layouts.app')
-@include('course/viewDataModal')
-@include('course/editDataModal')
+@include('course/add_modal_course')
+@include('course/edit_modal_course')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body id="body-container">
 @include('includes/header')
 <div id="container-main">
@@ -18,10 +17,12 @@
                 <h2>Graduação</h2>
                 <ul class="list-group list-group-flush">
                     @foreach($data_level_graduacao as $data_level1)
-                    <li class="list-group-item"><a href="{{ route('view_details_course',$data_level1->id) }}">{{ $data_level1->course }}</a>
+                    <li class="list-group-item"><a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)">{{ $data_level1->course }}</a>
                         <div class="pull-right">
-                            <a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="{{ $data_level1->course }}"></a>
-                            <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level1->course }}"></a>
+                            <a href="#" onclick="callEditModal(id=`{{ $data_level1->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="Editar curso"></a>
+                        @if(auth()->user()->level == 1)
+                            <a href="{{ route('destroyCourse',$data_level1->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir curso"></a>
+                        @endif
                         </div>
                         @endforeach
                     </li>
@@ -31,10 +32,12 @@
                 <h2>Pós-graduação</h2>
                 <ul class="list-group list-group-flush">
                     @foreach($data_level_pos as $data_level2)
-                    <li class="list-group-item"><a href="{{ route('view_details_course',$data_level2->id) }}">{{ $data_level2->course }}</a>
+                    <li class="list-group-item"><a href="#" onclick="callEditModal(id=`{{ $data_level2->id }}`)">{{ $data_level2->course }}</a>
                         <div class="pull-right">
-                            <a href="#" onclick="callEditModal(id=`{{ $data_level2->id }}`)" class="fa fa-pencil " aria-hidden="true" title="{{ $data_level1->course }}"></a>
-                            <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="{{ $data_level2->course }}"></a>
+                            <a href="#" onclick="callEditModal(id=`{{ $data_level2->id }}`)" class="fa fa-pencil" aria-hidden="true" title="Editar curso"></a>
+                        @if(auth()->user()->level == 1)
+                            <a href="{{ route('destroyCourse',$data_level2->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir curso"></a>
+                        @endif
                         </div>
                     @endforeach
                 </ul>

@@ -1,0 +1,33 @@
+#header {
+    background: $primary-color;
+    .container {
+        min-width: 100%;
+        min-height: 70px;
+        .navbar {
+            min-height: 70px;
+        }
+        .navbar-toggler {
+            background-color: $white;
+        }
+        .nav-link {
+            color: $secondary-color;
+            font-size: 14px;
+            &:hover {
+                color: $white;
+            }
+        }
+        a.dropdown-item{
+            font-size: 14px;
+            color: $color-text-title;
+            &:hover{
+                color: $primary-color;
+                background: #fffafa;
+            }
+        }
+        .username {
+            font-weight: bold;
+            color: $white;
+            text-transform: uppercase;
+        }
+    }
+}

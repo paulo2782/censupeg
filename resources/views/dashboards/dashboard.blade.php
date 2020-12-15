@@ -49,15 +49,9 @@
                     </div>
                     <div class="show-details-general">
                         <div class="row">
-                            @if(isset($_GET['dateCurrent'])) 
                             <div class="col-4">
                                 <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
                             </div>          
-                            @else
-                            <div class="col-4">
-                                <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ date('Y-m-d') }}">
-                            </div>          
-                            @endisset                    
                             <div class="col-2">
                                 <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
                             </div>

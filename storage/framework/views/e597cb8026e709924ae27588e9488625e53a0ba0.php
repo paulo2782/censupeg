@@ -49,15 +49,9 @@
                     </div>
                     <div class="show-details-general">
                         <div class="row">
-                            <?php if(isset($_GET['dateCurrent'])): ?> 
                             <div class="col-4">
                                 <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="<?php echo e($dateCurrent); ?>">
                             </div>          
-                            <?php else: ?>
-                            <div class="col-4">
-                                <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="<?php echo e(date('Y-m-d')); ?>">
-                            </div>          
-                            <?php endif; ?>                    
                             <div class="col-2">
                                 <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
                             </div>

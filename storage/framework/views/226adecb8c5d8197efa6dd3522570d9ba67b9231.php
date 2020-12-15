@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar curso do contato<span class="text-5-title">* Campo obrigatório</span></h3>
+                <h3 class="modal-title">Contato - Editar Cursos<span class="text-5">* Campo Obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -10,14 +10,14 @@
             <div id="callback"></div>
 
             <form class="form-dialog registerForm" id="updateForm">
-            <meta name="csrf-token" content="{{ csrf_token() }}">
-                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+            <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+                <input type="hidden" name="_token" id="token" value="<?php echo e(csrf_token()); ?>">
 
                 <!-- <input type="hidden" name="_method" value="PUT"> -->
                 <!-- srf -->
-               <input type="hidden" name="_token"       id="token" value="{{ csrf_token() }}">
-                <input type="hidden" name="id"             value="{{ $dados[0]->id }}">
-                <input type="hidden" name="contact_id" id="contact_id"     value="{{ $dados[0]->id }}">
+               <input type="hidden" name="_token"       id="token" value="<?php echo e(csrf_token()); ?>">
+                <input type="hidden" name="id"             value="<?php echo e($dados[0]->id); ?>">
+                <input type="hidden" name="contact_id" id="contact_id"     value="<?php echo e($dados[0]->id); ?>">
                 <input type="hidden" name="interest_id_edit" id="interest_id_edit">
                 <input type="hidden" name="course_id" id="course_id_edit">
                 <input type="hidden" id="statusEdit">
@@ -36,34 +36,35 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label for="selectCourses">Curso <span class="text-5">*</span></label>
+                        <label class="text-4">Curso <span>*</span></label>
                         <select class="c-select form-control" id="selectCourses" name="id_selectCourse" required>
                          </select>
                     </div>
                     <div class="form-group col-12">
-                        <label for="modalityEdit">Modalidade <span class="text-5">*</span></label>
+                        <label class="text-4">Modalidade</label>
                         <input type="text" id="modalityEdit" class="form-control" readonly="">
  
                     </div>
                     
                     <div class="form-group col-12">
-                        <label for="statusSchedule">Status <span class="text-5">*</span></label>
+                        <label class="text-4" for="statusSchedule">Status <span>*</span></label>
                         <select class="c-select form-control" id="statusSchedule" name="status" required>
-                            <option value="" disabled selected hidden>Selecione o status do curso</option>
+                            <option value="" selected>Selecione o status do curso</option>
                             <option value="Em interesse">Em interesse</option>
                             <option value="Cursando">Cursando</option>
                             <option value="Interrompido">Interrompido</option>
                             <option value="Concluído">Concluído</option>
                         </select>
                     </div>
-                </div>         
-                <input type="button" class="btnUpdateContactCourse btn btn-outline-success" value="Salvar">            
+                </div>
+                <div class="line-horizontal"></div>
+                <input type="button"  class="btnUpdateContactCourse btn btn-primary" value="Salvar">            
             </form>
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/course.js') }}"></script>
+<script src="<?php echo e(asset('/js/course.js')); ?>"></script>
 
 <script>
 
@@ -72,7 +73,7 @@ $('input[type=radio][name=level_courses]').on('change', function() {
   console.log(course_id_edit)
 
   $.ajax({
-    url: "{{ route('listCourse') }}",
+    url: "<?php echo e(route('listCourse')); ?>",
     method: 'GET',
     data:{level_course:level_course},
     dataType: 'json',
@@ -98,7 +99,7 @@ $('#selectCourses').change(function(event) {
 
   id_course_type = this.value
   $.ajax({
-    url: "{{ route('listCourse') }}",
+    url: "<?php echo e(route('listCourse')); ?>",
     method: 'GET',
     data:{id_course_type:id_course_type},
     dataType: 'json',
@@ -119,7 +120,7 @@ $('.btnUpdateContactCourse').click(function(event) {
     var form = $('#updateForm') 
 
     $.ajax({
-        url: "{{ route('updateInterestCourse') }}",
+        url: "<?php echo e(route('updateInterestCourse')); ?>",
         type: 'POST',
         data:form.serialize(),
         success:function(data){
@@ -131,4 +132,4 @@ $('.btnUpdateContactCourse').click(function(event) {
     });
     
 });
-</script>
+</script><?php /**PATH C:\censupeg\resources\views/contact/modal_contact_edit_courses.blade.php ENDPATH**/ ?>

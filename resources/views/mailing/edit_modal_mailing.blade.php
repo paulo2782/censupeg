@@ -63,11 +63,11 @@
                 <div class="dropdown-divider"></div>
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
-                        <label for="email">Data de contato</label>
+                        <label for="email">Data de contato <span class="text-5">*</span></label>
                         <input type="date" class="form-control" id="email" name="email" placeholder="dd/mm/aaaa" value="#" />
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label for="phone">Data de retorno <span class="text-5">*</span></label>
+                        <label for="phone">Data de retorno</label>
                         <input type="date" class="form-control" id="phone" name="phone" placeholder="dd/mm/aaaa" value="#" required />    
                     </div>
                     <div class="form-group col-12">

@@ -64,11 +64,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="email">Data de contato <span class="text-5">*</span></label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="dd/mm/aaaa" value="#" required />
+                        <input type="date" class="form-control" id="email" name="email" placeholder="dd/mm/aaaa" value="#" required />
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="phone">Data de retorno</label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="dd/mm/aaaa" value="#" />    
+                        <input type="date" class="form-control" id="phone" name="phone" placeholder="dd/mm/aaaa" value="#" />    
                     </div>
                     <div class="form-group col-12">
                         <label for="name">Status <span class="text-5">*</span></label>

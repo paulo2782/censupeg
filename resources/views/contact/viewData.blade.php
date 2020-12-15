@@ -24,7 +24,7 @@
 						<a class="nav-link" id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses" aria-selected="false">Cursos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contato" role="tab" aria-controls="contact" aria-selected="false">Ligações</a>
+						<a class="nav-link" id="schedules-tab" data-toggle="tab" href="#schedules" role="tab" aria-controls="schedules" aria-selected="false">Ligações</a>
 					</li>
 				</ul>
 				<div class="tab-content" id="myTabContent">
@@ -107,7 +107,7 @@
 							</table>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="tab-pane fade" id="schedules" role="tabpanel" aria-labelledby="schedules-tab">
 						<h2>Ligações
 							<i class="fa fa-plus-circle" aria-hidden="true" id="btnAddSchedule"></i>
 						</h2>

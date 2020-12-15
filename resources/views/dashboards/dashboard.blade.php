@@ -13,7 +13,7 @@
             <div class="show-dashboard-general">
                 <div class="row">
                     <div class="col-lg-4">
-                      <input type="date" class="form-control" name="dateCurrent" value="{{ $dateCurrent }}">
+                      <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
                     </div>          
                     <div class="col-lg-2">
                       <input type="submit" class="form-control btn btn-danger" value="OK">
@@ -135,7 +135,7 @@ function drawBasic() {
       ]);
 
       var options = {
-        title: 'Ligações no dia',
+        title: 'Ligações no dia - '+moment().format('D-M-Y',$('#dateCurrent').val()),
         hAxis: {
           title: 'Hora do Dia',
           format: 'H:mm',

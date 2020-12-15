@@ -109,6 +109,11 @@ google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawBasic);
 
 function drawBasic() {
+      var url = window.location.href
+      var dateCurrent = url.split("=")[1]
+      var i = dateCurrent.length
+      dateCurrent = dateCurrent.substr(dateCurrent,0,i-1)        
+
       var data = new google.visualization.DataTable();
       data.addColumn('timeofday', 'Hora do dia');
       data.addColumn('number', 'Ligações');
@@ -144,7 +149,7 @@ function drawBasic() {
       ]);
 
       var options = {
-        title: 'Ligações no dia - '+moment().format('D-M-Y',$('#dateCurrent').val()),
+        title: 'Ligações no dia - '+moment().format('D-M-Y',dateCurrent),
         hAxis: {
           title: 'Hora do Dia',
           format: 'H:mm',

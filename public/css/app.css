@@ -115,6 +115,14 @@ label { color: #333; font-size: 14px !important; }
 
 #navigate-months a { text-decoration: none; color: gray; font-size: 18px; }
 
+.show-dashboard-general .info-dashboard { background: white; border: 1px solid black; }
+
+.show-dashboard-general .info-dashboard > a.fa { text-decoration: none !important; }
+
+.show-dashboard-general .info-dashboard > a.fa:hover { text-decoration: none !important; }
+
+.show-dashboard-general .btn { font-size: 14px !important; }
+
 #login { width: 100%; }
 
 #login .container { max-width: 500px; height: 320px; }
@@ -152,16 +160,6 @@ label { color: #333; font-size: 14px !important; }
 .footer { position: fixed; bottom: 0; width: 100%; height: 50px; background-color: #111; color: #fff; padding: 20px 0; }
 
 .footer .copyright { font-size: 0.875em; color: #fff; line-height: 10px; text-align: center; }
-
-.top-bar-dashboard { width: 100%; height: 70px; background: aqua; margin-bottom: 20px; }
-
-.top-bar-dashboard h1 { display: inline-block; margin: 13px 20px; padding: 10px 0px; }
-
-.show-dashboard-general .info-dashboard { background: white; border: 1px solid black; }
-
-.show-dashboard-general .info-dashboard > a.fa { text-decoration: none !important; }
-
-.show-dashboard-general .info-dashboard > a.fa:hover { text-decoration: none !important; }
 
 .modal-dialog { max-width: 500px; overflow-y: initial !important; border-radius: 5px; }
 

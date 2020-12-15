@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @include('includes/header')
-@include('course/editDataModal')
+@include('course/edit_modal_course')
 
 <body id="body-container">
 <div id="container-main">
@@ -13,7 +13,7 @@
 				<h2>Dados básicos
                     <a href="#" onclick="callEditModal(id=`{{ $dados[0]->id }}`)"  class="fa fa-pencil btnEdit" aria-hidden="true" title="{{ $dados[0]->course }}"></a>
 				</h2>
-				<form class="contact-info" method="post">
+				<form id="contact-info" method="post">
 					<div class="form-row">
 						<div class="form-group col-12">
 							<label class="text-4" for="nameCourse">Curso</label>
@@ -41,7 +41,7 @@
 							<input type="url" class="form-control" readonly="readonly" id="link" name="link" value="{{ $dados[0]->link }}"/>    
 						</div>
 						<div class="form-group col-12">
-							<label class="text-4" for="observation">Informações adicionais</label>
+							<label class="text-4" for="additional_information">Informações adicionais</label>
 							<textarea class="form-control" readonly="readonly" id="additional_information" name="additional_information"> {{ $dados[0]->additional_information }}</textarea>
 						</div>
 					</div>

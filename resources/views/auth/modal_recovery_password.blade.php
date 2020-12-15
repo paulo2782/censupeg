@@ -16,7 +16,7 @@
                 <div class="">
                     <p>Senha enviada com sucesso</p>
                     <p> 
-                        Por favor, verifique seu email. Caso não encontre nosso e-mail em sua caixa de entrada, dê uma olhada na caixa de spam ou lixeira 
+                        Por favor, verifique seu email. Caso não encontre nosso email em sua caixa de entrada, dê uma olhada na caixa de spam ou lixeira 
                     </p>
                 <div> 
         </div>

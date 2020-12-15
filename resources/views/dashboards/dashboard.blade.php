@@ -10,17 +10,7 @@
                 </div>
                 <div class="show-dashboard-general">
                     <div class="row">
-                        @if(isset($_GET['dateCurrent'])) 
-                        <div class="col-4">
-                            <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
-                        </div>          
-                        @else
-                        <div class="col-4">
-                            <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ date('Y-m-d') }}">
-                        </div>          
-                        @endisset                    
-                        <div class="col-12">&nbsp</div>
-                        <div class="col-md-3 col-sm-6 col-12">
+                    <div class="col-md-3 col-sm-6 col-12">
                             <div class="info-dashboard card mb-4 box-shadow">
                                 <div class="card-body my-3 mx-4">
                                     <h3 class="font-weight-normal">Contatos</h3>
@@ -55,6 +45,23 @@
                                     <a href="{{ route('mailingShow') }}" class="fa fa-arrow-right"> Mailing</a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="show-details-general">
+                        <div class="row">
+                            @if(isset($_GET['dateCurrent'])) 
+                            <div class="col-4">
+                                <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
+                            </div>          
+                            @else
+                            <div class="col-4">
+                                <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ date('Y-m-d') }}">
+                            </div>          
+                            @endisset                    
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+                            </div>
+                            <div class="col-12">&nbsp</div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +109,11 @@ google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawBasic);
 
 function drawBasic() {
+      var url = window.location.href
+      var dateCurrent = url.split("=")[1]
+      var i = dateCurrent.length
+      dateCurrent = dateCurrent.substr(dateCurrent,0,i-1)        
+
       var data = new google.visualization.DataTable();
       data.addColumn('timeofday', 'Hora do dia');
       data.addColumn('number', 'Ligações');
@@ -137,7 +149,7 @@ function drawBasic() {
       ]);
 
       var options = {
-        title: 'Ligações no dia - '+moment().format('D-M-Y',$('#dateCurrent').val()),
+        title: 'Ligações no dia - '+moment().format('D-M-Y',dateCurrent),
         hAxis: {
           title: 'Hora do Dia',
           format: 'H:mm',

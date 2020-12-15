@@ -1,3 +1,4 @@
+blablabla
 @extends('layouts.app')
 <form name="dashboard" id="dashboard" method="GET" action="#">
 <body id="body-container">

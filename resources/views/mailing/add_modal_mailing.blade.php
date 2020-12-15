@@ -15,7 +15,7 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label class="text-4" for="name">Nome completo <span class="text-5">*</span></label>
+                        <label class="text-4" for="namxe">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="namxe" name="name" 
                         placeholder= "Informe o nome" value="#" required/>
                         @error('name') {{$message}} @enderror                                     

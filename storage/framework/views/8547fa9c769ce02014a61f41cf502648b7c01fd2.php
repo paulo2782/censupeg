@@ -15,7 +15,7 @@
                 <input type="hidden" name="id" value="<?php echo e(auth()->user()->id); ?>">
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="name">Nome completo <span class="text-5">*</span></label>
+                        <label for="namxe">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

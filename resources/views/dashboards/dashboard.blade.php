@@ -104,7 +104,7 @@
 <script>
 
 MonthCurrent = moment().format('M')
-
+ 
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawBasic);
 

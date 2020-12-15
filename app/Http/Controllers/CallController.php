@@ -40,6 +40,7 @@ class CallController extends Controller
         return response()->json([
             'course_name'=>$course_name,
             'date_contact'=>$data[0]->date_contact,
+            'time'=>$data[0]->time,
             'date_return'=>$data[0]->date_return,
             'schedule'=>$data[0]->schedule,
             'status'=>$data[0]->status,
@@ -54,6 +55,7 @@ class CallController extends Controller
 
         Call::where('id',$call_id_edit)->update(array(
           'date_contact'=>$request->date_contact,
+          'time'=>$request->time,
           'date_return'=>$request->date_return,
           'schedule'=>$request->schedule,
           'status'=>$request->status

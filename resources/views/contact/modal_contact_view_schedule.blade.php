@@ -18,10 +18,15 @@
                         <label for="course_view">Curso <span class="text-5">*</span></label>
                         <input type="text" id="course_view" class="form-control" name="course" readonly />
                     </div>
-                    <div class="form-group col-12">
+                    <div class="form-group col-6">
                         <label for="date_contact_view">Data do contato <span class="text-5">*</span></label>
                         <input type="date" id="date_contact_view" class="form-control" name="date_contact" readonly />
                     </div>
+                    <div class="form-group col-6">
+                        <label for="time">Horário <span class="text-5">*</span></label>
+                        <input type="time" class="form-control" id= "time_view" name="time" readonly/>
+                    </div>
+
                     <div class="form-group col-md-6 col-12">
                         <label for="date_return_view">Data de retorno</label>
                         <input type="date" id="date_return_view" class="form-control" name="date_return" readonly />    

@@ -22,9 +22,13 @@
                            
                         </select>
                     </div>
-                    <div class="form-group col-12">
+                    <div class="form-group col-6">
                         <label for="date_contact">Data de contato <span class="text-5">*</span></label>
                         <input type="date" class="form-control" id= "date_contact" name="date_contact" required/>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="time">Horário <span class="text-5">*</span></label>
+                        <input type="time" class="form-control" id= "time" name="time"/>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="date_return">Data de retorno</label>

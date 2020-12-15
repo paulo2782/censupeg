@@ -14,10 +14,16 @@
                 <input type="hidden" name="contact_id" value="{{ $dados[0]->id }}">
                 <input type="hidden" name="call_id_edit" id="call_id_edit">
                 <div class="form-row">
-                    <div class="form-group col-12">
+                    
+                    <div class="form-group col-6">
                         <label class="text-4" for="date_contact_edit">Data de contato <span>*</span></label>
                         <input type="date" id="date_contact_edit" class="form-control" readonly="readonly" name="date_contact" required/>
                     </div>
+                    <div class="form-group col-6">
+                        <label for="time">Horário <span class="text-5">*</span></label>
+                        <input type="time" class="form-control" id= "time" name="time" required/>
+                    </div>
+
                     <div class="form-group col-md-6 col-12">
                         <label class="text-4" for="date_return_edit">Data de retorno</label>
                         <input type="date" id="date_return_edit" class="form-control" readonly="readonly" name="date_return"/>    

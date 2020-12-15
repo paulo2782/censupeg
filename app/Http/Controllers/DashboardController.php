@@ -24,7 +24,7 @@ class DashboardController extends Controller
     	$month     = date('m');
     	$year      = date('Y');
 
-    	$call      = Call::whereYear('created_at','=',$year)->whereMonth('created_at','=',$month)->get();
+    	$call      = Call::whereYear('date_contact','=',$year)->whereMonth('date_contact','=',$month)->get();
     	$iCalls    = count($call); 
 
 
@@ -40,8 +40,8 @@ class DashboardController extends Controller
     		}
 
     		$data = Call::
-    		  whereDate('created_at',$request->dateCurrent)
-    		->whereTime('created_at',' like',$hour.'%')
+    		  whereDate('date_contact',$request->dateCurrent)
+    		->whereTime('time',' like',$hour.'%')
     		->get();
 
     		array_push($hourArray, count($data));

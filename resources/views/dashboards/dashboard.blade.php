@@ -162,7 +162,7 @@ function drawBasic() {
           title: 'Escala'
         }
       };
-
+ 
       var chart = new google.visualization.ColumnChart(
         document.getElementById('chart_div'));
 

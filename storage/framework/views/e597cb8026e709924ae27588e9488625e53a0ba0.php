@@ -145,7 +145,7 @@ $('#search').trigger('click')
       ]);
 
       var options = {
-        title: 'Ligações no dia - '+moment().format('D-M-Y',iDateCurrent),
+        title: 'Ligações no dia - '+moment(iDateCurrent).format('DD-MM-Y'),
         hAxis: {
           title: 'Hora do Dia',
           format: 'H:mm',

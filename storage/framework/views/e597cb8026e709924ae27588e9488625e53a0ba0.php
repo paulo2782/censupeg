@@ -149,7 +149,7 @@ function drawBasic() {
       ]);
 
       var options = {
-        title: 'Ligações no dia - '+iDateCurrent,
+        title: 'Ligações no dia - '+moment().format('D-M-Y',iDateCurrent),
         hAxis: {
           title: 'Hora do Dia',
           format: 'H:mm',

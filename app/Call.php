@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Call extends Model
 {
     protected $fillable = [
- 		'contact_id','date_contact','date_return','schedule','status','additional_information','user_id','course_id'
+ 		'contact_id','date_contact','date_return','schedule','status','additional_information','user_id','course_id','time'
     ];
 
     public function user(){

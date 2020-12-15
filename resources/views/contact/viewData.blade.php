@@ -202,6 +202,7 @@ $('.btnViewCall').click(function(event) {
  	    	$('#course_view').val('')
  	    	$('#course_view').val(data.course_name.course)
 	    	$('#date_contact_view').val(data.date_contact)
+	    	$('#time_view').val(data.time)
 	    	$('#date_return_view').val(data.date_return)
 	    	$('#schedule_view').val(data.schedule)
       		$('#statusScheduleView option[value="'+data.status+'"]').prop('selected',true)

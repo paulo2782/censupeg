@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\Course;
-use App\Partner;
+use App\Partners;
 use App\Call;
 
 class DashboardController extends Controller
@@ -18,7 +18,7 @@ class DashboardController extends Controller
     	$course    = Course::get();
     	$iCourses  = count($course); 
 
-    	$partner   = Course::get();
+    	$partner   = Partners::get();
     	$iPartners = count($partner); 
 
     	$month     = date('m');

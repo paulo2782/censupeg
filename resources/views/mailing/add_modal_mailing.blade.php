@@ -1,4 +1,7 @@
-<div class="modal fade" id="myModalAdd">
+@section('content')
+<script src="{{ asset('js/jquery.mask.js') }}"></script> 
+<script src="{{ asset('js/contact.js?(new Date()).getTime() ') }}"></script> 
+<div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,10 +11,9 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="contact-modal" action="#" method="post">
+            <form class="form-dialog registerForm" id="contact-modal" action="{{ route('store') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
-                @csrf
+                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <div class="form-group col-12">
@@ -21,18 +23,68 @@
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-md-7 col-12">
-                        <label class="text-4" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="#" />
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{Session::get('email')}}" 
+                               placeholder="fulano@email.com"/>
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
-                        <label class="text-4" for="phone">Telefone <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="#" required />    
+                        <label for="phone">Telefone <span class="text-5">*</span></label>
+                        <input type="text" class="form-control" id="phone" name="phone" 
+                               placeholder= "(00)0000-0000" value="{{Session::get('phone')}}" required/>   
                     </div>
                     <div class="form-group col-12">
-                        <label class="text-4" >Origem do contato <span class="text-5">*</span></label>
-                        <input type="hidden" id="contactOriginData" value="#">
-                        <select class="form-control" id="contactOrigin" name="contact_origin" required>
+                        <label for="schooling">Escolaridade <span class="text-5">*</span></label>
+                        <select class="form-control" id="schooling" name="schooling" required>
+                            <option value="" disabled selected hidden>Selecione a escolaridade</option>
+                            <option value="Ensino médio incompleto">Ensino médio incompleto</option>
+                            <option value="Ensino médio completo">Ensino médio completo</option>
+                            <option value="Ensino superior incompleto">Ensino superior incompleto</option>
+                            <option value="Ensino superior completo">Ensino superior completo</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label for="state">Estado <span class="text-5">*</span></label>
+                        <select class="form-control" id="state" name="state" required>
+                            <option value="" disabled selected hidden>Selecione o Estado</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                            <option value="DF">DF</option>                            
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6 col-12">
+                        <label for="city">Cidade <span class="text-5">*</span></label>
+                        <select class="form-control" id="city" name="city" required></select>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="contact_origin">Origem do contato <span class="text-5">*</span></label>
+                        <input type="hidden" name="hiddenContact_origin" id="hiddenContact_origin" value="{{Session::get('hiddenContact_origin')}}">
+                        <select class="form-control" id="contact_origin" name="contact_origin" required>
                             <option value="" disabled selected hidden>Selecione a origem do contato</option>
                             <option value="E-book">E-book</option>
                             <option value="Empresas Parceiras">Empresas parceiras</option>
@@ -51,43 +103,15 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="name">Curso de interesse <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Informe o curso de interesse" value="#" required />                         
-                    </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="form-row">
-                    <div class="form-group col-md-6 col-12">
-                        <label for="email">Data de contato</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="dd/mm/aaaa" value="#" />
-                    </div>
-                    <div class="form-group col-md-6 col-12">
-                        <label for="phone">Data retorno <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="dd/mm/aaaa" value="#" required />    
-                    </div>
-                    <div class="form-group col-12">
-                        <label for="name">Status <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="#" name="#" 
-                        placeholder= "Selecione status" value="#" required/>                         
-                    </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="form-row">
                     <div class="form-group col-12">
                         <label for="additional_information">Informações adicionais</label>
-                        <textarea class="form-control" id="additional_information" name="additional_information">#
-                        </textarea>
+                        <textarea class="form-control" id="additional_information" name="additional_information">{{Session::get('additional_information')}}</textarea>
                     </div>
-                </div>                    
+                </div>                
                 <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
             </form>
         </div>
     </div>
 </div>
- 
+@endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

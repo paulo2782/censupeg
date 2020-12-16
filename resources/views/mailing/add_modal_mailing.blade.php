@@ -109,7 +109,7 @@
 
     $('#btnNewContact').click(function(event) {
         /* Act on the event */
-        alert('ABRIR MODAL NOVO CONTACT')
+        alert('Abrir modal de novo contato')
     });
   </script>
 </head>

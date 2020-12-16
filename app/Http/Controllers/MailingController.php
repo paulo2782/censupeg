@@ -10,13 +10,15 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ExportCalls;
 
 use App\Call;
+use App\Course;
 
 class MailingController extends Controller
 {
 
     public function mailingShow(Request $request)
     {
-        return view('mailing/mailing');
+        $courses = Course::all();
+        return view('mailing/mailing',compact('courses'));
     }
 
     public function csvMailing(Request $request){

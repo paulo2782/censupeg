@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog">
+<div class="modal fade" id="myModalAdd" tabindex="0" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -15,26 +15,36 @@
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <!--CONTATO-->
-                    <div class="form-group col-12">
+                    <div class="form-group col-10">
                         <label for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
                         placeholder= "Informe o nome" value="" required/>
                         @error('name') {{$message}} @enderror                                     
                     </div>
+                    <div class="form-group col-2">
+                        <label>&nbsp</label>
+                        <input type="button" value="NOVO" class="btn btn-success form-control" id="btnNewContact">
+                    </div>
+
                     <div class="form-group col-md-7 col-12">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="" />
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="" / readonly>
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="" required />    
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="" readonly />    
                     </div>
                     <!--CURSO -->
                     <div class="form-group col-12">
                         <label for="course-interesting">Curso de interesse <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="course-interesting" name="" 
-                        placeholder= "Informe o curso de interesse" value="" required />                         
+                        <!-- <input type="text" class="form-control" id="course-interesting" name=""  -->
+                        <!-- placeholder= "Informe o curso de interesse" value="" required />                          -->
+                        <select class="c-select form-control" id="course" name="course_id">                            
+                        @foreach($courses as $course)
+                            <option value="">{{ $course->course }}</option>
+                        @endforeach
+                        </select>
                     </div>
                     <!--LIGAÇÃO-->
                     <div class="form-group col-md-6 col-12">
@@ -69,11 +79,45 @@
                         <label for="additional-information">Informações adicionais</label>
                         <textarea class="form-control" id="additional-information" name="additional-information">
                         </textarea>
+  
                     </div>
-                </div>                    
-                <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>            
+                </div>       
+
+                <button type="submit" id="add" class="btn btn-outline-success" data-dismiss=" ">Salvar</button>
             </form>
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    var availableTags = [
+      "Paulo Soares",
+      "João Manoel",
+      "Janaina Gonçalves",
+      "Manoel de Castro",
+      "Paulo Oliveira",
+      "Jose da Silva",
+      "José Santos"
+    ];
+    $( "#name" ).autocomplete({
+      source: availableTags
+    });
+
+    $('#btnNewContact').click(function(event) {
+        /* Act on the event */
+        alert('ABRIR MODAL NOVO CONTACT')
+    });
+  </script>
+</head>
+<body>
+
+<style>
+    .ui-autocomplete {
+        position: absolute;
+        z-index:1050 !important;
+        }
+</style>

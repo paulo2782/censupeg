@@ -1,7 +1,6 @@
-<script src="{{ asset('/js/jquery.maskMoney.js') }}"></script> 
- 
-<div class="modal fade" id="myModalEdit">
-    <div class="modal-dialog">
+<script src="{{ asset('/js/jquery.maskMoney.js') }}"></script>
+ <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Editar curso <span class="text-5-title">* Campo obrigatório</span></h3>

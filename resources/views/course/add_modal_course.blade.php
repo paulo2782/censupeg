@@ -1,7 +1,7 @@
 @section('content')
-<script src="{{ asset('js/jquery.maskMoney.js') }}"></script> 
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
+<script src="{{ asset('js/jquery.maskMoney.js') }}"></script>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Novo curso <span class="text-5-title">* Campo obrigatório</span></h3>

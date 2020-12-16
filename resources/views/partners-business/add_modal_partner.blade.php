@@ -1,5 +1,5 @@
-<div class="modal fade" id="myModalAdd">
-    <div class="modal-dialog">
+<div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Nova empresa parceira <span class="text-5-title">* Campo obrigatório</span></h3>

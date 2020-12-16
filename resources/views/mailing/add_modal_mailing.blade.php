@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group col-2">
                         <label>&nbsp</label>
-                        <input type="button" value="NOVO" class="btn btn-success form-control" id="btnNewContact">
+                        <input type="button" value="Novo" class="btn btn-outline-success form-control" id="btnNewContact">
                     </div>
 
                     <div class="form-group col-md-7 col-12">

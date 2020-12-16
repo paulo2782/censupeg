@@ -1,6 +1,6 @@
 <form name="#" id="#" method="POST">    
-  <div class="modal fade" id="modalDelete" role="dialog">
-      <div class="modal-dialog">
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
               <div class="modal-header">
                 <h3 class="modal-title">Excluir Contato</h3>

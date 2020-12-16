@@ -1,5 +1,5 @@
-<div class="modal fade" id="myModalEdit">
-    <div class="modal-dialog">
+<div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Alterar senha </h3>

@@ -8,9 +8,8 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="mailing-modal" action="#" method="post">
+            <form class="form-dialog registerForm" id="mailing-modal" action="{{ route('storeCall') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
                 @csrf
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
@@ -56,8 +55,11 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="course-interesting">Curso de interesse <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="course-interesting" name="" 
-                        placeholder= "Informe o curso de interesse" value="" required />                         
+                        <select id="id" class="form-control" name="course_id" required>
+                        @foreach($courses as $course)
+                            <option value="{{ $course->id }}">{{ $course->course }}</option>
+                        @endforeach   
+                        </select>
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>

@@ -10,13 +10,16 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ExportCalls;
 
 use App\Call;
+use App\Course;
 
 class MailingController extends Controller
 {
 
     public function mailingShow(Request $request)
     {
-        return view('mailing/mailing');
+        $courses = Course::all();
+
+        return view('mailing/mailing',compact('courses'));
     }
 
     public function csvMailing(Request $request){
@@ -26,7 +29,6 @@ class MailingController extends Controller
         $month = $request->get('month');
         $value_month = $request->get('value_month');
         $value_year = $request->get('value_year');
-        // dd($request->all());
 
         // TODOS REGISTRO MENSAL TABELA CALL
         if($month <> null){

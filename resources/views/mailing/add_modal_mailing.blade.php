@@ -28,7 +28,7 @@
 
                     <div class="form-group col-md-7 col-12">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value="" / readonly>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value=""  readonly />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">

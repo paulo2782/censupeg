@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Editar mailing<span class="text-5-title">* Campo obrigatório</span></h3>
+                <h3 class="modal-title">Novo mailing<span class="text-5-title">* Campo obrigatório</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,6 +14,7 @@
                 @csrf
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
+                    <!--CONTATO-->
                     <div class="form-group col-12">
                         <label for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
@@ -51,17 +52,13 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="form-row">
+                    <!--CURSO -->
                     <div class="form-group col-12">
                         <label for="course-interesting">Curso de interesse <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="course-interesting" name="" 
                         placeholder= "Informe o curso de interesse" value="" required />                         
                     </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="form-row">
+                    <!--LIGAÇÃO-->
                     <div class="form-group col-md-6 col-12">
                         <label for="date-contact">Data de contato <span class="text-5">*</span></label>
                         <input type="date" class="form-control" id="date-contact" name="date-contact" placeholder="dd/mm/aaaa" value="" required />
@@ -71,8 +68,8 @@
                         <input type="time" class="form-control" id="hour-contact" name="hour-contact" value="" required/>    
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label for="date-return">Data de retorno <span class="text-5">*</span></label>
-                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value="" required />
+                        <label for="date-return">Data de retorno</label>
+                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value=""/>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="hour-return">Horário de retorno</label>
@@ -90,9 +87,6 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="form-row">
                     <div class="form-group col-12">
                         <label for="additional-information">Informações adicionais</label>
                         <textarea class="form-control" id="additional-information" name="additional-information">
@@ -104,5 +98,4 @@
         </div>
     </div>
 </div>
- 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

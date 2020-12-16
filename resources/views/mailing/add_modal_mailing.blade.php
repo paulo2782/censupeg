@@ -71,8 +71,8 @@
                         <input type="time" class="form-control" id="hour-contact" name="hour-contact" value="" required/>    
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label for="date-return">Data de retorno <span class="text-5">*</span></label>
-                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value="" required />
+                        <label for="date-return">Data de retorno</label>
+                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value=""/>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="hour-return">Horário de retorno</label>

@@ -12,6 +12,13 @@ class DashboardController extends Controller
 {
     public function dashboardShow(Request $request)
     {
+
+        if(strlen($request->dateCurrent) == 0){
+            $dateCurrent = date('Y-m-d');            
+        }else{
+            $dateCurrent = $request->dateCurrent;
+        }
+
     	$contact   = Contact::get();
     	$iContacts = count($contact); 
 
@@ -40,15 +47,16 @@ class DashboardController extends Controller
     		}
 
     		$data = Call::
-    		  whereDate('date_contact',$request->dateCurrent)
+    		  whereDate('date_contact',$dateCurrent)
     		->whereTime('time',' like',$hour.'%')
     		->get();
 
     		array_push($hourArray, count($data));
+
     	}
 
-    	$day = substr($request->dateCurrent,8,2);
-    	$dateCurrent = $request->dateCurrent;
+    	$day = substr($dateCurrent,8,2);
+
     	return view('dashboards/dashboard',compact('iContacts','iCourses','iPartners','iCalls','hourArray','day','dateCurrent'));
     }
 }

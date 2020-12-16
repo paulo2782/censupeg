@@ -49,17 +49,11 @@
                     </div>
                     <div class="show-details-general">
                         <div class="row">
-                            @if(isset($_GET['dateCurrent'])) 
                             <div class="col-4">
                                 <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ $dateCurrent }}">
                             </div>          
-                            @else
-                            <div class="col-4">
-                                <input type="date" class="form-control" id="dateCurrent" name="dateCurrent" value="{{ date('Y-m-d') }}">
-                            </div>          
-                            @endisset                    
                             <div class="col-2">
-                                <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+                                <button type="submit" class="btn btn-outline-primary" id="search">Pesquisar</button>
                             </div>
                             <div class="col-12">&nbsp</div>
                         </div>
@@ -109,6 +103,8 @@ google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawBasic);
 
 function drawBasic() {
+$('#search').trigger('click')
+
       var url = window.location.href
       var dateCurrent = url.split("=")[1]
       var i = dateCurrent.length
@@ -149,7 +145,7 @@ function drawBasic() {
       ]);
 
       var options = {
-        title: 'Ligações no dia - '+moment().format('D-M-Y',iDateCurrent),
+        title: 'Ligações no dia - '+moment(iDateCurrent).format('DD-MM-Y'),
         hAxis: {
           title: 'Hora do Dia',
           format: 'H:mm',

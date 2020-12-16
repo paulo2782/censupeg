@@ -30,28 +30,6 @@
                         <label for="phone">Telefone <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="" required />    
                     </div>
-                    <div class="form-group col-12">
-                        <label for="contact-origin" >Origem do contato <span class="text-5">*</span></label>
-                        <input type="hidden" id="contact-origin" value="">
-                        <select class="form-control" id="contact-origin" name="contact-origin" required>
-                            <option value="" disabled selected hidden>Selecione a origem do contato</option>
-                            <option value="E-book">E-book</option>
-                            <option value="Empresas Parceiras">Empresas parceiras</option>
-                            <option value="ex-aluno">Ex-aluno</option>
-                            <option value="Facebook">Facebook</option>
-                            <option value="Flayer">Flayer</option>
-                            <option value="Indicação">Indicação</option>
-                            <option value="Outdoor">Outdoor</option>
-                            <option value="Palestra/Eventos">Palestra/Eventos</option>
-                            <option value="Presencial pólo">Presencial pólo</option>
-                            <option value="Prospecção externa">Prospecção externa</option>
-                            <option value="Site">Site</option>
-                            <option value="SMS">SMS</option>
-                            <option value="Whatsapp">Whatsapp</option>
-                            <option value="Visita">Visita</option>
-                            <option value="Outros">Outros</option>
-                        </select>
-                    </div>
                     <!--CURSO -->
                     <div class="form-group col-12">
                         <label for="course-interesting">Curso de interesse <span class="text-5">*</span></label>

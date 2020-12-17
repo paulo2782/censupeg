@@ -57,7 +57,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="{{ asset('/js/mailing.js?102') }}"></script>
+<script src="{{ asset('/js/mailing.js?103') }}"></script>
 <script src="{{ asset('/js/moment.min.js') }}"></script>
 
 </body>  
@@ -167,7 +167,5 @@ $('#year').change(function(event) {
         details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
     });
 });
-
-
 
 </script>

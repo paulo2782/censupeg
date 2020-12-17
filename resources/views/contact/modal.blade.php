@@ -12,6 +12,8 @@
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="who" id="who">
+
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="name">Nome completo <span class="text-5">*</span></label>

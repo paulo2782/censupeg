@@ -85,8 +85,13 @@ class ContactController extends Controller
             'additional_information'=>$request['additional_information'],
             'other_course'=>$request['other_course']
         ]);
- 
-         return redirect('/contact');
+
+        if($request->who == 'mailing')
+        {
+            return redirect('/mailing');
+        }else{
+            return redirect('/contact');
+        }
     }
 
     public function destroy(Request $request, $id){

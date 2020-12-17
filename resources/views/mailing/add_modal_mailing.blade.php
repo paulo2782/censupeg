@@ -113,6 +113,7 @@ function completeFields(){
     });    
 }
 $('#btnNewContact').click(function(event) {
+    $('#who').val('mailing')
     $('#status').val($('#hiddenStatus').val());
     $('#contact_origin').val($('#hiddenContact_origin').val());
     $('#myModal').modal('toggle')

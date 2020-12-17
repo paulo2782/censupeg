@@ -11,6 +11,7 @@ use App\Contact;
 use App\Course;
 use App\Interest;
 use App\Call;
+use Response;
 
 class ContactController extends Controller
 {
@@ -125,6 +126,18 @@ class ContactController extends Controller
         return view('contact/contact',compact('dados','search'));
      }
 
+    public function searchContactAjax(Request $request){
+        $search = $request->get('term');
+        $result = Contact::where('name','like',$search.'%')->get();
+        return response()->json($result);
+    }
+    public function autoCompleteContact(Request $request){
+        $search = $request->get('name');
+        $result = Contact::where('name','=',$search)->get();
+        return response()->json(['email'=>$result[0]->email,'phone'=>$result[0]->phone]);
+
+    }
+
     public function viewData(Request $request){
         $courses = Course::all();
         $dados = Contact::where('id',$request->id)->get();
@@ -142,5 +155,7 @@ class ContactController extends Controller
         $dataCalls = Call::where('contact_id','=',$request->id)->orderby('date_return')->orderby('schedule')->get(); 
         return view('/contact/viewData',compact('dados','courses','dataInterests','dataCalls'));
     }
+
+
 }
  

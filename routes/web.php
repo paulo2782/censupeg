@@ -50,6 +50,9 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('editCallContact/{idContact}/{idCall}',		'ContactController@editCallContact')->name('editCallContact');
 	Route::get('destroy/{id}', 'ContactController@destroy')->name('destroy');
 	Route::get('searchContact','ContactController@searchContact')->name('searchContact');
+	Route::get('searchContactAjax','ContactController@searchContactAjax')->name('searchContactAjax');
+	Route::get('autoCompleteContact','ContactController@autoCompleteContact')->name('autoCompleteContact');
+
 	Route::get('viewData/{id}','ContactController@viewData')->name('viewData');
 	
 	Route::get('call', 					'CallController@callShow')->name('callShow');

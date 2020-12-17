@@ -1,3 +1,4 @@
+        
 <div class="modal fade" id="myModalAdd" tabindex="0" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -38,8 +39,6 @@
                     <!--CURSO -->
                     <div class="form-group col-12">
                         <label for="course-interesting">Curso de interesse <span class="text-5">*</span></label>
-                        <!-- <input type="text" class="form-control" id="course-interesting" name=""  -->
-                        <!-- placeholder= "Informe o curso de interesse" value="" required />                          -->
                         <select class="c-select form-control" id="course" name="course_id">                            
                         @foreach($courses as $course)
                             <option value="">{{ $course->course }}</option>
@@ -94,30 +93,58 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
-    var availableTags = [
-      "Paulo Soares",
-      "João Manoel",
-      "Janaina Gonçalves",
-      "Manoel de Castro",
-      "Paulo Oliveira",
-      "Jose da Silva",
-      "José Santos"
-    ];
+
+ $(document).ready(function($) {
     $( "#name" ).autocomplete({
-      source: availableTags
+        source: function(request, response) {
+            $.ajax({
+            url: "{{route('searchContactAjax')}}",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.name;
+               }); 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+
+$('#name').click(function(event) {
+    $('#name').select()
+
+})
+
+$('#name').blur(function(event) {
+    $.ajax({
+        url: "{{route('autoCompleteContact')}}",
+        method:"GET",
+        dataType: "json",
+        data: {
+                name : $('#name').val()
+        },
+        success: function(data){
+            $('#email').val(data.email)
+            $('#phone').val(data.phone)
+        }
     });
 
-    $('#btnNewContact').click(function(event) {
-        /* Act on the event */
-        alert('Abrir modal de novo contato')
-    });
-  </script>
+ });   
+
+
+});
+
+</script>
 </head>
 <body>
 
+
 <style>
     .ui-autocomplete {
-        position: absolute;
-        z-index:1050 !important;
-        }
+        z-index: 1050;
+    }
 </style>

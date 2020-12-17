@@ -15,7 +15,6 @@
 
                 <!-- <input type="hidden" name="_method" value="PUT"> -->
                 <!-- srf -->
-               <input type="hidden" name="_token"       id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id"             value="{{ $dados[0]->id }}">
                 <input type="hidden" name="contact_id" id="contact_id"     value="{{ $dados[0]->id }}">
                 <input type="hidden" name="interest_id_edit" id="interest_id_edit">

@@ -1,4 +1,3 @@
-        
 <div class="modal fade" id="myModalAdd" tabindex="0" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -17,7 +16,7 @@
                     <!--CONTATO-->
                     <div class="form-group col-10">
                         <label for="name">Nome completo <span class="text-5">*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="nameMailing" name="name" 
                         placeholder= "Informe o nome" value="" required/>
                         <input type="hidden"  id="contact_id" name="contact_id">
 
@@ -35,7 +34,7 @@
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5"></span></label>
-                        <input type="text" class="form-control" id="phone" placeholder="(00)0000-0000" value="" readonly required />    
+                        <input type="text" class="form-control" id="phone_contact" placeholder="(00)0000-0000" value="" readonly required />    
                     </div>
                     <!--CURSO -->
                     <div class="form-group col-12">
@@ -88,10 +87,13 @@
         </div>
     </div>
 </div>
+@include('contact/modal')    
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{{ asset('/js/contact.js?2') }}"></script>
+<script src="{{ asset('/js/jquery.mask.js') }}"></script>
 
 <script>
 
@@ -101,18 +103,36 @@ function completeFields(){
         method:"GET",
         dataType: "json",
         data: {
-                name : $('#name').val()
+                name : $('#nameMailing').val()
         },
         success: function(data){
             $('#email').val(data.email)
-            $('#phone').val(data.phone)
+            $('#phone_contact').val(data.phone)
             $('#contact_id').val(data.contact_id)
         }
     });    
 }
+$('#btnNewContact').click(function(event) {
+    $('#status').val($('#hiddenStatus').val());
+    $('#contact_origin').val($('#hiddenContact_origin').val());
+    $('#myModal').modal('toggle')
+    
+
+    $('#state').change(function(event) {
+        let state = $('#state').val();
+        $.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados/'+state+'/distritos', function(data) {
+          $('#city').html('');
+          $.each(data,function(index, el) {
+            $('#city').append('<option>'+data[index].nome)
+          });
+        });
+    });
+
+
+});
 
  $(document).ready(function($) {
-    $( "#name" ).autocomplete({
+    $( "#nameMailing" ).autocomplete({
         source: function(request, response) {
             $.ajax({
             url: "{{route('searchContactAjax')}}",
@@ -131,18 +151,17 @@ function completeFields(){
     minLength: 1
  });
 
-$('#name').click(function(event) {
-    $('#name').select()
+$('#nameMailing').click(function(event) {
+    $('#nameMailing').select()
 
 })
 
 $('.ui-autocomplete').click(function(event) {
     completeFields()
 });
-$('#name').blur(function(event) {
+$('#nameMailing').blur(function(event) {
     completeFields()
 });   
-
 
 });
 

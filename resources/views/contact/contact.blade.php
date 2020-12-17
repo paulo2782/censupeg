@@ -70,7 +70,9 @@ endif
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('/js/contact.js') }}"></script>
+<script src="{{ asset('/js/contact.js?2') }}"></script>
+<script src="{{ asset('/js/jquery.mask.js') }}"></script>
+
 </body>  
 </html>
 <script src="{{ asset('js/function.js') }}"></script> 

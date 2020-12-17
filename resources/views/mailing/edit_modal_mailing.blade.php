@@ -12,7 +12,9 @@
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
                 @csrf
-                <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="contat_id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="id" id="id_contact">
+
                 <div class="form-row">
                     <!--CONTATO-->
                     <div class="form-group col-12">

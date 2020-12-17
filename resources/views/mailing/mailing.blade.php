@@ -168,4 +168,9 @@ $('#year').change(function(event) {
     });
 });
 
+$(document).on('click','.editMailing[data-id]',function(data) {
+    $('#id_contact').val($(this).attr('data-id'))
+
+    $('#myModalEdit').modal('show')
+})
 </script>

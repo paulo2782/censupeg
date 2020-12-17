@@ -94,6 +94,21 @@
 
 <script>
 
+function completeFields(){
+    $.ajax({
+        url: "{{route('autoCompleteContact')}}",
+        method:"GET",
+        dataType: "json",
+        data: {
+                name : $('#name').val()
+        },
+        success: function(data){
+            $('#email').val(data.email)
+            $('#phone').val(data.phone)
+        }
+    });    
+}
+
  $(document).ready(function($) {
     $( "#name" ).autocomplete({
         source: function(request, response) {
@@ -119,21 +134,12 @@ $('#name').click(function(event) {
 
 })
 
+$('.ui-autocomplete').click(function(event) {
+    completeFields()
+});
 $('#name').blur(function(event) {
-    $.ajax({
-        url: "{{route('autoCompleteContact')}}",
-        method:"GET",
-        dataType: "json",
-        data: {
-                name : $('#name').val()
-        },
-        success: function(data){
-            $('#email').val(data.email)
-            $('#phone').val(data.phone)
-        }
-    });
-
- });   
+    completeFields()
+});   
 
 
 });

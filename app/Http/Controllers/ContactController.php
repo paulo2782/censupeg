@@ -137,8 +137,8 @@ class ContactController extends Controller
         return response()->json($result);
     }
     public function autoCompleteContact(Request $request){
-        $search = $request->get('name');
-        $result = Contact::where('name','=',$search)->get();
+        $search = $request->get('idContact');
+        $result = Contact::where('id','=',$search)->get();
         return response()->json(['contact_id'=>$result[0]->id,'email'=>$result[0]->email,'phone'=>$result[0]->phone]);
 
     }

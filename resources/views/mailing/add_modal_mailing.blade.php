@@ -98,12 +98,18 @@
 <script>
 
 function completeFields(){
+    var str  = $('#nameMailing').val()
+    var re   = /ID:/g
+    var iStr = str.length 
+    var iRe  = str.search(re)
+    var idContact = str.substr(iRe+4,iStr)
+
     $.ajax({
         url: "{{route('autoCompleteContact')}}",
         method:"GET",
         dataType: "json",
         data: {
-                name : $('#nameMailing').val()
+                idContact : idContact
         },
         success: function(data){
             $('#email').val(data.email)
@@ -143,7 +149,7 @@ $('#btnNewContact').click(function(event) {
             dataType: "json",
             success: function(data){
                var resp = $.map(data,function(obj){
-                    return obj.name;
+                    return obj.name+' ID: '+obj.id;
                }); 
                response(resp);
             }

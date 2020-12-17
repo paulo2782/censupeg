@@ -9,17 +9,18 @@
                 </button>
             </div>
             <div id="callback"></div>
-            <form class="form-dialog registerForm" id="mailing-modal" action="#" method="post">
+            <form class="form-dialog registerForm" id="mailing-modal" action="{{ route('storeCall') }}" method="post">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
                 @csrf
-                <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="form-row">
                     <!--CONTATO-->
                     <div class="form-group col-10">
                         <label for="name">Nome completo <span class="text-5">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
                         placeholder= "Informe o nome" value="" required/>
+                        <input type="hidden"  id="contact_id" name="contact_id">
+
                         @error('name') {{$message}} @enderror                                     
                     </div>
                     <div class="form-group col-2">
@@ -29,42 +30,42 @@
 
                     <div class="form-group col-md-7 col-12">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com" value=""  readonly />
+                        <input type="email" class="form-control" id="email" placeholder="fulano@email.com" value=""  readonly />
                         @error('email') {{$message}} @enderror
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5"></span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="" readonly required />    
+                        <input type="text" class="form-control" id="phone" placeholder="(00)0000-0000" value="" readonly required />    
                     </div>
                     <!--CURSO -->
                     <div class="form-group col-12">
                         <label for="course-interesting">Curso de interesse <span class="text-5">*</span></label>
                         <select class="c-select form-control" id="course" name="course_id">                            
                         @foreach($courses as $course)
-                            <option value="">{{ $course->course }}</option>
+                            <option value="{{ $course->id }}">{{ $course->course }}</option>
                         @endforeach
                         </select>
                     </div>
                     <!--LIGAÇÃO-->
                     <div class="form-group col-md-6 col-12">
                         <label for="date-contact">Data de contato <span class="text-5">*</span></label>
-                        <input type="date" class="form-control" id="date-contact" name="date-contact" placeholder="dd/mm/aaaa" value="" required />
+                        <input type="date" class="form-control" id="date_contact" name="date_contact" placeholder="dd/mm/aaaa" value="" required />
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="hour-contact">Horário de contato <span class="text-5">*</span></label>
-                        <input type="time" class="form-control" id="hour-contact" name="hour-contact" value="" required/>    
+                        <input type="time" class="form-control" id="time" name="time" value="" required/>    
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="date-return">Data de retorno</label>
-                        <input type="date" class="form-control" id="date-return" name="date-return" placeholder="dd/mm/aaaa" value=""/>
+                        <input type="date" class="form-control" id="date_return" name="date_return" placeholder="dd/mm/aaaa" value=""/>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="hour-return">Horário de retorno</label>
-                        <input type="time" class="form-control" id="hour-return" name="hour-return" value="" />    
+                        <input type="time" class="form-control" id="schedule" name="schedule" value="" />    
                     </div>
                     <div class="form-group col-12">
                         <label for="status-schedule">Status da ligação <span class="text-5">*</span></label>
-                        <select id="status-schedule" class="form-control" name="status-schedule" required>
+                        <select id="status" class="form-control" name="status" required>
                             <option value="" disabled selected hidden>Selecione status da ligação</option>
                             <option value="Analisará a proposta">Analisará a proposta</option>
                             <option value="Conversará com a família">Conversará com a família</option>
@@ -76,7 +77,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="additional-information">Informações adicionais</label>
-                        <textarea class="form-control" id="additional-information" name="additional-information">
+                        <textarea class="form-control" id="additional_information" name="additional_information">
                         </textarea>
   
                     </div>
@@ -105,6 +106,7 @@ function completeFields(){
         success: function(data){
             $('#email').val(data.email)
             $('#phone').val(data.phone)
+            $('#contact_id').val(data.contact_id)
         }
     });    
 }

@@ -21,6 +21,7 @@ class MailingController extends Controller
         return view('mailing/mailing',compact('courses'));
     }
 
+
     public function csvMailing(Request $request){
 
         $user_id= $request->get('user_id');

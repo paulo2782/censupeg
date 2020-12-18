@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Contact;
 use App\Call;
+use App\Course;
 
 class CallController extends Controller
 {
@@ -32,13 +33,19 @@ class CallController extends Controller
     
     public function searchCallEdit(Request $request)
     {
-        $data = Call::where('id',$request->id)->get();
 
-        $course_name = Call::find($request->id);
-        $course_name = $course_name->course;
-
+        $data        = Call::where('id',$request->id)->get();
+        $data_contact= Contact::where('id',$data[0]->contact_id)->get();
+        $course_name = Course::orderby('course')->get();
+        
         return response()->json([
+            'call_id'=>$request->id,
+            'contact_id'=>$data[0]->contact_id,
+            'contact_name'=>$data_contact[0]->name,
+            'email'=>$data_contact[0]->email,
+            'phone'=>$data_contact[0]->phone,
             'course_name'=>$course_name,
+            'id_course'=>$data[0]->course_id,
             'date_contact'=>$data[0]->date_contact,
             'time'=>$data[0]->time,
             'date_return'=>$data[0]->date_return,
@@ -54,14 +61,18 @@ class CallController extends Controller
         $call_id_edit = $request->call_id_edit;
 
         Call::where('id',$call_id_edit)->update(array(
-          'date_contact'=>$request->date_contact,
-          'time'=>$request->time,
-          'date_return'=>$request->date_return,
-          'schedule'=>$request->schedule,
-          'status'=>$request->status
+        'contact_id'=>$request->contact_id_edit,
+        'date_contact'=>$request->date_contact_edit,
+        'date_return'=>$request->date_return_edit,
+        'schedule'=>$request->schedule_edit,
+        'status'=>$request->status_edit,
+        'additional_information'=>$request->additional_information_edit,
+        'user_id'=>$request->user_id_edit,
+        'course_id'=>$request->course_id_edit,
+        'time'=>$request->time_edit
         ));
 
-        return response()->json(["mensagem"=>$call_id_edit]);
+        return response()->json(["mensagem"=>'Registro Alterado!']);
     }
 
     public function storeCall(Request $request){

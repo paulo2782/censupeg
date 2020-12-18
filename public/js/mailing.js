@@ -83,7 +83,8 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                         "<td>"+date_return+"</td>"+
                         "<td>"+dataDayMonth[i].course+"</td>"+
                         "<td>"+dataDayMonth[i].status+"</td>"+
-                        "<td><a href="+dataDayMonth[i].id+"><i class='fa fa-pencil editMailing' title='Editar registro' data-id="+dataDayMonth[i].id+"></i></a>"+
+                        "<td>"+
+                        "    <i class='fa fa-pencil editMailing'  title='Editar registro'  data-id="+dataDayMonth[i].call_id+"></i>"+
                         "    <i class='fa fa-trash deleteMailing' title='Excluir registro' data-id="+dataDayMonth[i].call_id+"></i></td>"
                     )
                 }else{

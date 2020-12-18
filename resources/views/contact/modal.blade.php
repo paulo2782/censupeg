@@ -1,9 +1,5 @@
-@section('content')
-
-<script src="{{ asset('js/jquery.mask.js') }}"></script> 
-<script src="{{ asset('js/contact.js?(new Date()).getTime() ') }}"></script> 
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Novo contato<span class="text-5-title">* Campo obrigatório</span></h3>
@@ -16,6 +12,8 @@
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="who" id="who">
+
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="name">Nome completo <span class="text-5">*</span></label>
@@ -114,5 +112,3 @@
         </div>
     </div>
 </div>
-@endsection
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

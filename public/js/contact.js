@@ -52,6 +52,6 @@ function habilitar_outros() {
 }
 
 /* VALIDATION PHONE */
-$(document).ready(function(){ 
-   $('input[name=phone]').mask('(00)0000-00009');
+$(document).ready(function($){ 
+   $('input[id=phone]').mask('(00)0000-00009');
 });

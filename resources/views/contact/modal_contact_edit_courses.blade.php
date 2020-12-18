@@ -1,5 +1,5 @@
- <div class="modal fade" id="myModalEditCourse">
-    <div class="modal-dialog">
+ <div class="modal fade" id="myModalEditCourse" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Editar curso do contato<span class="text-5-title">* Campo obrigatório</span></h3>
@@ -15,7 +15,6 @@
 
                 <!-- <input type="hidden" name="_method" value="PUT"> -->
                 <!-- srf -->
-               <input type="hidden" name="_token"       id="token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id"             value="{{ $dados[0]->id }}">
                 <input type="hidden" name="contact_id" id="contact_id"     value="{{ $dados[0]->id }}">
                 <input type="hidden" name="interest_id_edit" id="interest_id_edit">

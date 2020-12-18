@@ -48,8 +48,11 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::put('updateContact/{id}',						'ContactController@updateContact')->name('updateContact');
 	Route::get('editCourseContact/{idContact}/{idCourse}',	'ContactController@editCourseContact')->name('editCourseContact');
 	Route::get('editCallContact/{idContact}/{idCall}',		'ContactController@editCallContact')->name('editCallContact');
-	Route::get('destroy/{id}', 'ContactController@destroy')->name('destroy');
-	Route::get('searchContact','ContactController@searchContact')->name('searchContact');
+	Route::get('destroy/{id}', 								'ContactController@destroy')->name('destroy');
+	Route::get('searchContact',								'ContactController@searchContact')->name('searchContact');
+	Route::get('searchContactAjax',							'ContactController@searchContactAjax')->name('searchContactAjax');
+	Route::get('autoCompleteContact',						'ContactController@autoCompleteContact')->name('autoCompleteContact');
+
 	Route::get('viewData/{id}','ContactController@viewData')->name('viewData');
 	
 	Route::get('call', 					'CallController@callShow')->name('callShow');
@@ -76,7 +79,9 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('destroyInterestCourse/{id}','InterestController@destroyInterestCourse')->name('destroyInterestCourse');
 
 	Route::get('dashboard', 	  'DashboardController@dashboardShow')->name('dashboardShow');
+	
 	Route::get('report', 	  'ReportController@reportShow')->name('reportShow');
+	
 	Route::get('myaccount',   'MyAccountController@myaccountShow')->name('myaccountShow');
 
 	Route::put('updateRegister/{id}',	'InterestController@updateRegister')->name('updateRegister');
@@ -90,6 +95,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('mailing',		'MailingController@mailingShow')->name('mailingShow');
 	Route::get('mailingAjax',	'MailingController@mailingAjax')->name('mailingAjax');
 	Route::get('csvMailing',	'MailingController@csvMailing')->name('csvMailing');
+	Route::get('editMailing',	'MailingController@editMailing')->name('editMailing');
 
 	Route::get('partners', 	  		'PartnersController@partnerShow')->name('partnerShow');
 	Route::post('partners', 	  	'PartnersController@storePartner')->name('storePartner');

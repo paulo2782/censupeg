@@ -57,7 +57,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="{{ asset('/js/mailing.js?102') }}"></script>
+<script src="{{ asset('/js/mailing.js?104') }}"></script>
 <script src="{{ asset('/js/moment.min.js') }}"></script>
 
 </body>  
@@ -168,6 +168,32 @@ $('#year').change(function(event) {
     });
 });
 
-
-
+$(document).on('click','.editMailing[data-id]',function(data) {
+    $('#id_contact').val($(this).attr('data-id'))
+    $('#myModalEdit').modal('show')
+    $.ajax({
+        url: "{{ route('searchCallEdit') }}",
+        method: 'GET',
+        data: {id: $(this).attr('data-id') },
+        success:function(data){
+            $('#call_id_edit').val(data.call_id)
+            $('#name_edit').val(data.contact_name)
+            $('#email_edit').val(data.email)
+            $('#phone_edit').val(data.phone)
+            for(i = 0 ; i <= data.course_name.length-1 ; i++)
+            {
+                $('#course_name_edit').append('<option value='+data.course_name[i].id+'>'+data.course_name[i].course+'</option>')
+            }
+            $('#contact_id_edit').val(data.contact_id)
+            $('#course_name_edit').val(data.id_course)
+            $('#date_contact_edit').val(data.date_contact)
+            $('#timeEdit').val(data.time)
+            $('#date_return_edit').val(data.date_return)
+            $('#schedule_edit').val(data.schedule)
+            $('#status_schedule_edit').val(data.status)
+            $('#additional_information_edit').html(data.additional_information)
+            $('#status_edit').val(data.status)
+        }   
+    }) 
+})
 </script>

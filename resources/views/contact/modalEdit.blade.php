@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5">*</span></label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00)0000-0000" value="{{ $dados[0]->phone }}" required />    
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="(00) 0000-0000" value="{{ $dados[0]->phone }}" required />    
                     </div>
                     <div class="form-group col-12">
                         <input type="hidden" id="schoolingData" value="{{ $dados[0]->schooling }}"/>    
@@ -113,6 +113,4 @@
         </div>
     </div>
 </div>
- 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 

@@ -10,11 +10,9 @@
             </div>
             <div id="callback"></div>
             <form class="form-dialog registerForm" id="updateForm">
- 
-             <meta name="csrf-token" content="{{ csrf_token() }}">
+                <meta name="csrf-token" content="{{ csrf_token() }}">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-
-                 <div class="form-row">
+                <div class="form-row">
                     <div class="form-group col-12">
                         <div class="radio-course">
                             <label>

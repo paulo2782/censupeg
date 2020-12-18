@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5"></span></label>
-                        <input type="text" class="form-control" id="phone_contact" placeholder="(00)0000-0000" value="" readonly required />    
+                        <input type="text" class="form-control" id="phone_contact" placeholder="(00) 0000-0000" value="" readonly required />    
                     </div>
                     <!--CURSO -->
                     <div class="form-group col-12">

@@ -11,7 +11,6 @@
             <form class="form-dialog registerForm" id="updatePartner" method="POST" action="{{ route('updatePartner') }}">
                 {{ method_field('PUT') }}
                 {!! csrf_field() !!}
- 
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="edtName">Nome da empresa <span class="text-5">*</span></label>

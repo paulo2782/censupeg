@@ -11,7 +11,6 @@
             <form class="form-dialog registerForm" id="updatePartner" method="POST" action="{{ route('updatePartner') }}">
                 {{ method_field('PUT') }}
                 {!! csrf_field() !!}
- 
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="edtName">Nome da empresa <span class="text-5">*</span></label>
@@ -47,5 +46,4 @@
    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('js/jquery.mask.js') }}"></script>
 <script src="{{ asset('js/partners.js') }}"></script>

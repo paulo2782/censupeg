@@ -36,17 +36,13 @@
                 </span>
             </div>
             <div class="show-details-block">
+
                 <div id="month">
-                    <ul>
-                        <li class="prev"><a href="#" id="btnPrev">&#10094;</a></li>
-                        <li class="next"><a href="#" id="btnNext">&#10095;</a></li>
-                        <li><span id="nameMonth"></span>
-                            <input type="number" value="{{ date('Y') }}" id="year" style="border-style: none"> 
-                        </div>
-                        <span style="font-size:18px"> </span>
-                        </li>
-                    </ul>
-                </div>
+                    <a href="#" class="prev-month fa fa-chevron-left fa-2x mr-4"></a> 
+                    <div class="month-year text-center"></div>
+                    <a href="#" class="next-month fa fa-chevron-right fa-2x ml-4"></a>
+                </div>              
+                <input type="hidden" value="{{ date('Y') }}" id="year" style="border-style: none"> 
                 <input type="hidden" id="value_month" name="value_month">
                 <input type="hidden" id="value_year"  name="value_year">
                 <div id="details"></div>
@@ -92,82 +88,6 @@ $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:month,yea
     details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
 })
 
- 
-$('#btnPrev').click(function(event) {
-    var year = $('#year').val()
-    $('#value_year').val(year);
-
-    $('#details').html('')
-    
-    auxMonth = $('#value_month').val()
-    auxMonth = parseInt(auxMonth)-1
-    
-    $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:0}, function( data ) {
-        $('#value_month').val(data.month)
-        
-        console.log(auxMonth)
-
-        object = JSON.parse(data.dataJson);
-        auxMonth = data.month
-
-        $('#nameMonth').html(data.nameMonth+' de ')
-
-        if(data.month >= 1){
-            $('#btnNext').show();
-        }
-        if(data.month == 1){
-            $('#btnPrev').hide();
-        }
-        details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
-    });
-});
-
-$('#btnNext').click(function(event) {
-    var year = $('#year').val()
-    $('#value_year').val(year);
-
-    $('#details').html('')
-
-    auxMonth = $('#value_month').val()
-    auxMonth = parseInt(auxMonth)+1
-
-    $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:1}, function( data ) {
-        $('#value_month').val(data.month)
-
-        object = JSON.parse(data.dataJson);
-        auxMonth = data.month
-
-        $('#nameMonth').html(data.nameMonth+' de ')
-
-        if(data.month >= 12){
-            $('#btnNext').hide();
-        }
-        if(data.month > 1){
-           $('#btnPrev').show();
-        }
-        details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
-    });
-});
-
-$('#year').change(function(event) {
-    var year = $('#year').val()
-    $('#value_year').val(year);
-
-    $('#details').html('')
-
-    $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:2}, function( data ) {
-        $('#value_month').val(data.month)
-    
-        object = JSON.parse(data.dataJson);
-        auxMonth = data.month
-
-        $('#nameMonth').html(data.nameMonth+' de ')
-
-        
-        details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
-    });
-});
-
 $(document).on('click','.editMailing[data-id]',function(data) {
     $('#id_contact').val($(this).attr('data-id'))
     $('#myModalEdit').modal('show')
@@ -196,4 +116,103 @@ $(document).on('click','.editMailing[data-id]',function(data) {
         }   
     }) 
 })
+
+
+$(document).ready(function(){
+    var d = new Date();
+
+function myCalendar() {
+    var month = d.getUTCMonth();
+    var day = d.getUTCDate();
+    var year = d.getUTCFullYear();
+
+    // Displays the current month in Strings and the actual year 
+    switch(month) {
+        case 0: $('.month-year').append('<h4> ' + 'Janeiro' + ' ' + "de " +  year + ' </h4>' ); break;
+        case 1: $('.month-year').append('<h4> ' + 'Fevereiro' + ' ' + "de " + year + ' </h4>' ); break;
+        case 2: $('.month-year').append('<h4> ' + 'Março' + ' ' + "de " + year + ' </h4>' ); break;
+        case 3: $('.month-year').append('<h4> ' + 'Abril' + ' ' + "de " + year + ' </h4>' ); break;
+        case 4: $('.month-year').append('<h4> ' + 'Maio' + ' ' + "de " + year + ' </h4>' ); break;
+        case 5: $('.month-year').append('<h4> ' + 'Junho' + ' ' + "de " + year + ' </h4>' ); break;
+        case 6: $('.month-year').append('<h4> ' + 'Julho' + ' ' + "de " + year + ' </h4>' ); break;
+        case 7: $('.month-year').append('<h4> ' + 'Agosto' + ' ' + "de " + year + ' </h4>' ); break;
+        case 8: $('.month-year').append('<h4> ' + 'Setembro' + ' ' + "de " + year + ' </h4>' ); break;
+        case 9: $('.month-year').append('<h4> ' + 'Outubro' + ' ' + "de " + year + ' </h4>' ); break;
+        case 10: $('.month-year').append('<h4> ' + 'Novembro' + ' ' + "de " + year + ' </h4>' ); break;
+        case 11: $('.month-year').append('<h4> ' + 'Dezembro' + ' ' + "de " + year + ' </h4>' ); break;
+    default:
+    break;
+
+    }
+};
+
+myCalendar();   
+
+//Navigation Buttons
+$('.prev-month').click(function(){
+    var year = $('#year').val()
+    $('#value_year').val(year);
+
+    $('#details').html('')
+    
+    auxMonth = $('#value_month').val()
+    auxMonth = parseInt(auxMonth)-1
+    
+    $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:0}, function( data ) {
+        $('#value_month').val(data.month)
+        
+        console.log(auxMonth)
+
+        object = JSON.parse(data.dataJson);
+        auxMonth = data.month
+
+        $('#nameMonth').html(data.nameMonth+' de ')
+
+        if(data.month >= 1){
+            $('#btnNext').show();
+        }
+        if(data.month == 1){
+            $('#btnPrev').hide();
+        }
+        details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
+    });
+
+    $('.month-year').empty();
+    d.setUTCMonth(d.getUTCMonth() - 1);
+    myCalendar();
+});
+
+$('.next-month').click(function(){
+    var year = $('#year').val()
+    $('#value_year').val(year);
+
+    $('#details').html('')
+
+    auxMonth = $('#value_month').val()
+    auxMonth = parseInt(auxMonth)+1
+
+    $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:1}, function( data ) {
+        $('#value_month').val(data.month)
+
+        object = JSON.parse(data.dataJson);
+        auxMonth = data.month
+
+        $('#nameMonth').html(data.nameMonth+' de ')
+
+        if(data.month >= 12){
+            $('#btnNext').hide();
+        }
+        if(data.month > 1){
+           $('#btnPrev').show();
+        }
+        details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
+    });
+
+    $('.month-year').empty();
+    d.setUTCMonth(d.getUTCMonth() + 1);
+    myCalendar();
+});
+
+});
+
 </script>

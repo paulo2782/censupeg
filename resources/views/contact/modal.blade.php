@@ -30,7 +30,7 @@
                     <div class="form-group col-md-5 col-12">
                         <label for="phone">Telefone <span class="text-5">*</span></label>
                         <input type="text" class="form-control" id="phone" name="phone" 
-                               placeholder= "(00)0000-0000" value="{{Session::get('phone')}}" required/>   
+                               placeholder= "(00) 0000-0000" value="{{Session::get('phone')}}" required/>   
                     </div>
                     <div class="form-group col-12">
                         <label for="schooling">Escolaridade <span class="text-5">*</span></label>

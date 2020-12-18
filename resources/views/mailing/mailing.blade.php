@@ -63,6 +63,7 @@
 var user_id = $('#user_id').val()
 var level   = $('#level').val()
 var month   = moment().format('M')
+
 var auxMonth
 var date_contact = []
 var year         = $('#year').val()
@@ -70,21 +71,12 @@ var year         = $('#year').val()
 $('#value_year').val(year);
 
 $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:month,year:year,btn:0}, function( data ) {
-    console.log(data)
+    var d = new Date()
+    var auxMonth = d.getUTCMonth()+1;
+    
 
-    if(data.month == 12){
-        $('#btnNext').hide();
-    }
-
-    $('#value_month').val(data.month)
     object = JSON.parse(data.dataJson)
     dataDayMonth = data.dataDayMonth
-
-    $('#nameMonth').html(data.nameMonth+' de ')
-
-    auxMonth = data.month
-    console.log(data.month)
-
     details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
 })
 
@@ -119,61 +111,50 @@ $(document).on('click','.editMailing[data-id]',function(data) {
 
 
 $(document).ready(function(){
-    var d = new Date();
+    var d = new Date()
+    function myCalendar() {
+        var month = d.getUTCMonth();
+        var day = d.getUTCDate();
+        var year = d.getUTCFullYear();
 
-function myCalendar() {
-    var month = d.getUTCMonth();
-    var day = d.getUTCDate();
-    var year = d.getUTCFullYear();
+        // Displays the current month in Strings and the actual year 
+        switch(month) {
+            case 0: $('.month-year').append("<h4 data-month='1'> Janeiro de "+  year + "</h4>"); break;
+            case 1: $('.month-year').append("<h4 data-month='2'> Fevereiro de "+ year + "</h4>"); break;
+            case 2: $('.month-year').append("<h4 data-month='3'> Março de "+ year + "</h4>"); break;
+            case 3: $('.month-year').append("<h4 data-month='4'> Abril de "+ year + "</h4>"); break;
+            case 4: $('.month-year').append("<h4 data-month='5'> Maio de "+ year + "</h4>"); break;
+            case 5: $('.month-year').append("<h4 data-month='6'> Junho de "+ year + "</h4>"); break;
+            case 6: $('.month-year').append("<h4 data-month='7'> Julho de "+ year + "</h4>"); break;
+            case 7: $('.month-year').append("<h4 data-month='8'> Agosto de "+ year + "</h4>"); break;
+            case 8: $('.month-year').append("<h4 data-month='9'> Setembro de "+ year + "</h4>"); break;
+            case 9: $('.month-year').append("<h4 data-month='10'> Outubro de "+ year + "</h4>"); break;
+            case 10: $('.month-year').append("<h4 data-month='11'> Novembro de "+ year + "</h4>"); break;
+            case 11: $('.month-year').append("<h4 data-month='12'> Dezembro de "+ year + "</h4>"); break;
+        default:
+        break;
+        }
+    };
 
-    // Displays the current month in Strings and the actual year 
-    switch(month) {
-        case 0: $('.month-year').append('<h4> ' + 'Janeiro' + ' ' + "de " +  year + ' </h4>' ); break;
-        case 1: $('.month-year').append('<h4> ' + 'Fevereiro' + ' ' + "de " + year + ' </h4>' ); break;
-        case 2: $('.month-year').append('<h4> ' + 'Março' + ' ' + "de " + year + ' </h4>' ); break;
-        case 3: $('.month-year').append('<h4> ' + 'Abril' + ' ' + "de " + year + ' </h4>' ); break;
-        case 4: $('.month-year').append('<h4> ' + 'Maio' + ' ' + "de " + year + ' </h4>' ); break;
-        case 5: $('.month-year').append('<h4> ' + 'Junho' + ' ' + "de " + year + ' </h4>' ); break;
-        case 6: $('.month-year').append('<h4> ' + 'Julho' + ' ' + "de " + year + ' </h4>' ); break;
-        case 7: $('.month-year').append('<h4> ' + 'Agosto' + ' ' + "de " + year + ' </h4>' ); break;
-        case 8: $('.month-year').append('<h4> ' + 'Setembro' + ' ' + "de " + year + ' </h4>' ); break;
-        case 9: $('.month-year').append('<h4> ' + 'Outubro' + ' ' + "de " + year + ' </h4>' ); break;
-        case 10: $('.month-year').append('<h4> ' + 'Novembro' + ' ' + "de " + year + ' </h4>' ); break;
-        case 11: $('.month-year').append('<h4> ' + 'Dezembro' + ' ' + "de " + year + ' </h4>' ); break;
-    default:
-    break;
-
-    }
-};
-
-myCalendar();   
+    myCalendar();   
 
 //Navigation Buttons
 $('.prev-month').click(function(){
-    var year = $('#year').val()
-    $('#value_year').val(year);
-
     $('#details').html('')
     
-    auxMonth = $('#value_month').val()
+    auxMonth = $('h4').attr('data-month')
+    year     = d.getUTCFullYear()
+
     auxMonth = parseInt(auxMonth)-1
     
+    if(auxMonth == 0){
+        auxMonth = 12
+        year = year-1
+    }
+        console.log(auxMonth + ' ' + year)
+
+
     $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:0}, function( data ) {
-        $('#value_month').val(data.month)
-        
-        console.log(auxMonth)
-
-        object = JSON.parse(data.dataJson);
-        auxMonth = data.month
-
-        $('#nameMonth').html(data.nameMonth+' de ')
-
-        if(data.month >= 1){
-            $('#btnNext').show();
-        }
-        if(data.month == 1){
-            $('#btnPrev').hide();
-        }
         details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
     });
 
@@ -183,28 +164,20 @@ $('.prev-month').click(function(){
 });
 
 $('.next-month').click(function(){
-    var year = $('#year').val()
-    $('#value_year').val(year);
-
     $('#details').html('')
 
-    auxMonth = $('#value_month').val()
+    auxMonth = $('h4').attr('data-month')
+    year     = d.getUTCFullYear()
+
     auxMonth = parseInt(auxMonth)+1
 
+    if(auxMonth == 13){
+        auxMonth = 1
+        year = year+1
+    }
+
+    console.log(auxMonth + ' ' + year)
     $.get("{{ route('mailingAjax') }}", {user_id:user_id,level:level,month:auxMonth,year:year,btn:1}, function( data ) {
-        $('#value_month').val(data.month)
-
-        object = JSON.parse(data.dataJson);
-        auxMonth = data.month
-
-        $('#nameMonth').html(data.nameMonth+' de ')
-
-        if(data.month >= 12){
-            $('#btnNext').hide();
-        }
-        if(data.month > 1){
-           $('#btnPrev').show();
-        }
         details(data.iCount,data.month, object, data.iCountDayMonth, dataDayMonth)
     });
 

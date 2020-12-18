@@ -79,7 +79,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                         "<tr>"+
                         "<td><strong>"+num+"</strong></td>"+
                         "<td>"+dataDayMonth[i].name+"</td>"+
-                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
+                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].time+"</td>"+
                         "<td>"+date_return+"</td>"+
                         "<td>"+dataDayMonth[i].course+"</td>"+
                         "<td>"+dataDayMonth[i].status+"</td>"+
@@ -92,7 +92,7 @@ function details(iCount, iMonth, object, iCountDayMonth, dataDayMonth){
                         "<tr>"+
                         "<td><strong>"+num+"</strong></td>"+
                         "<td>"+dataDayMonth[i].name+"</td>"+
-                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].created_at.substr(11,8)+"</td>"+
+                        "<td>"+moment(dataDayMonth[i].date_contact).format('DD-MM-YY')+' / '+dataDayMonth[i].time+"</td>"+
                         "<td>"+date_return+"</td>"+
                         "<td>"+dataDayMonth[i].course+"</td>"+
                         "<td>"+dataDayMonth[i].status+"</td>"

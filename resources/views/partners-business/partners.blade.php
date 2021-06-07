@@ -28,7 +28,7 @@
                                 <th>Nome</th>
                                 <th>Email</th>
                                 <th>Telefone</th>
-                                <th>Situação</th>
+                                <th>Status</th>
                                 <th>Operador</th>
                                 <th>Ação</th>
                             </tr>

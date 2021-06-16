@@ -15,9 +15,9 @@ class CreateCallTable extends Migration
     {
         Schema::create('calls', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('contact_id')->index();
-            $table->unsignedInteger('user_id')->index();
-            $table->unsignedInteger('course_id')->index();
+            $table->unsignedBigInteger('contact_id')->index();
+            $table->unsignedBigInteger('user_id')->index();
+            $table->unsignedBigInteger('course_id')->index();
             $table->date('date_contact');
             $table->date('date_return');
             $table->time('schedule');

@@ -31,7 +31,7 @@ class DashboardController extends Controller
         $month = date('m');
         $year  = date('Y');
 
-        $call   = Call::withactiveuser()->whereYear('date_contact', '=', $year)->whereMonth('date_contact', '=',
+        $call   = Call::whereYear('date_contact', '=', $year)->whereMonth('date_contact', '=',
             $month)->get();
         $iCalls = count($call);
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignUserCall extends Migration
+class AddForeignContactCourse extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class AddForeignUserCall extends Migration
      */
     public function up()
     {
-        Schema::table('calls', function (Blueprint $table) {
-            //
-           // $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+        return;
+        Schema::table('interests', function (Blueprint $table) {
+            $table->foreign('contact_id')->references('id')->on('contacts');
+            $table->foreign('course_id')->references('id')->on('courses');
 
         });
     }
@@ -28,7 +28,7 @@ class AddForeignUserCall extends Migration
      */
     public function down()
     {
-        Schema::table('calls', function (Blueprint $table) {
+        Schema::table('interests', function (Blueprint $table) {
             //
         });
     }

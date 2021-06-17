@@ -15,7 +15,7 @@
 endif
  -->
 
- 
+
 <div id="container-main">
     <div class="container">
         <div class="content">
@@ -27,20 +27,21 @@ endif
             <div class="aux-bar">
                 <h2>Contatos </h2>
                 <form class="search-contact" action="{{ route('searchContact') }}">
-                    <input type="search" id="search" name="search" class="form-control" placeholder=" Pesquisar contato" />
+                    <input type="search" id="search" name="search" class="form-control"
+                           placeholder=" Pesquisar contato"/>
                 </form>
             </div>
             <div id="content-table" class="table-responsive">
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Telefone</th>
-                            <th>Operador</th>
-                            <th>Ação</th>
-                        </tr>
-                    </thead>  
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Operador</th>
+                        <th>Ação</th>
+                    </tr>
+                    </thead>
                     <tbody id="tabela">
                     @foreach($dados as $dado)
                         <tr>
@@ -49,13 +50,15 @@ endif
                             <td> {{ $dado->phone }} </td>
                             <td> {{ $dado->user->name }}</td>
                             <td id='toview'>
-                                <a href="{{ route('viewData',$dado->id) }}" id="{{ $dado->id }}" class="fa fa-eye btnToView" aria-hidden="true" title="Visualizar contato"></a>
+                                <a href="{{ route('viewData',$dado->id) }}" id="{{ $dado->id }}"
+                                   class="fa fa-eye btnToView" aria-hidden="true" title="Visualizar contato"></a>
                                 @if(auth()->user()->level == 1)
-                                    <a href="{{ route('destroy',$dado->id) }}" class="fa fa-trash btnDelete" aria-hidden="true" title="Excluir contato"></a>
+                                    <a href="{{ route('destroy',$dado->id) }}" class="fa fa-trash btnDelete"
+                                       aria-hidden="true" title="Excluir contato"></a>
                                 @endif
                             </td>
                         </tr>
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -73,15 +76,15 @@ endif
 <script src="{{ asset('/js/contact.js?2') }}"></script>
 <script src="{{ asset('/js/jquery.mask.js') }}"></script>
 
-</body>  
+</body>
 </html>
-<script src="{{ asset('js/function.js') }}"></script> 
+<script src="{{ asset('js/function.js') }}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
     var msg = '{{Session::get('alert')}}';
     var exist = '{{Session::has('alert')}}';
-    if(exist){
-      swal("Censupeg",msg, 'error');
+    if (exist) {
+        swal("Censupeg", msg, 'error');
     }
 </script>

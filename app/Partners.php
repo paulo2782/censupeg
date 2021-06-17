@@ -2,16 +2,35 @@
 
 namespace App;
 
+use App\Scopes\UserIsActive;
 use Illuminate\Database\Eloquent\Model;
 
 class Partners extends Model
 {
     protected $fillable = [
- 		'user_id','name','email','phone','status','additional_information',
+        'user_id',
+        'name',
+        'email',
+        'phone',
+        'status',
+        'additional_information',
     ];
 
-    public function user(){
-    	return $this->belongsTo(User::class);
+    /*================================================================================================================*/
+    /*==================== BOOT =============================================================================*/
+    /*================================================================================================================*/
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope(new UserIsActive);
+    }
+
+    /*================================================================================================================*/
+    /*==================== RELATIONSHIPS =============================================================================*/
+    /*================================================================================================================*/
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

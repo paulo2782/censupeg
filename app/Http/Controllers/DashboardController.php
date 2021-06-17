@@ -13,50 +13,50 @@ class DashboardController extends Controller
     public function dashboardShow(Request $request)
     {
 
-        if(strlen($request->dateCurrent) == 0){
-            $dateCurrent = date('Y-m-d');            
-        }else{
+        if (strlen($request->dateCurrent) == 0) {
+            $dateCurrent = date('Y-m-d');
+        } else {
             $dateCurrent = $request->dateCurrent;
         }
 
-    	$contact   = Contact::get();
-    	$iContacts = count($contact); 
+        $contact   = Contact::get();
+        $iContacts = count($contact);
 
-    	$course    = Course::get();
-    	$iCourses  = count($course); 
+        $course   = Course::get();
+        $iCourses = count($course);
 
-    	$partner   = Partners::get();
-    	$iPartners = count($partner); 
+        $partner   = Partners::get();
+        $iPartners = count($partner);
 
-    	$month     = date('m');
-    	$year      = date('Y');
+        $month = date('m');
+        $year  = date('Y');
 
-    	$call      = Call::whereYear('date_contact','=',$year)->whereMonth('date_contact','=',$month)->get();
-    	$iCalls    = count($call); 
+        $call   = Call::withactiveuser()->whereYear('date_contact', '=', $year)->whereMonth('date_contact', '=',
+            $month)->get();
+        $iCalls = count($call);
 
 
-    	// GRAFICO HORAS
-    	$hourArray = [];
-    	for($i = 1 ; $i <= 24 ; $i++)
-    	{
-    		if($i < 10)
-    		{ 
-    			$hour = '0'.$i; 
-    		}else{
-    			$hour = $i;
-    		}
+        // GRAFICO HORAS
+        $hourArray = [];
+        for ($i = 1; $i <= 24; $i++) {
+            if ($i < 10) {
+                $hour = '0' . $i;
+            } else {
+                $hour = $i;
+            }
 
-    		$data = Call::
-    		  whereDate('date_contact',$dateCurrent)
-    		->whereTime('time',' like',$hour.'%')
-    		->get();
+            $data = Call::
+            whereDate('date_contact', $dateCurrent)
+                ->whereTime('time', ' like', $hour . '%')
+                ->get();
 
-    		array_push($hourArray, count($data));
+            array_push($hourArray, count($data));
 
-    	}
+        }
 
-    	$day = substr($dateCurrent,8,2);
+        $day = substr($dateCurrent, 8, 2);
 
-    	return view('dashboards/dashboard',compact('iContacts','iCourses','iPartners','iCalls','hourArray','day','dateCurrent'));
+        return view('dashboards/dashboard',
+            compact('iContacts', 'iCourses', 'iPartners', 'iCalls', 'hourArray', 'day', 'dateCurrent'));
     }
 }

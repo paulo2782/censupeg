@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +17,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','remember_token','level',
+        'name',
+        'email',
+        'password',
+        'remember_token',
+        'level',
+        'deleted_at'
     ];
 
     /**
@@ -25,7 +31,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -36,4 +43,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*================================================================================================================*/
+    /*==================== RELATIONSHIPS =============================================================================*/
+    /*================================================================================================================*/
+    /** * @return bool */
+    public function isAdministrator()
+    {
+        return $this->level === 1;
+    }
+
+    /*================================================================================================================*/
+    /*==================== METHODS ===================================================================================*/
+    /*================================================================================================================*/
+
+    /*================================================================================================================*/
+    /*==================== GETS ======================================================================================*/
+    /*================================================================================================================*/
+    public function getLevelShowAttribute()
+    {
+        return $this->level === 1 ? 'Administrador' : 'Operador';
+    }
+
 }

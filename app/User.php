@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -63,6 +64,14 @@ class User extends Authenticatable
     public function getLevelShowAttribute()
     {
         return $this->level === 1 ? 'Administrador' : 'Operador';
+    }
+
+    public function changeEmail()
+    {
+        $this->update([
+            'email' => Str::replaceFirst("@", \sprintf("_%s@", \time()), $this->email),
+        ]);
+        return $this;
     }
 
 }

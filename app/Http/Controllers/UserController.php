@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Site\User\StoreRequest;
+use App\Http\Requests\Site\User\UpdateRequest;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\Site\User\DeleteRequest;
@@ -36,7 +37,7 @@ class UserController extends Controller
      */
     public function destroy(User $user, DeleteRequest $request)
     {
-        $user->delete();
+        $user->changeEmail()->delete();
         return redirect()->back()->with('alert', 'Registro Apagado');
     }
 
@@ -44,7 +45,7 @@ class UserController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function updateUser(Request $request)
+    public function updateUser(UpdateRequest $request)
     {
         $data = $request->all();
         User::find($request->id)->update($data);
